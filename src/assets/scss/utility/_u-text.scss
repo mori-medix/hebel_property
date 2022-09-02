@@ -1,0 +1,179 @@
+@use "~/../src/assets/scss/global" as g;
+
+/* ---------------------------------------------------------
+ * text
+--------------------------------------------------------- */
+// text関連のutillty
+// text-color
+// font-size
+// text-align
+// line-height
+// letter-spacing
+$TEXT_COLOR_BOOL: false !default;
+$FONT_SIZE_BOOL: false !default;
+$TEXT_ALIGN_BOOL: false !default;
+$LINE_HEIGHT_BOOL: false !default;
+$LETTER_SPACING_BOOL: false !default;
+
+
+@if $TEXT_COLOR_BOOL {
+  /* text-color
+  -------------------------------------------------- */
+  .color-white {
+    &:not(:root) {
+      color: #fff;
+    }
+  }
+}
+
+@if $FONT_SIZE_BOOL {
+  /* font-size
+  -------------------------------------------------- */
+  // .u-fz-10
+  @each $key, $value in $BLAKE_POINT_LIST {
+    @if $key == default {
+      .u-fz-10 {
+        &:not(:root) {
+          font-size: 10;
+        }
+      }
+    } @else {
+      @media only screen and (min-width: #{$value}) {
+        .u-fz-10-#{$key} {
+          &:not(:root) {
+            font-size: 10;
+          }
+        }
+      }
+    }
+  }
+}
+
+@if $TEXT_ALIGN_BOOL {
+  /* text-align
+  -------------------------------------------------- */
+  // .u-text-left
+  // .u-text-center
+  // .u-text-right
+
+  // $textAlignLIst
+  // $className, $classValue
+  $TEXT_ALIGN_LIST: (
+    text-align:
+    (
+      left: left,
+      center: center,
+      right: right,
+    )
+  );
+  @each $key, $value in g.$BLAKE_POINT_LIST {
+    @if $key == default {
+      @each $classKey, $classValueList in $TEXT_ALIGN_LIST {
+        @each $className, $classValue in $classValueList {
+          .u-text-#{$className} {
+            &:not(:root) {
+              #{$classKey}: #{$classValue};
+            }
+          }
+        }
+      }
+    } @else {
+      @media only screen and (min-width: #{$value}) {
+        @each $classKey, $classValueList in $TEXT_ALIGN_LIST {
+          @each $className, $classValue in $classValueList {
+            .u-text-#{$className}-#{$key} {
+              &:not(:root) {
+                #{$classKey}: #{$classValue};
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@if $LINE_HEIGHT_BOOL {
+  /* line-height
+  -------------------------------------------------- */
+  // .u-lh-1
+
+  @each $key, $value in g.$BLAKE_POINT_LIST {
+    @if $key == default {
+      .u-lh-1 {
+        &:not(:root) {
+          line-height: 1;
+        }
+      }
+    } @else {
+      @media only screen and (min-width: #{$value}) {
+        .u-lh-1-#{$key} {
+          &:not(:root) {
+            line-height: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@if $LETTER_SPACING_BOOL {
+  /* letter-spacing
+  -------------------------------------------------- */
+  // .u-ls-base
+  // .u-ls-0
+  // .u-ls-003
+  // .u-ls-005
+  // .u-ls-minus003
+  // .u-ls-minus005
+
+  // $textAlignLIst
+  // $className, $classValue
+  $LETTER_SPACING_LIST: (
+    letter-spacing:
+    (
+      base: g.$LETTER_SPACING_BASE,
+      0: 0,
+    )
+  );
+
+  // ↑ Sass:Mapsの中にコメントアウトをしていると、stylelintの自動保存で消えるので外にだす。必要なものはここから追加。
+  // $LETTER_SPACING_LIST: (
+  //   letter-spacing:
+  //   (
+  //     base: g.$LETTER_SPACING_BASE,
+  //     0: 0,
+  //     '003': '0.03em',
+  //     '005': '0.05em',
+  //     minus003: '-0.03em',
+  //     minus005: '-0.05em',
+  //   )
+  // );
+
+  @each $key, $value in g.$BLAKE_POINT_LIST {
+    @if $key == default {
+      @each $classKey, $classValueList in $LETTER_SPACING_LIST {
+        @each $className, $classValue in $classValueList {
+          .u-ls-#{$className} {
+            &:not(:root) {
+              #{$classKey}: #{$classValue};
+            }
+          }
+        }
+      }
+    } @else {
+      @media only screen and (min-width: #{$value}) {
+        @each $classKey, $classValueList in $LETTER_SPACING_LIST {
+          @each $className, $classValue in $classValueList {
+            .u-ls-#{$className}-#{$key} {
+              &:not(:root) {
+                #{$classKey}: #{$classValue};
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

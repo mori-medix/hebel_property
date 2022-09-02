@@ -1,0 +1,33 @@
+/******************************************************************************
+ * utility
+*******************************************************************************/
+// 真偽値を true で使えるようになる
+@forward "~/../src/assets/scss/utility/u-display";
+
+@forward "~/../src/assets/scss/utility/u-flex-value" with(
+  $FLEX_BOOL: false
+);
+
+@forward "~/../src/assets/scss/utility/u-other" with(
+  $FLOAT_BOOL:false,
+  $POSITION_BOOL:false,
+  $OVERFLOW_BOOL:false
+);
+
+@forward "~/../src/assets/scss/utility/u-spacing" with(
+  $MARGIN_BOOL:true,
+  $PADDING_BOOL:false
+);
+
+@forward "~/../src/assets/scss/utility/u-column" with(
+  $WIDTH_BOOL: false,
+  $COLUMN_BOOL: true
+);
+
+@forward "~/../src/assets/scss/utility/u-text" with(
+  $TEXT_COLOR_BOOL: false,
+  $FONT_SIZE_BOOL: false,
+  $TEXT_ALIGN_BOOL: true,
+  $LINE_HEIGHT_BOOL: false,
+  $LETTER_SPACING_BOOL: false
+);

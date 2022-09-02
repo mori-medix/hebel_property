@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <%- include(`${__dirname}/src/settings/_head`,{pageData:pageData,pageName:pageName}) %>
+<body>
+
+  <!-- ↓↓ [ header2 ] ↓↓ -->
+  <!-- GTMタグが入る為基本的に使用しない -->
+<!-- ↑↑ [ header2 ] ↑↑ -->
+
+<!-- #container -->
+<div id="container" class="pg_home">
+  <%- include(`${__dirname}/src/components/organisms/header/_index`) %>
+  <!-- ↓↓ ソースを記述 ↓↓ -->
+  <%- typeof content !== 'undefined' ? content(__append) : null %>
+  <!-- ↑↑ ソースを記述 ↑↑ -->
+  <%- include(`${__dirname}/src/components/organisms/footer/_index`,{pageName:pageName}) %>
+</div>
+<!-- /#container -->
+
+<!-- ↓↓ [ footer2 ] ↓↓ -->
+
+<!-- ここから削除しない -->
+<script type="text/javascript" src="/hebel-rooms/common_v2/lib/jquery.min.js"></script>
+<script src="//www.afr-web.co.jp/hebel-rooms/common_v2/lib/scrollup/jquery.scrollUp.js" type="text/javascript"></script>
+<script src="//www.afr-web.co.jp/file.jsp?id=356289" type="text/javascript"></script>
+<!-- ここまで削除しない -->
+<!-- ↑↑ [ footer2 ] ↑↑ -->
+
+<!-- @@@TEMPLATE BEGIN@@@ -->
+<script type="text/javascript" src="//www.afr-web.co.jp/hebel-rooms/common_v2/lib/jquery-ui.min.js"></script>
+<script type="text/javascript" src="//www.afr-web.co.jp/hebel-rooms/common_v2/lib/selectBoxIt/jquery.selectBoxIt.js"></script><%
+if(pageName === 'search/detail/'){%>
+<script type="text/javascript" src="/hebel-rooms/common_v2/lib/ofi.min.js" ></script>
+<script type="text/javascript" src="/hebel-rooms/common_v2/lib/swiper.min.js" ></script>
+<script type="text/javascript" src="/hebel-rooms/common_v2/js/detail/page.js" ></script>
+<script type="text/javascript" src="/hebel-rooms/lightbox/jquery.fancybox.min.js"></script>
+<script>
+  objectFitImages('.object-fit-img img,.object-fit-cover-img img');
+
+
+           var mySwiper = new Swiper('.swiper-container', {
+               slidesPerView: 4,
+               speed: 800,
+               spaceBetween: 8,
+               slidesPerGroup: 4,
+               pagination: {
+                   el: '.swiper-pagination',
+                   clickable: true
+               },
+       breakpoints: {
+         739: {
+           spaceBetween: 20,
+           slidesPerView: 2,
+           slidesPerGroup: 2
+         }
+       }
+           });
+
+   var mainImg = document.querySelectorAll('.swiper-container-main .swiper-slide')
+   var mySwiperMain = new Swiper('.swiper-container-main', {
+       slidesPerView: 'auto',
+       spaceBetween: 71,
+       // loop:true,
+       // loopedSlides:mainImg.length,
+   pagination: {
+     el: '.swiper-pagination',
+     type: 'fraction',
+   },
+       navigation: {
+           nextEl: '.swiper-button-next',
+           prevEl: '.swiper-button-prev',
+       },
+       breakpoints: {
+           739: {
+               spaceBetween: 71
+           }
+       }
+   });
+  var nextBtn = document.querySelector('.js-slider-next');
+  var prevBtn = document.querySelector('.js-slider-prev');
+  var showBlock = document.querySelector('.js-detail-mainimg-showblock');
+  var swipArea = document.querySelector('.js-swipe-show-btn');
+  var flag = false;
+  var swipeNextFlag = true;
+  var swipePrevFlag = false;
+  var rightMove;
+  var rightMoveBefore;
+
+  if (window.matchMedia( "(min-width: 740px)" ).matches) {
+    mySwiperMain.on('touchStart', function (event) {
+      if (mySwiperMain.realIndex === mySwiperMain.slides.length - 2) {
+        rightMoveBefore = event.screenX;
+      }
+      if (mySwiperMain.realIndex === mySwiperMain.slides.length - 1) {
+        rightMoveBefore = null;
+        rightMove = event.screenX;
+      }
+    });
+
+    mySwiperMain.on('touchMove', function (event) {
+      if (rightMoveBefore > event.screenX) {
+        nextBtn.classList.add('mainimg-show-block');
+      }
+      if (mySwiperMain.realIndex === mySwiperMain.slides.length - 1) {
+        if (rightMove > event.screenX) {
+          if (swipeNextFlag) {
+            nextBtn.classList.add('mainimg-show-block-add');
+            showBlock.classList.add('is-show');
+            swipeNextFlag = false;
+            swipePrevFlag = true;
+            flag = true;
+          }
+        } else if (swipePrevFlag) {
+          swipePrevFlag = false;
+          swipeNextFlag = true;
+          nextBtn.classList.remove('mainimg-show-block-add');
+          flag = false;
+        }
+      }
+      if (rightMove < event.screenX) {
+        if (nextBtn.classList.contains('mainimg-show-block')) {
+          nextBtn.classList.remove('mainimg-show-block');
+        }
+      }
+    });
+  }
+
+
+  nextBtn.addEventListener('click',function (event) {
+    if(flag) {
+      mySwiperMain.slideTo(0);
+      nextBtn.classList.remove('mainimg-show-block');
+      nextBtn.classList.remove('mainimg-show-block-add');
+      flag = false;
+    }
+    if(nextBtn.classList.contains('mainimg-show-block')){
+   showBlock.classList.add('is-show');
+   nextBtn.classList.add('mainimg-show-block-add');
+   swipePrevFlag= true;
+   flag = true;
+  }
+    if(mySwiperMain.realIndex === mySwiperMain.slides.length - 1){
+      nextBtn.classList.add('mainimg-show-block');
+    }
+  });
+  prevBtn.addEventListener('click',function (event) {
+      if(nextBtn.classList.contains('mainimg-show-block')){
+          nextBtn.classList.remove('mainimg-show-block');
+      nextBtn.classList.remove('mainimg-show-block-add');
+          flag = false;
+      swipeNextFlag = true;
+      swipePrevFlag = false;
+      }
+  });
+
+  var touchStartX;
+  var touchStartY;
+  var touchMoveX;
+  var touchMoveY;
+
+  // 開始時
+  swipArea.addEventListener("touchstart", function(event) {
+    //(event.preventDefault) ? event.preventDefault() : event.returnValue = false;
+    // 座標の取得
+    touchStartX = event.touches[0].pageX;
+  }, false);
+
+  // 移動時
+  swipArea.addEventListener("touchmove", function(event) {
+    //(event.preventDefault) ? event.preventDefault() : event.returnValue = false;
+    // 座標の取得
+    touchMoveX = event.changedTouches[0].pageX;
+  }, false);
+
+  // 終了時
+  swipArea.addEventListener("touchend", function(event) {
+    // 移動量の判定
+    if (touchStartX > touchMoveX) {
+      if (touchStartX > (touchMoveX + 50)) {
+        if(mySwiperMain.realIndex === mySwiperMain.slides.length - 1){
+          showBlock.classList.add('is-show');
+          flag = true;
+          nextBtn.classList.add('mainimg-show-block');
+          nextBtn.classList.add('mainimg-show-block-add');
+        }
+      }
+    } else if (touchStartX < touchMoveX) {
+      if ((touchStartX + 50) < touchMoveX) {
+        if(nextBtn.classList.contains('mainimg-show-block')){
+          nextBtn.classList.remove('mainimg-show-block');
+          nextBtn.classList.remove('mainimg-show-block-add');
+          flag = false;
+        }
+      }
+    }
+  }, false);
+
+  showBlock.addEventListener('click',function (event) {
+    if(event.target.classList.contains('js-show-block-target')){
+    this.classList.remove('is-show');
+ }
+  });
+  
+   $(function(){
+       $('.js-modal-iframe').fancybox({
+           'type': 'iframe',
+           'width': '1040px',
+           'height': 'auto'
+       });
+   });
+
+</script><%
+}%>
+<!-- @@@TEMPLATE END@@@ -->
+
+<!-- ↓↓ [ footer3 ] ↓↓ -->
+<!-- ↑↑ [ footer3 ] ↑↑ -->
+
+<!-- ↓↓ [ anytag ] ↓↓ -->
+<!-- ↑↑ [ anytag ] ↑↑ -->
+</body>
+</html>

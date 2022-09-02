@@ -1,0 +1,37 @@
+@use "~/../src/assets/scss/global/variable" as var;
+@use "sass:math";
+
+// function
+
+// vw の取得式
+@function GET_VW($SIZE, $VIEWPORT:var.$SP_BASE_WIDTH) {
+  @if $SIZE == 0 {
+    @return 0;
+  } @else {
+    @return math.div($SIZE,$VIEWPORT) * 100vw;
+
+    // calcだとbored-radius box-shadowなど使えないので
+    // @return calc(#{$SIZE}/#{$VIEWPORT} * 100vw);
+  }
+}
+
+@function GET_VW_TAB($SIZE, $VIEWPORT:var.$TAB_BASE_WIDTH) {
+  @if $SIZE == 0 {
+    @return 0;
+  } @else {
+    @return math.div($SIZE,$VIEWPORT) * 100vw;
+
+    // @return calc(#{$SIZE}/#{$viewport} * 100vw);
+  }
+}
+
+// rem の取得式
+@function GET_REM($SIZE:16) {
+  @if $SIZE == 0 {
+    @return 0;
+  } @else {
+    @return math.div($SIZE,16) * 1rem;
+
+    // @return calc(#{$size} / 16 * 1rem);
+  }
+}

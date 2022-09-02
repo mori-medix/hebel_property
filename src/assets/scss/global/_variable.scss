@@ -1,0 +1,119 @@
+// 共通変数
+// 基準とするSPのサイズ
+$SP_BASE_WIDTH: 750;
+
+// 基準とするtabのサイズ
+$TAB_BASE_WIDTH: 1792;
+
+// PCのコンテンツの最大幅
+$PC_BASE_WIDTH: 1170;
+
+// デザイン作成時の最大サイズ
+$DESGIN_WIDTH: 1440;
+
+// mq-width
+$SM: 568px; // スマートフォン横持(iphone5。ほとんど使わない)
+$MD: 740px; // タブレット(ipad最小サイズからiphone Pro Max 横持ちまで)
+$LG: 897px; // ノートPC
+$XL: 1281px; // 大画面モニタ(任意。デザインサイズプラス1)
+$HD: 1921px; // hd以上
+// 参考
+// https://tech.speee.jp/entry/2018/05/10/113200
+// https://webdesign-abc.com/tech/resolution-list/
+
+$BLAKE_POINT_LIST: (
+  default: null,
+  md: $MD,
+);
+
+// ほとんど使わないものは消している
+// コメントアウトしていないとutilityの汎用クラスが各サイズ出てきてしまう。cssが重くなる
+// ↑ Sass:Mapsの中にコメントアウトをしていると、stylelintの自動保存で消えるので外にだす。必要なものはここから追加。
+// $BLAKE_POINT_LIST: (
+//   default: null,
+//   sm: $SM,
+//   md: $MD,
+//   lg: $LG
+//   xl: $XL,
+//   hd: $HD,
+// );
+
+// base-color
+$COLOR_BLACK: #1d1d1d;
+$COLOR_GRAY: null;
+$COLOR_LIGHT_GRAY: null;
+$COLOR_DARK_GRAY: null;
+
+// color
+$COLOR_TEXT_BASE: $COLOR_BLACK;
+$COLOR_TEXT_LINK: #1a0dab;
+$COLOR_MAIN: #1e2380;
+$COLOR_SUB: null;
+$COLOR_ACCENT: null;
+
+// base-font-family
+$FONT_FAMILY_BASE: YakuHanJP, "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+
+// base-fontsize
+$FONT_SIZE_BASE_SP: 14 * 2;
+$FONT_SIZE_BASE_TAB: null;
+$FONT_SIZE_BASE_PC: 15;
+
+// base-line-height:;
+$LINE_HEIGHT_BASE: 1.6;
+
+// base-letter-spacing
+$LETTER_SPACING_BASE: 0.03em;
+
+// font-weight Noto
+$FONT_WEIGHT_THIN: 100; // ゴシックのみ
+$FONT_WEIGHT_EXTRALIGHT: 200; // 明朝のみ
+$FONT_WEIGHT_LIGHT: 300;
+$FONT_WEIGHT_REGULAR: 400;
+$FONT_WEIGHT_MEDIUM: 500;
+$FONT_WEIGHT_SEMIBOLD: 600; // 明朝のみ
+$FONT_WEIGHT_BOLD: 700;
+$FONT_WEIGHT_EXTRABOLD: 800; // ゴシック、明朝両方なし
+$FONT_WEIGHT_BLACK: 900;
+
+// z-index
+$Z_OVER_LAP_UNDER: 10; // ブロック間の重なり
+$Z_OVER_LAP_OVER: 20; // ブロック間の重なり
+$Z_FLOATING: 100; // header,footerなど追従してくるもの
+$Z_FLOATING_SECOND: 200; // header,footerなど追従してくるもの
+$Z_SHOW_MENU: 1000; // 隠れているmenu
+$Z_MODAL: 10000; // モーダル。最上層にいく可能性が高いので
+
+// easing
+// 下にいくほど変化の程度が強くなる
+$LINEAR: cubic-bezier(0, 0, 1, 1);
+$EASE_IN_SINE: cubic-bezier(0.47, 0, 0.745, 0.715);
+$EASE_OUT_SINE: cubic-bezier(0.39, 0.575, 0.565, 1);
+$EASE_IN_OUT_SINE: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+$EASE_IN_QUAD: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+$EASE_OUT_QUAD: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$EASE_IN_OUT_QUAD: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$EASE_IN_CUBIC: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$EASE_OUT_CUBIC: cubic-bezier(0.215, 0.61, 0.355, 1);
+$EASE_IN_OUT_CUBIC: cubic-bezier(0.645, 0.045, 0.355, 1);
+$EASE_IN_QUART: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+$EASE_OUT_QUART: cubic-bezier(0.165, 0.84, 0.44, 1);
+$EASE_IN_OUT_QUART: cubic-bezier(0.77, 0, 0.175, 1);
+$EASE_IN_QUINT: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+$EASE_OUT_QUINT: cubic-bezier(0.23, 1, 0.32, 1); // おすすめ
+$EASE_IN_OUT_QUINT: cubic-bezier(0.86, 0, 0.07, 1);
+$EASE_IN_EXPO: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+$EASE_OUT_EXPO: cubic-bezier(0.19, 1, 0.22, 1); // おすすめ
+$EASE_IN_OUT_EXPO: cubic-bezier(1, 0, 0, 1);
+
+// 下記は動きが特殊
+// Circ: Expoのような強さを持つが、加速や減速の時間がよりゆるやか。
+// Back: 少し行き過ぎてから戻ってくるような動き。
+$EASE_IN_CIRC: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+$EASE_OUT_CIRC: cubic-bezier(0.075, 0.82, 0.165, 1);
+$EASE_IN_OUT_CIRC: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$EASE_IN_BACK: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+$EASE_OUT_BACK: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$EASE_IN_OUT_BACK: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+// 参考 https://ics.media/entry/18730/

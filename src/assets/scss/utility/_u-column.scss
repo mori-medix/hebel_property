@@ -1,0 +1,71 @@
+@use "~/../src/assets/scss/global" as g;
+@use "sass:math";
+
+$WIDTH_BOOL: false !default;
+$COLUMN_BOOL: false !default;
+
+/* ---------------------------------------------------------
+ * width
+--------------------------------------------------------- */
+@if $WIDTH_BOOL {
+  $WIDTH: (
+    sm: (auto,285,310,345),
+    md: (auto,600,800, 1000,1200,1520,1920)
+  );
+
+  @each $key, $SIZE in $WIDTH {
+    @each $NUM in $SIZE {
+      @if $key == sm {
+        .u-width-#{$NUM} {
+          &:not(:root) {
+            @if $NUM == auto {
+              width: auto;
+            } @else {
+              width: calc((#{$NUM} * 2) / #{g.$SP_BASE_WIDTH} * 100vw);
+            }
+          }
+        }
+      }
+      @if $key == md {
+        @include g.MQ_ABOVE_TAB {
+          .u-width-#{$NUM}-md {
+            // --base-width: #{$NUM};
+            &:not(:root) {
+              @if $NUM == auto {
+                width: auto;
+              } @else {
+                width: 100%;
+                max-width: #{$NUM}px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@if $COLUMN_BOOL {
+  /* ---------------------------------------------------------
+ * column
+--------------------------------------------------------- */
+  $MAX_COLUMN: 6;
+
+  @each $key, $value in g.$BLAKE_POINT_LIST {
+    @if $key == default {
+      @for $i from 2 through $MAX_COLUMN {
+        .u-col-#{$i} {
+          width: calc(100 / #{$i} * 1%);
+        }
+      }
+    } @else {
+      @media only screen and (min-width: #{$value}) {
+        @for $i from 2 through $MAX_COLUMN {
+          .u-col-#{$i}-#{$key} {
+            width: calc(100 / #{$i} * 1%);
+          }
+        }
+      }
+    }
+  }
+}

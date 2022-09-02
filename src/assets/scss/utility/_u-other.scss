@@ -1,0 +1,143 @@
+@use "~/../src/assets/scss/global" as g;
+@use "sass:math";
+
+/* ---------------------------------------------------------
+ * other
+--------------------------------------------------------- */
+// float
+// position
+// overflow
+$FLOAT_BOOL: false !default;
+$POSITION_BOOL: false !default;
+$OVERFLOW_BOOL: false !default;
+
+/* float
+  -------------------------------------------------- */
+// .u-float-left
+// .u-float-right
+// .u-clear-clear
+// $className, $classValue
+$FLOAT_LIST: (
+  float:
+  (
+    left: left,
+    right: right,
+  ),
+  clear: (
+    clear: both,
+  )
+);
+
+@if $FLOAT_BOOL {
+  @each $key, $value in g.$BLAKE_POINT_LIST {
+    @if $key == default {
+      @each $classKey, $classValueList in $FLOAT_LIST {
+        @each $className, $classValue in $classValueList {
+          .u-#{$classKey}-#{$className} {
+            &:not(:root) {
+              #{$classKey}: #{$classValue};
+            }
+          }
+        }
+      }
+    } @else {
+      @media only screen and (min-width: #{$value}) {
+        @each $classKey, $classValueList in $FLOAT_LIST {
+          @each $className, $classValue in $classValueList {
+            .u-#{$classKey}-#{$className}-#{$key} {
+              &:not(:root) {
+                #{$classKey}: #{$classValue};
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@if $POSITION_BOOL {
+  /* position
+  -------------------------------------------------- */
+  // .u-position-static
+  // .u-position-absolute
+  // .u-position-relative
+  // .u-position-fixed
+  // .u-position-sticky
+
+  // $className, $classValue
+  $POSITION_LIST: (
+    position:
+    (
+      static: static,
+      absolute: absolute,
+      relative: relative,
+      fixed: fixed,
+      sticky: sticky,
+    )
+  );
+  @each $key, $value in g.$BLAKE_POINT_LIST {
+    @if $key == default {
+      @each $classKey, $classValueList in $POSITION_LIST {
+        @each $className, $classValue in $classValueList {
+          .u-#{$classKey}-#{$className} {
+            &:not(:root) {
+              #{$classKey}: #{$classValue};
+            }
+          }
+        }
+      }
+    } @else {
+      @media only screen and (min-width: #{$value}) {
+        @each $classKey, $classValueList in $POSITION_LIST {
+          @each $className, $classValue in $classValueList {
+            .u-#{$classKey}-#{$className}-#{$key} {
+              &:not(:root) {
+                #{$classKey}: #{$classValue};
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@if $OVERFLOW_BOOL {
+  /* overflow
+-------------------------------------------------- */
+  // .u-overflow-hidden
+
+  // $className, $classValue
+  $OVER_FLOW_LIST: (
+    overflow:
+    (
+      hidden: hidden,
+    )
+  );
+  @each $key, $value in g.$BLAKE_POINT_LIST {
+    @if $key == default {
+      @each $classKey, $classValueList in $OVER_FLOW_LIST {
+        @each $className, $classValue in $classValueList {
+          .u-#{$classKey}-#{$className} {
+            &:not(:root) {
+              #{$classKey}: #{$classValue};
+            }
+          }
+        }
+      }
+    } @else {
+      @media only screen and (min-width: #{$value}) {
+        @each $classKey, $classValueList in $OVER_FLOW_LIST {
+          @each $className, $classValue in $classValueList {
+            .u-#{$classKey}-#{$className}-#{$key} {
+              &:not(:root) {
+                #{$classKey}: #{$classValue};
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@use "~/../src/assets/scss/global" as g;
+@use "sass:math";
+@use "sass:map";
+
+/* ---------------------------------------------------------
+ * display
+--------------------------------------------------------- */
+// displayValueLIst
+// .u-d-block
+// .u-d-inline
+// .u-d-inline-block
+// .u-d-flex
+// .u-d-grid
+// .u-d-table
+// .u-d-none
+
+$DISPLAY_VALUE_LIST: (
+  block: ( display: block),
+  none:(display: none),
+);
+
+// ↑ Sass:Mapsの中にコメントアウトをしていると、stylelintの自動保存で消えるので外にだす。必要なものはここから追加。
+// $DISPLAY_VALUE_LIST: (
+//   block: ( display: block),
+//   inline: (display: inline),
+//   inline-block: (display: inline-block),
+//   flex: (display: flex, other-value:(flex-wrap: wrap)),
+//   grid: (display: grid),
+//   table: (display: table),
+//   none:(display: none),
+// );
+
+@each $key, $value in g.$BLAKE_POINT_LIST {
+  @if $key == default {
+    @each $classKey, $classValueList in $DISPLAY_VALUE_LIST {
+      .u-d-#{map.get($classValueList, display)} {
+        display: map.get($classValueList, display);
+        @each $otherKey, $otherValue in map.get($classValueList, other-value) {
+          #{$otherKey}: #{$otherValue};
+        }
+      }
+    }
+  } @else {
+    @media only screen and (min-width: #{$value}) {
+      @each $classKey, $classValueList in $DISPLAY_VALUE_LIST {
+        .u-d-#{map.get($classValueList, display)}-#{$key} {
+          display: map.get($classValueList, display);
+          @each $otherKey, $otherValue in map.get($classValueList, other-value) {
+            #{$otherKey}: #{$otherValue};
+          }
+        }
+      }
+    }
+  }
+}

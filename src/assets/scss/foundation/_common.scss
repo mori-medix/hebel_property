@@ -1,0 +1,67 @@
+@use "~/../src/assets/scss/global" as G;
+
+/*******************************************************************************
+  common
+*******************************************************************************/
+body .contact li {
+  float: none;
+}
+
+.header {
+  position: relative;
+}
+
+.h_logo {
+  display: table;
+}
+
+.contact {
+  padding: 40px 0 110px;
+  letter-spacing: 0.06em;
+  @include G.FONT_PC(14);
+
+  div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, input, textarea, p, blockquote, table, th, td, address {
+    color: #333;
+  }
+
+  
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+  }
+  @include G.MQ_BELOW_TAB {
+    padding: 0 0 60px;
+    @include G.FONT_PC(13);
+
+    &.thanks {
+      padding-bottom: 80px;
+
+      + .wrap_footer {
+        padding-bottom: 0;
+      }
+    }
+
+    &.confirm {
+      + .wrap_footer {
+        padding-bottom: 70px;
+      }
+    }
+
+    + .wrap_footer {
+      padding-bottom: 85px;
+    }
+  }
+
+  em {
+    font-style: normal;
+  }
+
+  button {
+    display: block;
+    padding: 0;
+    margin: 0;
+    color: #333;
+    background-color: transparent;
+    border: none;
+  }
+}

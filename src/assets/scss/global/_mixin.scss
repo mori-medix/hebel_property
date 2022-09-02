@@ -1,0 +1,138 @@
+@use "~/../src/assets/scss/global/variable" as VAR;
+
+// mixn
+
+// Media Queries
+@mixin MQ_ORIGINAL($MIN: VAR.$MD) {
+  @media only screen and (min-width: #{$MIN}) {
+    @content;
+  }
+}
+
+@mixin  MQ_ABOVE_SP($MIN: VAR.$SM) {
+  @media only screen and (min-width: #{$MIN}) {
+    @content;
+  }
+}
+
+@mixin MQ_ABOVE_TAB($MIN: VAR.$MD) {
+  @media only screen and (min-width: #{$MIN}) {
+    @content;
+  }
+}
+
+@mixin MQ_ABOVE_NOTE($MIN: VAR.$LG) {
+  @media only screen and (min-width: #{$MIN}) {
+    @content;
+  }
+}
+
+@mixin MQ_ABOVE_DESK($MIN: VAR.$XL) {
+  @media only screen and (min-width: #{$MIN}) {
+    @content;
+  }
+}
+
+@mixin MQ_ABOVE_PC($MIN: VAR.$HD) {
+  @media only screen and (min-width: #{$MIN}) {
+    @content;
+  }
+}
+
+@mixin MQ_BELOW_TAB($MAX: VAR.$MD - 1) {
+  @media (max-width: #{$MAX}) {
+    @content;
+  }
+}
+
+// 両端揃え 英語が改行当たりのところにはいってなければ使えると思う
+@mixin JUSTIFY() {
+  text-align: justify;
+  text-justify: inter-ideograph;
+  text-justify: inter-character;
+}
+
+// 参考 https://yukimaru.org/html-css/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%81%AE%E4%B8%A1%E7%AB%AF%E6%8F%83%E3%81%88%E3%80%90ie%E3%80%81firefox%E5%AF%BE%E5%BF%9C%E3%80%91/
+
+// 三角形 数字の値にはpxなど入れる
+@mixin ARROW($ARROW_DIRECTION,$WIDTH,$HEIGHT,$COLOR,$DEFAULT_SET:true) {
+  @if $DEFAULT_SET {
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+  @if $ARROW_DIRECTION == top {
+    border-width: 0 calc(#{$WIDTH} / 2) $HEIGHT calc(#{$WIDTH} / 2);
+    @if $COLOR {
+      border-color: transparent transparent $COLOR transparent;
+    }
+  }
+  @if $ARROW_DIRECTION == right {
+    border-width: calc(#{$HEIGHT} / 2) 0 calc(#{$HEIGHT} / 2) $WIDTH;
+    @if $COLOR {
+      border-color: transparent transparent transparent $COLOR;
+    }
+  }
+  @if $ARROW_DIRECTION == bottom {
+    border-width: $HEIGHT calc(#{$WIDTH} / 2) 0 calc(#{$WIDTH} / 2);
+    @if $COLOR {
+      border-color: $COLOR transparent transparent transparent;
+    }
+  }
+  @if $ARROW_DIRECTION == right {
+    border-width: calc(#{$HEIGHT} / 2) $WIDTH calc(#{$HEIGHT} / 2) 0;
+    @if $COLOR {
+      border-color: transparent $COLOR transparent transparent;
+    }
+  }
+}
+
+// grid
+@mixin GRID_REPEAT($COLUMNS_WIDTH:auto,$COLUMNS_NUM:1,$ROW_NUM:1,$COLUMN_GAP:0,$ROW_GAP:0) {
+  display: grid;
+  grid-template-rows: repeat($ROW_NUM, auto);
+  grid-template-columns: repeat($COLUMNS_NUM, $COLUMNS_WIDTH);
+  row-gap: $ROW_GAP;
+  column-gap: $COLUMN_GAP;
+}
+
+// https://qiita.com/tonkotsuboy_com/items/bce73685cd6b1ea511dc
+// https://qiita.com/tonkotsuboy_com/items/10fc250ac579a32e9ee9
+
+// fontSize の取得式
+@mixin FONT_SP($SIZE:var.$FONT_SIZE_BASE_SP,$VIEWPORT:var.$SP_BASE_WIDTH) {
+  // font-size: calc(($SIZE / 16) * 16rem) ;
+  font-size: calc(#{$SIZE} / #{$VIEWPORT} * 100vw);
+}
+
+@mixin FONT_TAB($SIZE:var.$FONT_SIZE_BASE_TAB,$VIEWPORT:var.$TAB_BASE_WIDTH) {
+  // font-size: calc(($SIZE / 16) * 16rem) ;
+  font-size: calc(#{$SIZE} / #{$VIEWPORT} * 100vw);
+}
+
+@mixin FONT_PC($SIZE:var.$FONT_SIZE_BASE_PC) {
+  font-size: $SIZE + px;
+  font-size: calc(#{$SIZE} / 10 * 1rem) ;
+}
+
+// html:62.5%;のとき
+// @mixin fz-sp($size:$base-font-size,$viewport:$spBaseWidth) {
+//  font-size: ($size / 10) + rem;
+//  font-size: calc(#{$size}/#{$viewport} * 100vw);
+// }
+// @mixin fz-pc($size:$base-font-size) {
+//  font-size: $size + px;
+//  font-size: ($size / 10) + rem;
+// }
+
+// colの左右のpadding
+@mixin COL_SIDE_PD($wrapWidth:1000,$padding:30) {
+  padding-right: calc((#{$padding / 2}) / (#{$wrapWidth} + #{$padding}) * 100%);
+  padding-left: calc((#{$padding / 2}) / (#{$wrapWidth} + #{$padding}) * 100%);
+}
+
+// *colを包んでいるタグの左右のmargin
+@mixin COL_WRAPE_MG($wrapWidth:1400,$childrePadding:30) {
+  margin-right: calc((#{$childrePadding / 2}) / #{$wrapWidth} * 100% * -1);
+  margin-left: calc((#{$childrePadding / 2}) / #{$wrapWidth} * 100% * -1);
+}

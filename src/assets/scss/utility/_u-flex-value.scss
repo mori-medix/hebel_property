@@ -1,0 +1,90 @@
+@use "~/../src/assets/scss/global" as g;
+@use "sass:math";
+
+$FLEX_BOOL: false !default;
+@if $FLEX_BOOL {
+  /* ---------------------------------------------------------
+ * flex
+--------------------------------------------------------- */
+  // flexはあまりつかわないのでよく使うもの以外消している
+  // .u-justify-content-start
+  // .u-justify-content-center
+  // .u-justify-content-end
+  // .u-justify-content-around
+  // .u-justify-content-between
+  // .u-align-items-center
+  // .u-flex-direction-row
+  // .u-flex-direction-column
+  // .u-flex-wrap-wrap
+  // .u-flex-wrap-nowrap
+  // .u-flex-grow-1
+  // .u-flex-1
+  // .u-order-1
+  // .u-order-2
+
+  // $className, $classValue
+  $FLEX_VALUE_LIST: (
+    flex:(
+      1: 1,
+    ),
+    order: (
+      1: 1,
+      2: 2,
+    )
+  );
+
+  // ↑ Sass:Mapsの中にコメントアウトをしていると、stylelintの自動保存で消えるので外にだす。必要なものはここから追加。
+  // $FLEX_VALUE_LIST: (
+  //   justify-content:(
+  //     start:flex-start,
+  //     center:center,
+  //     end:flex-end,
+  //     around:space-around,
+  //     between:space-between,
+  //   ),
+  //   align-items:(
+  //     center:center
+  //   ),
+  //   flex-direction:(
+  //     row:row,
+  //     column:column
+  //   ),
+  //   flex-wrap:(
+  //     wrap:wrap,
+  //     nowrap:nowrap
+  //   ),
+  //   flex-grow:(
+  //     1:1
+  //   ),
+  
+  //   flex:(
+  //     1: 1,
+  //   ),
+  //   order: (
+  //     1: 1,
+  //     2: 2,
+  //   )
+  // );
+
+  @each $key, $value in g.$BLAKE_POINT_LIST {
+    @if $key == default {
+      @each $classKey, $classValueList in $FLEX_VALUE_LIST {
+        @each $className, $classValue in $classValueList {
+          .u-#{$classKey}-#{$className} {
+            #{$classKey}: #{$classValue};
+          }
+        }
+      }
+    } @else {
+      @media only screen and (min-width: #{$value}) {
+        @each $classKey, $classValueList in $FLEX_VALUE_LIST {
+          @each $className, $classValue in $classValueList {
+            .u-#{$classKey}-#{$className}-#{$key} {
+              #{$classKey}: #{$classValue};
+            }
+          }
+        }
+      }
+    }
+  }
+}

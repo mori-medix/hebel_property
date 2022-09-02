@@ -1,0 +1,196 @@
+@use "~/../src/assets/scss/global" as g;
+@use "sass:math";
+@use "sass:map";
+
+/* ---------------------------------------------------------
+ * spacing
+--------------------------------------------------------- */
+// spacing関連のutillty
+// margin
+// padding
+
+$MARGIN_BOOL: false !default;
+$PADDING_BOOL: false !default;
+$STEP_NUM: 5;
+$STEP_NUM_MAX: 150;
+$LOOP_VALUE: math.div($STEP_NUM_MAX,$STEP_NUM);
+
+
+@if $MARGIN_BOOL {
+  /* margin
+  -------------------------------------------------- */
+  // .u-mgt-0
+  // .u-mgb-0
+
+  // $className, $classValue
+  $MARGIN_LIST: (
+    margin-top: (
+      mgt: 0,
+    ),
+    margin-lr-0: (
+      left: 0,
+      right: 0,
+    ),
+    margin-lr-auto: (
+      left: auto,
+      right: auto,
+    )
+  );
+
+  // ↑ Sass:Mapsの中にコメントアウトをしていると、stylelintの自動保存で消えるので外にだす。必要なものはここから追加。
+  // $MARGIN_LIST: (
+  //   margin:
+  //     (
+  //       mg: 0,
+  //     ),
+  //   margin-top: (
+  //     mgt: 0,
+  //   ),
+  //   margin-bottom: (
+  //     mgb: 0,
+  //   ),
+  //   margin-lr-0: (
+  //     left: 0,
+  //     right: 0,
+  //   ),
+  //   margin-lr-auto: (
+  //     left: auto,
+  //     right: auto,
+  //   )
+  // );
+
+
+  @each $key, $value in g.$BLAKE_POINT_LIST {
+    @if $key == default {
+      @each $classKey, $classValueList in $MARGIN_LIST {
+        @if $classKey == margin-lr-auto or margin-lr-0 {
+          .u-#{$classKey} {
+            &:not(:root) {
+              margin-right: map.get($classValueList, right);
+              margin-left: map.get($classValueList, left);
+            }
+          }
+        }
+        @if $classKey != margin-lr-auto {
+          @if $classKey != margin-lr-0 {
+            @each $className, $classValue in $classValueList {
+              @for $i from 0 through  math.div($LOOP_VALUE,2) {
+                @if $i == 0 {
+                  .u-#{$className}-#{$classValue + ($STEP_NUM * $i)}-#{$key} {
+                    &:not(:root) {
+                      #{$classKey}: #{$classValue + ($STEP_NUM * $i)};
+                    }
+                  }
+                } @else {
+                  .u-#{$className}-#{$classValue + ($STEP_NUM * $i)} {
+                    &:not(:root) {
+                      #{$classKey}: calc(#{$classValue + (($STEP_NUM * 2) * $i)} / #{g.$SP_BASE_WIDTH} * 100vw);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    } @else {
+      @media only screen and (min-width: #{$value}) {
+        @each $classKey, $classValueList in $MARGIN_LIST {
+          @if $classKey == margin-lr-auto or margin-lr-0 {
+            .u-#{$classKey}-#{$key} {
+              &:not(:root) {
+                margin-right: map.get($classValueList, right);
+                margin-left: map.get($classValueList, left);
+              }
+            }
+          }
+          @if $classKey != margin-lr-auto {
+            @if $classKey != margin-lr-0 {
+              @each $className, $classValue in $classValueList {
+                @for $i from 0 through $LOOP_VALUE {
+                  @if $i == 0 {
+                    .u-#{$className}-#{$classValue + ($STEP_NUM * $i)}-#{$key} {
+                      &:not(:root) {
+                        #{$classKey}: #{$classValue + ($STEP_NUM * $i)};
+                      }
+                    }
+                  } @else {
+                    .u-#{$className}-#{$classValue + ($STEP_NUM * $i)}-#{$key} {
+                      &:not(:root) {
+                        #{$classKey}: #{$classValue + ($STEP_NUM * $i)}px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@if $PADDING_BOOL {
+  /* pading
+  -------------------------------------------------- */
+  // .u-pdt-0
+  // .u-pdb-0
+
+  // $className, $classValue
+  $PADDING_LIST: (
+    padding-top:
+    (
+      pdt: 0,
+    ),
+    padding-bottom: (
+      pdb: 0,
+    )
+  );
+
+  @each $key, $value in g.$BLAKE_POINT_LIST {
+    @if $key == default {
+      @each $classKey, $classValueList in $PADDING_LIST {
+        @each $className, $classValue in $classValueList {
+          @for $i from 0 through math.div($LOOP_VALUE,2) {
+            @if $i == 0 {
+              .u-#{$className}-#{$classValue + ($STEP_NUM * $i)} {
+                &:not(:root) {
+                  #{$classKey}: #{$classValue + ($STEP_NUM * $i)};
+                }
+              }
+            } @else {
+              .u-#{$className}-#{$classValue + ($STEP_NUM * $i)} {
+                &:not(:root) {
+                  #{$classKey}: calc(#{$classValue + (($STEP_NUM * 2) * $i)} / #{g.$SP_BASE_WIDTH} * 100vw);
+                }
+              }
+            }
+          }
+        }
+      }
+    } @else {
+      @media only screen and (min-width: #{$value}) {
+        @each $classKey, $classValueList in $PADDING_LIST {
+          @each $className, $classValue in $classValueList {
+            @for $i from 0 through $LOOP_VALUE {
+              @if $i == 0 {
+                .u-#{$className}-#{$classValue + ($STEP_NUM * $i)} {
+                  &:not(:root) {
+                    #{$classKey}: #{$classValue + ($STEP_NUM * $i)};
+                  }
+                }
+              } @else {
+                .u-#{$className}-#{$classValue + ($STEP_NUM * $i)}-#{$key} {
+                  &:not(:root) {
+                    #{$classKey}: #{$classValue + ($STEP_NUM * $i)}px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+// @forward での読み込みはスコープが拡大される。
+// @use をつかってファイルを読み込んだところで、スコープが閉じる
+// @forward でないと with は使えない（データを受け取れない）
+
+// 同じクラスでで囲って、ファイルを読み込むとき
+// @use 取り込む
+// as hoge で変数を取り込む。取り込み先は @mixin wrap {} で囲む
+// @include hoge.wrap
+
+@charset "utf-8";
+
+// **foundation**
+@use "~/../src/assets/scss/foundation";
+
+// **components**
+@use "~/../src/components";
+
+@use "~/../src/assets/scss/libs/swiper.scss";
+
+// **page**
+// @use "./pages";
+
+// **utility**
+// @use "~/../src/assets/scss/utility";
