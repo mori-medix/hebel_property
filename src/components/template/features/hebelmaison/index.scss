@@ -1,0 +1,113 @@
+@use "~/../src/assets/scss/global" as G;
+@use "sass:meta";
+
+.hebelmaison {
+  letter-spacing: 0.06em;
+  @include G.MQ_BELOW_TAB {
+    @include G.FONT_PC(13);
+  }
+  
+  &.page.contents {
+    padding-bottom: 40px;
+    @include G.MQ_BELOW_TAB {
+      padding-bottom: 0;
+    }
+  }
+
+  .contents-section {
+    padding: 80px 0 60px;
+    background-color: #fff;
+    @include G.MQ_BELOW_TAB {
+      padding: 40px 0 0;
+    }
+  }
+
+  &.hebelmaison-facility .contents-section {
+    padding-bottom: 90px;
+    @include G.MQ_BELOW_TAB {
+      padding-bottom: 65px;
+    }
+  }
+
+  &.hebelmaison-room .contents-section {
+    padding-bottom: 100px;
+    @include G.MQ_BELOW_TAB {
+      padding-bottom: 75px;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+  }
+
+  button {
+    padding: 0;
+    color: #000;
+    border: none;
+    outline: none;
+  }
+
+  .text-wrap {
+    > * {
+      line-height: 1.8;
+    }
+  }
+
+  &.page {
+    @include G.MQ_BELOW_TAB {
+      padding-top: 0;
+    }
+  }
+
+  .bg-gray {
+    padding: 80px 0 100px;
+    background-color: #f4f4f4;
+    @include G.MQ_BELOW_TAB {
+      padding: 50px 0 70px;
+    }
+  }
+
+  &.page.contents .breadcrumb.foot {
+    margin-bottom: 0;
+    @include G.MQ_BELOW_TAB {
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      padding-bottom: 15px;
+      padding-left: 30px;
+      overflow: hidden;
+      background: #eee;
+    }
+  }
+
+  .breadcrumb ul {
+    @include G.MQ_BELOW_TAB {
+      padding-bottom: 10px;
+      overflow-x: scroll;
+      white-space: nowrap;
+    }
+  }
+
+  .breadcrumb li {
+    @include G.MQ_BELOW_TAB {
+      display: inline;
+      float: none;
+    }
+  }
+  @include meta.load-css("~/../src/components/template/features/hebelmaison/current-page/");
+  @include meta.load-css("~/../src/components/template/features/hebelmaison/section-head/");
+  @include meta.load-css("~/../src/components/template/features/hebelmaison/section-body/");
+  @include meta.load-css("~/../src/components/template/features/hebelmaison/section-body-content/");
+  @include meta.load-css("~/../src/components/template/features/hebelmaison/section-body-content-heading/");
+  @include meta.load-css("~/../src/components/template/features/hebelmaison/section-body-content-media/");
+  @include meta.load-css("~/../src/components/template/features/hebelmaison/section-body-content-gallery/");
+  @include meta.load-css("~/../src/components/template/features/hebelmaison/section-body-content-text-stack");
+  @include meta.load-css("~/../src/components/template/features/hebelmaison/section-body-content-card");
+  @include meta.load-css("~/../src/components/template/features/hebelmaison/section-body-content-button");
+  @include meta.load-css("~/../src/components/template/features/hebelmaison/note");
+  @include meta.load-css("~/../src/components/template/features/hebelmaison/swiper");
+  @include meta.load-css("~/../src/components/template/features/hebelmaison/modal");
+}
+
+@include meta.load-css("~/../src/components/template/features/hebelmaison/service-section");
+@include meta.load-css("~/../src/components/template/features/hebelmaison/map");

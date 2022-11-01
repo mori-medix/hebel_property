@@ -1,0 +1,46 @@
+@use "~/../src/assets/scss/global" as G;
+@use "sass:math";
+
+/******************************************************************************
+* swiper
+*******************************************************************************/
+.swiper-container {
+  overflow: visible;
+}
+
+.swiper-button-prev::after, .swiper-button-next::after {
+  content: none;
+}
+
+.swiper-button-prev {
+  left: -10px;
+}
+
+.swiper-button-next {
+  right: -10px;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  @include G.MQ_BELOW_TAB {
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: 0;
+    transform: translateY(-50%);
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
+  opacity: 0;
+}
+
+.swiper-no-scroll-pc {
+  @media (min-width: 740px) {
+    transform: translate3d(0, 0, 0) !important;
+  }
+}

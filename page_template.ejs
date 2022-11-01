@@ -1,0 +1,28 @@
+<%
+  // index.htmlに吐き出した時、行があくようならここを一列に
+  const __dirname = process.cwd();
+  const pageData = {};
+  const pageName = 'search/features/hebelmaison/';
+  pageData.metaList = JSON.parse(include(`${__dirname}/src/assets/json/meta.json`));
+  // pageData.parts = JSON.parse(include(`${__dirname}/src/assets/json/pages/index.json`));
+  const func = {
+    tagDelete:(text) => {
+        return text.replace(/<.*>/g,'');
+    },
+    zeroPadding:(num) => {
+        return ('0' + num).slice(-2);
+    },
+    getTel:(tel) => {
+        const array = tel.split("-");
+        return array.join('');
+    }
+  }
+  const contentsAddClass ="page hebelmaison hebelmaison-index"
+%><% function content(__append) {
+  %>
+  <div id="contents" class="contents <%= contentsAddClass %>">
+  </div>
+<%
+} %><%-
+  include(`${__dirname}/src/layouts/_default`, {content,pageData:pageData,pageName:pageName,__dirname:__dirname})
+%>

@@ -1,0 +1,70 @@
+<% 
+  if( value.type === 'stack' ){%>
+    <div class="section-body-content-stack"><%
+      if(value.img.length > 1){%>
+      <div class="section-body-content-stack_media js-swiper-container swiper-container">
+        <div class="swiper-wrapper swiper-no-scroll-pc"><%
+        value.img.forEach((value)=> {%>
+          <div class="section-body-content-media_thum swiper-slide">
+            <picture>
+              <source media="(max-width: 739px)" srcset="/hebel-rooms/common_v2/img/features/hebelmaison/<%= value.src %>_sp.jpg">
+              <source media="(min-width: 740px)" srcset="/hebel-rooms/common_v2/img/features/hebelmaison/<%= value.src %>.jpg">
+              <img src="/hebel-rooms/common_v2/img/features/hebelmaison/<%= value.src %>.jpg" alt="" width="<%= value.width %>" height="<%= value.height %>">
+            </picture>
+          </div><%
+        })%>
+        </div>
+        <div class="swiper-button-prev">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M20,40C8.95,40,0,31.05,0,20S8.95,0,20,0s20,8.95,20,20-8.95,20-20,20Z" fill-rule="evenodd" opacity=".6"/><path d="M22.9,11.72c-.2-.22-.45-.34-.72-.34-.25,0-.52,.11-.72,.34l-6.55,7.44c-.2,.22-.3,.51-.3,.82s.1,.59,.3,.81l6.55,7.44c.4,.45,1.04,.45,1.44,0s.4-1.18,0-1.63l-5.82-6.62,5.82-6.62c.4-.45,.4-1.18,0-1.64h0Z" fill="#fff"/></svg>
+        </div>
+        <div class="swiper-button-next">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><path d="M20,40C8.95,40,0,31.05,0,20S8.95,0,20,0s20,8.95,20,20-8.95,20-20,20Z" fill-rule="evenodd" opacity=".6"/><path d="M17.1,28.28c.2,.22,.45,.34,.72,.34,.25,0,.52-.11,.72-.34l6.55-7.44c.2-.22,.3-.51,.3-.82s-.1-.59-.3-.81l-6.55-7.44c-.4-.45-1.04-.45-1.44,0-.4,.45-.4,1.18,0,1.63l5.82,6.62-5.82,6.62c-.4,.45-.4,1.18,0,1.64h0Zm0,0" fill="#fff"/></svg>
+        </div>
+      </div><%
+      } else {%>
+        <div class="section-body-content-stack_media">
+            <div class="section-body-content-media_thum">
+            <picture>
+              <source media="(max-width: 739px)" srcset="/hebel-rooms/common_v2/img/features/hebelmaison/<%= value.img[0].src %>_sp.jpg">
+              <source media="(min-width: 740px)" srcset="/hebel-rooms/common_v2/img/features/hebelmaison/<%= value.img[0].src %>.jpg">
+              <img src="/hebel-rooms/common_v2/img/features/hebelmaison/<%= value.img[0].src %>.jpg" alt="" width="<%= value.img[0].width %>" height="<%= value.img[0].height %>">
+            </picture>
+          </div>
+        </div>
+      <%}
+      if(value.textStack){%>
+        <%- include(`${__dirname}/src/components/template/features/hebelmaison/section-body-content-text-stack/_index.ejs`, {textStack:value.textStack,position:value.textStack.position,pageName:pageName,__dirname:__dirname}) %><%
+      } else if(value.caption){%>
+        <p class="section-body-content-text-caption"><%- value.caption %></p><%
+      } else if(value.textArray){%>
+        <div class="text-wrap">
+          <p><%- value.textArray %></p>
+        </div><%
+      }%>
+      </div><%
+  } else if(value.type === 'media-carousel') {%>
+      <div class="section-body-content-media is-with-fade-img js-with-fade-img <%= value.position === 'reverse'? 'is-reverse': ''%>">
+  <%- include(`${__dirname}/src/components/template/features/hebelmaison/section-body-content-text-stack/_index.ejs`, {textStack:value.textStack,position:value.textStack.position,value:value,pageName:pageName,__dirname:__dirname}) %>
+      <div class="section-body-content-media_thum js-swiper-fade swiper-container">
+        <ul class="section-body-content-media_thum-list swiper-wrapper"><%
+          value.thumList.forEach((img)=>{%>
+            <li class="section-body-content-media_thum-item swiper-slide">
+              <img src="/hebel-rooms/common_v2/img/features/hebelmaison/<%= img.src %>.jpg" alt="" width="<%= img.width %>" height="<%= img.height %>">
+            </li><%
+          })%>
+        </ul>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div><%
+  } else {%>
+    <div class="section-body-content-media <%= value.position === 'reverse'? 'is-reverse': ''%>">
+    <%- include(`${__dirname}/src/components/template/features/hebelmaison/section-body-content-text-stack/_index.ejs`, {textStack:value.textStack,position:value.textStack.position,pageName:pageName,__dirname:__dirname}) %>
+    <div class="section-body-content-media_thum ">
+      <picture>
+        <source media="(max-width: 739px)" srcset="/hebel-rooms/common_v2/img/features/hebelmaison/<%= value.img.src %>_sp.jpg">
+        <source media="(min-width: 740px)" srcset="/hebel-rooms/common_v2/img/features/hebelmaison/<%= value.img.src %>.jpg">
+        <img src="/hebel-rooms/common_v2/img/features/hebelmaison/<%= value.img.src %>.jpg" alt="" width="<%= value.img.width %>" height="<%= value.img.height %>">
+      </picture>
+    </div>
+  </div><%
+    }%>

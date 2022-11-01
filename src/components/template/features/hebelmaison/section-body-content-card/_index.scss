@@ -1,0 +1,44 @@
+@use "~/../src/assets/scss/global" as G;
+@use "sass:math";
+
+/******************************************************************************
+* section-body-content-card
+*******************************************************************************/
+.section-body-content-media_card-text-stack {
+  margin-top: 20px;
+  @include G.MQ_BELOW_TAB {
+    margin-top: 15px;
+  }
+}
+
+.section-body-content-media_card-haeding {
+  font-weight: bold;
+  @include G.FONT_PC(16);
+  @include G.MQ_BELOW_TAB {
+    @include G.FONT_PC(13);
+  }
+}
+
+.section-body-content-media_card-list {
+  margin-top: 20px;
+
+  > * + * {
+    margin-top: 15px;
+  }
+  @include G.MQ_BELOW_TAB {
+    margin-top: 15px;
+
+    > * + * {
+      margin-top: 10px;
+    }
+  }
+}
+
+.section-body-content-media_card-item {
+  padding-left: 1em;
+  line-height: 1.6;
+  text-indent: -1em;
+  @include G.MQ_BELOW_TAB {
+    @include G.FONT_PC(13);
+  }
+}

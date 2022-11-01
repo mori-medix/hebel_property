@@ -1,0 +1,42 @@
+@use "~/../src/assets/scss/global" as G;
+@use "sass:math";
+
+/******************************************************************************
+* section-body-content-gallery
+*******************************************************************************/
+.section-body-content-gallery-list {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 20px;
+  column-gap: 20px;
+  @include G.MQ_BELOW_TAB {
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+  }
+}
+
+.section-body-content-gallery-item-img {
+  float: none;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.section-body-content-gallery .modal-box {
+  padding-bottom: 45px;
+}
+
+.section-body-content-gallery-modal-img {
+  overflow: hidden;
+  border-radius: 5px;
+  @include G.MQ_BELOW_TAB {
+    border-radius: 4px;
+  }
+}
+
+.section-body-content-gallery-modal-text {
+  margin-top: 15px;
+  font-weight: 700;
+}

@@ -1,0 +1,218 @@
+@use "~/../src/assets/scss/global" as G;
+@use "sass:math";
+
+/******************************************************************************
+* modal
+*******************************************************************************/
+.modal {
+  display: none;
+
+  &.is-open {
+    display: block;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100013;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  background: rgb(0 0 0 / 70%);
+}
+
+.modal-box {
+  position: relative;
+  box-sizing: border-box;
+  max-width: 1000px;
+  max-height: calc(100vh - 150px);
+  padding: 60px 60px 80px;
+  margin: 0 auto;
+  overflow-y: auto;
+  background-color: #fff;
+  border-radius: 6px;
+  @include G.MQ_BELOW_TAB {
+    display: block;
+    max-height: calc(100vh - 70px);
+    padding: 45px 25px;
+  }
+}
+
+.is-add-scroll-y .modal-box {
+  display: block;
+}
+
+.modal .section-body-content-heading {
+  @include G.MQ_BELOW_TAB {
+    padding: 0;
+    line-height: 1.6;
+    text-align: center;
+    letter-spacing: 0.04em;
+  }
+}
+
+.modal .section-body-content-text-stack {
+  @include G.MQ_BELOW_TAB {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.modal .section-body-content-media-wrap {
+  @include G.MQ_BELOW_TAB {
+    margin-top: 15px;
+  }
+}
+
+.modal-list-wrap {
+  margin-top: 50px;
+}
+
+.modal-list-heading {
+  font-weight: bold;
+  letter-spacing: 0.09em;
+  @include G.FONT_PC(16);
+  @include G.MQ_BELOW_TAB {
+    @include G.FONT_PC(15);
+  }
+}
+
+.modal-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -25px;
+
+  &::after {
+    width: 260px;
+    padding: 0 25px;
+    content: "";
+  }
+  @include G.MQ_BELOW_TAB {
+    margin: 25px 0 0;
+    content: none;
+
+    > * + * {
+      margin-top: 20px;
+    }
+  }
+}
+
+.modal-list_item {
+  box-sizing: border-box;
+  flex-basis: 260px;
+  flex-grow: 1;
+  padding: 30px 25px 0;
+  @include G.MQ_BELOW_TAB {
+    padding: 0;
+  }
+}
+
+.modal-list_item-stack {
+  box-sizing: border-box;
+  height: 100%;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e9e9e9;
+  @include G.MQ_BELOW_TAB {
+    padding-bottom: 0;
+    border: none;
+  }
+}
+
+.modal-list_item-stack-heading {
+  display: flex;
+  font-weight: bold;
+  line-height: 20px;
+  color: #1e237f;
+  letter-spacing: 0.09em;
+  @include G.MQ_BELOW_TAB {
+    line-height: 16px;
+    letter-spacing: 0.16em;
+  }
+}
+
+.modal-list_item-stack-heading_num {
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  margin-right: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  color: #fff;
+  background-color: #1e237f;
+  border-radius: 4px;
+  @include G.MQ_BELOW_TAB {
+    width: 16px;
+    @include G.FONT_PC(9);
+  }
+}
+
+.modal-list_item-stack .text-wrap {
+  margin-top: 15px;
+
+  > * {
+    letter-spacing: 0.05em;
+  }
+  @include G.MQ_BELOW_TAB {
+    margin-top: 10px;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  @include G.MQ_BELOW_TAB {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Animation */
+// .modal[aria-hidden="false"] .modal-overlay {
+//   animation: anime-modal-fade-in 0.8s ease-out 0s;
+// }
+
+// .modal[aria-hidden="true"] .modal-overlay {
+//   animation: anime-modal-fade-out 0.8s ease-out 0s;
+// }
+
+// @keyframes anime-modal-fade-in {
+//   from {
+//     opacity: 0;
+//   }
+
+//   to {
+//     opacity: 1;
+//   }
+// }
+
+// @keyframes anime-modal-fade-out {
+//   from {
+//     opacity: 1;
+//   }
+
+//   to {
+//     opacity: 0;
+//   }
+// }

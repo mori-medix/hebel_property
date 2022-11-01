@@ -1,0 +1,48 @@
+<%
+  // index.htmlに吐き出した時、行があくようならここを一列に
+  const __dirname = process.cwd();
+  const pageData = {};
+  const pageName = '/features/hebelmaison/facility.html';
+  pageData.metaList = JSON.parse(include(`${__dirname}/src/assets/json/meta.json`));
+  pageData.parts = JSON.parse(include(`${__dirname}/src/assets/json/pages/features/hebelmaison/facility.json`));
+  const func = {
+    tagDelete:(text) => {
+        return text.replace(/<.*>/g,'');
+    },
+    zeroPadding:(num) => {
+        return ('0' + num).slice(-2);
+    },
+    getTel:(tel) => {
+        const array = tel.split("-");
+        return array.join('');
+    }
+  }
+  const contentsAddClass ="page hebelmaison hebelmaison-facility"
+%><% function content(__append) {
+  %>
+<div id="contents" class="contents <%= contentsAddClass %>">
+  <%- include(`${__dirname}/src/components/organisms/underlayer-kv/_index.ejs`, {kv:pageData.parts.kv,pageName:pageName,__dirname:__dirname}) %>
+  <%- include(`${__dirname}/src/components/template/features/hebelmaison/current-page/_index.ejs`, {kv:pageData.parts.kv,pageName:pageName,__dirname:__dirname}) %>
+  <section class="contents-section">
+    <%- include(`${__dirname}/src/components/template/features/hebelmaison/section-head/_index.ejs`, {contentHead:pageData.parts.contentHead,pageName:pageName,__dirname:__dirname}) %>
+    <div class="section-body"><%
+        pageData.parts.content.forEach((contentItem)=>{%>
+      <%- include(`${__dirname}/src/components/template/features/hebelmaison/section-body-content/_index.ejs`, {item:contentItem,pageName:pageName,__dirname:__dirname}) %><%
+        })%>
+    </div>
+  </section>
+  <%- include(`${__dirname}/src/components/template/features/hebelmaison/map/_index.ejs`) %>
+  <%- include(`${__dirname}/src/components/template/features/hebelmaison/service-section/_index.ejs`) %>
+  <!-- フッター下パンくず -->
+  <div class="breadcrumb foot" id="foot_breadcrumb">
+    <ul class="cf">
+      <li><a href="//www.afr-web.co.jp/hebel-rooms/index.html/">賃貸・お部屋探しのヘーベルメゾン</a></li>
+      <li><a href="/hebel-rooms/features/index.html/">サービスの特長</a></li>
+      <li>快適な暮らし</li>
+    </ul>
+  </div>
+</div>
+<%
+} %><%-
+  include(`${__dirname}/src/layouts/_default`, {content,pageData:pageData,pageName:pageName,__dirname:__dirname,meta:pageData.metaList[pageName]})
+%>

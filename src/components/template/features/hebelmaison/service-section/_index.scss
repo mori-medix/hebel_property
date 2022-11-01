@@ -1,0 +1,139 @@
+@use "~/../src/assets/scss/global" as G;
+@use "sass:math";
+
+/******************************************************************************
+* service-section
+*******************************************************************************/
+.hebelmaison {
+  &.page.contents .section.service_section {
+    padding: 80px 0 110px;
+    @include G.MQ_BELOW_TAB {
+      padding: 50px 0;
+      overflow: hidden;
+    }
+  }
+
+  
+
+  .service_section .section-header {
+    max-width: 1240px;
+    padding: 0 30px;
+  }
+
+  &.page.contents .section.service_section .section_title {
+    width: 100%;
+    text-align: left;
+    letter-spacing: 0.12em;
+
+    > * {
+      display: block;
+    }
+
+    .section_title-japanese {
+      font-weight: normal;
+      line-height: 1;
+      @include G.FONT_PC(14);
+    }
+
+    .section_title-english {
+      margin-top: 10px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: bold;
+      line-height: 1;
+      @include G.FONT_PC(25);
+    }
+    @include G.MQ_BELOW_TAB {
+      padding: 0 30px;
+
+      .section_title-english {
+        @include G.FONT_PC(23);
+      }
+    }
+  }
+
+  .section-content {
+    margin-top: 40px;
+    @include G.MQ_BELOW_TAB {
+      margin-top: 20px;
+    }
+  }
+
+  &.page.contents .section .section-content {
+    width: 100% ;
+    min-width: 1040px;
+    max-width: 1240px;
+    padding: 0 10px;
+    margin: 0 auto;
+    @include G.MQ_BELOW_TAB {
+      min-width: auto;
+      padding: 0 20px;
+    }
+  }
+
+  &.page.contents .section .row {
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: none;
+    margin-bottom: 0;
+  }
+
+  .section.service_section .section-content .row .col {
+    border: none;
+  }
+
+  .section .row .col {
+    box-sizing: border-box;
+    padding: 0 20px;
+  }
+
+  .service_section .section-content .row .col a {
+    background-color: transparent;
+  }
+
+  &.page.contents .section.service_section .section-content .row .cont {
+    padding: 0;
+    margin-top: 20px;
+    background-color: transparent;
+    @include G.MQ_BELOW_TAB {
+      padding: 0 20px;
+    }
+  }
+
+  &.page.contents .section.service_section .section-content .row .thumb {
+    overflow: hidden;
+    border-radius: 5px;
+    @include G.MQ_BELOW_TAB {
+      border-radius: 8px;
+    }
+  }
+
+  &.page.contents .section.service_section .section-content .row .cont h3 {
+    font-weight: bold;
+    @include G.FONT_PC(14);
+    @include G.MQ_BELOW_TAB {
+      @include G.FONT_PC(15);
+    }
+  }
+
+  &.page.contents .section.service_section .section-content .row .cont p {
+    margin-bottom: 0;
+    line-height: 1.8;
+    @include G.FONT_PC(14);
+    @include G.MQ_BELOW_TAB {
+      margin-top: 15px;
+      @include G.FONT_PC(13);
+    }
+  }
+
+  .section-content .swiper-button-next {
+    top: 30%;
+    right: 12px;
+    transform: translateY(0);
+  }
+
+  .section-content .swiper-button-prev {
+    top: 30%;
+    left: 12px;
+    transform: translateY(0);
+  }
+}

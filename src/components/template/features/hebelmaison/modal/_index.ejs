@@ -1,0 +1,65 @@
+<div id="<%= modal.id %>" aria-hidden="true" class="modal">
+  <div class="modal-overlay" data-micromodal-close>
+    <div class="modal-box">
+      <div class="modal-box-inner">
+        <%- include(`${__dirname}/src/components/template/features/hebelmaison/section-body-content-heading/_index.ejs`, {head:modal.head,pageName:pageName,__dirname:__dirname}) %>
+        <div class="section-body-content-media-wrap"><%
+          if(modal.type === 'card'){%>
+          <ul class="section-body-content-media is-card-col2"><%
+            modal.cardList.forEach((value)=>{%>
+            <li class="section-body-content-media_item">
+              <div class="section-body-content-media_card">
+                <div class="section-body-content-media_card_thum ">
+                  <picture>
+                    <source media="(max-width: 739px)" srcset="/hebel-rooms/common_v2/img/features/hebelmaison/<%= value.img.src %>_sp.jpg">
+                    <source media="(min-width: 740px)" srcset="/hebel-rooms/common_v2/img/features/hebelmaison/<%= value.img.src %>.jpg">
+                    <img src="/hebel-rooms/common_v2/img/features/hebelmaison/<%= value.img.src %>.jpg" alt="" width="<%= value.img.width %>" height="<%= value.img.height %>">
+                  </picture>
+                </div>
+                <div class="section-body-content-media_card-text-stack">
+                  <h4 class="section-body-content-media_card-haeding"><%- value.heading %></h4>
+                  <ol class="section-body-content-media_card-list"><%
+                      value.numList.forEach((item)=>{%>
+                    <li class="section-body-content-media_card-item"><%- item %></li><%
+                      })%>
+                  </ol>
+                </div>
+              </div>
+            </li><%
+            })%>
+          </ul><%
+          } else {%>
+          <%- include(`${__dirname}/src/components/template/features/hebelmaison/section-body-content-media/_index.ejs`, {value:modal,pageName:pageName,__dirname:__dirname}) %><%
+          }%>
+        </div>
+        <%
+          if(modal.list){%>
+        <div class="modal-list-wrap">
+          <h3 class="modal-list-heading"><%= modal.listHeading %></h3>
+          <ul class="modal-list"><%
+                  modal.list.forEach((value,index)=>{%>
+            <li class="modal-list_item">
+              <div class="modal-list_item-stack">
+                <h4 class="modal-list_item-stack-heading">
+                  <span class="modal-list_item-stack-heading_num"><%= index + 1 %></span>
+                  <%- value.heading %>
+                </h4>
+                <div class="text-wrap">
+                  <p><%- value.text %></p>
+                </div>
+              </div>
+            </li><%
+              })%>
+          </ul>
+        </div><%
+          }%>
+      </div>
+      <button class="modal-close" data-micromodal-close>
+        <svg id="a" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#f4f4f4" fill-rule="evenodd" />
+          <polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.21 8.42 10.82 12.02 7.21 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#ccc" fill-rule="evenodd" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>

@@ -8,7 +8,10 @@ const __dirname = dirname(__filename);
 export const common = {
   // メインとなるJavaScriptファイル（エントリーポイント）
   entry: {
-    'detail/page':'./src/assets/ts/common_v2/detail/page.ts',
+    // 'detail/page':'./src/assets/ts/common_v2/detail/page.ts',
+    'features/hebelmaison/page':'./src/assets/ts/common_v2/features/hebelmaison/page.ts',
+    'features/hebelmaison/swiper':'./src/assets/ts/common_v2/features/hebelmaison/swiper.js',
+    'features/hebelmaison/polyfill-library':'./src/assets/ts/common_v2/features/hebelmaison/polyfill-library.js',
   },
   module: {
     rules: [

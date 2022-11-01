@@ -1,0 +1,16 @@
+<div class="section-head">
+  <h2 class="section-heading"><%- contentHead.heading %></h2>
+  <h3 class="section-subheading"><%- contentHead.subHeading %></h3>
+  <div class="text-wrap"><%
+    contentHead.textArray.forEach((value)=>{%>
+      <p><%- value %></p><%
+    })%>
+  </div><%
+  if(contentHead.noteArray){%>
+    <div class="note-wrap"><%
+      contentHead.noteArray.forEach((value)=>{%>
+        <p class="note"><%- value %></p><%
+      })%>
+    </div>
+  <%}%>
+</div>

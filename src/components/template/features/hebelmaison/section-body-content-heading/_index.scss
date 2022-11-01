@@ -1,0 +1,44 @@
+@use "~/../src/assets/scss/global" as G;
+@use "sass:math";
+
+/******************************************************************************
+* section-body-content-heading
+*******************************************************************************/
+.section-body-content-heading {
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 0.06em;
+  @include G.FONT_PC(24);
+  @include G.MQ_BELOW_TAB {
+    padding: 0 13px;
+    text-align: left;
+    @include G.FONT_PC(18);
+  }
+}
+
+.section-body-content-heading_num {
+  display: block;
+  display: table;
+  padding: 5px 15px;
+  margin: 0 auto 20px;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  background-color: #181c7f;
+  border-radius: 100px;
+  @include G.FONT_PC(12);
+  @include G.MQ_BELOW_TAB {
+    margin: 0 0 15px;
+  }
+}
+
+.section-body-content-head_note {
+  margin-top: 25px;
+  text-align: center;
+  @include G.FONT_PC(12);
+  @include G.MQ_BELOW_TAB {
+    padding: 0 13px;
+    margin-top: 15px;
+    text-align: left;
+    letter-spacing: -0.05em;
+  }
+}

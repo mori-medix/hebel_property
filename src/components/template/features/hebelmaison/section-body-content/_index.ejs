@@ -1,0 +1,21 @@
+<div class="section-body-content-wrap <%= item.bg?'bg-gray':'' %>">
+  <div class="section-body-content">
+    <div class="section-body-content-head">
+      <%- include(`${__dirname}/src/components/template/features/hebelmaison/section-body-content-heading/_index.ejs`, {head:item.head,pageName:pageName,__dirname:__dirname}) %>
+    </div><%
+    if(item.contentType === 'gallery-modal'){%>
+      <div class="section-body-content-gallery-wrap">
+        <%- include(`${__dirname}/src/components/template/features/hebelmaison/section-body-content-gallery/_index.ejs`, {galleryItems:item.box,pageName:pageName,__dirname:__dirname}) %>
+      </div><%
+    } else {%>
+    <div class="section-body-content-media-wrap"><%
+    item.box.forEach((value)=>{%>
+    <%- include(`${__dirname}/src/components/template/features/hebelmaison/section-body-content-media/_index.ejs`, {value:value,pageName:pageName,__dirname:__dirname}) %><%
+    })%>
+    </div><%}
+    item.box.forEach((value)=>{
+    if(value.modal){%>
+      <%- include(`${__dirname}/src/components/template/features/hebelmaison/modal/_index.ejs`, {modal:value.modal,pageName:pageName,__dirname:__dirname}) %><%
+    }})%>
+  </div>
+</div>

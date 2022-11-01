@@ -32,9 +32,12 @@ module.exports = {
         ignoreAtRules: ['function', 'if', 'else', 'for', 'each', 'include', 'mixin', 'content', 'forward', 'use', 'else', 'return'],
       },
     ],
+    'keyframes-name-pattern':"anime-.+"// @keyframes の名前はアニメとつける
   },
 };
 
 // ルール参考
 // https://yuw27b.hatenablog.com/entry/2016/02/22/225544
 // module.exports を外せず、es6 import/export が使えなかったので、拡張子「cjs」にしている
+// https://iwb.jp/css-stylelint-vscode-settings-rules/
+// keyframes-name-pattern のルールはこちらを参考

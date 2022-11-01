@@ -1,0 +1,92 @@
+@use "~/../src/assets/scss/global" as G;
+@use "sass:math";
+
+/******************************************************************************
+* section-body-content-media
+*******************************************************************************/
+.section-body-content-media {
+  display: flex;
+  align-items: flex-start;
+
+  &.is-card-col2 {
+    margin: 0 -20px;
+
+    > * {
+      width: 50%;
+      padding: 0 20px;
+    }
+  }
+  @include G.MQ_BELOW_TAB {
+    flex-direction: column;
+    align-items: normal;
+
+    &.is-card-col2 {
+      margin: 0;
+
+      > * {
+        width: 100%;
+        padding: 0;
+      }
+
+      > * + * {
+        margin-top: 50px;
+      }
+    }
+  }
+}
+
+.section-body-content-media_thum {
+  order: 1;
+  width: calc(480 / 1000 * 100%);
+  margin-right: calc(40 / 1000 * 100%);
+  overflow: hidden;
+  border-radius: 5px;
+
+  img {
+    width: 100%;
+  }
+  @include G.MQ_BELOW_TAB {
+    width: 100%;
+    margin-right: 0;
+    border-radius: 4px;
+  }
+}
+
+.is-reverse .section-body-content-media_thum {
+  order: 2;
+  margin-right: 0;
+  @include G.MQ_BELOW_TAB {
+    order: 1;
+  }
+}
+
+.section-body-content-text-caption {
+  margin-top: 20px;
+  font-weight: bold;
+  @include G.FONT_PC(16);
+  @include G.MQ_BELOW_TAB {
+    padding: 0 13px;
+    margin-top: 15px;
+    @include G.FONT_PC(13);
+  }
+}
+
+.section-body-content-stack_media + .text-wrap {
+  margin-top: 25px;
+  @include G.MQ_BELOW_TAB {
+    padding: 0 13px;
+    margin-top: 10px;
+  }
+}
+
+.section-body-content-media_thum-list + .swiper-pagination {
+  display: none;
+}
+
+.section-body-content-media_thum-item img {
+  overflow: hidden;
+  border-radius: 5px;
+  @include G.MQ_BELOW_TAB {
+    border-radius: 4px;
+  }
+}

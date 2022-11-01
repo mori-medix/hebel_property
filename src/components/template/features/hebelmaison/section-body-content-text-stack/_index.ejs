@@ -1,0 +1,31 @@
+<div class="section-body-content-text-stack">
+  <h4 class="section-body-content-text-stack_heading"><%- textStack.heading %></h4>
+  <div class="text-wrap"><%
+    textStack.textArray.forEach((value)=>{%>
+      <p><%- value %></p><%
+    })%>
+  </div><%
+    if(textStack.note){%>
+      <div class="note-wrap">
+        <p class="note"><%- textStack.note %></p>
+      </div>
+    <%}
+  if(textStack.button){%>
+    <div class="section-body-content-text-stack_button">
+      <%- include(`${__dirname}/src/components/template/features/hebelmaison/section-body-content-button/_index.ejs`, {button:textStack.button,pageName:pageName,__dirname:__dirname}) %>
+    </div><%
+  }
+  if(value.thumList){%>
+    <div class="section-body-content-text-stack_switch-list-wrap">
+    <ul class="section-body-content-text-stack_switch-list"><%
+      value.thumList.forEach((thum,index)=>{%>
+        <li class="section-body-content-text-stack_switch-item js-switch-item <%= index === 0 ? 'is-active':'' %>">
+          <button type="button" class="section-body-content-text-stack_switch">
+            <img src="/hebel-rooms/common_v2/img/features/hebelmaison/<%= thum.src %>.jpg" alt="" width="<%= thum.width %>" height="<%= thum.height %>">
+          </button>
+        </li><%
+      })%>
+    </ul>
+    </div><%
+  }%>
+</div>

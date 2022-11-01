@@ -1,0 +1,33 @@
+<div class="section-body-content-gallery">
+  <ul class="section-body-content-gallery-list"><%
+    galleryItems.forEach((item,index)=>{%>
+      <li class="section-body-content-gallery-item">
+        <button type="button" class="section-body-content-gallery-item-img" data-micromodal-trigger="gallery-modal-<%= (index + 1).toString().padStart( 2, '0') %>">
+          <img src="/hebel-rooms/common_v2/img/features/hebelmaison/<%= item.img.src %>.jpg" alt="<%= item.img.alt %>" width="<%= item.img.width %>" height="<%= item.img.height %>">
+        </button>
+      </li><%
+    })%>
+  </ul>
+  <ul class="section-body-content-gallery-modal-list"><%
+    galleryItems.forEach((item,index)=>{%>
+    <li class="modal" id="gallery-modal-<%= (index + 1).toString().padStart( 2, '0') %>">
+      <div class="modal-overlay" data-micromodal-close>
+        <div class="modal-box">
+          <div class="modal-box-inner">
+            <div class="section-body-content-gallery-modal-img">
+              <img src="/hebel-rooms/common_v2/img/features/hebelmaison/<%= item.img.src %>.jpg" alt="<%= item.img.alt %>" width="<%= item.img.width %>" height="<%= item.img.height %>">
+            </div>
+            <p class="section-body-content-gallery-modal-text"><%- item.galleryModal.text %></p>
+          </div>
+          <button class="modal-close" data-micromodal-close="">
+            <svg id="a" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#f4f4f4" fill-rule="evenodd"></path>
+              <polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.21 8.42 10.82 12.02 7.21 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#ccc" fill-rule="evenodd"></polygon>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </li><%
+  })%>
+  </ul>
+</div>
