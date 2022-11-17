@@ -15,11 +15,35 @@
   <!-- /g_navi -->
   <p id="btn_contact" class="btn_contact"><a href="/hebel-rooms/form/contact/index.html/"><img src="//www.afr-web.co.jp/hebel-rooms/common_v2/img/common/contact-2.png"> </a></p>
   <!-- *********** 【FOR SP】 *********** -->
-  <div class="for_sp navi-trigger" id="sp-g-navi">
+  <div class="for_sp navi-trigger" id="sp-g-navi"><%
+    if(pageName === '/search/list_a/'){%>
+      <ul>
+        <li>
+          <a class="navi-item" href="/hebel-rooms/favorite/favorite_a/" data-navi-item="favorite">
+            <div class="navi-item__inner"><span>お気に入り</span></div>
+          </a>
+        </li>
+        <li>
+          <a class="navi-item search-menu" href="#" id="sp-nav-2" data-navi-item="search">
+            <div class="navi-item__inner"><span>物件検索</span></div>
+          </a>
+        </li>
+        <li>
+          <a class="navi-item main-menu" href="#" id="sp-nav-1" data-navi-item="menu">
+            <div class="navi-item__inner"><span>メニュー</span></div>
+          </a>
+        </li>
+        <!-- **************************
+        <li class="n02"><a href="#" class="search-menu" id="sp-nav-2"><span class="ic"></span></a><br></li>
+        <li class="n01"><a href="#" class="main-menu" id="sp-nav-1"><span class="ic"></span></a><br></li>
+        ************************** -->
+      </ul><%
+    } else {%>
     <ul>
       <li class="n01"><a href="#" class="main-menu" id="sp-nav-1"><span class="ic"></span></a><br></li>
       <li class="n02"><a href="#" class="search-menu" id="sp-nav-2"><span class="ic"></span></a><br></li>
-    </ul>
+    </ul><%
+    }%>
   </div>
   <!-- *********** 【FOR SP】 *********** -->
 </div><!-- /header -->
