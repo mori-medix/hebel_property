@@ -1,0 +1,112 @@
+<%
+  // index.htmlに吐き出した時、行があくようならここを一列に
+  const __dirname = process.cwd();
+  var pageData = {};
+  var pageName = 'lightbox08';
+  pageData.metaList = JSON.parse(include(`${__dirname}/src/assets/json/meta.json`));
+  // pageData.parts = JSON.parse(include(`${__dirname}/assets/json/page/hebel-rooms/search/list_a/index.json`));
+  var func = {
+    tagDelete:(text) => {
+        return text.replace(/<.*>/g,'');
+    },
+    zeroPadding:(num) => {
+        return ('0' + num).slice(-2);
+    },
+    getTel:(tel) => {
+        const array = tel.split("-");
+        return array.join('');
+    }
+  }
+%><% function content(__append) {
+  %><div id="contents" class="contents main eco">
+    <div class="eco-wrap">
+      <div class="eco-head">
+        <h1 class="eco-heading"><span class="eco-heading-main-text">Ecoレジグリッド</span><span class="eco-heading-box">ヘーベルメゾンオリジナル<br class="for_sp">ZEH-M（ゼッチ・マンション）</span></h1>
+      </div>
+      <div class="eco-body">
+        <h2 class="eco-body-heading">「Ecoレジグリッド」のメリット</h2>
+        <ol class="eco-list">
+          <li class="eco-item">
+            <div class="eco-stack">
+              <h3 class="eco-stack-heading"><span class="eco-stack-heading-num">1</span><span class="eco-stack-heading-text">断熱性が高く、快適</span></h3>
+              <div class="eco-stack-text-warp">
+                <p class="eco-stack-text">過ごしやすい室温を維持しやすく快適です。</p>
+              </div>
+            </div>
+          </li>
+          <li class="eco-item">
+            <div class="eco-stack">
+              <h3 class="eco-stack-heading"><span class="eco-stack-heading-num">2</span><span class="eco-stack-heading-text">光熱費が安く、お得</span></h3>
+              <div class="eco-stack-text-warp">
+                <p class="eco-stack-text">高性能給湯器などの省エネ設備を搭載して光熱費を抑えます。</p>
+              </div>
+            </div>
+          </li>
+          <li class="eco-item">
+            <div class="eco-stack">
+              <h3 class="eco-stack-heading"><span class="eco-stack-heading-num">3</span><span class="eco-stack-heading-text">停電時も安心</span></h3>
+              <div class="eco-stack-text-warp">
+                <p class="eco-stack-text">停電時は太陽光発電と蓄電池で共用部の非常用電源が維持。オートロックや廊下の照明、Wi-Fi も使えます。</p>
+              </div>
+            </div>
+          </li>
+        </ol>
+        <div class="eco-body-box">
+          <h3 class="eco-body-box-heading">
+            <span class="eco-body-box-heading-zu">
+              <span class="eco-body-box-heading-zu-circle">ZEH対応<br>マンション </span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M19.02,9.02H10.98V.98c0-.54-.44-.98-.98-.98s-.98,.44-.98,.98V9.02H.98c-.54,0-.98,.44-.98,.98s.44,.98,.98,.98H9.02v8.05c0,.54,.44,.98,.98,.98s.98-.44,.98-.98V10.98h8.05c.54,0,.98-.44,.98-.98s-.44-.98-.98-.98Z" fill="#2eb6aa"/></svg>
+              <span class="eco-body-box-heading-zu-circle">蓄電池</span>
+            </span>
+            <span class="eco-body-box-heading-text">つまり断熱性が高く快適で、光熱費が安くメリットの高いZEH-M（ゼッチ・マンション）に</span>
+            <em>蓄電池をプラスしたのが<br>ヘーベルメゾンの<br class="for_sp">Ecoレジグリッド</em>
+          </h3>
+          <div class="eco-body-box-list-wrap">
+            <p class="eco-body-box-list-wrap-heading"><span class="eco-body-box-list-wrap-heading-inner">だから、停電時でも</span></p>
+            <ol class="eco-body-box-list">
+              <li class="eco-body-box-item">共用部で<br>非常用電源が利用</li>
+              <li class="eco-body-box-item">オートロックや<br>共用部の照明が維持</li>
+              <li class="eco-body-box-item">住戸内でWi-Fiで<br>インターネット利用可能</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="wrap_footer" class="wrap_footer for_sp">
+      <div id="footer" class="footer">
+        <div class="footer-content-bottom">
+          <!-- *********** 【FOR SP】 *********** -->
+          <div class="for_sp scrolltopwrap">
+            <a href="#" class="scrolltop for_sp" id="scrollTop"><img src="//www.afr-web.co.jp/hebel-rooms/common_v2/img/sp/common/sp-scrollup.png" alt=""></a>
+          </div>
+          <div class="centering-list for_sp">
+            <ul class="cf">
+              <li><a href="http://www.afr-web.co.jp/fudousan/sitemap/index.html/" target="_blank">サイトマップ</a></li>
+              <li class="separator">｜</li>
+              <li><a href="http://www.afr-web.co.jp/fudousan/info/privacy.html/" target="_blank">プライバシーポリシー</a></li>
+            </ul>
+          </div>
+          <div class="centering-list for_sp">
+            <ul class="cf">
+              <li><a href="http://www.afr-web.co.jp/fudousan/info/legal.html/" target="_blank">ご利用条件</a></li>
+              <li class="separator">｜</li>
+              <li><a href="http://www.afr-web.co.jp/fudousan/info/aboutus.html/" target="_blank">宅建業法上の表示</a></li>
+            </ul>
+          </div>
+          <!-- *********** /【FOR SP】 *********** -->
+          <p class="copylight">Copyright© 2015 Asahi Kasei&nbsp; Realty&nbsp;&amp; &nbsp;Residence Corp. All rights reserved.</p>
+        </div><!-- /.footer-content-bottom -->
+      </div>
+    </div>
+    <div id="close_button" class="close_button">
+      <div class="wrap">
+        <button class="close" onclick="history.back()" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="19.99" viewBox="0 0 10 19.99"><path d="M9.58,19.5a1.88,1.88,0,0,0,0-2.37L3.45,10,9.58,2.77A1.88,1.88,0,0,0,9.43.4,1.29,1.29,0,0,0,7.57.4L.42,8.78a1.87,1.87,0,0,0,0,2.36l7.15,8.37A1.28,1.28,0,0,0,9.58,19.5Z" fill="#fff"/></svg>
+          前のページに戻る
+        </button>
+      </div>
+    </div>
+    </div><%
+} %><%-
+  include(`${__dirname}/src/layouts/_default`, {content,pageData:pageData,pageName:pageName,__dirname:__dirname,meta:pageData.metaList[pageName]})
+%>
