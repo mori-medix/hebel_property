@@ -6,6 +6,27 @@
     if(item.contentType === 'gallery-modal'){%>
       <div class="section-body-content-gallery-wrap">
         <%- include(`${__dirname}/src/components/template/features/hebelmaison/section-body-content-gallery/_index.ejs`, {galleryItems:item.box,pageName:pageName,__dirname:__dirname}) %>
+        <!-- 
+          {
+          "contentType":"gallery-modal-false",
+          "head":{
+            "heading":"その他写真ギャラリー"
+          },
+          box:[
+           {
+          "img":{
+            "src":"room/fig-03-1",
+              "alt":"",
+              "width":"800",
+              "height":"619"
+          },
+          "galleryModal":{
+            "text":"テキスト"
+          }
+        },
+        ]
+      }
+         -->
       </div><%
     } else {%>
     <div class="section-body-content-media-wrap"><%

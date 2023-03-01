@@ -14,7 +14,7 @@
     {
       "head":{
         "num":"model 01",
-        "heading":"ペットとの快適な暮らし"
+        "heading":"人とペットが気兼ねなく、楽しく暮らせる"
       },
       "box":[
         {
@@ -53,7 +53,10 @@
           ],
           "textStack":{
             "heading":"ペットと快適に暮らせる、ペット共生型賃貸マンション",
-            "textArray":["ペットスペース付きの収納や足洗い場など、ペット専用の設備がある物件。ゆったりとした広さで、人もペットも快適な暮らしができます。"]
+            "textArray":["ペットや飼い主さんも喜ぶ便利な専用設備やソフト面のサービスに加え、コミュニティを育む共用スペースの「わんジョインコモン」など、さまざまな工夫がつまった、ペット共生賃貸住宅です。"],
+            "textLink":[{
+              "text":"ペット共生型賃貸住宅「＋わん＋にゃん」の特集ページは<a href=\"/hebel-rooms/feature/petkyousei.html/\">こちら</a>"
+            }]
           }
         }
       ]
@@ -61,7 +64,7 @@
     {
       "head":{
         "num":"model 02",
-        "heading":"暮らしにリッチな高級感を演出"
+        "heading":"笑顔で子育てできる賃貸住宅"
       },
       "box":[
         {
@@ -91,85 +94,70 @@
               "alt":"",
               "width":"480",
               "height":"340"
+            },
+            {
+              "src":"room/fig-02-5",
+              "alt":"",
+              "width":"480",
+              "height":"340"
             }
           ],
           "textStack":{
-          "heading":"カラーリングや共用部のデザインにもこだわり",
-          "textArray":["水平のラインを活かした外観、シックで高級感のある共用部と内装デザイン。カップルやファミリーでの暮らしに、落ち着いた高級感を演出します。"]
+          "heading":"自然とコミュニケーションが生まれる空間設計",
+          "textArray":["子育て家族が集まり暮らす賃貸住宅。親子のコミュニケーションや、悩みや喜びを共感できる仲間とのコミュニケーションが自然と生まれ、親も子も笑顔で暮らせます。"],
+          "textLink":[{
+            "text":"子育て共感型賃貸住宅「母力」の特集ページは<a href=\"/hebel-rooms/feature/boriki/index.html/\">こちら</a>"
+          }]
           }
         }
       ]
     },
     {
-      "contentType":"gallery-modal",
       "head":{
-        "heading":"その他写真ギャラリー"
+        "num":"model 03",
+        "heading":"理想の暮らしを演出するお部屋"
       },
       "box":[
         {
-          "img":{
-            "src":"room/fig-03-1",
+          "type":"media-carousel",
+          "thumList":[
+            {
+              "src":"room/fig-03-1",
               "alt":"",
-              "width":"800",
-              "height":"619"
-          },
-          "galleryModal":{
-            "text":"テキスト"
-          }
-        },
-        {
-          "img":{
-            "src":"room/fig-03-2",
+              "width":"480",
+              "height":"340"
+            },
+            {
+              "src":"room/fig-03-2",
               "alt":"",
-              "width":"800",
-              "height":"619"
-          },
-          "galleryModal":{
-            "text":"テキスト"
-          }
-        },
-        {
-          "img":{
-            "src":"room/fig-03-3",
+              "width":"480",
+              "height":"340"
+            },
+            {
+              "src":"room/fig-03-3",
               "alt":"",
-              "width":"800",
-              "height":"619"
-          },
-          "galleryModal":{
-            "text":"テキスト"
-          }
-        },
-        {
-          "img":{
-            "src":"room/fig-03-4",
+              "width":"480",
+              "height":"340"
+            },
+            {
+              "src":"room/fig-03-4",
               "alt":"",
-              "width":"800",
-              "height":"619"
-          },
-          "galleryModal":{
-            "text":"テキスト"
-          }
-        },
-        {
-          "img":{
-            "src":"room/fig-03-5",
+              "width":"480",
+              "height":"340"
+            },
+            {
+              "src":"room/fig-03-5",
               "alt":"",
-              "width":"800",
-              "height":"619"
-          },
-          "galleryModal":{
-            "text":"テキスト"
-          }
-        },
-        {
-          "img":{
-            "src":"room/fig-03-6",
-              "alt":"",
-              "width":"800",
-              "height":"619"
-          },
-          "galleryModal":{
-            "text":"テキスト"
+              "width":"480",
+              "height":"340"
+            }
+          ],
+          "textStack":{
+          "heading":"こだわりのハイグレードな賃貸住宅",
+          "textArray":["お部屋の中はもちろん、外観・共用部のデザインにもこだわった、ハイグレードな賃貸住宅。居住性能にすぐれたワンランク上の賃貸住宅をご用意しています。"],
+          "textLink":[{
+            "text":"へーベルメゾンのプレミアム賃貸「PREMIUM EDITION」の特集ページは<a href=\"/hebel-rooms/feature/premiumedition/index.html/\">こちら</a>"
+          }]
           }
         }
       ]

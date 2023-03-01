@@ -5,6 +5,13 @@
       <p><%- value %></p><%
     })%>
   </div><%
+    if(textStack.textLink){%>
+      <div class="section-body-content-text-stack_text-link-wrap"><%
+        textStack.textLink.forEach((value)=>{%>
+          <p class="section-body-content-text-stack_text-link"><%- value.text %></p><%
+        })%>
+      </div>
+    <%}
     if(textStack.note){%>
       <div class="note-wrap">
         <p class="note"><%- textStack.note %></p>

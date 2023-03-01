@@ -30,13 +30,13 @@
 }
 
 .section-body-content-media-wrap {
-  margin-top: 50px;
+  margin-top: 45px;
 
   > * + * {
     margin-top: 80px;
   }
   @include G.MQ_BELOW_TAB {
-    margin-top: 25px;
+    margin-top: 20px;
 
     > * + * {
       margin-top: 45px;

@@ -56,10 +56,33 @@
   }
 }
 
+.section-body-content-text-stack_text-link-wrap {
+  margin-top: 20px;
+  @include G.MQ_BELOW_TAB {
+    order: 4;
+    padding: 0 13px;
+    margin-top: 12px;
+  }
+}
+
+.section-body-content-text-stack_text-link a:hover {
+  text-decoration: none;
+}
+
 .section-body-content-text-stack .text-wrap {
   margin-top: 20px;
   @include G.MQ_BELOW_TAB {
     margin-top: 8px;
+  }
+}
+
+
+.section-body-content-text-stack_text-link {
+  line-height: 1.8;
+
+  a {
+    color: #181c7f;
+    text-decoration: underline;
   }
 }
 
