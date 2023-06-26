@@ -57,7 +57,7 @@
 }
 
 .tnt-section--inner {
-  width: 1050px;
+  width: 780px;
   margin: 0 auto
 }
 
@@ -304,7 +304,7 @@
   background-color: #fff
 }
 
-.tnt-section-navi .tnt-row:nth-child(2) {
+.tnt-section-navi .tnt-row:last-child {
   margin-bottom: 0
 }
 
@@ -395,6 +395,14 @@
 .tnt-section-wnclb .btn {
   width: 470px;
   margin-bottom: 20px
+}
+
+.tnt-box--note {
+  padding-left: 1em;
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 1.6;
+  text-indent: -1em;
 }
 
 .wnclb-pickup {
@@ -693,6 +701,24 @@
   width: 22px;
   height: 21px;
   background: url("/hebel-rooms/common_v2/img/serviceicons-sa07de31101.png") -1px -804px
+}
+
+.serviceicons-ic-23::before {
+  width: 25px;
+  height: 13px;
+  background: url("/hebel-rooms/common_v2/img/tenant_v2/index/serviceicons-pet.png") 0 0;
+}
+
+.serviceicons-ic-24::before {
+  width: 25px;
+  height: 15px;
+  background: url("/hebel-rooms/common_v2/img/tenant_v2/index/serviceicons-pet.png") 0 -13px;
+}
+
+.serviceicons-ic-25::before {
+  width: 25px;
+  height: 11px;
+  background: url("/hebel-rooms/common_v2/img/tenant_v2/index/serviceicons-pet.png") 0 -28px;
 }
 
 .faq-section-faqnav {
