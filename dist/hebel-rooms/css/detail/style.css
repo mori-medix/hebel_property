@@ -381,7 +381,19 @@ button:hover {
 }
 @media (max-width: 739px) {
   .detail-web-contact-area-body {
+    display: block;
     padding: 20px 20px 30px;
+  }
+}
+
+.detail-web-contact-area-body.is-know-cost {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 739px) {
+  .detail-web-contact-area-body.is-know-cost {
+    display: block;
   }
 }
 
@@ -389,6 +401,12 @@ button:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-right: 40px;
+}
+@media (max-width: 739px) {
+  .detail-web-contact-area-body-inner {
+    margin-right: 0;
+  }
 }
 
 .detail-web-contact-area-body-thum {
@@ -492,15 +510,37 @@ button:hover {
 }
 
 .detail-web-contact-area-button-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 20px -4px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 10px 1fr 10px 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 10px;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+  width: 100%;
+  margin-top: 20px;
 }
 @media (max-width: 739px) {
   .detail-web-contact-area-button-list {
-    display: block;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
     margin: 20px 0 0;
+  }
+}
+
+.is-know-cost .detail-web-contact-area-button-list {
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+  max-width: 440px;
+  margin-top: 0;
+}
+@media (max-width: 739px) {
+  .is-know-cost .detail-web-contact-area-button-list {
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: none;
+    margin-top: 20px;
   }
 }
 
@@ -510,7 +550,6 @@ button:hover {
           flex: 1;
   float: none;
   height: 60px;
-  padding: 0 4px;
 }
 .detail-web-contact-area-button-item:first-child a {
   padding-left: 25px;
@@ -531,6 +570,7 @@ button:hover {
   width: 100%;
   height: 100%;
   font-weight: bold;
+  line-height: 1.4;
   text-align: center;
   background-color: #f4f4f4;
   border-radius: 3px;
@@ -563,13 +603,6 @@ button:hover {
 @media (max-width: 739px) {
   .detail-web-contact-area-button-item {
     height: 50px;
-    padding: 0;
-  }
-  .detail-web-contact-area-button-item:first-child a {
-    padding-left: 0;
-  }
-  .detail-web-contact-area-button-item:not(:first-child) {
-    margin-top: 10px;
   }
   .detail-web-contact-area-button-item a {
     font-size: 14px;
@@ -585,6 +618,34 @@ button:hover {
   }
   .detail-web-contact-area-button-item a:hover svg path {
     fill: #50bc73;
+  }
+}
+
+.is-know-cost .detail-web-contact-area-button-item:not(:first-child) a {
+  font-size: 13px;
+}
+.is-know-cost .detail-web-contact-area-button-item:first-child {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+}
+.is-know-cost .detail-web-contact-area-button-item:first-child a {
+  padding-left: 0;
+}
+.is-know-cost .detail-web-contact-area-button-item svg {
+  left: 35px;
+}
+@media (max-width: 739px) {
+  .is-know-cost .detail-web-contact-area-button-item svg {
+    left: 18px;
+    width: 20px;
+    height: 20px;
+  }
+  .is-know-cost .detail-web-contact-area-button-item:not(:first-child) a {
+    font-size: 12px;
   }
 }
 

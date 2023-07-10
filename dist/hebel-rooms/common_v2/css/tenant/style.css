@@ -17,7 +17,7 @@
 .contents.page.tenant-index .section-kv, .contents.page.tenant-bousai .section-kv, .contents.page.tenant-oteire .section-kv, .contents.page.tenant-sumikae .section-kv, .contents.page.tenant-manners .section-kv, .contents.page.tenant-koushin .section-kv, .contents.page.tenant-kaiteki .section-kv, .contents.page.tenant-faq .section-kv, .contents.page.tenant-gonyukyo .section-kv {
   height: 294px;
   padding: 70px 0 0;
-  background-image: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/index/kv2.jpg);
+  background-image: url(/hebel-rooms/common_v2/img/tenant/index/kv2.jpg);
   background-position: 50% 70px;
   background-size: 1040px auto
 }
@@ -151,8 +151,8 @@
 
 .hbclb-bnr.bnr-style__01 {
   background-color: #e4e5f0;
-  background-image: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant_v2/index/ic-arrow-tntbnr-01.png);
-  background-image: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant_v2/index/ic-arrow-tntbnr-02.png)
+  background-image: url(/hebel-rooms/common_v2/img/tenant_v2/index/ic-arrow-tntbnr-01.png);
+  background-image: url(/hebel-rooms/common_v2/img/tenant_v2/index/ic-arrow-tntbnr-02.png)
 
 }
 
@@ -162,7 +162,7 @@
 
 .hbclb-bnr.bnr-style__02 {
   background-color: #e4e5f0;
-  background-image: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant_v2/index/ic-arrow-tntbnr-02.png)
+  background-image: url(/hebel-rooms/common_v2/img/tenant_v2/index/ic-arrow-tntbnr-02.png)
 }
 
 .hbclb-bnr.bnr-style__02 .bnr--title {
@@ -334,7 +334,7 @@
   font-size: 1.1rem;
   line-height: 1.6;
   color: #000;
-  background-image: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/common/ic-arrow-black-01.jpg);
+  background-image: url(/hebel-rooms/common_v2/img/common/ic-arrow-black-01.jpg);
   background-repeat: no-repeat;
   background-position: 95% 50%;
   background-size: 0.4em auto
@@ -355,7 +355,7 @@
   line-height: 1.6;
   color: #fff;
   background-color: #232883;
-  background-image: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/common/ic-arrow-white-r-01.png);
+  background-image: url(/hebel-rooms/common_v2/img/common/ic-arrow-white-r-01.png);
   background-repeat: no-repeat;
   background-position: 95% 50%;
   background-size: 0.4em auto
@@ -441,7 +441,7 @@
   font-size: 14px;
   font-size: 1.4rem;
   line-height: 1.6;
-  background-image: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/common/ic-arrow-blue-04.png);
+  background-image: url(/hebel-rooms/common_v2/img/common/ic-arrow-blue-04.png);
   background-repeat: no-repeat;
   background-position: 100% 50%;
   background-size: 1em auto
@@ -509,7 +509,7 @@
 .tnt-box--list li {
   display: block;
   float: none;
-  background-image: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/common/ic-arrow-blue-03.png);
+  background-image: url(/hebel-rooms/common_v2/img/common/ic-arrow-blue-03.png);
   background-repeat: no-repeat;
   background-position: 95% 50%;
   background-size: 0.4em auto;
@@ -729,11 +729,18 @@
 .faqnav--row {
   display: flexbox;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   justify-content: space-between;
   width: 1040px;
   margin: 0 auto 40px;
   -ms-flex-pack: justify
+}
+
+.faqnav--row::after {
+  width: 30%;
+  height: 0;
+  content: "";
 }
 
 .faqnav--cont {
@@ -814,6 +821,13 @@
   transform: rotate(135deg);
   transform: rotate(135deg);
   transform: rotate(135deg)
+}
+
+.faqnav--note {
+  padding-left: 1em;
+  margin-top: 30px;
+  line-height: 1.5;
+  text-indent: -1em;
 }
 
 .tnt-catnav--wrapper {
@@ -1093,7 +1107,7 @@
 }
 
 .navswiper-container .myswiper-button-prev::after {
-  background-image: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/common/ic-arrow-white-l-01.png);
+  background-image: url(/hebel-rooms/common_v2/img/common/ic-arrow-white-l-01.png);
   background-position: 20% 50%;
   border-radius: 0 20px 20px 0
 }
@@ -1116,7 +1130,7 @@
 }
 
 .navswiper-container .myswiper-button-next::after {
-  background-image: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/common/ic-arrow-white-r-01.png);
+  background-image: url(/hebel-rooms/common_v2/img/common/ic-arrow-white-r-01.png);
   background-position: 80% 50%;
   border-radius: 20px 0 0 20px
 }
@@ -1371,7 +1385,6 @@
   background: url("/hebel-rooms/common_v2/img/serviceiconslrg-sd1aba6e3b5.png") -5px -1980px
 }
 
-/***** 2019.07.02 ADD *****/
 .serviceiconslrg-ico-42::before {
   width: 41px;
   height: 37px;
@@ -1395,7 +1408,7 @@
     height: 29.0vw;
     padding-top: 45px;
     padding-bottom: 20px;
-    background-image: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/sp/tenant/index/kv2.jpg);
+    background-image: url(/hebel-rooms/common_v2/img/sp/tenant/index/kv2.jpg);
     background-position: 50% 45px;
     background-size: 100% auto
   }
@@ -1548,7 +1561,7 @@
 
   .hbclb-bnr.bnr-style__01 {
     background-color: #fbdfea;
-    background-image: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant_v2/index/ic-arrow-tntbnr-01.png)
+    background-image: url(/hebel-rooms/common_v2/img/tenant_v2/index/ic-arrow-tntbnr-01.png)
   }
 
   .hbclb-bnr.bnr-style__01 .bnr--title {
@@ -1557,7 +1570,7 @@
 
   .hbclb-bnr.bnr-style__02 {
     background-color: #e4e5f0;
-    background-image: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant_v2/index/ic-arrow-tntbnr-02.png)
+    background-image: url(/hebel-rooms/common_v2/img/tenant_v2/index/ic-arrow-tntbnr-02.png)
   }
 
   .hbclb-bnr.bnr-style__02 .bnr--title {
@@ -1657,7 +1670,7 @@
     background-color: #fff
   }
 
-  .tnt-section-navi .tnt-row:nth-child(2) {
+  .tnt-section-navi .tnt-row:last-child {
     margin-bottom: 0
   }
 
@@ -1688,7 +1701,7 @@
     line-height: 1.6;
     color: #232883;
     background-color: #fff;
-    background-image: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/sp/common/ic-arrow-blue-02.png);
+    background-image: url(/hebel-rooms/common_v2/img/sp/common/ic-arrow-blue-02.png);
     background-repeat: no-repeat;
     background-position: 95% 50%;
     background-size: 0.4em auto;
@@ -1760,7 +1773,7 @@
     font-size: 1.4rem;
     font-weight: normal;
     line-height: 1.6;
-    background-image: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/common/ic-arrow-blue-04.png);
+    background-image: url(/hebel-rooms/common_v2/img/common/ic-arrow-blue-04.png);
     background-repeat: no-repeat;
     background-position: 100% 50%;
     background-size: 1em auto
@@ -2301,13 +2314,13 @@ body li.app-download-item, body li.app-for-browser-item, body li.contents-about-
   width: 100%;
   height: 270px;
   padding-top: 60px;
-  background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/app_dlBG_pc.jpg);
+  background: url(/hebel-rooms/common_v2/img/tenant/app/app_dlBG_pc.jpg);
 }
 @media screen and (max-width: 739px) {
   .app-download {
     height: 48.8vw;
     padding-top: 10vw;
-    background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/app_dlBG_sp.jpg);
+    background: url(/hebel-rooms/common_v2/img/tenant/app/app_dlBG_sp.jpg);
     background-size: cover;
   }
 }
@@ -2485,24 +2498,24 @@ body li.app-download-item, body li.app-for-browser-item, body li.contents-about-
 
 .app-for-browser-item:nth-child(2) a {
   color: #000;
-  background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_paretID.png) no-repeat 25px center;
+  background: url(/hebel-rooms/common_v2/img/tenant/app/icon_paretID.png) no-repeat 25px center;
   background-size: 21px auto;
   border: 1px solid #000;
 }
 @media screen and (max-width: 739px) {
   .app-for-browser-item:nth-child(2) a {
-    background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_paretID.png) no-repeat 12vw center;
+    background: url(/hebel-rooms/common_v2/img/tenant/app/icon_paretID.png) no-repeat 12vw center;
     background-size: 4.2vw auto;
   }
 }
 
 .app-for-browser-item:nth-child(2) a:hover {
-  background: #ddd url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_paretID.png) no-repeat 25px center;
+  background: #ddd url(/hebel-rooms/common_v2/img/tenant/app/icon_paretID.png) no-repeat 25px center;
   background-size: 21px auto;
 }
 @media screen and (max-width: 739px) {
   .app-for-browser-item:nth-child(2) a:hover {
-    background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_paretID.png) no-repeat 12vw center;
+    background: url(/hebel-rooms/common_v2/img/tenant/app/icon_paretID.png) no-repeat 12vw center;
     background-size: 4.2vw auto;
   }
 }
@@ -2632,46 +2645,46 @@ body li.app-download-item, body li.app-for-browser-item, body li.contents-about-
 }
 
 .contents-about-item:nth-child(1) {
-  background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_contents01.png) no-repeat 22px center;
+  background: url(/hebel-rooms/common_v2/img/tenant/app/icon_contents01.png) no-repeat 22px center;
   background-size: 150px 150px;
 }
 @media screen and (max-width: 739px) {
   .contents-about-item:nth-child(1) {
-    background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_contents01.png) no-repeat 3vw 3vw;
+    background: url(/hebel-rooms/common_v2/img/tenant/app/icon_contents01.png) no-repeat 3vw 3vw;
     background-size: 23vw 23vw;
   }
 }
 
 .contents-about-item:nth-child(2) {
-  background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_contents02.png) no-repeat 22px center;
+  background: url(/hebel-rooms/common_v2/img/tenant/app/icon_contents02.png) no-repeat 22px center;
   background-size: 150px 150px;
 }
 @media screen and (max-width: 739px) {
   .contents-about-item:nth-child(2) {
     padding: 4vw 4vw 4vw 30vw;
-    background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_contents02.png) no-repeat 3vw 3vw;
+    background: url(/hebel-rooms/common_v2/img/tenant/app/icon_contents02.png) no-repeat 3vw 3vw;
     background-size: 23vw 23vw;
   }
 }
 
 .contents-about-item:nth-child(3) {
-  background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_contents03.png) no-repeat 22px center;
+  background: url(/hebel-rooms/common_v2/img/tenant/app/icon_contents03.png) no-repeat 22px center;
   background-size: 150px 150px;
 }
 @media screen and (max-width: 739px) {
   .contents-about-item:nth-child(3) {
-    background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_contents03.png) no-repeat 3vw 3vw;
+    background: url(/hebel-rooms/common_v2/img/tenant/app/icon_contents03.png) no-repeat 3vw 3vw;
     background-size: 23vw 23vw;
   }
 }
 
 .contents-about-item:nth-child(4) {
-  background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_contents04.png) no-repeat 22px center;
+  background: url(/hebel-rooms/common_v2/img/tenant/app/icon_contents04.png) no-repeat 22px center;
   background-size: 150px 150px;
 }
 @media screen and (max-width: 739px) {
   .contents-about-item:nth-child(4) {
-    background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_contents04.png) no-repeat 3vw 3vw;
+    background: url(/hebel-rooms/common_v2/img/tenant/app/icon_contents04.png) no-repeat 3vw 3vw;
     background-size: 23vw 23vw;
   }
 }
@@ -2786,56 +2799,56 @@ body li.app-download-item, body li.app-for-browser-item, body li.contents-about-
 }
 
 .regist-flow-item:nth-child(1) {
-  background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_flow01.png) no-repeat center 60px;
+  background: url(/hebel-rooms/common_v2/img/tenant/app/icon_flow01.png) no-repeat center 60px;
   background-size: 40% auto;
 }
 @media screen and (max-width: 739px) {
   .regist-flow-item:nth-child(1) {
-    background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_flow01.png) no-repeat 1vw top;
+    background: url(/hebel-rooms/common_v2/img/tenant/app/icon_flow01.png) no-repeat 1vw top;
     background-size: 20vw auto;
   }
 }
 
 .regist-flow-item:nth-child(2) {
-  background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_flow02.png) no-repeat center 60px;
+  background: url(/hebel-rooms/common_v2/img/tenant/app/icon_flow02.png) no-repeat center 60px;
   background-size: 40% auto;
 }
 @media screen and (max-width: 739px) {
   .regist-flow-item:nth-child(2) {
-    background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_flow02.png) no-repeat 3vw top;
+    background: url(/hebel-rooms/common_v2/img/tenant/app/icon_flow02.png) no-repeat 3vw top;
     background-size: 15vw auto;
   }
 }
 
 .regist-flow-item:nth-child(3) {
-  background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_flow03.png) no-repeat center 60px;
+  background: url(/hebel-rooms/common_v2/img/tenant/app/icon_flow03.png) no-repeat center 60px;
   background-size: 40% auto;
 }
 @media screen and (max-width: 739px) {
   .regist-flow-item:nth-child(3) {
-    background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_flow03.png) no-repeat 3vw top;
+    background: url(/hebel-rooms/common_v2/img/tenant/app/icon_flow03.png) no-repeat 3vw top;
     background-size: 15vw auto;
   }
 }
 
 .regist-flow-item:nth-child(4) {
-  background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_flow04.png) no-repeat center 60px;
+  background: url(/hebel-rooms/common_v2/img/tenant/app/icon_flow04.png) no-repeat center 60px;
   background-size: 40% auto;
 }
 @media screen and (max-width: 739px) {
   .regist-flow-item:nth-child(4) {
-    background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_flow04.png) no-repeat 4vw top;
+    background: url(/hebel-rooms/common_v2/img/tenant/app/icon_flow04.png) no-repeat 4vw top;
     background-size: 15vw auto;
   }
 }
 
 .regist-flow-item:nth-child(5) {
-  background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_flow05.png) no-repeat center 60px;
+  background: url(/hebel-rooms/common_v2/img/tenant/app/icon_flow05.png) no-repeat center 60px;
   background-size: 40% auto;
 }
 @media screen and (max-width: 739px) {
   .regist-flow-item:nth-child(5) {
-    background: url(https://www.afr-web.co.jp/hebel-rooms/common_v2/img/tenant/app/icon_flow05.png) no-repeat 4vw top;
+    background: url(/hebel-rooms/common_v2/img/tenant/app/icon_flow05.png) no-repeat 4vw top;
     background-size: 15vw auto;
   }
 }
