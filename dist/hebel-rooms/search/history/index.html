@@ -10,9 +10,9 @@
   <meta http-equiv="Expires" content="-1">
   <!-- /キャッシュ対策 -->
 
-    <meta name="description" content="ヘーベルメゾンの賃貸物件一覧｜ヘーベルメゾン｜物件情報はこちら！旭化成不動産レジデンスが提供する、賃貸マンション「ヘーベルメゾン」、都民住宅や分譲マンション賃貸、賃貸戸建「ヘーベルハウス」といった賃貸物件は、Room A CLUBやベルティスサービスなどの入居者サービスも充実しています。">
-    <meta name="keywords" content="">
-      <title>物件一覧｜旭化成不動産レジデンス株式会社｜ヘーベルメゾンの安心の賃貸</title>
+    <meta name="description" content="テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト">
+    <meta name="keywords" content="キーワード,キーワード,キーワード,キーワード,キーワード">
+    <title>タイトル</title>
   
   <!-- @@@ TEMPLATE BEGIN @@@ -->
   <link rel="shortcut icon" type="image/x-icon" href="//www.afr-web.co.jp/hebel-rooms/common_v2/favicon.ico">
@@ -21,7 +21,7 @@
   
   <link rel="stylesheet" href="//www.afr-web.co.jp/hebel-rooms/common_v2/lib/scrollup/image.css" type="text/css">
   <link rel="stylesheet" href="//www.afr-web.co.jp/hebel-rooms/common_v2/lib/selectBoxIt/jquery.selectBoxIt.css" type="text/css">
-  <link rel="stylesheet" href="/hebel-rooms/common_v2/css/style.css" type="text/css">
+  <link rel="stylesheet" href="//www.afr-web.co.jp/file.jsp?id=356290" type="text/css">
   <link rel="stylesheet" href="//www.afr-web.co.jp/file.jsp?id=359205" type="text/css">
   
   <link rel="canonical" href="">
@@ -37,6 +37,36 @@
     <script type="text/javascript" src="/hebel-rooms/common_v2/lib/jquery.min.js"></script>
     <script src="/hebel-rooms/lightbox/jquery.fancybox.min.js" defer></script>
     <script src="/hebel-rooms/common_v2/js/search/page.js" defer></script>
+    <script>
+      function countdown(tableAccordion){
+        if(tableAccordion !== null){
+            const text = tableAccordion.querySelector('.property-detail-table-foot_text').textContent;
+            const numbers = text.match(/\d+/g);
+            tableAccordion.querySelector('.property-detail-table-foot_text').textContent = text.replace(/\d+/g, numbers - 1);
+          }
+      };
+      function propertyDetailRemove(event){
+        event.preventDefault;
+        const target = event.currentTarget;
+        const content = target.closest('.property-detail');
+        const tableAccordion = content.querySelector('.js-table-accordion');
+        if( target.closest('.property-detail_table-body').childElementCount === 1){
+            const table = target.closest('.js-table');
+            target.closest('.property-detail_table-body').remove();
+            tableAccordion.style.display = 'none';
+            if(table.querySelectorAll('.property-detail_table-body').length === 0){
+            content.remove();
+            }
+        } else {
+          target.closest('.property-detail_table-body-inner').remove();
+          countdown(tableAccordion);
+        }
+      }
+      function contentsRemove(event){
+        event.preventDefault;
+        event.currentTarget.closest('._searchbox_history_list-property-item').remove();
+      }
+    </script>
   <!-- ↑↑ アドバンススクリプト ↑↑ -->
   
   <link rel="stylesheet" type="text/css" href="//www.asahi-kasei.co.jp/j-koho/css/j-koho_footer.css" media="all" />
@@ -85,27 +115,10 @@
   <p id="btn_contact" class="btn_contact"><a href="/hebel-rooms/form/contact/index.html/"><img src="//www.afr-web.co.jp/hebel-rooms/common_v2/img/common/contact-2.png"> </a></p>
   <!-- *********** 【FOR SP】 *********** -->
   <div class="for_sp navi-trigger" id="sp-g-navi">
-      <ul>
-        <li>
-          <a class="navi-item" href="/hebel-rooms/favorite/favorite_a/" data-navi-item="favorite">
-            <div class="navi-item__inner"><span>お気に入り</span></div>
-          </a>
-        </li>
-        <li>
-          <a class="navi-item search-menu" href="#" id="sp-nav-2" data-navi-item="search">
-            <div class="navi-item__inner"><span>物件検索</span></div>
-          </a>
-        </li>
-        <li>
-          <a class="navi-item main-menu" href="#" id="sp-nav-1" data-navi-item="menu">
-            <div class="navi-item__inner"><span>メニュー</span></div>
-          </a>
-        </li>
-        <!-- **************************
-        <li class="n02"><a href="#" class="search-menu" id="sp-nav-2"><span class="ic"></span></a><br></li>
-        <li class="n01"><a href="#" class="main-menu" id="sp-nav-1"><span class="ic"></span></a><br></li>
-        ************************** -->
-      </ul>
+    <ul>
+      <li class="n01"><a href="#" class="main-menu" id="sp-nav-1"><span class="ic"></span></a><br></li>
+      <li class="n02"><a href="#" class="search-menu" id="sp-nav-2"><span class="ic"></span></a><br></li>
+    </ul>
   </div>
   <!-- *********** 【FOR SP】 *********** -->
 </div><!-- /header -->
@@ -1201,11 +1214,11 @@
 --><script aria-hidden="true" type="application/x-lastpass" id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{(function() { for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; if (typeof(lastpass_f.lpsubmitorig2)=='object'){ continue;}lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i.toString(); } else { d.textContent=i.toString(); } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }})()}catch(e){}</script>
 <!-- ↑↑ [ header ] ↑↑ -->
   <!-- ↓↓ ソースを記述 ↓↓ -->
-  <div id="contents" class="contents main property-list-page">
+  <div id="contents" class="contents page main property-list-page property-history-page">
     <div class="property-list-page-breadcrumb">
   <div class="breadcrumb">
     <ul class="cf">
-      <li><a href="/hebel-rooms/index.html">賃貸・お部屋探しのヘーベルメゾン</a> </li><li><a href="/hebel-rooms/search/index.html/">お部屋を探す</a> </li><li>検索結果一覧</li>
+      <li><a href="/hebel-rooms/index.html">賃貸・お部屋探しのヘーベルメゾン</a> </li><li><a href="/hebel-rooms/search/index.html/">お部屋を探す</a> </li><li>最近見た物件一覧</li>
     </ul>
   </div>
 </div>
@@ -1213,34 +1226,8 @@
       <div class="property-list list-type-a">
       <div class="property-list-head">
   <div class="page-title property-list-style">
-  <h1 class="title"><span class="cityname">千代田区、中央区、世田谷区、目黒区、港区、江東区</span><span class="sub">の検索結果</span></h1>
+  <h1 class="title"><span class="cityname">最近見た物件一覧</span></h1>
 </div>
-  <!-- ↓↓ 現行ページから引用しています(コピー&ペースト) ↓↓ -->
-<div class="display_search_options js-intersection-target">
-  <div class="conditions">
-    <ul class="for_pc">
-      <li class="area conditions-item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="13.98" viewBox="0 0 14 13.98"><path d="M12.5,13.75A2.17,2.17,0,0,0,14,11.59V2.32A2.33,2.33,0,0,0,11.67,0H2.33A2.32,2.32,0,0,0,0,2.32v9.27a2.17,2.17,0,0,0,1.5,2.16,8.36,8.36,0,0,0,1.21.16c2.14.1,6.44.09,8.58,0A8.36,8.36,0,0,0,12.5,13.75ZM2.33,1.16h9.34a1.16,1.16,0,0,1,1.16,1.16H1.17A1.16,1.16,0,0,1,2.33,1.16Zm1.38,7a.59.59,0,0,1-.55-.36L1.44,3.48H12.56L10.84,7.75a.59.59,0,0,1-.55.36Zm8,4.64H2.33a1.16,1.16,0,0,1-1.16-1.16V5.91l.91,2.27A1.75,1.75,0,0,0,3.71,9.27h6.58a1.75,1.75,0,0,0,1.63-1.09l.91-2.27v5.68h0A1.16,1.16,0,0,1,11.67,12.75Z" fill="#333"/><path d="M11.08,10.43H9.92a.58.58,0,1,0,0,1.16h1.16a.58.58,0,1,0,0-1.16Z" fill="#333"/><path d="M4.08,10.43H2.92a.58.58,0,1,0,0,1.16H4.08a.58.58,0,1,0,0-1.16Z" fill="#333"/></svg>
-        <span class="conditions-item-text"><span class="conditions-item-heading">駅：</span>小田急電鉄小田原線：千歳船橋駅/成城学園前駅/祖師ヶ谷大蔵駅/小田急電鉄小田原線：千歳船橋駅/成城学園前駅/祖師ヶ谷大蔵駅</span><a href="#" title="" class="change">変更</a></li>
-      <li class="options conditions-item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M8.62,11.69a.62.62,0,0,1-.62.62H4.31a.63.63,0,0,1,0-1.25H8A.62.62,0,0,1,8.62,11.69ZM16,3.75v7.32A3.54,3.54,0,0,1,15,13.61L13.61,15A3.56,3.56,0,0,1,11.07,16H3.75A3.75,3.75,0,0,1,0,12.25V3.75A3.75,3.75,0,0,1,3.75,0h8.5A3.75,3.75,0,0,1,16,3.75Zm-1.33,8H13A1.25,1.25,0,0,0,11.7,13v1.72a2.42,2.42,0,0,0,1-.61l1.33-1.33A2.42,2.42,0,0,0,14.67,11.7Zm.08-7.95a2.5,2.5,0,0,0-2.5-2.5H3.75a2.5,2.5,0,0,0-2.5,2.5v8.5a2.5,2.5,0,0,0,2.5,2.5h6.7V13a2.5,2.5,0,0,1,2.5-2.5h1.8ZM11.69,7.38H4.31A.62.62,0,0,0,3.69,8a.63.63,0,0,0,.62.63h7.38A.63.63,0,0,0,12.31,8,.62.62,0,0,0,11.69,7.38Zm0-3.69H4.31a.63.63,0,0,0,0,1.25h7.38a.63.63,0,0,0,0-1.25Z" fill="#000333"/></svg>
-        <span class="conditions-item-text"><span class="conditions-item-heading">条件：</span>共益費・管理費を含む/1LDK/2DK/2LDK/3K以上/新築/ウォークインクローゼット</span>
-        <!-- <a href="#" title="" class="change">変更</a> -->
-        <button data-anc="#search-options" title="" class="js-property-list-page-scroll" type="button">変更</button></li>
-    </ul>
-    <ul class="for_sp">
-      <li class="area conditions-item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="13.98" viewBox="0 0 14 13.98"><path d="M12.5,13.75A2.17,2.17,0,0,0,14,11.59V2.32A2.33,2.33,0,0,0,11.67,0H2.33A2.32,2.32,0,0,0,0,2.32v9.27a2.17,2.17,0,0,0,1.5,2.16,8.36,8.36,0,0,0,1.21.16c2.14.1,6.44.09,8.58,0A8.36,8.36,0,0,0,12.5,13.75ZM2.33,1.16h9.34a1.16,1.16,0,0,1,1.16,1.16H1.17A1.16,1.16,0,0,1,2.33,1.16Zm1.38,7a.59.59,0,0,1-.55-.36L1.44,3.48H12.56L10.84,7.75a.59.59,0,0,1-.55.36Zm8,4.64H2.33a1.16,1.16,0,0,1-1.16-1.16V5.91l.91,2.27A1.75,1.75,0,0,0,3.71,9.27h6.58a1.75,1.75,0,0,0,1.63-1.09l.91-2.27v5.68h0A1.16,1.16,0,0,1,11.67,12.75Z" fill="#333"/><path d="M11.08,10.43H9.92a.58.58,0,1,0,0,1.16h1.16a.58.58,0,1,0,0-1.16Z" fill="#333"/><path d="M4.08,10.43H2.92a.58.58,0,1,0,0,1.16H4.08a.58.58,0,1,0,0-1.16Z" fill="#333"/></svg>
-        <span class="conditions-item-text"><span class="conditions-item-heading">駅　：</span>小田急電鉄小田原線：千歳船橋駅/成城学園前駅/祖師ヶ谷大蔵駅/小田急電鉄小田原線：千歳船橋駅/成城学園前駅/祖師ヶ谷大蔵駅</span><a href="#" title="" class="change">変更</a></li>
-      <li class="options conditions-item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M8.62,11.69a.62.62,0,0,1-.62.62H4.31a.63.63,0,0,1,0-1.25H8A.62.62,0,0,1,8.62,11.69ZM16,3.75v7.32A3.54,3.54,0,0,1,15,13.61L13.61,15A3.56,3.56,0,0,1,11.07,16H3.75A3.75,3.75,0,0,1,0,12.25V3.75A3.75,3.75,0,0,1,3.75,0h8.5A3.75,3.75,0,0,1,16,3.75Zm-1.33,8H13A1.25,1.25,0,0,0,11.7,13v1.72a2.42,2.42,0,0,0,1-.61l1.33-1.33A2.42,2.42,0,0,0,14.67,11.7Zm.08-7.95a2.5,2.5,0,0,0-2.5-2.5H3.75a2.5,2.5,0,0,0-2.5,2.5v8.5a2.5,2.5,0,0,0,2.5,2.5h6.7V13a2.5,2.5,0,0,1,2.5-2.5h1.8ZM11.69,7.38H4.31A.62.62,0,0,0,3.69,8a.63.63,0,0,0,.62.63h7.38A.63.63,0,0,0,12.31,8,.62.62,0,0,0,11.69,7.38Zm0-3.69H4.31a.63.63,0,0,0,0,1.25h7.38a.63.63,0,0,0,0-1.25Z" fill="#000333"/></svg>
-        <span class="conditions-item-text"><span class="conditions-item-heading">条件：</span>共益費・管理費を含む/1LDK/2DK/2LDK/3K以上/新築/ウォークインクローゼット</span>
-        <!-- <a href="#" title="" class="change">変更</a> -->
-        <button data-anc="#search-options" title="" class="js-property-list-page-scroll" type="button">変更</button></li>
-    </ul>
-  </div>
-</div>
-<!-- ↑↑ 現行ページから引用しています(コピー&ペースト) ↑↑ -->
   <div class="headsearch">
   <div class="search-results">
     <div class="headsearch-left">
@@ -1268,12 +1255,12 @@
       <!-- ↑↑ 現行ページから引用しています(コピー&ペースト) ↑↑ -->
       </div>
     </div>
-    <p class="search-results_right"><span class="search-results_right-num">1</span>|&nbsp;<em>35</em>&nbsp;ページ</p>
+    <p class="search-results_right"><span class="search-results_right-num">1</span>|&nbsp;<em>2</em>&nbsp;ページ</p>
   </div>
 </div>
 
 </div>
-      <div class="property-detail-wrap">
+<div class="property-detail-wrap">
   
   <div class="property-detail">
     <div class="property-detail_head">
@@ -1289,7 +1276,6 @@
   </a>
 </p>
   <p class="property-detail_heading">（仮称）西綾瀬4丁目メゾン</p>
-  
 </div>
     <div class="property-detail_media">
   <div class="property-detail_media-thum">
@@ -1350,7 +1336,7 @@
 <tbody class="property-detail_table-body">
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -1438,11 +1424,17 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -1524,11 +1516,17 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -1613,13 +1611,19 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
 </tbody>
 <tbody class="property-detail_table-body">
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -1704,11 +1708,17 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -1793,11 +1803,17 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -1882,11 +1898,17 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -1971,11 +1993,17 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -2060,11 +2088,17 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -2149,11 +2183,17 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
 </tbody>
   </table>
-  <div class="property-detail-table-foot js-table-accordion"><button type="button">全9件を表示する<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6"><path d="M.25.25a.83.83,0,0,1,1.18,0L5,3.93,8.61.25A.82.82,0,0,1,9.79.34a.88.88,0,0,1,0,1.12L5.61,5.75a.83.83,0,0,1-1.18,0L.24,1.46A.87.87,0,0,1,.25.25Z" fill="#1e237f"/></svg></button></div>
+  <div class="property-detail-table-foot js-table-accordion"><button type="button"><span class="property-detail-table-foot_text">全9件を表示する</span><svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6"><path d="M.25.25a.83.83,0,0,1,1.18,0L5,3.93,8.61.25A.82.82,0,0,1,9.79.34a.88.88,0,0,1,0,1.12L5.61,5.75a.83.83,0,0,1-1.18,0L.24,1.46A.87.87,0,0,1,.25.25Z" fill="#1e237f"/></svg></button></div>
 </div>
   </div>
   <div class="property-detail">
@@ -2170,7 +2210,6 @@
   </a>
 </p>
   <p class="property-detail_heading">（仮称）西綾瀬4丁目メゾン</p>
-  
 </div>
     <div class="property-detail_media">
   <div class="property-detail_media-thum">
@@ -2231,7 +2270,7 @@
 <tbody class="property-detail_table-body">
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -2319,11 +2358,17 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -2408,11 +2453,17 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -2497,11 +2548,17 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
 </tbody>
   </table>
-  <div class="property-detail-table-foot js-table-accordion"><button type="button">全3件を表示する<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6"><path d="M.25.25a.83.83,0,0,1,1.18,0L5,3.93,8.61.25A.82.82,0,0,1,9.79.34a.88.88,0,0,1,0,1.12L5.61,5.75a.83.83,0,0,1-1.18,0L.24,1.46A.87.87,0,0,1,.25.25Z" fill="#1e237f"/></svg></button></div>
+  <div class="property-detail-table-foot js-table-accordion"><button type="button"><span class="property-detail-table-foot_text">全3件を表示する</span><svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6"><path d="M.25.25a.83.83,0,0,1,1.18,0L5,3.93,8.61.25A.82.82,0,0,1,9.79.34a.88.88,0,0,1,0,1.12L5.61,5.75a.83.83,0,0,1-1.18,0L.24,1.46A.87.87,0,0,1,.25.25Z" fill="#1e237f"/></svg></button></div>
 </div>
   </div>
   <div class="property-detail">
@@ -2518,11 +2575,10 @@
   </a>
 </p>
   <p class="property-detail_heading">（仮称）西綾瀬4丁目メゾン</p>
-  
 </div>
     <div class="property-detail_media">
   <div class="property-detail_media-thum">
-    <img src="https://image.rentersnet.jp/f97f6d84-877f-4699-904f-45ed93bd7533_property_picture_1469_large.jpg" alt="" class="object-fit-img-cover">
+    <img src="https://image.rentersnet.jp/34bbcdda-ffc8-4db4-ab4c-d29c529d51b8_property_picture_1469_large.jpg" alt="" class="object-fit-img-cover">
   </div>
   <div class="property-detail_media-text-area">
     <div class="property-detail_media-box">
@@ -2579,7 +2635,7 @@
 <tbody class="property-detail_table-body">
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -2664,11 +2720,17 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -2753,11 +2815,17 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -2842,13 +2910,19 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
 </tbody>
 <tbody class="property-detail_table-body">
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -2933,11 +3007,17 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -3022,11 +3102,17 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -3111,11 +3197,17 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -3200,11 +3292,17 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
 </tbody>
   </table>
-  <div class="property-detail-table-foot js-table-accordion"><button type="button">全7件を表示する<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6"><path d="M.25.25a.83.83,0,0,1,1.18,0L5,3.93,8.61.25A.82.82,0,0,1,9.79.34a.88.88,0,0,1,0,1.12L5.61,5.75a.83.83,0,0,1-1.18,0L.24,1.46A.87.87,0,0,1,.25.25Z" fill="#1e237f"/></svg></button></div>
+  <div class="property-detail-table-foot js-table-accordion"><button type="button"><span class="property-detail-table-foot_text">全7件を表示する</span><svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6"><path d="M.25.25a.83.83,0,0,1,1.18,0L5,3.93,8.61.25A.82.82,0,0,1,9.79.34a.88.88,0,0,1,0,1.12L5.61,5.75a.83.83,0,0,1-1.18,0L.24,1.46A.87.87,0,0,1,.25.25Z" fill="#1e237f"/></svg></button></div>
 </div>
   </div>
   <div class="property-detail">
@@ -3221,7 +3319,6 @@
   </a>
 </p>
   <p class="property-detail_heading">（仮称）西綾瀬4丁目メゾン</p>
-  
 </div>
     <div class="property-detail_media">
   <div class="property-detail_media-thum">
@@ -3282,7 +3379,7 @@
 <tbody class="property-detail_table-body">
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -3370,11 +3467,17 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -3459,11 +3562,17 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
   <tr class="property-detail_table-body-inner">
     <td class="property-detail_table-input">
-      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox"><span class="ic"></span></label>
+      <label class="hr-ck" for=""><input type="checkbox" name="" value="" class="js-checkbox" onclick="showPropertyDetailFollow(this)"><span class="ic"></span></label>
     </td>
     <td class="property-detail_table-thum-wrap">
       <div class="property-detail_table-thum">
@@ -3548,480 +3657,255 @@
         </a>
         <a href="" class="property-detail_table-contact-text-link hover-line-type-gradation-hide">詳細を見る</a>
       </div>
+      <div class="property-detail_table-remove-button">
+        <span class="for_sp">最近見た物件から削除</span>
+        <button type="button" onclick="propertyDetailRemove(event)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m12,0c6.63,0,12,5.37,12,12s-5.37,12-12,12S0,18.63,0,12,5.37,0,12,0Z" fill="#cbcbcb" fill-rule="evenodd"/><polygon points="16.82 8.42 15.62 7.22 12.02 10.82 8.42 7.22 7.22 8.42 10.82 12.02 7.22 15.62 8.42 16.82 12.02 13.22 15.62 16.82 16.82 15.62 13.22 12.02 16.82 8.42" fill="#fff" fill-rule="evenodd"/></svg>
+        </button>
+      </div>
     </td>
   </tr>
 </tbody>
   </table>
-  <div class="property-detail-table-foot js-table-accordion"><button type="button">全3件を表示する<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6"><path d="M.25.25a.83.83,0,0,1,1.18,0L5,3.93,8.61.25A.82.82,0,0,1,9.79.34a.88.88,0,0,1,0,1.12L5.61,5.75a.83.83,0,0,1-1.18,0L.24,1.46A.87.87,0,0,1,.25.25Z" fill="#1e237f"/></svg></button></div>
+  <div class="property-detail-table-foot js-table-accordion"><button type="button"><span class="property-detail-table-foot_text">全3件を表示する</span><svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6"><path d="M.25.25a.83.83,0,0,1,1.18,0L5,3.93,8.61.25A.82.82,0,0,1,9.79.34a.88.88,0,0,1,0,1.12L5.61,5.75a.83.83,0,0,1-1.18,0L.24,1.46A.87.87,0,0,1,.25.25Z" fill="#1e237f"/></svg></button></div>
 </div>
   </div>
 </div>
-      <div class="pager">
+<div class="pager">
   <div class="centering-list">
     <ul class="cf">
       <!-- <li><a href="/hebel-rooms/search/list_a/?start=1&room_keyword=%EF%BD%86%EF%BD%95%EF%BD%86%EF%BD%95&pref_cd=13&search_results_text=%E6%9D%B1%E4%BA%AC%E9%83%BD%E3%81%AEfufu%EF%BC%88%E3%83%95%E3%83%95%EF%BC%89%E7%89%A9%E4%BB%B6%E4%B8%80%E8%A6%A7&orderfield=4&order=1&count=10" title="">&laquo;</a></li> -->
       <li><a  class="pager-prev" href="/hebel-rooms/search/list_a/?start=1&room_keyword=%EF%BD%86%EF%BD%95%EF%BD%86%EF%BD%95&pref_cd=13&search_results_text=%E6%9D%B1%E4%BA%AC%E9%83%BD%E3%81%AEfufu%EF%BC%88%E3%83%95%E3%83%95%EF%BC%89%E7%89%A9%E4%BB%B6%E4%B8%80%E8%A6%A7&orderfield=4&order=1&count=10" title="">&lsaquo;</a></li>
       <li><a href="/hebel-rooms/search/list_a/?start=1&room_keyword=%EF%BD%86%EF%BD%95%EF%BD%86%EF%BD%95&pref_cd=13&search_results_text=%E6%9D%B1%E4%BA%AC%E9%83%BD%E3%81%AEfufu%EF%BC%88%E3%83%95%E3%83%95%EF%BC%89%E7%89%A9%E4%BB%B6%E4%B8%80%E8%A6%A7&orderfield=4&order=1&count=10" title="">1</a></li>
       <li><span class="c">2</span></li>
-      <li><a href="/hebel-rooms/search/list_a/?start=3&room_keyword=%EF%BD%86%EF%BD%95%EF%BD%86%EF%BD%95&pref_cd=13&search_results_text=%E6%9D%B1%E4%BA%AC%E9%83%BD%E3%81%AEfufu%EF%BC%88%E3%83%95%E3%83%95%EF%BC%89%E7%89%A9%E4%BB%B6%E4%B8%80%E8%A6%A7&orderfield=4&order=1&count=10" title="">3</a></li>
-      <li><a href="/hebel-rooms/search/list_a/?start=4&room_keyword=%EF%BD%86%EF%BD%95%EF%BD%86%EF%BD%95&pref_cd=13&search_results_text=%E6%9D%B1%E4%BA%AC%E9%83%BD%E3%81%AEfufu%EF%BC%88%E3%83%95%E3%83%95%EF%BC%89%E7%89%A9%E4%BB%B6%E4%B8%80%E8%A6%A7&orderfield=4&order=1&count=10" title="">4</a></li>
-      <li><span class="dot">…</span></li>
-      <li><a href="/hebel-rooms/search/list_a/?start=4&room_keyword=%EF%BD%86%EF%BD%95%EF%BD%86%EF%BD%95&pref_cd=13&search_results_text=%E6%9D%B1%E4%BA%AC%E9%83%BD%E3%81%AEfufu%EF%BC%88%E3%83%95%E3%83%95%EF%BC%89%E7%89%A9%E4%BB%B6%E4%B8%80%E8%A6%A7&orderfield=4&order=1&count=10" title="">35</a></li>
-      <li><a  class="pager-next" href="/hebel-rooms/search/list_a/?start=3&room_keyword=%EF%BD%86%EF%BD%95%EF%BD%86%EF%BD%95&pref_cd=13&search_results_text=%E6%9D%B1%E4%BA%AC%E9%83%BD%E3%81%AEfufu%EF%BC%88%E3%83%95%E3%83%95%EF%BC%89%E7%89%A9%E4%BB%B6%E4%B8%80%E8%A6%A7&orderfield=4&order=1&count=10" title="">&rsaquo;</a></li>
       <!-- <li><a href="/hebel-rooms/search/list_a/?start=4&room_keyword=%EF%BD%86%EF%BD%95%EF%BD%86%EF%BD%95&pref_cd=13&search_results_text=%E6%9D%B1%E4%BA%AC%E9%83%BD%E3%81%AEfufu%EF%BC%88%E3%83%95%E3%83%95%EF%BC%89%E7%89%A9%E4%BB%B6%E4%B8%80%E8%A6%A7&orderfield=4&order=1&count=10" title="">&raquo;</a></li> -->
     </ul>
   </div>
 </div><!-- /.pager -->
-      <div class="search-property-wrap">
-  <div class="search-property-wrap-inner">
-    <!-- ↓↓ 現行ページから引用しています(コピー&ペースト) ↓↓ -->
-    <p class="search-heading">現在選択中の検索条件</p>
-    <div class="display_search_options js-intersection-target02">
-    <div class="conditions">
-      <ul class="for_pc">
-        <li class="area conditions-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="13.98" viewBox="0 0 14 13.98"><path d="M12.5,13.75A2.17,2.17,0,0,0,14,11.59V2.32A2.33,2.33,0,0,0,11.67,0H2.33A2.32,2.32,0,0,0,0,2.32v9.27a2.17,2.17,0,0,0,1.5,2.16,8.36,8.36,0,0,0,1.21.16c2.14.1,6.44.09,8.58,0A8.36,8.36,0,0,0,12.5,13.75ZM2.33,1.16h9.34a1.16,1.16,0,0,1,1.16,1.16H1.17A1.16,1.16,0,0,1,2.33,1.16Zm1.38,7a.59.59,0,0,1-.55-.36L1.44,3.48H12.56L10.84,7.75a.59.59,0,0,1-.55.36Zm8,4.64H2.33a1.16,1.16,0,0,1-1.16-1.16V5.91l.91,2.27A1.75,1.75,0,0,0,3.71,9.27h6.58a1.75,1.75,0,0,0,1.63-1.09l.91-2.27v5.68h0A1.16,1.16,0,0,1,11.67,12.75Z" fill="#333"/><path d="M11.08,10.43H9.92a.58.58,0,1,0,0,1.16h1.16a.58.58,0,1,0,0-1.16Z" fill="#333"/><path d="M4.08,10.43H2.92a.58.58,0,1,0,0,1.16H4.08a.58.58,0,1,0,0-1.16Z" fill="#333"/></svg>
-          <span class="conditions-item-text"><span class="conditions-item-heading">駅：</span>小田急電鉄小田原線：千歳船橋駅/成城学園前駅/祖師ヶ谷大蔵駅/小田急電鉄小田原線：千歳船橋駅/成城学園前駅/祖師ヶ谷大蔵駅</span><a href="#" title="" class="change">変更</a></li>
-        <li class="options conditions-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M8.62,11.69a.62.62,0,0,1-.62.62H4.31a.63.63,0,0,1,0-1.25H8A.62.62,0,0,1,8.62,11.69ZM16,3.75v7.32A3.54,3.54,0,0,1,15,13.61L13.61,15A3.56,3.56,0,0,1,11.07,16H3.75A3.75,3.75,0,0,1,0,12.25V3.75A3.75,3.75,0,0,1,3.75,0h8.5A3.75,3.75,0,0,1,16,3.75Zm-1.33,8H13A1.25,1.25,0,0,0,11.7,13v1.72a2.42,2.42,0,0,0,1-.61l1.33-1.33A2.42,2.42,0,0,0,14.67,11.7Zm.08-7.95a2.5,2.5,0,0,0-2.5-2.5H3.75a2.5,2.5,0,0,0-2.5,2.5v8.5a2.5,2.5,0,0,0,2.5,2.5h6.7V13a2.5,2.5,0,0,1,2.5-2.5h1.8ZM11.69,7.38H4.31A.62.62,0,0,0,3.69,8a.63.63,0,0,0,.62.63h7.38A.63.63,0,0,0,12.31,8,.62.62,0,0,0,11.69,7.38Zm0-3.69H4.31a.63.63,0,0,0,0,1.25h7.38a.63.63,0,0,0,0-1.25Z" fill="#000333"/></svg>
-          <span class="conditions-item-text"><span class="conditions-item-heading">条件：</span>共益費・管理費を含む/1LDK/2DK/2LDK/3K以上/新築/ウォークインクローゼット</span>
-          <!-- <a href="#" title="" class="change">変更</a> -->
-        <button data-anc="#search-options" title="" class="js-property-list-page-scroll" type="button">変更</button></li>
-      </ul>
-      <ul class="for_sp">
-        <li class="area conditions-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="13.98" viewBox="0 0 14 13.98"><path d="M12.5,13.75A2.17,2.17,0,0,0,14,11.59V2.32A2.33,2.33,0,0,0,11.67,0H2.33A2.32,2.32,0,0,0,0,2.32v9.27a2.17,2.17,0,0,0,1.5,2.16,8.36,8.36,0,0,0,1.21.16c2.14.1,6.44.09,8.58,0A8.36,8.36,0,0,0,12.5,13.75ZM2.33,1.16h9.34a1.16,1.16,0,0,1,1.16,1.16H1.17A1.16,1.16,0,0,1,2.33,1.16Zm1.38,7a.59.59,0,0,1-.55-.36L1.44,3.48H12.56L10.84,7.75a.59.59,0,0,1-.55.36Zm8,4.64H2.33a1.16,1.16,0,0,1-1.16-1.16V5.91l.91,2.27A1.75,1.75,0,0,0,3.71,9.27h6.58a1.75,1.75,0,0,0,1.63-1.09l.91-2.27v5.68h0A1.16,1.16,0,0,1,11.67,12.75Z" fill="#333"/><path d="M11.08,10.43H9.92a.58.58,0,1,0,0,1.16h1.16a.58.58,0,1,0,0-1.16Z" fill="#333"/><path d="M4.08,10.43H2.92a.58.58,0,1,0,0,1.16H4.08a.58.58,0,1,0,0-1.16Z" fill="#333"/></svg>
-          <span class="conditions-item-text"><span class="conditions-item-heading">駅　：</span>小田急電鉄小田原線：千歳船橋駅/成城学園前駅/祖師ヶ谷大蔵駅/小田急電鉄小田原線：千歳船橋駅/成城学園前駅/祖師ヶ谷大蔵駅</span><a href="#" title="" class="change">変更</a></li>
-        <li class="options conditions-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M8.62,11.69a.62.62,0,0,1-.62.62H4.31a.63.63,0,0,1,0-1.25H8A.62.62,0,0,1,8.62,11.69ZM16,3.75v7.32A3.54,3.54,0,0,1,15,13.61L13.61,15A3.56,3.56,0,0,1,11.07,16H3.75A3.75,3.75,0,0,1,0,12.25V3.75A3.75,3.75,0,0,1,3.75,0h8.5A3.75,3.75,0,0,1,16,3.75Zm-1.33,8H13A1.25,1.25,0,0,0,11.7,13v1.72a2.42,2.42,0,0,0,1-.61l1.33-1.33A2.42,2.42,0,0,0,14.67,11.7Zm.08-7.95a2.5,2.5,0,0,0-2.5-2.5H3.75a2.5,2.5,0,0,0-2.5,2.5v8.5a2.5,2.5,0,0,0,2.5,2.5h6.7V13a2.5,2.5,0,0,1,2.5-2.5h1.8ZM11.69,7.38H4.31A.62.62,0,0,0,3.69,8a.63.63,0,0,0,.62.63h7.38A.63.63,0,0,0,12.31,8,.62.62,0,0,0,11.69,7.38Zm0-3.69H4.31a.63.63,0,0,0,0,1.25h7.38a.63.63,0,0,0,0-1.25Z" fill="#000333"/></svg>
-          <span class="conditions-item-text"><span class="conditions-item-heading">条件：</span>共益費・管理費を含む/1LDK/2DK/2LDK/3K以上/新築/ウォークインクローゼット</span>
-          <!-- <a href="#" title="" class="change">変更</a> -->
-        <button data-anc="#search-options" title="" class="js-property-list-page-scroll" type="button">変更</button></li>
-      </ul>
-    </div>
-    </div>
+<div class="search-prop-foot japan-all section">
+  <div class="section-header">
+    <h2 class="section_title"><img src="https://www.ah-hp.com//hebel-rooms/common_v2/img/common/h2-search-room.png" alt="" class=""></h2>
   </div>
-    <!-- ↑↑ 現行ページから引用しています(コピー&ペースト) ↑↑ -->
-    <div class="search-property-form-area">
-      <div class="search-property-wrap-inner">
-      <!-- ↓↓ 現行ページから引用しています(コピー&ペースト) ↓↓ -->
-      <div class="search-property section">
-  <form action="" method="get" accept-charset="utf-8">
-
-    <input type="hidden" name="city_cd" value="13221"><input type="hidden" name="pref_cd" value="13">
-    <div class="box search-options" id="search-options">
-      <div class="box-content">
-        <h2 class="box-heading">物件の条件</h2>
-        <div class="box-body">
-          <div class="box-inner box-price">
-            <p class="search-heading">賃料</p>
-            <div class="box-inner-body">
-              <ul class="cf range">
-                <li>
-                  <select class="hr-select" name="rent_amount_lower">
-                    <option value="" selected>下限なし</option>
-                    <option label="3.0万円" value="30000" >3.0万円</option>
-                    <option label="3.5万円" value="35000" >3.5万円</option>
-                    <option label="4.0万円" value="40000" >4.0万円</option>
-                    <option label="4.5万円" value="45000" >4.5万円</option>
-                    <option label="5.0万円" value="50000" >5.0万円</option>
-                    <option label="5.5万円" value="55000" >5.5万円</option>
-                    <option label="6.0万円" value="60000" >6.0万円</option>
-                    <option label="6.5万円" value="65000" >6.5万円</option>
-                    <option label="7.0万円" value="70000" >7.0万円</option>
-                    <option label="7.5万円" value="75000" >7.5万円</option>
-                    <option label="8.0万円" value="80000" >8.0万円</option>
-                    <option label="8.5万円" value="85000" >8.5万円</option>
-                    <option label="9.0万円" value="90000" >9.0万円</option>
-                    <option label="9.5万円" value="95000" >9.5万円</option>
-                    <option label="10万円" value="100000" >10万円</option>
-                    <option label="11万円" value="110000" >11万円</option>
-                    <option label="12万円" value="120000" >12万円</option>
-                    <option label="13万円" value="130000" >13万円</option>
-                    <option label="14万円" value="140000" >14万円</option>
-                    <option label="15万円" value="150000" >15万円</option>
-                    <option label="16万円" value="160000" >16万円</option>
-                    <option label="17万円" value="170000" >17万円</option>
-                    <option label="18万円" value="180000" >18万円</option>
-                    <option label="19万円" value="190000" >19万円</option>
-                    <option label="20万円" value="200000" >20万円</option>
-                    <option label="30万円" value="300000" >30万円</option>
-                    <option label="50万円" value="500000" >50万円</option>
-                    <option label="100万円" value="1000000" >100万円</option>
-                  </select>                      
-                </li>
-                <li class="separator">&ensp;-&ensp;</li>
-                <li>
-                  <select class="hr-select" name="rent_amount_upper">
-                    <option label="3.5万円" value="35000" >3.5万円</option>
-                    <option label="4.0万円" value="40000" >4.0万円</option>
-                    <option label="4.5万円" value="45000" >4.5万円</option>
-                    <option label="5.0万円" value="50000" >5.0万円</option>
-                    <option label="5.5万円" value="55000" >5.5万円</option>
-                    <option label="6.0万円" value="60000" >6.0万円</option>
-                    <option label="6.5万円" value="65000" >6.5万円</option>
-                    <option label="7.0万円" value="70000" >7.0万円</option>
-                    <option label="7.5万円" value="75000" >7.5万円</option>
-                    <option label="8.0万円" value="80000" >8.0万円</option>
-                    <option label="8.5万円" value="85000" >8.5万円</option>
-                    <option label="9.0万円" value="90000" >9.0万円</option>
-                    <option label="9.5万円" value="95000" >9.5万円</option>
-                    <option label="10万円" value="100000" >10万円</option>
-                    <option label="11万円" value="110000" >11万円</option>
-                    <option label="12万円" value="120000" >12万円</option>
-                    <option label="13万円" value="130000" >13万円</option>
-                    <option label="14万円" value="140000" >14万円</option>
-                    <option label="15万円" value="150000" >15万円</option>
-                    <option label="16万円" value="160000" >16万円</option>
-                    <option label="17万円" value="170000" >17万円</option>
-                    <option label="18万円" value="180000" >18万円</option>
-                    <option label="19万円" value="190000" >19万円</option>
-                    <option label="20万円" value="200000" >20万円</option>
-                    <option label="30万円" value="300000" >30万円</option>
-                    <option label="50万円" value="500000" >50万円</option>
-                    <option label="100万円" value="1000000" >100万円</option>
-                    <option value=""  selected>上限なし</option>
-                  </select>                      
-                </li>
-              </ul>
-              <ul class="cf li-2">
-                <li>
-                  <ul class="cf cks li-2 sp-2col box-flex">
-                    <li><label class="hr-ck" for="cb-opt-1-1"><input type="checkbox" name="rent_total_upper" id="cb-opt-1-1" value="1" ><span class="ic"></span><span class="label-cont"><span class="txt">共益費 / 管理費を含む</span></span></label></li>
-                    <li><label class="hr-ck" for="cb-opt-1-2"><input type="checkbox" name="reikin_upper" id="cb-opt-1-2" value="0.01" ><span class="ic"></span><span class="label-cont"><span class="txt">礼金なし</span></span></label></li>
-                  </ul>                      
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="box-inner">
-            <p class="search-heading">間取り</p>
-            <div class="box-inner-body box-madori">
-              <ul class="cf li-2">
-                <li>
-                  <ul class="cf cks li-2 sp-2col">
-                    <li><label class="hr-ck" for="cb-opt-1-3"><input type="checkbox" name="room_layout_type" id="cb-opt-1-3" value="OneRoom,1K,1SK" ><span class="ic"></span><span class="label-cont"><span class="txt">1R・1K</span></span></label></li>
-                    <li><label class="hr-ck" for="cb-opt-1-4"><input type="checkbox" name="room_layout_type" id="cb-opt-1-4" value="1DK,1SDK" ><span class="ic"></span><span class="label-cont"><span class="txt">1DK</span></span></label></li>
-                  </ul>                      
-                </li>
-                <li>
-                  <ul class="cf cks li-2 sp-2col">
-                    <li><label class="hr-ck" for="cb-opt-1-5"><input type="checkbox" name="room_layout_type" id="cb-opt-1-5" value="1LDK,1SLDK" ><span class="ic"></span><span class="label-cont"><span class="txt">1LDK</span></span></label></li>
-                    <li><label class="hr-ck" for="cb-opt-1-6"><input type="checkbox" name="room_layout_type" id="cb-opt-1-6" value="2K,2SK" ><span class="ic"></span><span class="label-cont"><span class="txt">2K</span></span></label></li>
-                  </ul>                      
-                </li>
-              </ul>
-
-              <ul class="cf li-2">
-                <li>
-                  <ul class="cf cks li-2 sp-2col">
-                    <li><label class="hr-ck" for="cb-opt-1-7"><input type="checkbox" name="room_layout_type" id="cb-opt-1-7" value="2DK,2SDK" ><span class="ic"></span><span class="label-cont"><span class="txt">2DK</span></span></label></li>
-                    <li><label class="hr-ck" for="cb-opt-1-8"><input type="checkbox" name="room_layout_type" id="cb-opt-1-8" value="2LDK,2SLDK" ><span class="ic"></span><span class="label-cont"><span class="txt">2LDK</span></span></label></li>
-                  </ul>                      
-                </li>
-                <li>
-                  <ul class="cf cks li-2 sp-2col single">
-                    <li><label class="hr-ck" for="cb-opt-1-9"><input type="checkbox" name="room_layout_type" id="cb-opt-1-9" value="3K,3SK,3DK,3SDK,3LDK,3SLDK,4K,4SK,4DK,4SDK,4LDK,4SLDK" ><span class="ic"></span><span class="label-cont"><span class="txt">3K以上</span></span></label></li>
-                  </ul>                      
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="box-accordion">
-            <div class="box-inner box-area">
-              <p class="search-heading">専有面積</p>
-              <div class="box-inner-body">
-                <ul class="cf range">
-                  <li>
-                    <select class="hr-select" name="square_lower">
-                      <option value="" selected>下限なし</option>
-                      <option value="10" >10m&sup2;</option>
-                      <option value="15" >15m&sup2;</option>
-                      <option value="20" >20m&sup2;</option>
-                      <option value="25" >25m&sup2;</option>
-                      <option value="30" >30m&sup2;</option>
-                      <option value="35" >35m&sup2;</option>
-                      <option value="40" >40m&sup2;</option>
-                      <option value="45" >45m&sup2;</option>
-                      <option value="50" >50m&sup2;</option>
-                      <option value="60" >60m&sup2;</option>
-                      <option value="70" >70m&sup2;</option>
-                      <option value="80" >80m&sup2;</option>
-                      <option value="90" >90m&sup2;</option>
-                      <option value="100" >100m&sup2;</option>
-                      <option value="110" >110m&sup2;</option>
-                      <option value="120" >120m&sup2;</option>
-                      <option value="130" >130m&sup2;</option>
-                      <option value="140" >140m&sup2;</option>
-                      <option value="150" >150m&sup2;</option>
-                      <option value="200" >200m&sup2;</option>
-                    </select>
-                  </li>
-                  <li class="separator">&ensp;-&ensp;</li>
-                  <li>
-                    <select class="hr-select" name="square_upper">
-                      <option value="15" >15m&sup2;</option>
-                      <option value="20" >20m&sup2;</option>
-                      <option value="25" >25m&sup2;</option>
-                      <option value="30" >30m&sup2;</option>
-                      <option value="35" >35m&sup2;</option>
-                      <option value="40" >40m&sup2;</option>
-                      <option value="45" >45m&sup2;</option>
-                      <option value="50" >50m&sup2;</option>
-                      <option value="60" >60m&sup2;</option>
-                      <option value="70" >70m&sup2;</option>
-                      <option value="80" >80m&sup2;</option>
-                      <option value="90" >90m&sup2;</option>
-                      <option value="100" >100m&sup2;</option>
-                      <option value="110" >110m&sup2;</option>
-                      <option value="120" >120m&sup2;</option>
-                      <option value="130" >130m&sup2;</option>
-                      <option value="140" >140m&sup2;</option>
-                      <option value="150" >150m&sup2;</option>
-                      <option value="200" >200m&sup2;</option>
-                      <option value="" selected>上限なし</option>
-                    </select>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="box-inner box-access">
-              <p class="search-heading">アクセス</p>
-              <div class="box-inner-body ">
-                <ul class="cf li-2 box-flex">
-                  <li>
-                    <ul class="cf cks li-2 sp-2col box-flex">
-                      <li><label class="hr-rd" for="cb-opt-2-1"><input type="radio" name="est_transport_time_upper" id="cb-opt-2-1" value="5" ><span class="ic"></span><span class="label-cont"><span class="txt">5分以内</span></span></label></li>
-                      <li><label class="hr-rd" for="cb-opt-2-2"><input type="radio" name="est_transport_time_upper" id="cb-opt-2-2" value="10" ><span class="ic"></span><span class="label-cont"><span class="txt">10分以内</span></span></label></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul class="cf cks li-2 sp-2col box-flex">
-                      <li><label class="hr-rd" for="cb-opt-2-4"><input type="radio" name="est_transport_time_upper" id="cb-opt-2-4" value="15" ><span class="ic"></span><span class="label-cont"><span class="txt">15分以内</span></span></label></li>
-                      <li><label class="hr-rd" for="cb-opt-2-3"><input type="radio" name="est_transport_time_upper" id="cb-opt-2-3" value="100" checked="checked"><span class="ic"></span><span class="label-cont"><span class="txt">指定なし</span></span></label></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="box-inner box-years">
-              <p class="search-heading">築年数</p>
-              <div class="box-inner-body">
-                <p class="single-col">
-                  <select class="hr-select" name="complete_year_lower">
-                    <option value="100" >指定なし</option>
-                    <option value="new" >新築</option>
-                    <option value="1" >1年以内</option>
-                    <option value="3" >3年以内</option>
-                    <option value="5" >5年以内</option>
-                    <option value="10" >10年以内</option>
-                    <option value="15" >15年以内</option>
-                    <option value="20" >20年以内</option>
-                    <option value="25" >25年以内</option>
-                    <option value="30" >30年以内</option>
-                  </select>
-                </p>
-              </div>
-            </div>
-          </div>
-          <button class="box-accordion-button js-property-list-page-accordion" type="button" data-button-open-hide="true">
-            さらに表示
-            <svg xmlns="http://www.w3.org/2000/svg" width="8.01" height="5" viewBox="0 0 8.01 5" class="for_pc"><path d="M.2.21a.63.63,0,0,1,.94,0L4,3.28,6.9.21a.65.65,0,0,1,.95.08.77.77,0,0,1,0,.93L4.49,4.79a.63.63,0,0,1-.94,0L.19,1.22A.75.75,0,0,1,.2.21Z" fill="#292e86"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" class="for_sp"><path d="M13,26A13,13,0,1,0,0,13,13,13,0,0,0,13,26ZM8.62,11A.76.76,0,0,1,9.7,11L13,14.3,16.26,11a.76.76,0,0,1,1.07,1.07l-3.82,3.82a.75.75,0,0,1-1.07,0L8.62,12.09A.75.75,0,0,1,8.62,11Z" fill="#292e86"/></svg>
-          </button>
-        </div>
+  <div class="section-content">
+    <div class="row col-2 cf">
+      <div class="col">
+        <table class="area-table">
+          <tbody>
+            <tr class="firstrow">
+              <th rowspan="7">関東</th>
+              <td class="area"><a href="/hebel-rooms/search/tokyo/index.html/">東京都</a></td>
+              <td class="td02"><a href="/hebel-rooms/search/area/index.html/?pref_cd=13">エリア検索</a></td>
+              <td class="td03"><a href="/hebel-rooms/search/ensen/index.html/?pref_cd=13">路線検索</a></td>
+            </tr>
+            <tr>
+              <td class="area"><a href="/hebel-rooms/search/kanagawa/index.html/">神奈川県</a></td>
+              <td class="td02"><a href="/hebel-rooms/search/area/index.html/?pref_cd=14">エリア検索</a></td>
+              <td class="td03"><a href="/hebel-rooms/search/ensen/index.html/?pref_cd=14">路線検索</a></td>
+            </tr>
+            <tr>
+              <td class="area"><a href="/hebel-rooms/search/chiba/index.html/">千葉県</a></td>
+              <td class="td02"><a href="/hebel-rooms/search/area/index.html/?pref_cd=12">エリア検索</a></td>
+              <td class="td03"><a href="/hebel-rooms/search/ensen/index.html/?pref_cd=12">路線検索</a></td>
+            </tr>
+            <tr>
+              <td class="area"><a href="/hebel-rooms/search/saitama/index.html/">埼玉県</a></td>
+              <td class="td02"><a href="/hebel-rooms/search/area/index.html/?pref_cd=11">エリア検索</a></td>
+              <td class="td03"><a href="/hebel-rooms/search/ensen/index.html/?pref_cd=11">路線検索</a></td>
+            </tr>
+            <tr>
+              <td class="area"><a href="/hebel-rooms/search/ibaraki/index.html/">茨城県</a></td>
+              <td class="td02">
+                <form id="search_prop_foot_ibaraki">
+                  <a href="/hebel-rooms/search/list_a/?pref_cd=08&amp;search_menu=off&amp;search_results_text=%E8%8C%A8%E5%9F%8E%E7%9C%8C%E3%81%AE%E7%89%A9%E4%BB%B6%E4%B8%80%E8%A6%A7" data-value="pref_cd=08" class="area-ibaraki" data-map-area="ibaraki">物件一覧</a>
+                  <input name="search_results_text" value="茨城県の物件一覧" type="hidden">
+                  <input name="city_selected" value="茨城県" type="hidden">
+                </form>
+              </td>
+              <td class="td03"></td>
+            </tr>
+            
+            <tr>
+              <td class="area"><a>栃木県</a></td>
+              <td class="td02">
+                <form id="search_prop_foot_tochigi">
+                  <a href="/hebel-rooms/search/list_a/?pref_cd=09&amp;search_menu=off&amp;search_results_text=%E6%A0%83%E6%9C%A8%E7%9C%8C%E3%81%AE%E7%89%A9%E4%BB%B6" data-value="pref_cd=09" class="area-tochigi" data-map-area="tochigi">物件一覧</a>
+                  <input name="search_results_text" value="栃木県の物件一覧" type="hidden">
+                  <input name="city_selected" value="栃木県" type="hidden">
+                </form>
+              </td>
+              <td class="td03"></td>
+            </tr>
+            <tr>
+              <td class="area"><a>群馬県</a></td>
+              <td class="td02">
+                <form id="search_prop_foot_gunma">
+                  <a href="/hebel-rooms/search/list_a/?pref_cd=10&amp;search_menu=off&amp;search_results_text=%E7%BE%A4%E9%A6%AC%E7%9C%8C%E3%81%AE%E7%89%A9%E4%BB%B6" data-value="pref_cd=10" class="area-gunma" data-map-area="gunma">物件一覧</a>
+                  <input name="search_results_text" value="群馬県の物件一覧" type="hidden">
+                  <input name="city_selected" value="群馬県" type="hidden">
+                </form>
+              </td>
+              <td class="td03"></td>
+            </tr>
+            
+            
+            <tr class="lasttrow for_pc">
+              <td class=""></td>
+              <td class=""></td>
+              <td class=""></td>
+            </tr>
+            <tr class="hlf">
+              <th rowspan="4">東海</th>
+              <td class="area"><a href="/hebel-rooms/search/shizuoka/index.html/">静岡県</a></td>
+              <td class="td02"><a href="/hebel-rooms/search/area/index.html/?pref_cd=22">エリア検索</a></td>
+              <td class="td03"><a href="/hebel-rooms/search/ensen/index.html/?pref_cd=22">路線検索</a></td>
+            </tr>
+            <tr>
+              <td class="area"><a href="/hebel-rooms/search/aichi/index.html/">愛知県</a></td>
+              <td class="td02"><a href="/hebel-rooms/search/area/index.html/?pref_cd=23">エリア検索</a></td>
+              <td class="td03"><a href="/hebel-rooms/search/ensen/index.html/?pref_cd=23">路線検索</a></td>
+            </tr>
+            <tr>
+              <td class="area"><a href="/hebel-rooms/search/gifu/index.html/">岐阜県</a></td>
+              <td class="td02"><a href="/hebel-rooms/search/area/index.html/?pref_cd=21">エリア検索</a></td>
+              <td class="td03"><a href="/hebel-rooms/search/ensen/index.html/?pref_cd=21">路線検索</a></td>
+            </tr>
+            <tr class="lasttrow">
+              <td class="area"><a href="/hebel-rooms/search/mie/index.html/">三重県</a></td>
+              <td class="td02"><a href="/hebel-rooms/search/area/index.html/?pref_cd=24">エリア検索</a></td>
+              <td class="td03"><a href="/hebel-rooms/search/ensen/index.html/?pref_cd=24">路線検索</a></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="box-content">
-        <h2 class="box-heading">こだわり条件</h2>
-        <div class="box-body">
-          <div class="box-inner">
-            <p class="search-heading">人気のこだわり条件</p>
-            <div class="box-inner-body">
-              <div class="box-checkbox-list box-flex">
-                <ul class="cf li-2 box-flex">
-                  <li>
-                    <ul class="cf cks li-2 sp-2col box-flex">
-                      <li class="box-checkbox-item"><label class="hr-ck disable" for="cb-opt-3-1"><input type="checkbox" name="building_keyword" id="cb-opt-3-1" value="ペット共生" disabled><span class="ic"></span><span class="label-cont"><span class="txt">ペット共生物件</span></span></label></li>
-                      <li class="box-checkbox-item"><label class="hr-ck" for="cb-opt-3-2"><input type="checkbox" name="enter_div" id="cb-opt-3-2" value="1"  ><span class="ic"></span><span class="label-cont"><span class="txt">即入居可</span></span></label></li>
-                    </ul>                      
-                  </li>
-                  <li>
-                    <ul class="cf cks li-2 sp-2col box-flex">
-                      <li class="box-checkbox-item"><label class="hr-ck" for="cb-opt-3-3"><input type="checkbox" name="surety" id="cb-opt-3-3" value="1"  ><span class="ic"></span><span class="label-cont"><span class="txt">保証人不要</span></span></label></li>
-                      <li class="box-checkbox-item"><label class="hr-ck" for="cb-opt-3-4"><input type="checkbox" name="equipment_and" id="cb-opt-3-4" value="division_type"  ><span class="ic"></span><span class="label-cont"><span class="txt">分譲賃貸</span></span></label></li>
-                    </ul>                      
-                  </li>
-                </ul>
-                <ul class="cf li-2">
-                  <li>
-                    <ul class="cf cks li-2 sp-2col single">
-                      <li><label class="hr-ck" for="cb-opt-3-5"><input type="checkbox" name="equipment_and" id="cb-opt-3-5" value="walk_in"  ><span class="ic"></span><span class="label-cont"><span class="txt">ウォークインクローゼット</span></span></label></li>
-                    </ul>                      
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="box-inner-body" style="display:none">
-              <div class="box-checkbox-list">
-                <ul class="cf li-2 box-flex">
-                  <li>
-                    <ul class="cf cks li-2 sp-2col box-flex">
-                      <li class="box-checkbox-item"><label class="hr-ck" for="cb-opt-3-2"><input type="checkbox" name="enter_div" id="cb-opt-3-2-2" value="1"  disabled="disabled"><span class="ic"></span><span class="label-cont"><span class="txt">即入居可</span></span></label></li>
-                      <li class="box-checkbox-item"><label class="hr-ck" for="cb-opt-3-3"><input type="checkbox" name="surety" id="cb-opt-3-3-2" value="1"  disabled="disabled"><span class="ic"></span><span class="label-cont"><span class="txt">保証人不要</span></span></label></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul class="cf cks li-2 sp-2col box-flex">
-                      <li class="box-checkbox-item"><label class="hr-ck" for="cb-opt-3-4"><input type="checkbox" name="equipment_and" id="cb-opt-3-4-2" value="division_type"  disabled="disabled"><span class="ic"></span><span class="label-cont"><span class="txt">分譲賃貸</span></span></label></li>
-                      <li class="box-checkbox-item"><label class="hr-ck" for="cb-opt-3-5"><input type="checkbox" name="equipment_and" id="cb-opt-3-5-2" value="walk_in"  disabled="disabled"><span class="ic"></span><span class="label-cont"><span class="txt">ウォークインクローゼット</span></span></label></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-            <div class="box-inner">
-              <p class="search-heading">位置</p>
-              <div class="box-inner-body">
-                <div class="box-checkbox-list">
-                  <ul class="cf li-2">
-                    <li>
-                      <ul class="cf cks li-2 sp-2col box-flex">
-                        <li class="box-checkbox-item"><label class="hr-ck" for="cb-opt-4-1"><input type="checkbox" name="floor_upper" id="cb-opt-4-1" value="1" ><span class="ic"></span><span class="label-cont"><span class="txt">1階</span></span></label></li>
-                        <li class="box-checkbox-item"><label class="hr-ck" for="cb-opt-4-2"><input type="checkbox" name="floor_lower" id="cb-opt-4-2" value="2" ><span class="ic"></span><span class="label-cont"><span class="txt">2階以上</span></span></label></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="box-accordion">
-            <div class="box-inner">
-              <p class="search-heading">セキュリティ</p>
-              <div class="box-inner-body">
-                <div class="box-checkbox-list">
-                  <ul class="cf li-2 box">
-                    <li>
-                      <ul class="cf cks li-2 sp-2col box-flex">
-                        <li class="box-checkbox-item"><label class="hr-ck" for="cb-opt-5-1"><input type="checkbox" name="equipment_and" id="cb-opt-5-1" value="autolock" ><span class="ic"></span><span class="label-cont"><span class="txt">オートロック</span></span></label></li>
-                        <li class="box-checkbox-item"><label class="hr-ck" for="cb-opt-5-2"><input type="checkbox" name="equipment_and" id="cb-opt-5-2" value="tv_doorphone" ><span class="ic"></span><span class="label-cont"><span class="txt">テレビドアフォン</span></span></label></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="box-inner">
-              <p class="search-heading">建物・室内設備</p>
-              <div class="box-inner-body">
-                <div class="box-checkbox-list box-flex">
-                  <ul class="cf li-2 box-flex">
-                    <li>
-                      <ul class="cf cks li-2 sp-2col single">
-                        <li class="box-checkbox-item"><label class="hr-ck" for="cb-opt-6-1"><input type="checkbox" name="carpark_status" id="cb-opt-6-1" value="1,2,3" ><span class="ic"></span><span class="label-cont"><span class="txt">駐車場有</span></span></label></li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="cf cks li-2 sp-2col single">
-                        <li class="box-checkbox-item"><label class="hr-ck" for="cb-opt-6-2"><input type="checkbox" name="equipment_and" id="cb-opt-6-2" value="delivery_locker" ><span class="ic"></span><span class="label-cont"><span class="txt">宅配ボックス</span></span></label></li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="cf cks li-2 sp-2col single">
-                        <li class="box-checkbox-item"><label class="hr-ck" for="cb-opt-6-3"><input type="checkbox" name="equipment_and" id="cb-opt-6-3" value="BT_separate" ><span class="ic"></span><span class="label-cont"><span class="txt">バストイレ別</span></span></label></li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="cf cks li-2 sp-2col single">
-                        <li class="box-checkbox-item"><label class="hr-ck" for="cb-opt-6-4"><input type="checkbox" name="equipment_and" id="cb-opt-6-4" value="bathroom_dryer" ><span class="ic"></span><span class="label-cont"><span class="txt">浴室乾燥機</span></span></label></li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="cf cks li-2 sp-2col single">
-                        <li class="box-checkbox-item"><label class="hr-ck" for="cb-opt-6-5"><input type="checkbox" name="equipment_and" id="cb-opt-6-5" value="spray_toilet" ><span class="ic"></span><span class="label-cont"><span class="txt">温水洗浄便座</span></span></label></li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="cf cks li-2 sp-2col single">
-                        <li class="box-checkbox-item"><label class="hr-ck" for="cb-opt-6-6"><input type="checkbox" name="equipment_and" id="cb-opt-6-6" value="oidaki" ><span class="ic"></span><span class="label-cont"><span class="txt">追い焚き</span></span></label></li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="cf cks li-2 sp-2col single">
-                        <li class="box-checkbox-item"><label class="hr-ck" for="cb-opt-6-7"><input type="checkbox" name="equipment_and" id="cb-opt-6-7" value="flooring" ><span class="ic"></span><span class="label-cont"><span class="txt">フローリング</span></span></label></li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="cf cks li-2 sp-2col single">
-                        <li class="box-checkbox-item"><label class="hr-ck" for="cb-opt-6-8"><input type="checkbox" name="airconditioner" id="cb-opt-6-8" value="1" ><span class="ic"></span><span class="label-cont"><span class="txt">エアコン付</span></span></label></li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul class="cf cks li-2 sp-2col single">
-                        <li><label class="hr-ck" for="cb-opt-6-9"><input type="checkbox" name="equipment_and" id="cb-opt-6-9" value="lavatory_independence" ><span class="ic"></span><span class="label-cont"><span class="txt">独立洗面台</span></span></label></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button class="box-accordion-button js-property-list-page-accordion" type="button" data-button-open-hide="true">
-            さらに表示
-            <svg xmlns="http://www.w3.org/2000/svg" width="8.01" height="5" viewBox="0 0 8.01 5" class="for_pc"><path d="M.2.21a.63.63,0,0,1,.94,0L4,3.28,6.9.21a.65.65,0,0,1,.95.08.77.77,0,0,1,0,.93L4.49,4.79a.63.63,0,0,1-.94,0L.19,1.22A.75.75,0,0,1,.2.21Z" fill="#292e86"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" class="for_sp"><path d="M13,26A13,13,0,1,0,0,13,13,13,0,0,0,13,26ZM8.62,11A.76.76,0,0,1,9.7,11L13,14.3,16.26,11a.76.76,0,0,1,1.07,1.07l-3.82,3.82a.75.75,0,0,1-1.07,0L8.62,12.09A.75.75,0,0,1,8.62,11Z" fill="#292e86"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="btn-search-box">
-      <p class="submit"><input type="submit" value="" class="btn-search sidebar-regist type-list"></p>
-    </div>
-  </form>
-</div>
-      <!-- ↑↑ 現行ページから引用しています(コピー&ペースト) ↑↑ -->
-      </div>
-    </div>
-</div>
-      <div class="property-detail-follow js-follow">
-  <div class="property-detail-follow-a js-fllow-a">
-    <div class="property-detail-follow-inner">
-      <p class="property-detail-follow-a-text">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5,0H19a5,5,0,0,1,5,5V19a5,5,0,0,1-5,5H5a5,5,0,0,1-5-5V5A5,5,0,0,1,5,0Z" fill="#1e237f" fill-rule="evenodd"/><path d="M16.89,10.1l-5,5.72a.92.92,0,0,1-1.41,0l-3-3.44a1.27,1.27,0,0,1,0-1.61.91.91,0,0,1,1.41,0l0,0,2.29,2.62,4.29-4.91a.91.91,0,0,1,1.41,0,1.28,1.28,0,0,1,0,1.59Z" fill="#fff"/></svg>
-        <span class="property-detail-follow-a-text-inner">チェックした物件を</span>
-      </p>
-      <div class="property-detail-follow-button-wrap">
-        <div class="property-detail-follow-button">
-          <a href="">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25.95" height="25.01" viewBox="0 0 25.95 25.01"><path d="M19.35,24a1.57,1.57,0,0,1-.76-.2L13,20.87,7.41,23.79a1.58,1.58,0,0,1-.78.21l-.26,0a1.7,1.7,0,0,1-1.1-.7A1.73,1.73,0,0,1,5,22l1-6.25L1.51,11.39a1.71,1.71,0,0,1-.49-1,1.66,1.66,0,0,1,.31-1.26,1.68,1.68,0,0,1,1.1-.67l6.23-.92L11.47,2a1.7,1.7,0,0,1,3,0l2.82,5.66,6.16,1a1.68,1.68,0,0,1,1,2.88L19.92,15.8,21,22a1.24,1.24,0,0,1,0,.27A1.71,1.71,0,0,1,19.35,24Z" transform="translate(0 0)" fill="#1d2280"></path><path d="M13,0V2a.66.66,0,0,1,.6.39l2.59,5.18.46.93,1,.16,5.67.88a.68.68,0,0,1,.59.69.68.68,0,0,1-.2.48l-4.14,4-.77.74L19,16.5l1,5.68s0,.07,0,.11a.67.67,0,0,1-1,.63l-5.11-2.69L13,19.74l-.93.49-5.15,2.7a.72.72,0,0,1-.27.07H6.54A.71.71,0,0,1,6,22.17l1-5.73.17-1-.75-.73-4.13-4a.64.64,0,0,1-.2-.39.68.68,0,0,1,.56-.78l5.72-.84,1-.15.47-.94,2.58-5.19A.71.71,0,0,1,13,2V0m0,0h0a2.67,2.67,0,0,0-2.4,1.5L8,6.68l-5.72.84A2.69,2.69,0,0,0,.82,12.11l4.13,4L4,21.84A2.69,2.69,0,0,0,6.2,25a2,2,0,0,0,.43,0,2.58,2.58,0,0,0,1.25-.32L13,22l5.11,2.69a2.58,2.58,0,0,0,1.25.32A2.72,2.72,0,0,0,22,22.27a3.13,3.13,0,0,0,0-.43l-1-5.69,4.14-4a2.69,2.69,0,0,0-1.49-4.59L18,6.68,15.41,1.5A2.64,2.64,0,0,0,13,0Z" transform="translate(0 0)" fill="#fff"></path></svg>
-            <span class="property-detail-follow-button-inner">お気に入り</span>
-          </a>
-        </div>
-        <div class="property-detail-follow-button">
-          <a href="">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path d="M13.45,9.62A.54.54,0,0,0,14,9.08V5.27a2.17,2.17,0,0,0-1-1.84l-1.31-.85v-2A.55.55,0,0,0,11.13,0H2.87a.55.55,0,0,0-.55.55v2L1,3.42A2.2,2.2,0,0,0,0,5.27v6.54A2.19,2.19,0,0,0,2.19,14h9.62A2.19,2.19,0,0,0,14,11.81a.55.55,0,0,0-1.09,0,1.1,1.1,0,0,1-1.1,1.1H2.19a1.1,1.1,0,0,1-1.1-1.1V6L5.84,8.93a2.2,2.2,0,0,0,2.32,0L12.91,6v3.1A.54.54,0,0,0,13.45,9.62Zm-1-5.27a1,1,0,0,1,.38.42l-1.1.69V3.88Zm-10.8,0,.72-.47V5.46L1.21,4.77A1.05,1.05,0,0,1,1.6,4.35ZM7.58,8A1.06,1.06,0,0,1,6.42,8l-3-1.86v-5h7.16V6.14Zm0-3.82A.55.55,0,1,1,7,3.64.55.55,0,0,1,7.55,4.18Zm2,0A.55.55,0,1,1,9,3.64.55.55,0,0,1,9.52,4.18Zm-4,0A.55.55,0,1,1,5,3.64.54.54,0,0,1,5.55,4.18Z" fill="#fff"/></svg>
-            <span class="property-detail-follow-button-inner">お問い合わせ</span>
-          </a>
-        </div>
+      <div class="col">
+        <table class="area-table">
+          <tbody>
+            <tr class="firstrow">
+              <th rowspan="6">関西</th>
+              <td class="area"><a href="/hebel-rooms/search/oosaka/index.html/">大阪府</a></td>
+              <td class="td02"><a href="/hebel-rooms/search/area/index.html/?pref_cd=27">エリア検索</a></td>
+              <td class="td03"><a href="/hebel-rooms/search/ensen/index.html/?pref_cd=27">路線検索</a></td>
+            </tr>
+            <tr>
+              <td class="area"><a href="/hebel-rooms/search/kyoto/index.html/">京都府</a></td>
+              <td class="td02"><a href="/hebel-rooms/search/area/index.html/?pref_cd=26">エリア検索</a></td>
+              <td class="td03"><a href="/hebel-rooms/search/ensen/index.html/?pref_cd=26">路線検索</a></td>
+            </tr>
+            <tr>
+              <td class="area"><a href="/hebel-rooms/search/hyogo/index.html/">兵庫県</a></td>
+              <td class="td02"><a href="/hebel-rooms/search/area/index.html/?pref_cd=28">エリア検索</a></td>
+              <td class="td03"><a href="/hebel-rooms/search/ensen/index.html/?pref_cd=28">路線検索</a></td>
+            </tr>
+            <tr>
+              <td class="area"><a href="/hebel-rooms/search/nara/index.html/">奈良県</a></td>
+              <td class="td02"><a href="/hebel-rooms/search/area/index.html/?pref_cd=29">エリア検索</a></td>
+              <td class="td03"><a href="/hebel-rooms/search/ensen/index.html/?pref_cd=29">路線検索</a></td>
+            </tr>
+            <tr>
+              <td class="area"><a href="/hebel-rooms/search/shiga/index.html/">滋賀県</a></td>
+              <td class="td02"><a href="/hebel-rooms/search/area/index.html/?pref_cd=25">エリア検索</a></td>
+              <td class="td03"><a href="/hebel-rooms/search/ensen/index.html/?pref_cd=25">路線検索</a></td>
+            </tr>
+            <tr class="lasttrow">
+              <td class="area"><a href="/hebel-rooms/search/wakayama/index.html/">和歌山県</a></td>
+              <td class="td02">
+                <form id="search_prop_foot_wakayama">
+                  <a href="/hebel-rooms/search/list_a/?pref_cd=30&amp;search_menu=off&amp;search_results_text=%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E3%81%AE%E7%89%A9%E4%BB%B6%E4%B8%80%E8%A6%A7" data-value="pref_cd=30" class="area-wakayama" data-map-area="wakayama">物件一覧</a>
+                  <input name="search_results_text" value="和歌山県の物件一覧" type="hidden">
+                  <input name="city_selected" value="和歌山県" type="hidden">
+                </form>
+              </td>
+              <td class="td03"></td>
+            </tr>
+            <tr class="hlf for_sp">
+              <th rowspan="4">西日本</th>
+              <td class="area"><a href="/hebel-rooms/search/fukuoka/index.html/">福岡県</a></td>
+              <td class="td02"><a href="/hebel-rooms/search/area/index.html/?pref_cd=40">エリア検索</a></td>
+              <td class="td03"><a href="/hebel-rooms/search/ensen/index.html/?pref_cd=40">路線検索</a></td>
+            </tr>
+            <tr class="for_sp">
+              <td class="area"><a href="/hebel-rooms/search/hiroshima/index.html/">広島県</a></td>
+              <td class="td02"><a href="/hebel-rooms/search/area/index.html/?pref_cd=34">エリア検索</a></td>
+              <td class="td03"><a href="/hebel-rooms/search/ensen/index.html/?pref_cd=34">路線検索</a></td>
+            </tr>
+            <tr class="lasttrow for_sp">
+              <td class="area"><a href="/hebel-rooms/search/okayama/index.html/">岡山県</a></td>
+              <td class="td02">
+                <form id="search_prop_foot_okayama_sp">
+                  <a href="/hebel-rooms/search/list_a/?pref_cd=33&amp;search_menu=off&amp;search_results_text=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E3%81%AE%E7%89%A9%E4%BB%B6%E4%B8%80%E8%A6%A7" data-value="pref_cd=33" class="area-okayama" data-map-area="okayama">物件一覧</a>
+                  <input name="search_results_text" value="岡山県の物件一覧" type="hidden">
+                  <input name="city_selected" value="岡山県" type="hidden">
+                </form>
+              </td>
+              <td class="td03"></td>
+            </tr>
+            <tr class="hlf for_pc">
+              <th rowspan="4">西日本</th>
+              <td class="area"><a href="/hebel-rooms/search/fukuoka/index.html/">福岡県</a></td>
+              <td class="td02"><a href="/hebel-rooms/search/area/index.html/?pref_cd=40">エリア検索</a></td>
+              <td class="td03"><a href="/hebel-rooms/search/ensen/index.html/?pref_cd=40">路線検索</a></td>
+            </tr>
+            <tr class="for_pc">
+              <td class="area"><a href="/hebel-rooms/search/hiroshima/index.html/">広島県</a></td>
+              <td class="td02"><a href="/hebel-rooms/search/area/index.html/?pref_cd=34">エリア検索</a></td>
+              <td class="td03"><a href="/hebel-rooms/search/ensen/index.html/?pref_cd=34">路線検索</a></td>
+            </tr>
+            <tr class="for_pc">
+              <td class="area"><a href="/hebel-rooms/search/okayama/index.html/">岡山県</a></td>
+              <td class="td02">
+                <form id="search_prop_foot_okayama_pc">
+                  <a href="/hebel-rooms/search/list_a/?pref_cd=33&amp;search_menu=off&amp;search_results_text=%E5%B2%A1%E5%B1%B1%E7%9C%8C%E3%81%AE%E7%89%A9%E4%BB%B6%E4%B8%80%E8%A6%A7" data-value="pref_cd=33" class="area-okayama" data-map-area="okayama">物件一覧</a>
+                  <input name="search_results_text" value="岡山県の物件一覧" type="hidden">
+                  <input name="city_selected" value="岡山県" type="hidden">
+                </form>
+              </td>
+              <td class="td03"></td>
+            </tr>
+            <tr class="lasttrow for_pc">
+              <td class=""></td>
+              <td class=""></td>
+              <td class=""></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
-  <div class="property-detail-follow-b">
-    <div class="property-detail-follow-button-wrap">
-      <div class="property-detail-follow-button">
-        <a href="">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="13.98" viewBox="0 0 14 13.98"><path d="M12.5,13.75A2.17,2.17,0,0,0,14,11.59V2.32A2.33,2.33,0,0,0,11.67,0H2.33A2.32,2.32,0,0,0,0,2.32v9.27a2.17,2.17,0,0,0,1.5,2.16,8.36,8.36,0,0,0,1.21.16c2.14.1,6.44.09,8.58,0A8.36,8.36,0,0,0,12.5,13.75ZM2.33,1.16h9.34a1.16,1.16,0,0,1,1.16,1.16H1.17A1.16,1.16,0,0,1,2.33,1.16Zm1.38,7a.59.59,0,0,1-.55-.36L1.44,3.48H12.56L10.84,7.75a.59.59,0,0,1-.55.36Zm8,4.64H2.33a1.16,1.16,0,0,1-1.16-1.16V5.91l.91,2.27A1.75,1.75,0,0,0,3.71,9.27h6.58a1.75,1.75,0,0,0,1.63-1.09l.91-2.27v5.68h0A1.16,1.16,0,0,1,11.67,12.75Z" fill="#fff"/><path d="M11.08,10.43H9.92a.58.58,0,1,0,0,1.16h1.16a.58.58,0,1,0,0-1.16Z" fill="#fff"/><path d="M4.08,10.43H2.92a.58.58,0,1,0,0,1.16H4.08a.58.58,0,1,0,0-1.16Z" fill="#fff"/></svg>
-          <span class="property-detail-follow-button-inner">沿線・駅</span>
-        </a>
+</div>
+<div class="property-detail-follow js-follow">
+  <div class="property-detail-follow-a js-follow-a">
+      <div class="property-detail-follow-inner">
+          <p class="property-detail-follow-a-text">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M5,0H19a5,5,0,0,1,5,5V19a5,5,0,0,1-5,5H5a5,5,0,0,1-5-5V5A5,5,0,0,1,5,0Z" fill="#1e237f" fill-rule="evenodd"></path>
+                  <path d="M16.89,10.1l-5,5.72a.92.92,0,0,1-1.41,0l-3-3.44a1.27,1.27,0,0,1,0-1.61.91.91,0,0,1,1.41,0l0,0,2.29,2.62,4.29-4.91a.91.91,0,0,1,1.41,0,1.28,1.28,0,0,1,0,1.59Z" fill="#fff"></path>
+              </svg>
+              <span class="property-detail-follow-a-text-inner">チェックした物件を</span>
+          </p>
+          <div class="property-detail-follow-button-wrap">
+              <div class="property-detail-follow-button">
+                  <button type="button" onclick="checkAll('1')" style="padding-right: 0px;">
+                      <a title="" href="/hebel-rooms/favorite/favorite_a/">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25.95" height="25.01" viewBox="0 0 25.95 25.01">
+                          <path d="M19.35,24a1.57,1.57,0,0,1-.76-.2L13,20.87,7.41,23.79a1.58,1.58,0,0,1-.78.21l-.26,0a1.7,1.7,0,0,1-1.1-.7A1.73,1.73,0,0,1,5,22l1-6.25L1.51,11.39a1.71,1.71,0,0,1-.49-1,1.66,1.66,0,0,1,.31-1.26,1.68,1.68,0,0,1,1.1-.67l6.23-.92L11.47,2a1.7,1.7,0,0,1,3,0l2.82,5.66,6.16,1a1.68,1.68,0,0,1,1,2.88L19.92,15.8,21,22a1.24,1.24,0,0,1,0,.27A1.71,1.71,0,0,1,19.35,24Z" transform="translate(0 0)" fill="#1d2280"></path>
+                          <path d="M13,0V2a.66.66,0,0,1,.6.39l2.59,5.18.46.93,1,.16,5.67.88a.68.68,0,0,1,.59.69.68.68,0,0,1-.2.48l-4.14,4-.77.74L19,16.5l1,5.68s0,.07,0,.11a.67.67,0,0,1-1,.63l-5.11-2.69L13,19.74l-.93.49-5.15,2.7a.72.72,0,0,1-.27.07H6.54A.71.71,0,0,1,6,22.17l1-5.73.17-1-.75-.73-4.13-4a.64.64,0,0,1-.2-.39.68.68,0,0,1,.56-.78l5.72-.84,1-.15.47-.94,2.58-5.19A.71.71,0,0,1,13,2V0m0,0h0a2.67,2.67,0,0,0-2.4,1.5L8,6.68l-5.72.84A2.69,2.69,0,0,0,.82,12.11l4.13,4L4,21.84A2.69,2.69,0,0,0,6.2,25a2,2,0,0,0,.43,0,2.58,2.58,0,0,0,1.25-.32L13,22l5.11,2.69a2.58,2.58,0,0,0,1.25.32A2.72,2.72,0,0,0,22,22.27a3.13,3.13,0,0,0,0-.43l-1-5.69,4.14-4a2.69,2.69,0,0,0-1.49-4.59L18,6.68,15.41,1.5A2.64,2.64,0,0,0,13,0Z" transform="translate(0 0)" fill="#fff"></path>
+                      </svg>
+                      <span class="property-detail-follow-button-inner">お気に入り</span>
+                      </a>
+                  </button>
+              </div>
+              <div class="property-detail-follow-button">
+                  <button type="button" onclick="checkAll('2')" style="padding-right: 0px;">
+                      <a href="/hebel-rooms/form/contact/index.html/">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                          <path d="M13.45,9.62A.54.54,0,0,0,14,9.08V5.27a2.17,2.17,0,0,0-1-1.84l-1.31-.85v-2A.55.55,0,0,0,11.13,0H2.87a.55.55,0,0,0-.55.55v2L1,3.42A2.2,2.2,0,0,0,0,5.27v6.54A2.19,2.19,0,0,0,2.19,14h9.62A2.19,2.19,0,0,0,14,11.81a.55.55,0,0,0-1.09,0,1.1,1.1,0,0,1-1.1,1.1H2.19a1.1,1.1,0,0,1-1.1-1.1V6L5.84,8.93a2.2,2.2,0,0,0,2.32,0L12.91,6v3.1A.54.54,0,0,0,13.45,9.62Zm-1-5.27a1,1,0,0,1,.38.42l-1.1.69V3.88Zm-10.8,0,.72-.47V5.46L1.21,4.77A1.05,1.05,0,0,1,1.6,4.35ZM7.58,8A1.06,1.06,0,0,1,6.42,8l-3-1.86v-5h7.16V6.14Zm0-3.82A.55.55,0,1,1,7,3.64.55.55,0,0,1,7.55,4.18Zm2,0A.55.55,0,1,1,9,3.64.55.55,0,0,1,9.52,4.18Zm-4,0A.55.55,0,1,1,5,3.64.54.54,0,0,1,5.55,4.18Z" fill="#fff"></path>
+                      </svg>
+                      <span class="property-detail-follow-button-inner">お問い合わせ</span>
+                      </a>
+                  </button>
+              </div>
+          </div>
       </div>
-      <div class="property-detail-follow-button">
-        <button data-anc="#search-options" class="js-property-list-page-scroll">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path d="M7.55,10.23a.55.55,0,0,1-.55.54H3.77a.55.55,0,0,1,0-1.09H7A.55.55,0,0,1,7.55,10.23Zm6.45-7V9.69a3.12,3.12,0,0,1-.92,2.22l-1.17,1.17A3.12,3.12,0,0,1,9.69,14H3.29A3.29,3.29,0,0,1,0,10.71V3.28A3.28,3.28,0,0,1,3.29,0h7.42A3.28,3.28,0,0,1,14,3.28Zm-1.17,7h-1.5a1.09,1.09,0,0,0-1.09,1.09v1.5a2.11,2.11,0,0,0,.9-.52l1.17-1.17A2.11,2.11,0,0,0,12.83,10.24Zm.08-7a2.19,2.19,0,0,0-2.2-2.19H3.29a2.19,2.19,0,0,0-2.2,2.19v7.43a2.19,2.19,0,0,0,2.2,2.2H9.14V11.33a2.19,2.19,0,0,1,2.19-2.19h1.58ZM10.23,6.45H3.77a.55.55,0,0,0,0,1.1h6.46a.55.55,0,0,0,0-1.1Zm0-3.22H3.77a.54.54,0,0,0-.54.54.55.55,0,0,0,.54.55h6.46a.55.55,0,0,0,.54-.55A.54.54,0,0,0,10.23,3.23Z" fill="#fff"/></svg>
-          <span class="property-detail-follow-button-inner">詳細条件</span>
-        </button>
-      </div>
-    </div>
   </div>
 </div>
       </div>
@@ -4418,7 +4302,7 @@
 
 
   <!-- ここから削除しない -->
-
+  <script type="text/javascript" src="/hebel-rooms/common_v2/lib/jquery.min.js"></script>
 <script src="//www.afr-web.co.jp/hebel-rooms/common_v2/lib/scrollup/jquery.scrollUp.js" type="text/javascript"></script>
 <script src="//www.afr-web.co.jp/file.jsp?id=356289" type="text/javascript"></script>
 <!-- ここまで削除しない -->
@@ -4427,6 +4311,27 @@
 <!-- @@@TEMPLATE BEGIN@@@ -->
 <script type="text/javascript" src="//www.afr-web.co.jp/hebel-rooms/common_v2/lib/jquery-ui.min.js"></script>
 <script type="text/javascript" src="//www.afr-web.co.jp/hebel-rooms/common_v2/lib/selectBoxIt/jquery.selectBoxIt.js"></script>
+  <script>
+        function showPropertyDetailFollow(obj) {
+        if (obj.checked) {
+            $(".js-follow").attr('class', 'property-detail-follow js-follow is-active');
+            $(".js-follow-a").attr('class', 'property-detail-follow-a js-follow-a is-active');
+        } else {
+            var flag = false;
+            $(".js-checkbox").each(function(index, element){
+                if (element.checked) {
+                    flag = true;
+                }
+            })
+            if (!flag) {
+                if ('off' == new URL(window.location.href).searchParams.get('search_menu')) {
+                    $(".js-follow").attr('class', 'property-detail-follow js-follow');
+                }
+                $(".js-follow-a").attr('class', 'property-detail-follow-a js-follow-a');
+            }
+        }
+    }
+  </script>
  <!-- @@@TEMPLATE END@@@ -->
 <!-- ↓↓ [ footer3 ] ↓↓ -->
 <!-- ↑↑ [ footer3 ] ↑↑ -->

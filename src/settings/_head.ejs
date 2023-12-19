@@ -45,7 +45,7 @@
     <link rel="stylesheet" href="/hebel-rooms/css/detail/swiper.css" type="text/css">
     <link rel="stylesheet" href="/hebel-rooms/css/detail/style.css" type="text/css"><%
   }
-  if(pageName === '/search/list_a/'){%>
+  if(pageName === '/search/list_a/' || pageName === '/search/history/'){%>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
@@ -55,6 +55,38 @@
     <script type="text/javascript" src="/hebel-rooms/common_v2/lib/jquery.min.js"></script>
     <script src="/hebel-rooms/lightbox/jquery.fancybox.min.js" defer></script>
     <script src="/hebel-rooms/common_v2/js/search/page.js" defer></script><%
+  }
+  if( pageName === '/search/history/'){%>
+    <script>
+      function countdown(tableAccordion){
+        if(tableAccordion !== null){
+            const text = tableAccordion.querySelector('.property-detail-table-foot_text').textContent;
+            const numbers = text.match(/\d+/g);
+            tableAccordion.querySelector('.property-detail-table-foot_text').textContent = text.replace(/\d+/g, numbers - 1);
+          }
+      };
+      function propertyDetailRemove(event){
+        event.preventDefault;
+        const target = event.currentTarget;
+        const content = target.closest('.property-detail');
+        const tableAccordion = content.querySelector('.js-table-accordion');
+        if( target.closest('.property-detail_table-body').childElementCount === 1){
+            const table = target.closest('.js-table');
+            target.closest('.property-detail_table-body').remove();
+            tableAccordion.style.display = 'none';
+            if(table.querySelectorAll('.property-detail_table-body').length === 0){
+            content.remove();
+            }
+        } else {
+          target.closest('.property-detail_table-body-inner').remove();
+          countdown(tableAccordion);
+        }
+      }
+      function contentsRemove(event){
+        event.preventDefault;
+        event.currentTarget.closest('._searchbox_history_list-property-item').remove();
+      }
+    </script><%
   }
   if(pageName === 'lightbox08'){%>
     <link rel="preconnect" href="https://fonts.googleapis.com">

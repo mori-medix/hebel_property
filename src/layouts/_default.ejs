@@ -49,6 +49,29 @@ if(pageName !== 'lightbox08'){%>
 <script type="text/javascript" src="//www.afr-web.co.jp/hebel-rooms/common_v2/lib/jquery-ui.min.js"></script>
 <script type="text/javascript" src="//www.afr-web.co.jp/hebel-rooms/common_v2/lib/selectBoxIt/jquery.selectBoxIt.js"></script><%
 }
+if(pageName === '/search/history/'){%>
+  <script>
+        function showPropertyDetailFollow(obj) {
+        if (obj.checked) {
+            $(".js-follow").attr('class', 'property-detail-follow js-follow is-active');
+            $(".js-follow-a").attr('class', 'property-detail-follow-a js-follow-a is-active');
+        } else {
+            var flag = false;
+            $(".js-checkbox").each(function(index, element){
+                if (element.checked) {
+                    flag = true;
+                }
+            })
+            if (!flag) {
+                if ('off' == new URL(window.location.href).searchParams.get('search_menu')) {
+                    $(".js-follow").attr('class', 'property-detail-follow js-follow');
+                }
+                $(".js-follow-a").attr('class', 'property-detail-follow-a js-follow-a');
+            }
+        }
+    }
+  </script><%
+}
 if(pageName === 'search/detail/'){%>
 <script type="text/javascript" src="/hebel-rooms/common_v2/lib/ofi.min.js" ></script>
 <script type="text/javascript" src="/hebel-rooms/common_v2/lib/swiper.min.js" ></script>

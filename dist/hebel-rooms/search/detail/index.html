@@ -47,16 +47,33 @@
   <!-- ↓↓ [ header ] ↓↓ -->
 <div id="header" class="header">
   <p id="h_logo" class="h_logo"><a href="/hebel-rooms/index.html/" name="top"><img alt="ヘーベルメゾン" src="/hebel-rooms/common_v2/img/common/logo.svg"></a></p>
-  <div id="g_navi" class="g_navi centering-list">
-    <ul class="cf">
-      <li><a href="/hebel-rooms/search/index.html/" data-menu="01"><img src="//www.afr-web.co.jp/hebel-rooms/common_v2/img/common/gnav-01.png" alt="お部屋を探す"></a></li>
-      <li><a href="/hebel-rooms/feature/index.html/" data-menu="02"><img src="//www.afr-web.co.jp/hebel-rooms/common_v2/img/common/gnav-02.png" alt="こだわり検索"></a></li>
-      <li><a href="/hebel-rooms/features/index.html/" data-menu="03"><img src="//www.afr-web.co.jp/hebel-rooms/common_v2/img/common/gnav-03.png" alt="サービスの特長"></a></li>
-      <li><a href="/hebel-rooms/magazine/index.html/" data-menu="04"><img src="//www.afr-web.co.jp/hebel-rooms/common_v2/img/common/gnav-04.png" alt="ROOMSスタイル"></a></li>
-      <li><a href="/hebel-rooms/shop/index.html/"><img src="//www.afr-web.co.jp/hebel-rooms/common_v2/img/common/gnav-05.png" alt="店舗を探す"></a></li>
-      <li><a href="/hebel-rooms/tenant/index.html/" data-menu="05"><img src="//www.afr-web.co.jp/hebel-rooms/common_v2/img/common/gnav-06-2.png" alt="ご入居者様へ"></a></li>
+  <div class="for_sp navi-trigger" id="sp-g-navi">
+    <ul>
+      <li>
+        <a class="navi-item" href="/hebel-rooms/favorite/favorite_a/" data-navi-item="favorite">
+          <div class="navi-item__inner"><span>お気に入り</span></div>
+        </a>
+      </li>
+      <li>
+        <a class="navi-item search-menu" href="#" id="sp-nav-2" data-navi-item="search">
+          <div class="navi-item__inner"><span>物件検索</span></div>
+        </a>
+      </li>
+      <li>
+        <a class="navi-item" href="/hebel-rooms/history/" data-navi-item="history">
+          <div class="navi-item__inner"><span>最近見た物件</span></div>
+        </a>
+      </li>
+      <li>
+        <a class="navi-item main-menu" href="#" id="sp-nav-1" data-navi-item="menu">
+          <div class="navi-item__inner"><span>メニュー</span></div>
+        </a>
+      </li>
+      <!-- **************************
+      <li class="n02"><a href="#" class="search-menu" id="sp-nav-2"><span class="ic"></span></a><br></li>
+      <li class="n01"><a href="#" class="main-menu" id="sp-nav-1"><span class="ic"></span></a><br></li>
+      ************************** -->
     </ul>
-    <span class="ic-arrow" id="ic-arrow-navigation"></span>
   </div>
   <!-- /g_navi -->
   <p id="btn_contact" class="btn_contact"><a href="/hebel-rooms/form/contact/index.html/"><img src="//www.afr-web.co.jp/hebel-rooms/common_v2/img/common/contact-2.png"> </a></p>
@@ -90,6 +107,7 @@
       <li><a href="#" class="" id="_trigger_search_area"><span class="ic-sidebar-trriger-01"></span></a><br></li>
       <li><a href="#" class="" id="_trigger_search_ensen"><span class="ic-sidebar-trriger-02"></span></a><br></li>
       <li><a href="#" class="" id="_trigger_favorite_list"><span class="ic-sidebar-trriger-03"></span></a><br></li>
+      <li><a href="#" class="" id="_trigger_history_list"><span class="ic-sidebar-trriger-04"></span></a><br></li>
     </ul>
   </div>
 </div><!-- /head_search -->
@@ -1076,6 +1094,63 @@
 @@@extension:HR_S1_Favorite(393038::393037::393039::/hebel-rooms/common_v2/img/property/main_sample.jpg)@@@
 </div>
 <!-- ######## お気に入りここまで ######## -->
+<!-- ######## 最近見たここから ######## -->
+<div class="sidesearch-content-wrapper _searchbox_history_list" id="_searchbox_history_list">
+  <div class="_searchbox_history_list-head">
+    <p class="_searchbox_history_list-heading">
+      <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34"><path d="m34,17c0,9.39-7.61,17-17,17S0,26.39,0,17c0-.67.54-1.21,1.21-1.21s1.21.54,1.21,1.21c0,6.69,4.53,12.53,11.02,14.17,6.49,1.64,13.26-1.34,16.43-7.24,3.17-5.89,1.93-13.19-3.02-17.69S14.54,1.16,8.96,4.86h.75c.67,0,1.21.54,1.21,1.21s-.54,1.21-1.21,1.21h-3.64c-.32,0-.63-.13-.86-.36-.23-.23-.36-.54-.36-.86v-3.64c0-.67.54-1.21,1.21-1.21s1.21.54,1.21,1.21v.62C12.48-.57,19.26-1,24.87,1.93c5.61,2.93,9.13,8.74,9.13,15.07h0Zm-6.07,0c0,4.42-2.66,8.41-6.75,10.1-4.08,1.69-8.78.76-11.91-2.37-3.13-3.13-4.06-7.83-2.37-11.91,1.69-4.08,5.68-6.75,10.1-6.75,6.03,0,10.92,4.9,10.93,10.93h0Zm-6.61,1.42l-3.1-2.07v-5.42c0-.67-.54-1.21-1.21-1.21s-1.21.54-1.21,1.21v6.07c0,.41.2.79.54,1.01l3.64,2.43c.56.36,1.3.21,1.67-.34.37-.55.22-1.3-.33-1.68h0Zm0,0" fill="#1e2380"/></svg>
+      <span class="_searchbox_history_list-heading-text">最近見た物件</span>
+    </p>
+    <div class="_searchbox_history_list-link">
+      <a href="/hebel-rooms/search/history/">最近見た物件一覧へ</a>
+    </div>
+  </div>
+  <div class="_searchbox_history_list-property">
+    <h3 class="_searchbox_history_list-property-heading">最近見た物件(最新10件)</h3>
+    <ul class="_searchbox_history_list-property-list">
+      <li class="_searchbox_history_list-property-item">
+        <div class="_searchbox_history_list-property-card">
+          <a title="remove" class="remove" href="#" onClick="contentsRemove(event)"><span class="ic"></span></a>
+          <a href="" class="_searchbox_history_list-property-card-content">
+            <div class="_searchbox_history_list-property-thum">
+              <img src="https://image.rentersnet.jp/34bbcdda-ffc8-4db4-ab4c-d29c529d51b8_property_picture_1469_large.jpg" alt="" width="82" height="82">
+            </div>
+            <div>
+              <p class="_searchbox_history_list-property-text-wrap">
+                <span class="_searchbox_history_list-property-address">東京都中央区</span>
+                <span class="_searchbox_history_list-property-price">9.5万円</span>
+              </p>
+              <p class="_searchbox_history_list-property-floor">1K - 26.64m2</p>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="_searchbox_history_list-property-item">
+        <div class="_searchbox_history_list-property-card">
+          <a title="remove" class="remove" href="#" onClick="contentsRemove(event)"><span class="ic"></span></a>
+          <a href="" class="_searchbox_history_list-property-card-content">
+            <div class="_searchbox_history_list-property-thum">
+              <img src="https://image.rentersnet.jp/34bbcdda-ffc8-4db4-ab4c-d29c529d51b8_property_picture_1469_large.jpg" alt="" width="82" height="82">
+            </div>
+            <div>
+              <p class="_searchbox_history_list-property-text-wrap">
+                <span class="_searchbox_history_list-property-address">東京都中央区</span>
+                <span class="_searchbox_history_list-property-price">25.6万円</span>
+              </p>
+              <p class="_searchbox_history_list-property-floor">2LDK -  61.1m2</p>
+            </div>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="_searchbox_history_list-footer">
+    <div class="_searchbox_history_list-link">
+      <a href="/hebel-rooms/search/history/">最近見た物件一覧へ</a>
+    </div>
+  </div>
+</div>
+  <!-- ######## 最近見たここまで ######## -->
 </div>
 </div>
 <!-- /.box-area -->
