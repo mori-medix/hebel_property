@@ -270,6 +270,188 @@ button:hover {
   }
 }
 
+.detail-energy-saving {
+  background-color: #f4f4f4;
+  padding-bottom: 70px;
+}
+
+.detail-energy-saving-inner {
+  width: 1000px;
+  margin: 0 auto;
+}
+@media (max-width: 739px) {
+  .detail-energy-saving-inner {
+    width: 92%;
+  }
+}
+
+.detail-energy-saving-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  border-top: 1px solid #c8c7c7;
+  border-bottom: 1px solid #c8c7c7;
+}
+@media (max-width: 739px) {
+  .detail-energy-saving-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detail-energy-saving-list-item {
+  padding: 32px 0;
+}
+.detail-energy-saving-list-item:nth-child(odd) {
+  grid-column: 1/2;
+}
+.detail-energy-saving-list-item:nth-child(even) {
+  grid-column: 2/3;
+}
+.detail-energy-saving-list-item.is-full-line {
+  grid-column: 1/3;
+}
+.detail-energy-saving-list-item:nth-child(n+3) {
+  border-top: 1px dotted #c8c7c7;
+}
+@media (max-width: 739px) {
+  .detail-energy-saving-list-item {
+    padding: 25px 0;
+  }
+  .detail-energy-saving-list-item:nth-child(odd) {
+    grid-column: 1/2;
+  }
+  .detail-energy-saving-list-item:nth-child(even) {
+    grid-column: 1/2;
+  }
+  .detail-energy-saving-list-item.is-full-line {
+    grid-column: 1/2;
+  }
+  .detail-energy-saving-list-item:nth-child(n+2) {
+    border-top: 1px dotted #c8c7c7;
+  }
+}
+
+.detail-energy-saving-list-item {
+  display: grid;
+  grid-template-columns: 7em 1fr;
+  align-items: center;
+  column-gap: 30px;
+}
+@media (max-width: 739px) {
+  .detail-energy-saving-list-item {
+    column-gap: 20px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .detail-energy-saving-list-item {
+    grid-template-columns: 6em 1fr;
+    column-gap: 10px;
+  }
+}
+
+.detail-energy-saving-list-dt {
+  color: #1e237f;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+}
+@media (max-width: 739px) {
+  .detail-energy-saving-list-dt {
+    font-size: 1.3rem;
+  }
+}
+
+.detail-energy-saving-list-dd-star-list {
+  display: flex;
+}
+.detail-energy-saving-list-dd-star-list > li {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+.detail-energy-saving-list-dd-star-list > li svg {
+  width: 100%;
+  height: 100%;
+}
+.detail-energy-saving-list-dd-star-list > li svg.is-color > .detail-energy-saving-star {
+  fill: #f4c76c;
+}
+.detail-energy-saving-list-dd-star-list > li:nth-child(n+5) svg.is-color > path {
+  fill: #f4c76c;
+}
+@media (max-width: 739px) {
+  .detail-energy-saving-list-dd-star-list > li {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+  }
+}
+
+.detail-energy-saving-list-dd-house-list {
+  display: flex;
+  align-items: flex-end;
+  counter-reset: number;
+}
+.detail-energy-saving-list-dd-house-list > li {
+  counter-increment: number;
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  position: relative;
+}
+.detail-energy-saving-list-dd-house-list > li:nth-child(n+4) {
+  width: 29px;
+  height: 29px;
+}
+.detail-energy-saving-list-dd-house-list > li::before {
+  content: counter(number) "";
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  top: 41%;
+  line-height: 1;
+  padding-left: 2px;
+}
+.detail-energy-saving-list-dd-house-list > li svg {
+  width: 100%;
+  height: 100%;
+}
+.detail-energy-saving-list-dd-house-list > li svg.is-color > path {
+  fill: #f18b86;
+}
+@media (max-width: 739px) {
+  .detail-energy-saving-list-dd-house-list > li {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+  }
+  .detail-energy-saving-list-dd-house-list > li:nth-child(n+4) {
+    width: 25px;
+    height: 25px;
+  }
+  .detail-energy-saving-list-dd-house-list > li::before {
+    top: 38%;
+    padding-left: 1px;
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .detail-energy-saving-list-dd-house-list > li {
+    margin-right: 5px;
+  }
+}
+
+.detail-energy-saving-list-dd-costs {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #c32b33;
+  letter-spacing: 0.06em;
+}
+
 .detail-web-contact-area-wrap {
   background-color: #f4f4f4;
 }
