@@ -395,15 +395,6 @@ button:hover {
         }
       }
     }
-    &:nth-child(n + 5){
-      svg{
-        &.is-color{
-          > path{
-            fill: #f4c76c;
-          }
-        }
-      }
-    }
   }
   @include G.MQ_BELOW_TAB {
     > li{
