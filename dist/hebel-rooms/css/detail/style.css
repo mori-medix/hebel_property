@@ -431,6 +431,9 @@ button:hover {
 .detail-energy-saving-list-dd-star-list > li svg.is-color > .detail-energy-saving-star {
   fill: #f4c76c;
 }
+.detail-energy-saving-list-dd-star-list > li svg.is-kira > .detail-energy-saving-star-kira {
+  fill: #f4c76c;
+}
 @media (max-width: 739px) {
   .detail-energy-saving-list-dd-star-list > li {
     width: 22px;

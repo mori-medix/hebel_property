@@ -395,6 +395,13 @@ button:hover {
         }
       }
     }
+    svg{
+      &.is-kira{
+        > .detail-energy-saving-star-kira{
+          fill: #f4c76c;
+        }
+      }
+    }
   }
   @include G.MQ_BELOW_TAB {
     > li{
