@@ -1929,32 +1929,28 @@ button:hover {
   }
 }
 
-.detail-info-list {
-  display: box;
-  display: flexbox;
-  display: flex;
-  flex-wrap: wrap;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.detail-info-list-wrap {
+  display: grid;
+  grid-template-columns: 480px 1fr;
   letter-spacing: 0.06em;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
+  column-gap: 40px;
+  row-gap: 32px;
 }
 
 @media only screen and (max-width: 739px) {
-  .detail-info-list {
-    display: block;
+  .detail-info-list-wrap {
+    grid-template-columns: 100%;
   }
+}
+
+.detail-info-list{
+  display: grid;
+  row-gap: 20px;
 }
 
 .detail-info-item {
   float: none;
   width: 480px;
-  margin-bottom: 20px;
-}
-
-.detail-info-item:nth-child(n+3) {
-  margin-bottom: 0;
 }
 
 @media only screen and (max-width: 739px) {
@@ -2124,6 +2120,96 @@ button:hover {
 
   .detail-info-iconitem:nth-child(6n) {
     margin-right: 0;
+  }
+}
+
+.detail-info-icon-list-caption{
+  font-size: 13px;
+  font-weight: bold;
+  padding-bottom: 16px;
+}
+
+.detail-info-icon-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(117px, 1fr));
+  row-gap: 3px;
+  column-gap: 3px;
+}
+
+@media only screen and (max-width: 739px) {
+  .detail-info-icon-list{
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+.detail-info-icon-item{
+  a {
+    text-decoration: none !important;
+    display: block;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+
+.detail-info-icon-box{
+  box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #f4f4f4;
+  box-sizing: border-box;
+  border-radius: 3px;
+  padding: 20px 0 14px;
+  position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    height: 115px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  &.is-disabled{
+    .detail-info-icon-text{
+      color: #aaa;
+    }
+    svg path{
+      fill: #aaa;
+    }
+  }
+  @media only screen and (max-width: 739px) {
+    height: 108px;
+  }
+}
+.detail-info-icon{
+  width: 58px;
+  margin: 0 auto;
+  svg{
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+  }
+  @media only screen and (max-width: 739px) {
+    width: 50px;
+  }
+}
+
+.detail-info-icon-text{
+  text-align: center;
+  font-size: 14px;
+  color: #1e237f;
+  font-weight: 700;
+  margin-top: 6px;
+  line-height: 1.2;
+  align-self: center;
+  @media only screen and (max-width: 739px) {
+    font-size: 13px;
+    line-height: 1.3;
+}
+}
+
+.detail-info-icon-item .question{
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  @media only screen and (max-width: 739px) {
+    width: 12px;
+    height: 12px;
   }
 }
 
