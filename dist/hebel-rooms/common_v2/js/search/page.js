@@ -590,3 +590,12 @@
         }))
     }()
 }();
+
+$(function(){
+  $('.js-accordion-trigger').on('click', function(){
+    console
+    $(this).toggleClass('is-open');
+    $('.js-accordion-target').slideToggle();
+    return false;
+  });
+});

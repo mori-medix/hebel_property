@@ -1968,6 +1968,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
 }
 
 @media only screen and (max-width: 739px) {
@@ -2036,6 +2039,265 @@
     width: auto !important;
   }
 }
+.property-list .new-email-button a {
+  color: #F3725D;
+  font-weight: 700;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 14px 5px 1fr;
+  grid-template-columns: 14px 1fr;
+  border: 1px solid #F3725D;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 5px;
+     -moz-column-gap: 5px;
+          column-gap: 5px;
+  padding: 2px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.property-list-new-email-modal {
+  max-width: 600px;
+  width: calc(100% - 20px);
+  margin: 0 auto;
+  display: none;
+  border-radius: 6px;
+  padding: 40px 80px 60px !important;
+}
+
+@media only screen and (max-width: 739px) {
+  .property-list-new-email-modal {
+    padding: 40px 20px 60px !important;
+  }
+}
+.property-list-new-email-modal .fancybox-close-small {
+  width: 15px;
+  height: 15px;
+}
+.property-list-new-email-modal .fancybox-close-small::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: url("data:image/svg+xml;charset=utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20id%3D%22a%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2215%22%20height%3D%2215%22%20viewBox%3D%220%200%2015%2015%22%3E%3Cpath%20d%3D%22M7.5%2C0c4.14%2C0%2C7.5%2C3.36%2C7.5%2C7.5s-3.36%2C7.5-7.5%2C7.5S0%2C11.64%2C0%2C7.5%2C3.36%2C0%2C7.5%2C0Z%22%20fill%3D%22%23292e85%22%20fill-rule%3D%22evenodd%22%20stroke-width%3D%220%22%2F%3E%3Cpath%20d%3D%22M10.51%2C5.26l-.75-.75-2.25%2C2.26-2.26-2.26-.75.75%2C2.26%2C2.26-2.26%2C2.25.75.75%2C2.26-2.25%2C2.25%2C2.25.75-.75-2.25-2.25%2C2.25-2.26Z%22%20fill%3D%22%23fff%22%20fill-rule%3D%22evenodd%22%20stroke-width%3D%220%22%2F%3E%3C%2Fsvg%3E") 0 0/100% 100% no-repeat;
+}
+
+.property-list-new-email-modal-heading {
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.8;
+}
+.property-list-new-email-modal-heading em {
+  font-weight: 700;
+  color: #292E85;
+  text-decoration: underline;
+}
+
+.property-list-new-email-modal-from-area {
+  margin-top: 30px;
+}
+
+.property-list-new-email-modal-box-heading {
+  font-weight: bold;
+  font-size: 13px;
+  color: #999;
+  padding-bottom: 5px;
+}
+
+.property-list-new-email-modal-box-inner {
+  position: relative;
+}
+
+.property-list-new-email-modal-box input {
+  background-color: #E7EEFE;
+  border-color: #E7EEFE;
+  outline: none;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 15px 40px 15px 10px;
+  font-weight: 700;
+}
+.property-list-new-email-modal-box input:focus-visible {
+  border-color: #4069f9;
+}
+.property-list-new-email-modal-box input:focus {
+  border-color: #4069f9;
+}
+
+.property-list-new-email-modal-box .errorMessage {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  background-color: #fff;
+  font-size: 10px;
+  border: 1px solid #4069F9;
+  padding: 4px 10px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 2px 0 0 rgba(30, 35, 128, 0.1);
+          box-shadow: 0 2px 0 0 rgba(30, 35, 128, 0.1);
+  -webkit-transform: translateY(-95%);
+          transform: translateY(-95%);
+}
+.property-list-new-email-modal-box .errorMessage::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
+          clip-path: polygon(100% 0, 0 0, 50% 100%);
+  background-color: #fff;
+  bottom: -10px;
+  left: 20px;
+}
+.property-list-new-email-modal-box .errorMessage::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
+          clip-path: polygon(100% 0, 0 0, 50% 100%);
+  background-color: #4069F9;
+  bottom: -10px;
+  left: 19px;
+}
+
+.property-list-new-email-modal-box .errorMessage .errorText {
+  color: #4069F9;
+}
+
+.property-list-new-email-modal-box .input-text_label {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  font-size: 12px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #4069F9;
+  font-weight: 700;
+}
+
+.property-list-new-email-submit-wrap {
+  margin-top: 30px;
+}
+
+.property-list-new-email-submit-wrap a {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  width: 100%;
+  background-color: #292E85;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 16px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 8px;
+     -moz-column-gap: 8px;
+          column-gap: 8px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.property-list-new-email-submit-wrap a > *:first-child {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 2px 6px 0;
+}
+.property-list-new-email-submit-wrap a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.property-list-new-email-modal .about-personal-information {
+  margin: 30px auto 0;
+  max-width: 800px;
+}
+
+.property-list-new-email-modal .about-personal-information_heading {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  align-items: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 12px;
+  font-size: 1.2rem;
+  justify-content: center;
+}
+.property-list-new-email-modal .about-personal-information_heading button {
+  color: #1e2380;
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.property-list-new-email-modal .about-personal-information_heading svg {
+  margin-left: 0.5em;
+}
+
+.property-list-new-email-modal .about-personal-information_heading .is-open + svg {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.property-list-new-email-modal .about-personal-information_body {
+  display: none;
+}
+
+.property-list-new-email-modal .about-personal-information_text {
+  font-size: 12px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  padding-top: 15px;
+}
+
+.property-list-new-email-modal .about-personal-information_text a {
+  text-decoration: underline;
+}
+
+.property-list-new-email-modal-registration-info {
+  background-color: #F4F4F4;
+  padding: 30px 20px;
+  margin-top: 20px;
+}
+
+.property-list-new-email-modal-registration-info-heading {
+  font-weight: bold;
+  color: #292E85;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.property-list-new-email-modal-registration-info-text {
+  line-height: 1.6;
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.property-list-new-email-modal-text {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 30px;
+}
+
 .property-list .selectboxit-btn {
   border: none;
   border-radius: 14px;
@@ -3461,3 +3723,194 @@ label.hr-rd .txt {
   padding-bottom: 50px;
 }
 
+[data-navi-item=history] .navi-item__inner:before {
+  width: 17px;
+  height: 17px;
+  background-size: 17px 17px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20id%3D%22a%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2234%22%20height%3D%2234%22%20viewBox%3D%220%200%2034%2034%22%3E%3Cpath%20d%3D%22m34%2C17c0%2C9.39-7.61%2C17-17%2C17S0%2C26.39%2C0%2C17c0-.67.54-1.21%2C1.21-1.21s1.21.54%2C1.21%2C1.21c0%2C6.69%2C4.53%2C12.53%2C11.02%2C14.17%2C6.49%2C1.64%2C13.26-1.34%2C16.43-7.24%2C3.17-5.89%2C1.93-13.19-3.02-17.69S14.54%2C1.16%2C8.96%2C4.86h.75c.67%2C0%2C1.21.54%2C1.21%2C1.21s-.54%2C1.21-1.21%2C1.21h-3.64c-.32%2C0-.63-.13-.86-.36-.23-.23-.36-.54-.36-.86v-3.64c0-.67.54-1.21%2C1.21-1.21s1.21.54%2C1.21%2C1.21v.62C12.48-.57%2C19.26-1%2C24.87%2C1.93c5.61%2C2.93%2C9.13%2C8.74%2C9.13%2C15.07h0Zm-6.07%2C0c0%2C4.42-2.66%2C8.41-6.75%2C10.1-4.08%2C1.69-8.78.76-11.91-2.37-3.13-3.13-4.06-7.83-2.37-11.91%2C1.69-4.08%2C5.68-6.75%2C10.1-6.75%2C6.03%2C0%2C10.92%2C4.9%2C10.93%2C10.93h0Zm-6.61%2C1.42l-3.1-2.07v-5.42c0-.67-.54-1.21-1.21-1.21s-1.21.54-1.21%2C1.21v6.07c0%2C.41.2.79.54%2C1.01l3.64%2C2.43c.56.36%2C1.3.21%2C1.67-.34.37-.55.22-1.3-.33-1.68h0Zm0%2C0%22%20fill%3D%22%231e2380%22%2F%3E%3C%2Fsvg%3E");
+  margin-bottom: 5px;
+}
+
+@media screen and (min-width: 739px) {
+  .head_search ul li span {
+    background-image: url(/hebel-rooms/common_v2/img/common/sidenav/side-icon3.png);
+  }
+  .head_search ul li .ic-sidebar-trriger-04 {
+    background-position: 0% -482px;
+  }
+  .head_search ul li a.current .ic-sidebar-trriger-04 {
+    background-position: 0% -565px;
+  }
+}
+@media screen and (min-width: 739px) {
+  ._searchbox_history_list-head {
+    padding: 20px 0;
+  }
+}
+@media screen and (min-width: 739px) {
+  ._searchbox_history_list-heading {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    position: relative;
+    color: #1e2380;
+    padding-bottom: 5px;
+  }
+  ._searchbox_history_list-heading::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #aeb1e8;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+  }
+  ._searchbox_history_list-heading svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+  ._searchbox_history_list-heading-text {
+    font-size: 16px;
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 739px) {
+  ._searchbox_history_list-link {
+    margin: 15px auto 0;
+    width: 250px;
+    height: 46px;
+  }
+  ._searchbox_history_list-link a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    background-color: #1e2380;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: 1px solid #1e2380;
+    -webkit-transition: opacity;
+    transition: opacity;
+  }
+  ._searchbox_history_list-link a:hover {
+    color: #fff;
+    opacity: 0.8;
+    text-decoration: none;
+  }
+}
+@media screen and (min-width: 739px) {
+  ._searchbox_history_list-property {
+    border-top: 1px dotted #1e2380;
+    padding: 15px;
+  }
+}
+@media screen and (min-width: 739px) {
+  ._searchbox_history_list-property-heading {
+    background-color: #4455a8;
+    border-radius: 5px 5px 0 0;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    padding: 11px 0;
+    font-size: 14px;
+    font-size: 1.4rem;
+  }
+}
+@media screen and (min-width: 739px) {
+  ._searchbox_history_list-property-list {
+    margin-top: 5px;
+    display: -ms-grid;
+    display: grid;
+    row-gap: 5px;
+  }
+  ._searchbox_history_list-property-card {
+    background-color: #fff;
+    border-radius: 5px;
+    padding-left: 40px;
+    position: relative;
+  }
+  ._searchbox_history_list-property-card-content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 90px 10px 1fr;
+    grid-template-columns: 90px 1fr;
+    -webkit-column-gap: 10px;
+       -moz-column-gap: 10px;
+            column-gap: 10px;
+    padding: 10px 10px 10px 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  ._searchbox_history_list-property-thum {
+    height: 90px;
+    width: 90px;
+    padding: 3px;
+    border: 1px solid #eee;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  ._searchbox_history_list-property-thum img {
+    font-family: "object-fit: cover;";
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+  }
+  ._searchbox_history_list-property-text-wrap {
+    font-weight: 700;
+    color: #1e2380;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  ._searchbox_history_list-property-text-wrap > * {
+    display: block;
+  }
+  ._searchbox_history_list-property-floor {
+    padding-top: 5px;
+    font-size: 14px;
+    font-size: 1.4rem;
+  }
+  ._searchbox_history_list-footer {
+    border-top: 1px dotted #1e2380;
+  }
+  ._searchbox_history_list-property-card .remove {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    margin-top: -10px;
+    display: block;
+    float: left;
+    width: 20px;
+    height: 20px;
+  }
+  ._searchbox_history_list-property-card .remove:hover .ic {
+    background-position: 50% 100%;
+  }
+  ._searchbox_history_list-property-card .remove .ic {
+    background-image: url(/hebel-rooms/common_v2/img/common/sidenav/ic-remove.jpg);
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+}
