@@ -2053,13 +2053,14 @@
   -webkit-column-gap: 5px;
      -moz-column-gap: 5px;
           column-gap: 5px;
-  padding: 2px 10px;
+  padding: 2px 6px;
   border-radius: 5px;
   text-decoration: none;
+  letter-spacing: 0;
 }
 
 .property-list-new-email-modal {
-  max-width: 600px;
+  max-width: 1000px;
   width: calc(100% - 20px);
   margin: 0 auto;
   display: none;
@@ -2146,7 +2147,7 @@
 .property-list-new-email-modal-box .errorMessage::after {
   content: "";
   position: absolute;
-  top: 100%;
+  top: calc(100% - 1px);
   left: 50%;
   width: 12px;
   height: 12px;
@@ -2279,23 +2280,63 @@
   margin-top: 20px;
 }
 
-.property-list-new-email-modal-registration-info-heading {
-  font-weight: bold;
-  color: #292E85;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
 .property-list-new-email-modal-registration-info-text {
   line-height: 1.6;
-  margin-top: 20px;
   font-size: 13px;
+  overflow-wrap: anywhere; /* 収まらない場合に折り返す */
+  word-break: normal; /* 単語の分割はデフォルトに依存 */
+  line-break: strict; /* 禁則処理を厳格に適用 */
+}
+.property-list-new-email-modal-registration-info-text em {
+  font-weight: bold;
+  color: #292E85;
+  font-style: normal;
 }
 
-.property-list-new-email-modal-text {
-  font-size: 13px;
-  line-height: 1.6;
-  margin-top: 30px;
+.property-list-new-email-modal-note-wrap {
+  margin-top: 20px;
+  line-height: 1.8;
+}
+.property-list-new-email-modal-note-wrap > * {
+  margin-top: 4px;
+}
+
+.property-list-new-email-modal-note {
+  font-size: 12px;
+  text-indent: -1em;
+  padding-left: 1em;
+  overflow-wrap: anywhere; /* 収まらない場合に折り返す */
+  word-break: normal; /* 単語の分割はデフォルトに依存 */
+  line-break: strict; /* 禁則処理を厳格に適用 */
+  color: #999;
+}
+
+.property-list-new-email-modal-note a {
+  color: #292E85;
+  text-decoration: underline;
+  color: #999;
+}
+.property-list-new-email-modal-note a:hover {
+  color: #999;
+  text-decoration: none;
+}
+@media only screen and (max-width: 739px) {
+  .property-list-new-email-modal-note a:hover {
+    text-decoration: underline;
+  }
+}
+
+.property-list-new-email-modal-note-list li {
+  font-size: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  float: none;
+  color: #999;
+}
+.property-list-new-email-modal-note-list li::before {
+  content: "・";
+  font-weight: 700;
 }
 
 .property-list .selectboxit-btn {

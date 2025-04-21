@@ -1491,6 +1491,9 @@ button:hover {
             transform: translateX(-50%);
     transform: translateX(-50%);
   }
+  .detail-mainimg-count.is-right {
+    left: 90%;
+  }
 }
 .detail-mainimgwrap {
   position: relative;
@@ -2442,6 +2445,7 @@ button:hover {
 @media only screen and (max-width: 739px) {
   .detail-features-wrap {
     padding: 50px 0 60px;
+    overflow: hidden;
   }
 }
 .detail-features {
@@ -2654,6 +2658,10 @@ button:hover {
   margin: 0 auto;
 }
 
+.detail-mainimgwrap .detail-thumlistwrap {
+  top: 559px;
+}
+
 @media only screen and (max-width: 739px) {
   .detail-thumlistwrap {
     position: static;
@@ -2676,6 +2684,10 @@ button:hover {
     flex-wrap: wrap;
     width: 92%;
     margin: 0 auto 35px;
+  }
+  .detail-mainimgwrap .detail-thumlist {
+    width: 89.3333333333%;
+    margin: 0 auto 20px;
   }
 }
 .detail-thumitem {
@@ -2756,6 +2768,92 @@ button:hover {
     margin-right: 0;
   }
 }
+.detail-features-equipment-list-wrap {
+  margin: 0 auto 80px;
+}
+@media only screen and (max-width: 739px) {
+  .detail-features-equipment-list-wrap {
+    width: 92%;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 42px;
+  }
+}
+
+@media only screen and (max-width: 739px) {
+  .detail-features-equipment-list-wrap > * {
+    width: 44.2666666667vw;
+  }
+}
+
+@media only screen and (min-width: 740px) {
+  .detail-features-equipment-list {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    row-gap: 17px;
+    -webkit-column-gap: 17px;
+       -moz-column-gap: 17px;
+            column-gap: 17px;
+  }
+}
+
+.detail-features-equipment-list li {
+  float: none;
+}
+@media only screen and (min-width: 740px) {
+  .detail-features-equipment-list li {
+    width: auto !important;
+  }
+}
+@media only screen and (max-width: 739px) {
+  .detail-features-equipment-list li {
+    padding-right: 1.6vw;
+  }
+}
+
+.detail-features-equipment-card {
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #fff;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.detail-features-equipment-card > * {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -webkit-transition: -webkit-box-shadow 0.25s ease 0s;
+  transition: -webkit-box-shadow 0.25s ease 0s;
+  transition: box-shadow 0.25s ease 0s;
+  transition: box-shadow 0.25s ease 0s, -webkit-box-shadow 0.25s ease 0s;
+}
+.detail-features-equipment-card:hover {
+  -webkit-box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.25);
+}
+.detail-features-equipment-card:hover .detail-features-equipment-card-back img,
+.detail-features-equipment-card:hover .detail-features-equipment-card-back iframe {
+  opacity: 0.2;
+}
+@media only screen and (max-width: 739px) {
+  .detail-features-equipment-card {
+    width: 44.2666666667vw;
+  }
+}
+
 .detail-features-360bnr {
   margin-bottom: 35px;
 }
@@ -2767,6 +2865,97 @@ button:hover {
   background-color: #ccc;
 }
 
+.detail-features-equipment-card-front {
+  z-index: 1;
+}
+
+.detail-features-equipment-card-front-icon {
+  height: 60px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+.detail-features-equipment-card-front-icon img {
+  width: auto;
+  height: 100%;
+}
+@media only screen and (max-width: 739px) {
+  .detail-features-equipment-card-front-icon {
+    height: 40px;
+  }
+}
+
+.detail-features-equipment-card-front-text {
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  margin-top: 28px;
+  font-size: 18px;
+}
+@media only screen and (max-width: 739px) {
+  .detail-features-equipment-card-front-text {
+    margin-top: 12px;
+    font-size: 15px;
+  }
+}
+
+.detail-features-equipment-card-back {
+  z-index: 0;
+  position: relative;
+  background-color: #000;
+  height: 200px;
+}
+.detail-features-equipment-card-back img {
+  opacity: 0.3;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center bottom;
+     object-position: center bottom;
+}
+.detail-features-equipment-card-back iframe {
+  opacity: 0.3;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+@media only screen and (max-width: 739px) {
+  .detail-features-equipment-card-back {
+    height: 104px;
+  }
+}
+
+@media only screen and (min-width: 740px) {
+  .detail-features-equipment-list-wrap .detail-features-equipment-list > .swiper-pagination {
+    display: none;
+  }
+}
+
+.detail-features-equipment-list-wrap .swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: 0;
+}
+
+.detail-features-equipment-list-wrap .swiper-pagination-bullet {
+  background-color: #d3d3d3;
+  opacity: 1;
+  border: 3px solid #f4f4f4;
+}
+
+.detail-features-equipment-list-wrap .swiper-pagination-bullet-active {
+  background-color: #d3d3d3;
+  border: 3px solid #1f237b;
+}
+
+.detail-features-boxtit {
+  margin-bottom: 24px;
+}
 @media only screen and (max-width: 739px) {
   .detail-features-boxtit {
     margin-bottom: 20px;
@@ -2774,6 +2963,7 @@ button:hover {
     font-size: 1.3rem;
   }
 }
+
 @media only screen and (max-width: 739px) {
   .detail-features-floor {
     width: 92%;
@@ -3076,6 +3266,37 @@ button:hover {
   }
   100% {
     opacity: 1;
+  }
+}
+.detail-main-equipment-list {
+  position: absolute;
+  bottom: 65px;
+  left: 12px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 3px;
+     -moz-column-gap: 3px;
+          column-gap: 3px;
+  z-index: 11;
+}
+
+@media only screen and (max-width: 739px) {
+  .detail-main-equipment-list {
+    z-index: 1;
+    left: 4%;
+    bottom: 15px;
+  }
+}
+.detail-main-equipment-list li {
+  float: none;
+  width: 50px;
+}
+
+@media only screen and (max-width: 739px) {
+  .detail-main-equipment-list li {
+    width: 35px;
   }
 }
 .detail-mainimg-hideblock-btnarea {

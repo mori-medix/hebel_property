@@ -25,10 +25,10 @@ export function getBaseDir(type,__dirname) {
       //   inputPath: `${__dirname}/src/pages/hebel-rooms/features/hebelmaison/swiper.scss`,
       //   outputPath: `${__dirname}/dist/hebel-rooms/common_v2/css/features/hebelmaison/swiper.css`,
       // },
-      // {
-      //   inputPath: `${__dirname}/src/pages/hebel-rooms/search/detail/index.scss`,
-      //   outputPath: `${__dirname}/dist/hebel-rooms/css/detail/style.css`,
-      // },
+      {
+        inputPath: `${__dirname}/src/pages/hebel-rooms/search/detail/index.scss`,
+        outputPath: `${__dirname}/dist/hebel-rooms/css/detail/style.css`,
+      },
     ];
   }
   return baseDir;

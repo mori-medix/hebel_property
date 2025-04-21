@@ -252,6 +252,33 @@ if(pageName === 'search/detail/'){%>
        });
    });
 
+
+  if(document.querySelector('.swiper-container-equipment')){
+    const breakpoint = '739'
+    const swiperEquipmentOptions = {
+    slidesPerView: 'auto',
+    slidesPerView: 1,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    }
+  }
+  let mySwiperEquipment;
+
+  const mediaQueryList = window.matchMedia(`(max-width: ${breakpoint}px)`);
+
+  function handleChangeMediaQuery(event) {
+  if (event.matches) {
+    mySwiperEquipment = new Swiper('.swiper-container-equipment', swiperEquipmentOptions)
+  } else {
+    if(!mySwiperEquipment) return;
+    mySwiperEquipment.destroy(true, true);
+  }
+  }
+  handleChangeMediaQuery(mediaQueryList);
+  mediaQueryList.addEventListener('change', handleChangeMediaQuery);
+  }
+
 </script><%
 }%><%
 if(pageName === '/features/hebelmaison/' || pageName === '/features/hebelmaison/facility.html' || pageName === '/features/hebelmaison/room.html'){%>
