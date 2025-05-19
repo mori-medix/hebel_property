@@ -252,11 +252,91 @@ if(pageName === 'search/detail/'){%>
        });
    });
 
+   if(document.querySelector('.swiper-container-recommendation-pc')){
+
+    const swiperRecommendationOptions = {
+    slidesPerView: 3, 
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  }
+  var mySwiperRecommendation =  new Swiper('.swiper-container-recommendation-pc', swiperRecommendationOptions)
+  }
+
+  if(document.querySelector('.swiper-container-recommendation-sp')){
+
+const swiperRecommendationOptions = {
+slidesPerView: 1, 
+spaceBetween: 5,
+pagination: {
+  el: '.swiper-pagination',
+  clickable: true,
+},
+navigation: {
+  nextEl: ".swiper-button-next",
+  prevEl: ".swiper-button-prev",
+}
+}
+var mySwiperRecommendation =  new Swiper('.swiper-container-recommendation-sp', swiperRecommendationOptions);
+
+
+const items = document.querySelectorAll('.js-detail-recommendation-item-height-even');
+const itemsHeightList = [];
+const itemsHeightList02 = [];
+const maxHeightList = [];
+const heightEvenFunc = (device)=>{
+  if(device === 'sp'){
+    [...items].map((item,i) => {
+    itemsHeightList[i] = [];
+    [...item.children].map((child,j) => {
+      itemsHeightList02[j] = [];
+      itemHeight = {};
+      itemHeight['index'] = j;
+      itemHeight['height'] = child.offsetHeight;
+      itemsHeightList[i].push(itemHeight);
+    });
+  });
+
+
+  itemsHeightList.map((item,i) => {
+    item.map((child) => {
+      itemsHeightList02[child.index].push(child.height);
+    });
+  });
+
+  itemsHeightList02.map((item,i) => {
+    maxHeightList[i] = Math.max(...item);
+  });
+
+  [...items].map((item,i) => {
+    [...item.children].map((child,j) => {
+      child.style.height = maxHeightList[j] + 'px';
+    });
+  });
+  }
+}
+
+  const breakpoint = '739'
+  const mediaQueryList = window.matchMedia(`(max-width: ${breakpoint}px)`);
+
+  function handleChangeMediaQuery(event) {
+  if (event.matches) {
+    heightEvenFunc('sp');
+  }
+  }
+  handleChangeMediaQuery(mediaQueryList);
+  mediaQueryList.addEventListener('change', handleChangeMediaQuery);
+  
+}
 
   if(document.querySelector('.swiper-container-equipment')){
     const breakpoint = '739'
     const swiperEquipmentOptions = {
-    slidesPerView: 'auto',
     slidesPerView: 1,
     pagination: {
       el: '.swiper-pagination',
