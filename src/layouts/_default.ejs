@@ -336,12 +336,17 @@ const heightEvenFunc = (device)=>{
 
   if(document.querySelector('.swiper-container-equipment')){
     const breakpoint = '739'
-    const swiperEquipmentOptions = {
-    slidesPerView: 1,
-    pagination: {
+    const slideNum = document.querySelectorAll('.swiper-container-equipment .swiper-slide').length;
+    if(slideNum < 3) {
+      document.querySelector('.detail-features-equipment-list-wrap').classList.add('is-not-pagination');
+    }
+    const paginationOptions = slideNum < 3 ? false : {
       el: '.swiper-pagination',
       clickable: true,
-    }
+    };
+    const swiperEquipmentOptions = {
+    slidesPerView: 1,
+    pagination: paginationOptions
   }
   let mySwiperEquipment;
 

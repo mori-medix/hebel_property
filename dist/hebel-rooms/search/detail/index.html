@@ -1696,45 +1696,6 @@
                         </div>
                     </a>
                 </li>
-                <li class="swiper-slide">
-                    <a href="" class="detail-features-equipment-card">
-                        <div class="detail-features-equipment-card-front">
-                            <div class="detail-features-equipment-card-front-icon">
-                                <img src="/hebel-rooms/common_v2/img/property/icons/ic-movie.svg" alt="">
-                            </div>
-                            <p class="detail-features-equipment-card-front-text">動画</p>
-                        </div>
-                        <div class="detail-features-equipment-card-back">
-                            <iframe src="https://www.youtube.com/embed/SgEQrUIKJ6Y?si=pUMZ7lYu1SMLtUQi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
-                        </div>
-                    </a>
-                </li>
-                <li class="swiper-slide">
-                    <a href="" class="detail-features-equipment-card">
-                        <div class="detail-features-equipment-card-front">
-                            <div class="detail-features-equipment-card-front-icon">
-                                <img src="/hebel-rooms/common_v2/img/property/icons/ic-3d.svg" alt="">
-                            </div>
-                            <p class="detail-features-equipment-card-front-text">3DCG間取り</p>
-                        </div>
-                        <div class="detail-features-equipment-card-back">
-                            <iframe height='300px' width='400px' style='max-width:100%;' src='https://spacely.co.jp/afr-web/_COPY_1037526_1027882' frameborder='0' allowfullscreen='true' mozallowfullscreen='true' webkitallowfullscreen='true'></iframe>
-                        </div>
-                    </a>
-                </li>
-                <li class="swiper-slide">
-                    <a href="" class="detail-features-equipment-card">
-                        <div class="detail-features-equipment-card-front">
-                            <div class="detail-features-equipment-card-front-icon">
-                                <img src="/hebel-rooms/common_v2/img/property/icons/ic-360.svg" alt="">
-                            </div>
-                            <p class="detail-features-equipment-card-front-text">360度パノラマ</p>
-                        </div>
-                        <div class="detail-features-equipment-card-back">
-                            <iframe src="https://rent.nurvecloud.com//panoramas/11798604/embed" width="1000px" height="520px" border="0" frameborder="0" allowfullscreen=""></iframe>
-                        </div>
-                    </a>
-                </li>
             </ul>
             <div class="swiper-pagination"></div>
         </div>
@@ -3419,12 +3380,17 @@ const heightEvenFunc = (device)=>{
 
   if(document.querySelector('.swiper-container-equipment')){
     const breakpoint = '739'
-    const swiperEquipmentOptions = {
-    slidesPerView: 1,
-    pagination: {
+    const slideNum = document.querySelectorAll('.swiper-container-equipment .swiper-slide').length;
+    if(slideNum < 3) {
+      document.querySelector('.detail-features-equipment-list-wrap').classList.add('is-not-pagination');
+    }
+    const paginationOptions = slideNum < 3 ? false : {
       el: '.swiper-pagination',
       clickable: true,
-    }
+    };
+    const swiperEquipmentOptions = {
+    slidesPerView: 1,
+    pagination: paginationOptions
   }
   let mySwiperEquipment;
 

@@ -3113,6 +3113,12 @@ button:hover {
 }
 
 @media only screen and (max-width: 739px) {
+  .detail-features-equipment-list-wrap.is-not-pagination {
+    padding-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 739px) {
   .detail-features-equipment-list-wrap > * {
     width: 44.2666666667vw;
   }
@@ -3178,7 +3184,8 @@ button:hover {
           box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.25);
 }
 .detail-features-equipment-card:hover .detail-features-equipment-card-back img,
-.detail-features-equipment-card:hover .detail-features-equipment-card-back iframe {
+.detail-features-equipment-card:hover .detail-features-equipment-card-back iframe,
+.detail-features-equipment-card:hover .detail-features-equipment-card-back > * {
   opacity: 0.2;
 }
 @media only screen and (max-width: 739px) {
@@ -3776,7 +3783,6 @@ button:hover {
 
 @media only screen and (max-width: 739px) {
   .detail-main-equipment-list {
-    z-index: 1;
     left: 4%;
     bottom: 15px;
   }
