@@ -2563,7 +2563,7 @@
   background-color: #fff;
   -webkit-box-shadow: 0 -2px 3px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 -2px 3px 0 rgba(0, 0, 0, 0.1);
-  margin-top: 80px;
+  margin-top: 50px;
   padding: 40px 0 100px;
 }
 @media only screen and (max-width: 739px) {
@@ -3990,6 +3990,7 @@ label.hr-rd .txt {
 }
 .search-property-new-mail-wrap {
   margin-top: 70px;
+  padding-bottom: 30px;
 }
 @media screen and (max-width: 739px) {
   .search-property-new-mail-wrap {
