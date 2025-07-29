@@ -3,14 +3,14 @@
     "list":[
       {
         "heading":{
-          "one":"ペット共生型賃貸住宅 <br class=\"for_sp\">プラスわんプラスにゃん"
+          "one":"へーベルメゾン・<br>PREMIUM EDITION"
         },
-        "text":"ペットを「飼う」のではなく「共に生きる」。人とペットが気兼ねなく、楽しく、暮らせる賃貸住宅。",
+        "text":"へーベルメゾンの理想を追い求め、洗練されたデザインのプレミアム賃貸。",
         "img":{
           "src":"recommendation_item_img01",
           "extension":"jpg",
           "width":{
-            "pc":"480"
+            "pc":"580"
           },
           "height":{
             "pc":"362"
@@ -18,19 +18,50 @@
           "alt":""
         },
         "link":{
-          "href":""
+          "href":"",
+          "type":"link"
+        },
+        "label":{
+          "text":"ハイグレード仕様"
+        }
+      },
+      {
+        "heading":{
+          "one":"ペット共生型賃貸住宅 <br>プラスわんプラスにゃん"
+        },
+        "text":"ペットを「飼う」のではなく「共に生きる」。人とペットが気兼ねなく、楽しく、暮らせる賃貸住宅。",
+        "img":{
+          "src":"recommendation_item_img02",
+          "extension":"jpg",
+          "width":{
+            "pc":"580"
+          },
+          "height":{
+            "pc":"362"
+          },
+          "alt":""
+        },
+        "link":{
+          "href":{
+            "pc":"/hebel-rooms/lightbox/index.html/",
+            "sp":"/hebel-rooms/lightbox/index_sp.html/"
+          },
+          "type":"lightbox"
+        },
+        "label":{
+          "text":"ペットと暮らす"
         }
       },
       {
         "heading":{
           "one":"共働き夫婦二人の賃貸住宅 <br class=\"for_sp\">fufu"
         },
-        "text":" 旭化成共働き家族研究所による、暮らし実態調査を経て開発された、共働き夫婦向けの賃貸住宅。",
+        "text":"旭化成共働き家族研究所による、暮らし実態調査を経て開発された、共働き夫婦向けの賃貸住宅",
         "img":{
-          "src":"recommendation_item_img02",
+          "src":"recommendation_item_img03",
           "extension":"jpg",
           "width":{
-            "pc":"480"
+            "pc":"580"
           },
           "height":{
             "pc":"362"
@@ -38,39 +69,26 @@
           "alt":""
         },
         "link":{
-          "href":""
+          "href":{
+            "pc":"/hebel-rooms/lightbox02/index.html/",
+            "sp":"/hebel-rooms/lightbox02/index_sp.html/"
+          },
+          "type":"lightbox"
+        },
+        "label":{
+          "text":"2人暮らし向け"
         }
       },
       {
         "heading":{
           "one":"子育て共感賃貸住宅 <br class=\"for_sp\">BORIKI"
         },
-        "text":"子育てファミリーが笑顔で子育てできる、賃貸住宅のありかたを追究して生まれた子育て共感賃貸住宅。",
-        "img":{
-          "src":"recommendation_item_img03",
-          "extension":"jpg",
-          "width":{
-            "pc":"480"
-          },
-          "height":{
-            "pc":"362"
-          },
-          "alt":""
-        },
-        "link":{
-          "href":""
-        }
-      },
-      {
-        "heading":{
-          "one":"一人暮らしの女性向け共有賃貸 <br class=\"for_sp\">New Safole"
-        },
-        "text":"子都市でひとり暮らしをする女性のための、あんしん共有賃貸マンション。 ",
+        "text":"子育てファミリーが笑顔で子育てできる、賃貸住宅のありかたを追究して生まれた子育て共感賃貸住宅",
         "img":{
           "src":"recommendation_item_img04",
           "extension":"jpg",
           "width":{
-            "pc":"480"
+            "pc":"580"
           },
           "height":{
             "pc":"362"
@@ -78,19 +96,23 @@
           "alt":""
         },
         "link":{
-          "href":""
+          "href":{"pc":"/hebel-rooms/lightbox04/index.html/"},
+          "type":"lightbox"
+        },
+        "label":{
+          "text":"ファミリー向け"
         }
       },
       {
         "heading":{
-          "one":"プレミアム賃貸 <br class=\"for_sp\">PREMIUM EDITION"
+          "one":"一人暮らしの女性向け共有賃貸 <br> New Safole"
         },
-        "text":"へーベルメゾンの理想を追い求め、洗練されたデザインのプレミアム賃貸。",
+        "text":"子都市でひとり暮らしをする女性のための、あんしん共有賃貸マンション。 ",
         "img":{
           "src":"recommendation_item_img05",
           "extension":"jpg",
           "width":{
-            "pc":"480"
+            "pc":"580"
           },
           "height":{
             "pc":"362"
@@ -98,7 +120,11 @@
           "alt":""
         },
         "link":{
-          "href":""
+          "href":"",
+          "type":"link"
+        },
+        "label":{
+          "text":"単身女性向け"
         }
       },
       {
@@ -110,7 +136,7 @@
           "src":"recommendation_item_img06",
           "extension":"jpg",
           "width":{
-            "pc":"480"
+            "pc":"580"
           },
           "height":{
             "pc":"362"
@@ -118,7 +144,155 @@
           "alt":""
         },
         "link":{
-          "href":""
+          "href":{"pc":"/hebel-rooms/lightbox06/index.html/"},
+          "type":"lightbox"
+        },
+        "label":{
+          "text":"省エネで家計にやさしい"
+        }
+      },
+      {
+        "heading":{
+          "one":"賃貸でもっといい暮らし <br class=\"for_sp\">光と風のLDK"
+        },
+        "text":"80.9%の女性が従来のLDKより「住みたい」と答えた憧れの暮らしを叶える快適な賃貸住宅",
+        "img":{
+          "src":"recommendation_item_img07",
+          "extension":"jpg",
+          "width":{
+            "pc":"580"
+          },
+          "height":{
+            "pc":"362"
+          },
+          "alt":""
+        },
+        "link":{
+          "href":"",
+          "type":"link"
+        },
+        "label":{
+          "text":"開放感のある住まい"
+        }
+      },
+      {
+        "heading":{
+          "one":"ペットのための<br class=\"for_sp\">IoT設備"
+        },
+        "text":"IoTを活用した様々な設備により、お出かけ中、ペットも飼い主様も安心できる賃貸住宅",
+        "img":{
+          "src":"recommendation_item_img08",
+          "extension":"jpg",
+          "width":{
+            "pc":"580"
+          },
+          "height":{
+            "pc":"362"
+          },
+          "alt":""
+        },
+         "link":{
+          "href":{"pc":"/hebel-rooms/lightbox/iot/index.html/"},
+          "type":"lightbox"
+        },
+        "label":{
+          "text":"人とペットにやさしいIoT"
+        }
+      },
+      {
+        "heading":{
+          "one":"リノベーション賃貸"
+        },
+        "text":"新築のような内装と高い安全性能を両立する賃貸住宅",
+        "img":{
+          "src":"recommendation_item_img09",
+          "extension":"jpg",
+          "width":{
+            "pc":"580"
+          },
+          "height":{
+            "pc":"362"
+          },
+          "alt":""
+        },
+        "link":{
+          "href":"/hebel-rooms/lightbox/iot/index.html/",
+          "type":"link"
+        }
+      },
+      {
+        "heading":{
+          "one":"都市型の分譲賃貸マンション <br class=\"for_sp\">ATLAS"
+        },
+        "text":"厳選された立地とハイクオリティな居住空間、安心のサポートを兼ね備えた分譲賃貸",
+        "img":{
+          "src":"recommendation_item_img10",
+          "extension":"jpg",
+          "width":{
+            "pc":"580"
+          },
+          "height":{
+            "pc":"362"
+          },
+          "alt":""
+        },
+        "link":{
+          "href":"",
+          "type":"link"
+        },
+        "label":{
+          "text":"分譲マンション・賃貸"
+        }
+      },
+      {
+        "heading":{
+          "one":"まどり可変型賃貸住宅・<br class=\"for_sp\">free㎡"
+        },
+        "text":"動く収納で間取りを変えられる。子供の誕生や成長など、家族の変化に対応し長く暮らせる賃貸住宅",
+        "img":{
+          "src":"recommendation_item_img11",
+          "extension":"jpg",
+          "width":{
+            "pc":"580"
+          },
+          "height":{
+            "pc":"362"
+          },
+          "alt":""
+        },
+        "link":{
+          "href":{
+            "pc":"/hebel-rooms/lightbox05/index.html/",
+            "sp":"/hebel-rooms/lightbox05/index_sp.html/"
+          },
+          "type":"lightbox"
+        },
+        "label":{
+          "text":"間取りを変更できる"
+        }
+      },
+      {
+        "heading":{
+          "one":"停電時も安心 <br class=\"for_sp\">Ecoレジグリッド"
+        },
+        "text":"断熱・省エネ・創エネ性能を備えたZEH-M対応住宅に、蓄電池をプラスし防災性を高めた賃貸住宅",
+        "img":{
+          "src":"recommendation_item_img12",
+          "extension":"jpg",
+          "width":{
+            "pc":"580"
+          },
+          "height":{
+            "pc":"362"
+          },
+          "alt":""
+        },
+        "link":{
+          "href":{"pc":"/hebel-rooms/lightbox08/index.html/"},
+          "type":"lightbox"
+        },
+        "label":{
+          "text":"防災にも強いZEH"
         }
       }
     ]
