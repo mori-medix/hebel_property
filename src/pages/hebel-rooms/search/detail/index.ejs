@@ -282,35 +282,41 @@
                     <%_  pageData.parts.detail_recommendation.list.map((item,index)=>{ -%>
                     <li class="swiper-slide">
                     <%_ if(item.link.type === "link") { -%>
-                     <a class="detail-recommendation-card" href="<%= item.link.href %>">
-                         <h3 class="detail-recommendation-card-heading">
-                             <%- item.heading.one%>
-                         </h3>
-                         <div class="detail-recommendation-card-content">
-                             <div class="detail-recommendation-card-text-wrap">
-                                 <p class="detail-recommendation-card-text"><%- item.text %></p>
-                             </div>
-                         </div>
-                         <div class="detail-recommendation-card-img">
-                             <img src="/hebel-rooms/common_v2/img/property/<%= item.img.src %>.<%= item.img.extension %>" alt="" width="<%= item.img.width.pc %>" height="<%= item.img.height.pc %>" loading="lazy">
-                         </div>
-                     </a>
-                     <%_ } -%>
-                     <%_ if(item.link.type === "lightbox") { -%>
-                     <a class="detail-recommendation-card js-modal-iframe" href="<%= item.link.href.pc %>">
-                         <h3 class="detail-recommendation-card-heading">
-                             <%- item.heading.one%>
-                         </h3>
-                         <div class="detail-recommendation-card-content">
-                             <div class="detail-recommendation-card-text-wrap">
-                                 <p class="detail-recommendation-card-text"><%- item.text %></p>
-                             </div>
-                         </div>
-                         <div class="detail-recommendation-card-img">
-                             <img src="/hebel-rooms/common_v2/img/property/<%= item.img.src %>.<%= item.img.extension %>" alt="" width="<%= item.img.width.pc %>" height="<%= item.img.height.pc %>" loading="lazy">
-                         </div>
-                     </a>
-                     <%_ } -%>
+                    <a class="detail-recommendation-card" href="<%= item.link.href %>">
+                        <div class="detail-recommendation-card-head">
+                            <h3 class="detail-recommendation-card-heading"><%- item.heading.one%></h3>
+                            <%_ if(item.label) { -%> 
+                            <p class="detail-recommendation-card-label"><%- item.label.text %></p>
+                            <%_ } -%>
+                        </div>
+                        <div class="detail-recommendation-card-content">
+                            <div class="detail-recommendation-card-text-wrap">
+                                <p class="detail-recommendation-card-text"><%- item.text %></p>
+                            </div>
+                        </div>
+                        <div class="detail-recommendation-card-img">
+                            <img src="/hebel-rooms/common_v2/img/property/<%= item.img.src %>.<%= item.img.extension %>" alt="" width="<%= item.img.width.pc %>" height="<%= item.img.height.pc %>" loading="lazy">
+                        </div>
+                    </a>
+                    <%_ } -%>
+                    <%_ if(item.link.type === "lightbox") { -%>
+                    <a class="detail-recommendation-card js-modal-iframe" href="<%= item.link.href.pc %>">
+                        <div class="detail-recommendation-card-head">
+                            <h3 class="detail-recommendation-card-heading"><%- item.heading.one%></h3>
+                            <%_ if(item.label) { -%> 
+                            <p class="detail-recommendation-card-label"><%- item.label.text %></p>
+                            <%_ } -%>
+                        </div>
+                        <div class="detail-recommendation-card-content">
+                            <div class="detail-recommendation-card-text-wrap">
+                                <p class="detail-recommendation-card-text"><%- item.text %></p>
+                            </div>
+                        </div>
+                        <div class="detail-recommendation-card-img">
+                            <img src="/hebel-rooms/common_v2/img/property/<%= item.img.src %>.<%= item.img.extension %>" alt="" width="<%= item.img.width.pc %>" height="<%= item.img.height.pc %>" loading="lazy">
+                        </div>
+                    </a>
+                    <%_ } -%>
                     </li>
                     <%_ }) -%>
                 </ul>
@@ -326,9 +332,12 @@
                         <li>
                             <%_ if(item.link.type === "link") { -%>
                             <a class="detail-recommendation-card" href="<%= item.link.href %>">
-                                <h3 class="detail-recommendation-card-heading">
-                                    <%- item.heading.one%>
-                                </h3>
+                                <div class="detail-recommendation-card-head">
+                                    <h3 class="detail-recommendation-card-heading"><%- item.heading.one%></h3>
+                                    <%_ if(item.label) { -%> 
+                                    <p class="detail-recommendation-card-label"><%- item.label.text %></p>
+                                    <%_ } -%>
+                                </div>
                                 <div class="detail-recommendation-card-content">
                                     <div class="detail-recommendation-card-text-wrap">
                                         <p class="detail-recommendation-card-text"><%- item.text %></p>
@@ -341,9 +350,12 @@
                              <%_ } -%>
                              <%_ if(item.link.type === "lightbox") { -%>
                             <a class="detail-recommendation-card js-modal-iframe" href="<%= item.link.href.sp?item.link.href.sp:item.link.href.pc %>">
-                                <h3 class="detail-recommendation-card-heading">
-                                    <%- item.heading.one%>
-                                </h3>
+                                <div class="detail-recommendation-card-head">
+                                    <h3 class="detail-recommendation-card-heading"><%- item.heading.one%></h3>
+                                    <%_ if(item.label) { -%> 
+                                    <p class="detail-recommendation-card-label"><%- item.label.text %></p>
+                                    <%_ } -%>
+                                </div>
                                 <div class="detail-recommendation-card-content">
                                     <div class="detail-recommendation-card-text-wrap">
                                         <p class="detail-recommendation-card-text"><%- item.text %></p>
@@ -364,9 +376,12 @@
                         <li>
                             <%_ if(item.link.type === "link") { -%>
                             <a class="detail-recommendation-card" href="<%= item.link.href %>">
-                                <h3 class="detail-recommendation-card-heading">
-                                    <%- item.heading.one%>
-                                </h3>
+                                <div class="detail-recommendation-card-head">
+                                    <h3 class="detail-recommendation-card-heading"><%- item.heading.one%></h3>
+                                    <%_ if(item.label) { -%> 
+                                    <p class="detail-recommendation-card-label"><%- item.label.text %></p>
+                                    <%_ } -%>
+                                </div>
                                 <div class="detail-recommendation-card-content">
                                     <div class="detail-recommendation-card-text-wrap">
                                         <p class="detail-recommendation-card-text"><%- item.text %></p>
@@ -379,9 +394,12 @@
                              <%_ } -%>
                              <%_ if(item.link.type === "lightbox") { -%>
                             <a class="detail-recommendation-card js-modal-iframe" href="<%= item.link.href.sp?item.link.href.sp:item.link.href.pc %>">
-                                <h3 class="detail-recommendation-card-heading">
-                                    <%- item.heading.one%>
-                                </h3>
+                                <div class="detail-recommendation-card-head">
+                                    <h3 class="detail-recommendation-card-heading"><%- item.heading.one%></h3>
+                                    <%_ if(item.label) { -%> 
+                                    <p class="detail-recommendation-card-label"><%- item.label.text %></p>
+                                    <%_ } -%>
+                                </div>
                                 <div class="detail-recommendation-card-content">
                                     <div class="detail-recommendation-card-text-wrap">
                                         <p class="detail-recommendation-card-text"><%- item.text %></p>
@@ -402,9 +420,12 @@
                         <li>
                             <%_ if(item.link.type === "link") { -%>
                             <a class="detail-recommendation-card" href="<%= item.link.href %>">
-                                <h3 class="detail-recommendation-card-heading">
-                                    <%- item.heading.one%>
-                                </h3>
+                                <div class="detail-recommendation-card-head">
+                                    <h3 class="detail-recommendation-card-heading"><%- item.heading.one%></h3>
+                                    <%_ if(item.label) { -%> 
+                                    <p class="detail-recommendation-card-label"><%- item.label.text %></p>
+                                    <%_ } -%>
+                                </div>
                                 <div class="detail-recommendation-card-content">
                                     <div class="detail-recommendation-card-text-wrap">
                                         <p class="detail-recommendation-card-text"><%- item.text %></p>
@@ -417,9 +438,12 @@
                              <%_ } -%>
                              <%_ if(item.link.type === "lightbox") { -%>
                             <a class="detail-recommendation-card js-modal-iframe" href="<%= item.link.href.sp?item.link.href.sp:item.link.href.pc %>">
-                                <h3 class="detail-recommendation-card-heading">
-                                    <%- item.heading.one%>
-                                </h3>
+                                <div class="detail-recommendation-card-head">
+                                    <h3 class="detail-recommendation-card-heading"><%- item.heading.one%></h3>
+                                    <%_ if(item.label) { -%> 
+                                    <p class="detail-recommendation-card-label"><%- item.label.text %></p>
+                                    <%_ } -%>
+                                </div>
                                 <div class="detail-recommendation-card-content">
                                     <div class="detail-recommendation-card-text-wrap">
                                         <p class="detail-recommendation-card-text"><%- item.text %></p>
@@ -440,9 +464,12 @@
                         <li>
                             <%_ if(item.link.type === "link") { -%>
                             <a class="detail-recommendation-card" href="<%= item.link.href %>">
-                                <h3 class="detail-recommendation-card-heading">
-                                    <%- item.heading.one%>
-                                </h3>
+                                <div class="detail-recommendation-card-head">
+                                    <h3 class="detail-recommendation-card-heading"><%- item.heading.one%></h3>
+                                    <%_ if(item.label) { -%> 
+                                    <p class="detail-recommendation-card-label"><%- item.label.text %></p>
+                                    <%_ } -%>
+                                </div>
                                 <div class="detail-recommendation-card-content">
                                     <div class="detail-recommendation-card-text-wrap">
                                         <p class="detail-recommendation-card-text"><%- item.text %></p>
@@ -455,9 +482,12 @@
                              <%_ } -%>
                              <%_ if(item.link.type === "lightbox") { -%>
                             <a class="detail-recommendation-card js-modal-iframe" href="<%= item.link.href.sp?item.link.href.sp:item.link.href.pc %>">
-                                <h3 class="detail-recommendation-card-heading">
-                                    <%- item.heading.one%>
-                                </h3>
+                                <div class="detail-recommendation-card-head">
+                                    <h3 class="detail-recommendation-card-heading"><%- item.heading.one%></h3>
+                                    <%_ if(item.label) { -%> 
+                                    <p class="detail-recommendation-card-label"><%- item.label.text %></p>
+                                    <%_ } -%>
+                                </div>
                                 <div class="detail-recommendation-card-content">
                                     <div class="detail-recommendation-card-text-wrap">
                                         <p class="detail-recommendation-card-text"><%- item.text %></p>
