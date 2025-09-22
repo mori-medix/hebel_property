@@ -23,7 +23,7 @@
     "clean": "rimraf ./dist/**/css/*.map ./dist/**/js/*.map",
     "format": "js-beautify -f ./dist/**/*.html -r --type[\"html\"]",
     "start": "browser-sync start --server \"./dist/\" --startPath \"./hebel-rooms/search/list_a\" --files \"./dist/**/*.html,./dist/hebel-rooms/common_v2/css/**/*.css,./dist/hebel-rooms/common_v2/js/**/*.js\"",
-    "build": "npm-run-all -p build-html build-css:nomap webpack-prod clean",
+    "build": "npm-run-all -p build-html build-css:nomap webpack-prod",
     "dev": "npm-run-all -p watch-css watch-html webpack-dev start",
     "lint": "npm-run-all -p eslint:fix stylelint:fix"
   },

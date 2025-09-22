@@ -216,7 +216,7 @@
           "alt":""
         },
         "link":{
-          "href":"/hebel-rooms/lightbox/iot/index.html/",
+          "href":"",
           "type":"link"
         }
       },
@@ -655,6 +655,20 @@
         "text":"高機能<br>インターホン",
         "img":{
           "src":"ic-interphone02",
+          "extension":"svg",
+          "width":{
+            "pc":"144"
+          },
+          "height":{
+            "pc":"144"
+          },
+          "alt":""
+        }
+      },
+      {
+        "text":"シーリング<br>ライト",
+        "img":{
+          "src":"ic-ceiling-light",
           "extension":"svg",
           "width":{
             "pc":"144"

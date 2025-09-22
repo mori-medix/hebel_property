@@ -2654,6 +2654,10 @@ button:hover {
 .detail-recommendation-card:hover {
   text-decoration: none;
 }
+.detail-recommendation-card:hover .detail-recommendation-card-img img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
 @media only screen and (max-width: 739px) {
   .detail-recommendation-card {
     --padding-inline: 12;
@@ -2730,10 +2734,17 @@ button:hover {
 }
 
 .detail-recommendation-card-img {
+  overflow: hidden;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
   margin: 0 calc(var(--padding-inline) * -1px);
+}
+.detail-recommendation-card-img img {
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 .detail-features-wrap {

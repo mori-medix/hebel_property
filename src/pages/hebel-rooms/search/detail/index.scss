@@ -2387,9 +2387,11 @@ button:hover {
   box-sizing: border-box;
   height: 100%;
   grid-template-rows: auto auto 1fr;
-  
   &:hover{
     text-decoration: none;
+    .detail-recommendation-card-img img{
+      transform: scale(1.1);
+    }
   }
   @media only screen and (max-width: 739px) {
     --padding-inline: 12;
@@ -2446,8 +2448,12 @@ row-gap: 10px;
 }
 
 .detail-recommendation-card-img{
+  overflow: hidden;
   order: 1;
   margin: 0 calc(var(--padding-inline) * -1px);
+  img{
+    transition: transform 0.3s ease;
+  }
 }
 
 
