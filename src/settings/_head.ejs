@@ -45,7 +45,7 @@
     <link rel="stylesheet" href="/hebel-rooms/css/detail/swiper.css" type="text/css">
     <link rel="stylesheet" href="/hebel-rooms/css/detail/style.css" type="text/css"><%
   }
-  if(pageName === '/search/list_a/' || pageName === '/search/history/'){%>
+  if(pageName === '/search/list_a/' || pageName === '/search/list_favorite/' || pageName === '/search/history/'){%>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
@@ -53,7 +53,12 @@
     <link rel="stylesheet" href="/hebel-rooms/css/navi.css">
     <link rel="stylesheet" href="/hebel-rooms/common_v2/css/search/style.css">
     <script type="text/javascript" src="/hebel-rooms/common_v2/lib/jquery.min.js"></script>
-    <script src="/hebel-rooms/lightbox/jquery.fancybox.min.js" defer></script>
+    <script src="/hebel-rooms/lightbox/jquery.fancybox.min.js" defer></script><%
+  }
+  if(pageName === '/search/list_favorite/'){%>
+    <script src="/hebel-rooms/common_v2/js/search/qrcode.min.js"></script><%
+  }
+  if(pageName === '/search/list_a/' || pageName === '/search/list_favorite/' || pageName === '/search/history/'){%>
     <script src="/hebel-rooms/common_v2/js/search/page.js" defer></script><%
   }
   if( pageName === '/search/history/'){%>

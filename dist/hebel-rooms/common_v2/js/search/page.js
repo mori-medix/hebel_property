@@ -526,7 +526,12 @@
           }
           Array.prototype.forEach.call(t, (function (t) {
             r.observe(t)
-          })), s.observe(e)
+          })),
+          function () {
+            if(e !== null){
+              s.observe(e)
+            }
+          }();
         }(), r()(),
         function (t, e) {
           var n = document.querySelectorAll(t);
@@ -599,3 +604,46 @@ $(function(){
     return false;
   });
 });
+
+if(document.querySelector('.js-link-copy') !== null){
+  document.querySelectorAll('.js-link-copy').forEach((item) => {
+  item.addEventListener('click', () => {
+    // navigator.clipboard.writeText() を使って、現在のURLをクリップボードに書き込む
+    navigator.clipboard.writeText(location.href)
+      // .then(() => {
+      //   // コピーが成功した場合
+      //   alert('ページのURLをコピーしました！');
+      // })
+      // .catch(err => {
+      //   // コピーが失敗した場合
+      //   console.error('コピーに失敗しました: ', err);
+      //   alert('URLのコピーに失敗しました。');
+      // });
+    item.classList.add('is-active');
+    setTimeout(() => {
+      item.classList.remove('is-active');
+    }, 2000);
+  });
+});
+}
+
+function getQr(event) {
+  event.preventDefault();
+    const modal =  document.querySelector(event.currentTarget.getAttribute('href'));
+    if(!modal.classList.contains('is-qr-show')) {
+      new QRCode(modal.querySelector('.qrcode'), {
+        text:event.currentTarget.dataset.link,
+        width: 128,
+        height: 128,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+      });
+      modal.classList.add('is-qr-show');
+    }
+}
+
+function toggleShareList(event) {
+  event.preventDefault();
+  event.currentTarget.closest('.js-has-share').querySelector('.js-share-list').classList.toggle('is-show');
+}
