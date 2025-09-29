@@ -1327,8 +1327,11 @@
   box-sizing: border-box;
   visibility: hidden;
   pointer-events: none;
-  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
-  &.is-show{
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+  &.is-show {
     visibility: visible;
     pointer-events: auto;
     opacity: 1;
@@ -1362,7 +1365,7 @@
     &::after {
       content: none;
     }
-    &::before{
+    &::before {
       content: '';
       position: absolute;
       top: 0;
@@ -1380,7 +1383,6 @@
   white-space: nowrap;
   line-height: 1;
   @media only screen and (max-width: 739px) {
-
   }
 }
 
@@ -1395,33 +1397,65 @@
   }
 }
 
-  .property-detail_table-share-list li:nth-child(2) .property-detail_table-share-button,
-    .property-detail_table-share-list li:nth-child(3) .property-detail_table-share-button{
-    background-color: #F1F1FC;
-    border-radius: 9999px;
-    box-sizing: border-box;
-    height: 30px;
+.property-detail_table-share-list li:nth-child(2) .property-detail_table-share-button,
+.property-detail_table-share-list li:nth-child(3) .property-detail_table-share-button {
+  background-color: #f1f1fc;
+  border-radius: 9999px;
+  box-sizing: border-box;
+  height: 30px;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  svg {
     width: 100%;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    padding: 7px;
-    svg{
-      width: 100%;
-      height: auto;
-    }
-    @media only screen and (max-width: 739px) {
-      background-color: #fff;
-      padding: 0;
-    }
+    height: auto;
   }
-
+  @media only screen and (max-width: 739px) {
+    background-color: #fff;
+    padding: 0;
+  }
+}
 
 .property-detail_table-share-button {
   display: grid;
   line-height: 1;
   svg {
     display: block;
+  }
+  &.is-copy-message {
+    &::before {
+      position: absolute;
+      top: 0;
+      transform: translateY(-48px);
+      left: 0;
+      right: 0;
+      margin: 0;
+      font-size: 12px;
+      content: '物件のURLをコピーしました';
+      background-color: rgb(0 0 0 / 65%);
+      box-sizing: border-box;
+      padding: 10px;
+      border-radius: 5px;
+      color: #fff;
+      letter-spacing: 0.03em;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+      width: fit-content;
+      margin: 0 auto;
+    }
+    &.is-show {
+      &::before {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+    }
   }
   @media only screen and (max-width: 739px) {
     grid-template-columns: 18px auto;
@@ -1430,6 +1464,11 @@
     svg {
       width: 100%;
       height: auto;
+    }
+    &.is-copy-message {
+      &::before {
+        transform: translateY(-18px);
+      }
     }
   }
 }
@@ -1440,6 +1479,7 @@
     display: block;
     font-size: 12px;
     font-weight: 700;
+    color: #000;
   }
 }
 
@@ -1583,13 +1623,13 @@
 
   @media only screen and (max-width: 739px) {
     background-color: #fff;
-    border: 1px solid #E5E5E5;;
+    border: 1px solid #e5e5e5;
     width: 100%;
     height: 100%;
     display: grid;
     align-items: center;
     border-radius: 5px;
-    grid-template-columns:18px auto;
+    grid-template-columns: 18px auto;
     text-align: left;
     justify-content: center;
     column-gap: 8px;
@@ -1606,13 +1646,14 @@
   }
 }
 
-.property-detail_table-close-text{
+.property-detail_table-close-text {
   display: none;
   @media only screen and (max-width: 739px) {
     display: block;
+    color: #000;
+    font-weight: 700;
   }
 }
-
 
 .property-detail_modal {
   border-radius: 6px;
@@ -3660,8 +3701,24 @@ label.hr-rd .txt {
   }
 }
 
+.property-detail_qr-modal {
+  display: none;
+}
+
 .fancybox-slide .property-detail_qr-modal {
   padding: 32px !important;
+  max-width: 280px;
+}
+
+.fancybox-slide .property-detail_qr-modal-head-text {
+  font-size: 14px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.fancybox-slide .qrcode {
+  display: grid;
+  justify-content: center;
 }
 
 .property-detail_qr-modal button {

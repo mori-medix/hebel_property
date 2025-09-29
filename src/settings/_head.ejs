@@ -56,7 +56,40 @@
     <script src="/hebel-rooms/lightbox/jquery.fancybox.min.js" defer></script><%
   }
   if(pageName === '/search/list_favorite/'){%>
-    <script src="/hebel-rooms/common_v2/js/search/qrcode.min.js"></script><%
+    <script src="/hebel-rooms/common_v2/js/search/qrcode.min.js"></script>
+
+    <script>
+function getQr(url,event) {
+  event.preventDefault();
+    const modal =  document.querySelector(event.currentTarget.getAttribute('href'));
+    if(!modal.classList.contains('is-qr-show')) {
+      new QRCode(modal.querySelector('.qrcode'), {
+        text:url,
+        width: 128,
+        height: 128,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+      });
+      modal.classList.add('is-qr-show');
+    }
+}
+
+function toggleShareList(event) {
+  event.preventDefault();
+  event.currentTarget.closest('.js-has-share').querySelector('.js-share-list').classList.toggle('is-show');
+}
+
+function getPageUrl(url,event){
+  _this = event.currentTarget;
+  navigator.clipboard.writeText(url);
+  _this.classList.add('is-show');
+  setTimeout(() => {
+    _this.classList.remove('is-show');
+  }, 2000);
+}
+</script>
+    <%
   }
   if(pageName === '/search/list_a/' || pageName === '/search/list_favorite/' || pageName === '/search/history/'){%>
     <script src="/hebel-rooms/common_v2/js/search/page.js" defer></script><%

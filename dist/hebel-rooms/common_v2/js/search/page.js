@@ -626,24 +626,3 @@ if(document.querySelector('.js-link-copy') !== null){
   });
 });
 }
-
-function getQr(event) {
-  event.preventDefault();
-    const modal =  document.querySelector(event.currentTarget.getAttribute('href'));
-    if(!modal.classList.contains('is-qr-show')) {
-      new QRCode(modal.querySelector('.qrcode'), {
-        text:event.currentTarget.dataset.link,
-        width: 128,
-        height: 128,
-        colorDark : "#000000",
-        colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.H
-      });
-      modal.classList.add('is-qr-show');
-    }
-}
-
-function toggleShareList(event) {
-  event.preventDefault();
-  event.currentTarget.closest('.js-has-share').querySelector('.js-share-list').classList.toggle('is-show');
-}
