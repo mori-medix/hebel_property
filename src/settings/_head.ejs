@@ -59,21 +59,128 @@
     <script src="/hebel-rooms/common_v2/js/search/qrcode.min.js"></script>
 
     <script>
+    {
+      const propertyDataList = [];
+      window.addEventListener('DOMContentLoaded',function(){
+        document.cookie = 'favoriteList=; max-age=0;';
+      },false);
+      function getPropertyName(_this){
+        const name = _this.closest('.property-detail').querySelector('.property-detail_heading').textContent;
+        const num = _this.closest('.property-detail_table-body-inner').querySelector('.property-detail_table-num').textContent;
+        return name + ' ' + num;
+      }
+
+      function setCookieObj(cookieName, cookieValue, cookiePath = '', cookieExpires) {
+        try {
+          let jsonStr = JSON.stringify(cookieValue);
+          if (cookieExpires) {
+            document.cookie = cookieName + '=' + encodeURIComponent(jsonStr) + '; path=' + cookiePath + '; expires=' + new Date(cookieExpires).toUTCString() + ';';
+          } else {
+            //有効期限が設定されてない場合、セッションクッキーとする
+            document.cookie = cookieName + '=' + encodeURIComponent(jsonStr) + '; path=' + cookiePath + ';';
+          }
+        } catch (error) {
+          console.log('保存時にエラーが発生しました。', error);
+        }
+      }
+
+      function getCookieObj(cookieName) {
+        const name = cookieName + '=';
+        const decodedCookie = decodeURIComponent(document.cookie);
+        const ca = decodedCookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+          let c = ca[i].trim();
+          if (c.indexOf(name) === 0) {
+            try {
+              return JSON.parse(c.substring(name.length, c.length));
+            } catch (e) {
+              return null;
+            }
+          }
+        }
+        return null;
+      }
+
+      function savePropertyData(_this){
+      if (_this.checked) {
+        const obj = {};
+        obj.value = _this.getAttribute('data-value');
+        obj.name = getPropertyName(_this);
+        propertyDataList.push(obj);
+        setCookieObj('favoriteList', propertyDataList);
+      } else {
+        propertyDataList.filter((item, index) => {
+          if (item.value === _this.getAttribute('data-value')) {
+            propertyDataList.splice(index, 1);
+          }
+        });
+        if (propertyDataList.length === 0) {
+          document.cookie = 'favoriteList=; max-age=0;';
+        } else {
+        setCookieObj('favoriteList', propertyDataList);
+        }
+      }
+      }
+
+      function getPageUrlText(type){
+        const favoriteList = getCookieObj('favoriteList');
+        if(type === 'text'){
+        if (favoriteList && Array.isArray(favoriteList)) {
+          return favoriteList.map(item => `${item.name}\r\nhttps://www.afr-web.co.jp/hebel-rooms/search/detail/?clientcorp_room_cd=${item.value}`).join('\r\n\r\n');
+        }
+        return '';
+        }
+        if(type === 'line'){
+          if (favoriteList && Array.isArray(favoriteList)) {
+            const text = favoriteList.map(item => `${item.name}\r\nhttps://www.afr-web.co.jp/hebel-rooms/search/detail/?clientcorp_room_cd=${item.value}`).join('\r\n\r\n');
+            const lineUrl = `http://line.me/R/msg/text/?${encodeURIComponent('へーベルメゾンでお気に入り登録した物件\r\n\r\n')}${encodeURIComponent(text)}`;
+            window.open(lineUrl, '_blank');
+          }
+        }
+      }
+
+      function getQrList(){
+        const favoriteList = getCookieObj('favoriteList');
+        document.querySelector('.js-property-detail_check-qr-modal').textContent = '';
+        const list = document.createElement('ul');
+        list.classList.add('property-detail_check-qr-modal-list');
+        favoriteList.forEach(item => {
+          const listItem = document.createElement('li');
+          listItem.classList.add('property-detail_check-qr-modal-item');
+          listItem.innerHTML = `
+            <p class="property-detail_check-qr-modal-name">${item.name}</p>
+            <div class="qrcode"></div>
+          `;
+          new QRCode(listItem.querySelector('.qrcode'), {
+            text:`https://www.afr-web.co.jp/hebel-rooms/search/detail/?clientcorp_room_cd=${item.value}`,
+            width: 128,
+            height: 128,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+          });
+          list.appendChild(listItem);
+          document.querySelector('.js-property-detail_check-qr-modal').appendChild(list);
+        });
+      }
+    }
+
 function getQr(url,event) {
   event.preventDefault();
-    const modal =  document.querySelector(event.currentTarget.getAttribute('href'));
-    if(!modal.classList.contains('is-qr-show')) {
-      new QRCode(modal.querySelector('.qrcode'), {
-        text:url,
-        width: 128,
-        height: 128,
-        colorDark : "#000000",
-        colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.H
-      });
-      modal.classList.add('is-qr-show');
-    }
+  const modal =  document.querySelector(event.currentTarget.getAttribute('href'));
+  if(!modal.classList.contains('is-qr-show')) {
+    new QRCode(modal.querySelector('.qrcode'), {
+      text:url,
+      width: 128,
+      height: 128,
+      colorDark : "#000000",
+      colorLight : "#ffffff",
+      correctLevel : QRCode.CorrectLevel.H
+    });
+    modal.classList.add('is-qr-show');
+  }
 }
+
 
 function toggleShareList(event) {
   event.preventDefault();
