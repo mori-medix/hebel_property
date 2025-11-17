@@ -3235,6 +3235,9 @@ label.hr-rd .txt {
   .property-detail-follow-a {
     height: 88px;
   }
+  .property-favorite-page .property-detail-follow-a {
+    height: 94px;
+  }
 }
 .property-detail-follow-a.is-active {
   -webkit-transform: translateY(0);
@@ -3498,7 +3501,7 @@ label.hr-rd .txt {
 
 .fancybox-slide .property-detail_check-qr-modal{
   max-width: 300px;
-  margin: 0 auto;
+  margin: 44px auto;
   padding: 40px 24px 40px !important;
 }
 
