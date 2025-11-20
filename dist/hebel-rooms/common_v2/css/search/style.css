@@ -3687,6 +3687,9 @@ label.hr-rd .txt {
   .property-detail-follow-a {
     height: 88px;
   }
+  .property-favorite-page .property-detail-follow-a {
+    height: 94px;
+  }
 }
 .property-detail-follow-a.is-active {
   -webkit-transform: translateY(0);

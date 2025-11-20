@@ -9,7 +9,16 @@
 
 <!-- #container -->
 <div id="container" class="pg_home"><%
-  if(pageName !== 'lightbox08'){%>
+  if (
+    pageName !== 'lightbox08' &&
+    pageName !== 'lightbox09' &&
+    pageName !== 'lightbox09' &&
+    pageName !== 'lightbox10' &&
+    pageName !== 'lightbox11' &&
+    pageName !== 'lightbox12' &&
+    pageName !== 'lightbox13' &&
+    pageName !== 'lightbox14'
+  ){%>
   <%- include(`${__dirname}/src/components/organisms/header/_index`) %><%
   } else {%>
     <header id="header" class="for_sp">
@@ -23,7 +32,16 @@
   <!-- ↓↓ ソースを記述 ↓↓ -->
   <%- typeof content !== 'undefined' ? content(__append) : null %>
   <!-- ↑↑ ソースを記述 ↑↑ --><%
-  if(pageName !== 'lightbox08'){%>
+  if (
+    pageName !== 'lightbox08' &&
+    pageName !== 'lightbox09' &&
+    pageName !== 'lightbox09' &&
+    pageName !== 'lightbox10' &&
+    pageName !== 'lightbox11' &&
+    pageName !== 'lightbox12' &&
+    pageName !== 'lightbox13' &&
+    pageName !== 'lightbox14'
+  ){%>
   <%- include(`${__dirname}/src/components/organisms/footer/_index`,{pageName:pageName}) %><%
   }%>
 </div>
@@ -39,7 +57,16 @@ if(pageName === '/search/list_a/' || pageName === 'lightbox08'){
   <!-- ここから削除しない -->
   <script type="text/javascript" src="/hebel-rooms/common_v2/lib/jquery.min.js"></script><%
 }
-if(pageName !== 'lightbox08'){%>
+if (
+    pageName !== 'lightbox08' &&
+    pageName !== 'lightbox09' &&
+    pageName !== 'lightbox09' &&
+    pageName !== 'lightbox10' &&
+    pageName !== 'lightbox11' &&
+    pageName !== 'lightbox12' &&
+    pageName !== 'lightbox13' &&
+    pageName !== 'lightbox14'
+  ){%>
 <script src="//www.afr-web.co.jp/hebel-rooms/common_v2/lib/scrollup/jquery.scrollUp.js" type="text/javascript"></script>
 <script src="//www.afr-web.co.jp/file.jsp?id=356289" type="text/javascript"></script>
 <!-- ここまで削除しない -->
