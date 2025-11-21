@@ -954,97 +954,18 @@ titles
 /* =========================================================
 hero
 ========================================================= */
-.hk-mv {
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  padding-top: 36px;
-}
 
-@media screen and (max-width: 767px) {
-  .hk-mv {
-    padding-top: 9vw;
-    padding-bottom: 8vw;
-  }
-}
-.hk-mv-ttl {
-  text-align: center;
-  margin-bottom: 20px;
+.hk-mv-ttl{
+  width: fit-content;
+    margin: 0 auto;
 }
 
 @media screen and (max-width: 767px) {
   .hk-mv-ttl {
-    width: 65.3334vw;
-    margin: 0 auto 2vw;
+    padding: 0 calc(12/390*100vw) calc(50/390*100vw);
   }
-}
-.hk-mv-image {
-  width: 100%;
-  height: 480px;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
 }
 
-@media screen and (max-width: 767px) {
-  .hk-mv-image {
-    height: 81vw;
-  }
-}
-.hk-mv-image-v {
-  width: 1920px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-@media screen and (max-width: 767px) {
-  .hk-mv-image-v {
-    width: 100%;
-    left: 0;
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-.hk-mv-image-clip {
-  width: 1920px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 4;
-}
-
-@media screen and (max-width: 767px) {
-  .hk-mv-image-clip {
-    width: 100%;
-    left: 0;
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-.hk-mv-cv {
-  display: none;
-}
-
-@media screen and (max-width: 767px) {
-  .hk-mv-cv {
-    display: block;
-    position: relative;
-    z-index: 99;
-    top: -15vw;
-  }
-}
 /* =========================================================
 cv
 ========================================================= */
@@ -1101,7 +1022,7 @@ cv
   content: "";
   width: 1em;
   height: 1em;
-  background: url(../img/ic_search.svg) no-repeat center;
+  background: url(/hebel-rooms/lightbox11/img/ic_search.svg) no-repeat center;
   background-size: contain;
   position: absolute;
   top: 50%;
@@ -1181,7 +1102,7 @@ cv
   content: "";
   width: 1em;
   height: 1em;
-  background: url(../img/ic_search.svg) no-repeat center;
+  background: url(/hebel-rooms/lightbox11/img/ic_search.svg) no-repeat center;
   background-size: contain;
   position: absolute;
   top: 40px;
@@ -1393,7 +1314,7 @@ about
 .hk-about-bg {
   width: 100%;
   padding: 105px 0 120px;
-  background-image: url(../img/hk_about_bg_fub.jpg);
+  background-image: url(/hebel-rooms/lightbox11/img/hk_about_bg_fub.jpg);
   background-position: center;
   background-repeat: no-repeat;
   z-index: 1;
@@ -1424,7 +1345,7 @@ about
   top: 0;
   left: 0;
   z-index: 4;
-  background-image: url(../img/hk_abou_bg_lb.png);
+  background-image: url(/hebel-rooms/lightbox11/img/hk_abou_bg_lb.png);
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -1436,7 +1357,7 @@ about
   top: 0;
   left: 0;
   z-index: 4;
-  background-image: url(../img/hk_abou_bg_l.png);
+  background-image: url(/hebel-rooms/lightbox11/img/hk_abou_bg_l.png);
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -1448,7 +1369,7 @@ facility
   width: 100%;
   overflow-x: hidden;
   padding: 106px 0 70px;
-  background: url(../img/hk_block_bg.svg) no-repeat center 0;
+  background: url(/hebel-rooms/lightbox11/img/hk_block_bg.svg) no-repeat center 0;
   position: relative;
 }
 
@@ -1681,7 +1602,7 @@ facility
   width: 100%;
   padding-top: 12vw;
   background-color: #a0d7e6;
-  background-image: url(../img/hk_block_bg_top_sp.svg);
+  background-image: url(/hebel-rooms/lightbox11/img/hk_block_bg_top_sp.svg);
   background-position: center top;
   background-repeat: no-repeat;
   background-size: contain;
@@ -1690,7 +1611,7 @@ facility
 .hk-facility-pickup-inner {
   width: 100%;
   padding-bottom: 12vw;
-  background-image: url(../img/hk_block_bg_bottom_sp.svg);
+  background-image: url(/hebel-rooms/lightbox11/img/hk_block_bg_bottom_sp.svg);
   background-position: center bottom -1px;
   background-repeat: no-repeat;
   background-size: contain;
@@ -2455,6 +2376,10 @@ utility
 }
 
 /* 追記 */
+#header .headerWrap{
+  margin-top: 1.875%;
+}
+
 #header .logo {
     width: 53.125%;
     margin-top: 0.3125%;

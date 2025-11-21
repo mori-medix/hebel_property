@@ -168,8 +168,8 @@
           "alt":""
         },
         "link":{
-          "href":"",
-          "type":"link"
+          "href":{"pc":"/hebel-rooms/lightbox11/"},
+          "type":"lightbox"
         },
         "label":{
           "text":"開放感のある住まい"
