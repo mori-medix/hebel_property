@@ -1,1 +1,3625 @@
-!function(){"use strict";!function(e,t){function r(e){if(1/e==-1/0&&(e=0),e>Math.pow(2,32)-1)throw new RangeError("Invalid array length");var t=[];return t.length=e,t}function o(e,t){var r=arguments.length>2?arguments[2]:[];if(!1===c(e))throw new TypeError(Object.prototype.toString.call(e)+"is not a function.");return e.apply(t,r)}function n(e,t){return e[t]}function i(e,t){return t in e}function a(e){return"[object Array]"===Object.prototype.toString.call(e)}function c(e){return"function"==typeof e}function l(e){return Boolean(e)}function p(e){if(null===e||e===t)throw TypeError();return Object(e)}function u(e,t){return p(e)[t]}function f(e,r){var o=u(e,r);if(null===o||o===t)return t;if(!1===c(o))throw new TypeError("Method not callable: "+r);return o}function y(t){switch(typeof t){case"undefined":return"undefined";case"boolean":return"boolean";case"number":return"number";case"string":return"string";case"symbol":return"symbol";default:return null===t?"null":"Symbol"in e&&(t instanceof e.Symbol||t.constructor===e.Symbol)?"symbol":"object"}}function b(e){return"object"===y(e)&&("function"==typeof e&&!!e.prototype)}function s(e,r){if("object"!==y(e["[[Iterator]]"]))throw new Error(Object.prototype.toString.call(e["[[Iterator]]"])+"is not an Object.");var n=e["[[Iterator]]"],i=f(n,"return");if(i===t)return r;try{var a=o(i,n)}catch(e){var c=e}if(r)return r;if(c)throw c;if("object"!==y(a))throw new TypeError("Iterator's return method returned a non-object.");return r}function h(e){var t=function(e){if(arguments.length<2)var t=o(e["[[NextMethod]]"],e["[[Iterator]]"]);else t=o(e["[[NextMethod]]"],e["[[Iterator]]"],[arguments[1]]);if("object"!==y(t))throw new TypeError("bad iterator");return t}(e);return!0!==function(e){if("object"!==y(e))throw new Error(Object.prototype.toString.call(e)+"is not an Object.");return l(n(e,"done"))}(t)&&t}function v(e){if("object"!==y(e))throw new Error(Object.prototype.toString.call(e)+"is not an Object.");return n(e,"value")}function w(e,t){return y(e)===y(t)&&("number"===y(e)?!(!isNaN(e)||!isNaN(t))||(1/e==1/0&&1/t==-1/0||(1/e==-1/0&&1/t==1/0||e===t)):function(e,t){return e===t}(e,t))}function g(e){if("symbol"===y(e))throw new TypeError("Cannot convert a Symbol value to a number");var t=Number(e);return isNaN(t)?0:1/t==1/0||1/t==-1/0||t===1/0||t===-1/0?t:(t<0?-1:1)*Math.floor(Math.abs(t))}function d(e){var t=g(e);return t<=0?0:Math.min(t,Math.pow(2,53)-1)}function j(r){var i=arguments.length>1?arguments[1]:t;if("object"===y(r)){if(arguments.length<2)var a="default";else i===String?a="string":i===Number&&(a="number");var l="function"==typeof e.Symbol&&"symbol"==typeof e.Symbol.toPrimitive?f(r,e.Symbol.toPrimitive):t;if(l!==t){var p=o(l,r,[a]);if("object"!==y(p))return p;throw new TypeError("Cannot convert exotic object to primitive.")}return"default"===a&&(a="number"),function(e,t){if("string"===t)var r=["toString","valueOf"];else r=["valueOf","toString"];for(var i=0;i<r.length;++i){var a=n(e,r[i]);if(c(a)){var l=o(a,e);if("object"!==y(l))return l}}throw new TypeError("Cannot convert to primitive.")}(r,a)}return r}function m(e){switch(y(e)){case"symbol":throw new TypeError("Cannot convert a Symbol value to a string");case"object":return m(j(e,String));default:return String(e)}}var O,S,_,E,M,P,T,I,z;function k(e,t,r){var o={value:r,writable:!0,enumerable:!0,configurable:!0};try{return Object.defineProperty(e,t,o),!0}catch(e){return!1}}function x(e,t,r){var o=k(e,t,r);if(!o)throw new TypeError("Cannot assign value `"+Object.prototype.toString.call(r)+"` to property `"+Object.prototype.toString.call(t)+"` on object `"+Object.prototype.toString.call(e)+"`");return o}function A(e,t){if("boolean"!==y(t))throw new Error;var r={};return k(r,"value",e),k(r,"done",t),r}function N(e,t,r){var o={value:r,writable:!0,enumerable:!1,configurable:!0};Object.defineProperty(e,t,o)}function $(e,t){var r=arguments[2]||{},o=function(e,t){var r=n(e,"prototype");return"object"!==y(r)&&(r=t),r}(e,t),i=Object.create(o);for(var a in r)Object.prototype.hasOwnProperty.call(r,a)&&Object.defineProperty(i,a,{configurable:!0,enumerable:!1,writable:!0,value:r[a]});return i}function D(e){var t=arguments.length>2?arguments[2]:e,r=arguments.length>1?arguments[1]:[];if(!b(e))throw new TypeError("F must be a constructor.");if(!b(t))throw new TypeError("newTarget must be a constructor.");return t===e?new(Function.prototype.bind.apply(e,[null].concat(r))):o(e,$(t,Object.prototype),r)}function F(o,i){if(0===i&&1/i==-1/0&&(i=0),!1===a(o))return r(i);var c=n(o,"constructor");if("object"===y(c)&&null===(c="Symbol"in e&&"species"in e.Symbol?n(c,e.Symbol.species):t)&&(c=t),c===t)return r(i);if(!b(c))throw new TypeError("C must be a constructor");return D(c,[i])}function C(e){var t=o(arguments.length>1?arguments[1]:f(e,Symbol.iterator),e);if("object"!==y(t))throw new TypeError("bad iterator");var r=u(t,"next"),n=Object.create(null);return n["[[Iterator]]"]=t,n["[[NextMethod]]"]=r,n["[[Done]]"]=!1,n}"defineProperty"in Object&&function(){try{return Object.defineProperty({},"test",{value:42}),!0}catch(e){return!1}}()||(O=Object.defineProperty,S=Object.prototype.hasOwnProperty.call(Object.prototype,"__defineGetter__"),_="Getters & setters cannot be defined on this javascript engine",E="A property cannot both have accessors and be writable or have a value",Object.defineProperty=function(e,r,o){if(O&&(e===window||e===document||e===Element.prototype||e instanceof Element))return O(e,r,o);if(null===e||!(e instanceof Object||"object"==typeof e))throw new TypeError("Object.defineProperty called on non-object");if(!(o instanceof Object))throw new TypeError("Property description must be an object");var n=String(r),i="value"in o||"writable"in o,a="get"in o&&typeof o.get,c="set"in o&&typeof o.set;if(a){if(a===t)return e;if("function"!==a)throw new TypeError("Getter must be a function");if(!S)throw new TypeError(_);if(i)throw new TypeError(E);Object.__defineGetter__.call(e,n,o.get)}else e[n]=o.value;if(c){if(c===t)return e;if("function"!==c)throw new TypeError("Setter must be a function");if(!S)throw new TypeError(_);if(i)throw new TypeError(E);Object.__defineSetter__.call(e,n,o.set)}return"value"in o&&(e[n]=o.value),e}),"isArray"in Array||N(Array,"isArray",function(e){return a(e)}),"forEach"in Array.prototype||N(Array.prototype,"forEach",function(e){var r=p(this),a=r instanceof String?r.split(""):r,l=d(n(r,"length"));if(!1===c(e))throw new TypeError(e+" is not a function");for(var u=arguments.length>1?arguments[1]:t,f=0;f<l;){var y=m(f);if(i(a,y))o(e,u,[n(a,y),f,r]);f+=1}return t}),"includes"in Array.prototype||N(Array.prototype,"includes",function(e){var t=p(this),r=d(n(t,"length"));if(0===r)return!1;var o=g(arguments[1]);if(o>=0)var i=o;else(i=r+o)<0&&(i=0);for(;i<r;){if(w(e,n(t,m(i))))return!0;i+=1}return!1}),"indexOf"in Array.prototype||N(Array.prototype,"indexOf",function(e){var t=p(this),r=d(n(t,"length"));if(0===r)return-1;var o=g(arguments[1]);if(o>=r)return-1;if(o>=0)var a=1/o==-1/0?0:o;else(a=r+o)<0&&(a=0);for(;a<r;){if(i(t,m(a)))if(e===n(t,m(a)))return a;a+=1}return-1}),"bind"in Function.prototype||N(Function.prototype,"bind",function(e){var t=Object,r=Array.prototype,o=function(){},n=r.slice,i=r.concat,a=r.push,l=Math.max,p=this;if(!c(p))throw new TypeError("Function.prototype.bind called on incompatible "+p);for(var u,f=n.call(arguments,1),y=l(0,p.length-f.length),b=[],s=0;s<y;s++)a.call(b,"$"+s);return u=Function("binder","return function ("+b.join(",")+"){ return binder.apply(this, arguments); }")(function(){if(this instanceof u){var r=p.apply(this,i.call(f,n.call(arguments)));return t(r)===r?r:this}return p.apply(e,i.call(f,n.call(arguments)))}),p.prototype&&(o.prototype=p.prototype,u.prototype=new o,o.prototype=null),u}),"freeze"in Object||N(Object,"freeze",function(e){return e}),"getOwnPropertyDescriptor"in Object&&"function"==typeof Object.getOwnPropertyDescriptor&&function(){try{return"3"===Object.getOwnPropertyDescriptor("13.7",1).value}catch(e){return!1}}()||(M=Object.getOwnPropertyDescriptor,P=function(){try{return 1===Object.defineProperty(document.createElement("div"),"one",{get:function(){return 1}}).one}catch(e){return!1}},T={}.toString,I="".split,N(Object,"getOwnPropertyDescriptor",function(e,t){var r=p(e);r=("string"===y(r)||r instanceof String)&&"[object String]"==T.call(e)?I.call(e,""):Object(e);var o,n,i=function(e){var t=j(e,String);return"symbol"===y(t)?t:m(t)}(t);if(P)try{return M(r,i)}catch(e){}if(o=r,n=i,Object.prototype.hasOwnProperty.call(o,n))return{enumerable:!0,configurable:!0,writable:!0,value:r[i]}})),"getPrototypeOf"in Object||N(Object,"getPrototypeOf",function(e){if(e!==Object(e))throw new TypeError("Object.getPrototypeOf called on non-object");var t=e.__proto__;return t||null===t?t:"function"==typeof e.constructor&&e instanceof e.constructor?e.constructor.prototype:e instanceof Object?Object.prototype:null}),"isExtensible"in Object||(z=Object.isExtensible,N(Object,"isExtensible",function(e){return"object"===y(e)&&(!z||z(e))})),"keys"in Object&&function(){return 2===Object.keys(arguments).length}(1,2)&&function(){try{return Object.keys(""),!0}catch(e){return!1}}()||N(Object,"keys",function(){var e=Object.prototype.hasOwnProperty,r=Object.prototype.toString,o=Object.prototype.propertyIsEnumerable,n=!o.call({toString:null},"toString"),i=o.call(function(){},"prototype");function a(){var e;try{e=Object.create({})}catch(e){return!0}return o.call(e,"__proto__")}var c=["toString","toLocaleString","valueOf","hasOwnProperty","isPrototypeOf","propertyIsEnumerable","constructor"],l=function(e){var t=e.constructor;return t&&t.prototype===e},p={$console:!0,$external:!0,$frame:!0,$frameElement:!0,$frames:!0,$innerHeight:!0,$innerWidth:!0,$outerHeight:!0,$outerWidth:!0,$pageXOffset:!0,$pageYOffset:!0,$parent:!0,$scrollLeft:!0,$scrollTop:!0,$scrollX:!0,$scrollY:!0,$self:!0,$webkitIndexedDB:!0,$webkitStorageInfo:!0,$window:!0},u=function(){if("undefined"==typeof window)return!1;for(var t in window)try{if(!p["$"+t]&&e.call(window,t)&&null!==window[t]&&"object"==typeof window[t])try{l(window[t])}catch(e){return!0}}catch(e){return!0}return!1}();return function(o){var p,f,y,b="[object Function]"===r.call(o),s=(p=o,f=r.call(p),(y="[object Arguments]"===f)||(y="[object Array]"!==f&&null!==p&&"object"==typeof p&&"number"==typeof p.length&&p.length>=0&&"[object Function]"===r.call(p.callee)),y),h="[object String]"===r.call(o),v=[];if(o===t||null===o)throw new TypeError("Cannot convert undefined or null to object");var w=i&&b;if(h&&o.length>0&&!e.call(o,0))for(var g=0;g<o.length;++g)v.push(String(g));if(s&&o.length>0)for(var d=0;d<o.length;++d)v.push(String(d));else for(var j in o)a()&&"__proto__"===j||w&&"prototype"===j||!e.call(o,j)||v.push(String(j));if(n)for(var m=function(e){if("undefined"==typeof window||!u)return l(e);try{return l(e)}catch(e){return!1}}(o),O=0;O<c.length;++O)m&&"constructor"===c[O]||!e.call(o,c[O])||v.push(c[O]);return v}}()),"assign"in Object||N(Object,"assign",function(e,r){var o=p(e);if(1===arguments.length)return o;var i,a,c,l,u=Array.prototype.slice.call(arguments,1);for(i=0;i<u.length;i++){var f=u[i];for(f===t||null===f?c=[]:(l="[object String]"===Object.prototype.toString.call(f)?String(f).split(""):p(f),c=Object.keys(l)),a=0;a<c.length;a++){var y,b=c[a];try{var s=Object.getOwnPropertyDescriptor(l,b);y=s!==t&&!0===s.enumerable}catch(e){y=Object.prototype.propertyIsEnumerable.call(l,b)}if(y){var h=n(l,b);o[b]=h}}}return o}),"defineProperties"in Object||N(Object,"defineProperties",function(e,r){if("object"!==y(e))throw new TypeError("Object.defineProperties called on non-object");for(var o=p(r),i=Object.keys(o),a=[],c=0;c<i.length;c++){var l=i[c],u=Object.getOwnPropertyDescriptor(o,l);if(u!==t&&u.enumerable){var f=n(o,l);a.push([l,f])}}for(var b=0;b<a.length;b++){var s=a[b][0];f=a[b][1],Object.defineProperty(e,s,f)}return e}),"create"in Object||function(){if(!({__proto__:null}instanceof Object))var e=function(){return{__proto__:null}};else e=function(){var t=document.createElement("iframe");t.style.display="none";var r=document.body||document.documentElement;r.appendChild(t),t.src="javascript:";var o=t.contentWindow.Object.prototype;r.removeChild(t),t=null,delete o.constructor,delete o.hasOwnProperty,delete o.propertyIsEnumerable,delete o.isPrototypeOf,delete o.toLocaleString,delete o.toString,delete o.valueOf;var n=function(){};return n.prototype=o,e=function(){return new n},new n};function t(){}N(Object,"create",function(r,o){if("object"!==y(r)&&"null"!==y(r))throw new TypeError("Object prototype may only be an Object or null");if("null"===y(r))var n=e();else t.prototype=r,(n=new t).__proto__=r,n.constructor.prototype=r,n.__proto__=r;return 1 in arguments?Object.defineProperties(n,o):n})}(),"filter"in Array.prototype||N(Array.prototype,"filter",function(e){var r=p(this),a=d(n(r,"length"));if(!1===c(e))throw new TypeError(e+" is not a function");for(var u=arguments.length>1?arguments[1]:t,f=F(r,0),y=0,b=0;y<a;){var s=m(y);if(i(r,s)){var h=n(r,s);l(o(e,u,[h,y,r]))&&(x(f,m(b),h),b+=1)}y+=1}return f}),"map"in Array.prototype||N(Array.prototype,"map",function(e){var r=p(this),a=d(n(r,"length"));if(!1===c(e))throw new TypeError(e+" is not a function");for(var l=arguments.length>1?arguments[1]:t,u=F(r,a),f=0;f<a;){var y=m(f);if(i(r,y))x(u,y,o(e,l,[n(r,y),f,r]));f+=1}return u}),"getOwnPropertyNames"in Object&&function(){try{return Object.getOwnPropertyNames(1),!0}catch(e){return!1}}()||function(){var t={}.toString,r="".split,o=[].concat,n=Object.prototype.hasOwnProperty,i=Object.getOwnPropertyNames||Object.keys,a="object"==typeof e?i(e):[];N(Object,"getOwnPropertyNames",function(e){var c=p(e);if("[object Window]"===t.call(c))try{return i(c)}catch(e){return o.call([],a)}c="[object String]"==t.call(c)?r.call(c,""):Object(c);for(var l=i(c),u=["length","prototype"],f=0;f<u.length;f++){var y=u[f];n.call(c,y)&&!l.includes(y)&&l.push(y)}if(l.includes("__proto__")){var b=l.indexOf("__proto__");l.splice(b,1)}return l})}(),"Symbol"in e&&0===e.Symbol.length||function(r,o,n){var i,a=function(){try{var e={};return r.defineProperty(e,"t",{configurable:!0,enumerable:!1,get:function(){return!0},set:t}),!!e.t}catch(e){return!1}}(),c=0,l=""+Math.random(),p="__symbol:",u="__symbol@@"+l,f={},b="defineProperty",s="defineProperties",h="getOwnPropertyNames",v="getOwnPropertyDescriptor",w="propertyIsEnumerable",g=r.prototype,d=g.hasOwnProperty,j=g[w],m=g.toString,O=Array.prototype.concat,S=r.getOwnPropertyNames?r.getOwnPropertyNames(e):[],_=r[h],E=function(e){if("[object Window]"===m.call(e))try{return _(e)}catch(e){return O.call([],S)}return _(e)},M=r[v],P=r.create,T=r.keys,I=r.freeze||r,z=r[b],k=r[s],x=M(r,h),A=function(e,t,r){if(!d.call(e,u))try{z(e,u,{enumerable:!1,configurable:!1,writable:!1,value:{}})}catch(t){e[u]={}}e[u]["@@"+t]=r},N=function(){},$=function(e){return e!=u&&!d.call(W,e)},D=function(e){return e!=u&&d.call(W,e)},F=function(e){var t=""+e;return D(t)?d.call(this,t)&&this[u]&&this[u]["@@"+t]:j.call(this,e)},C=function(e){var t={enumerable:!1,configurable:!0,get:N,set:function(t){i(this,e,{enumerable:!1,configurable:!0,writable:!0,value:t}),A(this,e,!0)}};try{z(g,e,t)}catch(r){g[e]=t.value}W[e]=z(r(e),"constructor",G);var o=M(V.prototype,"description");return o&&z(W[e],"description",o),I(W[e])},K=function(e){var r=function(e){if("symbol"===y(e))return e;throw TypeError(e+" is not a symbol")}(e);if(Y){var o=X(r);if(""!==o)return o.slice(1,-1)}if(f[r]!==t)return f[r];var n=r.toString(),i=n.lastIndexOf("0.");return""===(n=n.slice(10,i))?t:n},V=function e(){var o=arguments[0];if(this instanceof e)throw new TypeError("Symbol is not a constructor");var n=p.concat(o||"",l,++c);o===t||null!==o&&!isNaN(o)&&""!==String(o)||(f[n]=String(o));var i=C(n);return a||r.defineProperty(i,"description",{configurable:!0,enumerable:!1,value:K(i)}),i},W=P(null),G={value:V},q=function(e){return W[e]},B=function(e,t,r){var o=""+t;return D(o)?(i(e,o,r.enumerable?function(e){var t=P(e);return t.enumerable=!1,t}(r):r),A(e,o,!!r.enumerable)):z(e,t,r),e},L=function(e){return E(e).filter(e===g?(t=e,function(e){return d.call(t,u)&&d.call(t[u],"@@"+e)}):D).map(q);var t};x.value=B,z(r,b,x),x.value=L,z(r,"getOwnPropertySymbols",x),x.value=function(e){return E(e).filter($)},z(r,h,x),x.value=function(e,t){var r=L(t);return r.length?T(t).concat(r).forEach(function(r){F.call(t,r)&&B(e,r,t[r])}):k(e,t),e},z(r,s,x),x.value=F,z(g,w,x),x.value=V,z(n,"Symbol",x),x.value=function(e){var t=p.concat(p,e,l);return t in g?W[t]:C(t)},z(V,"for",x),x.value=function(e){if($(e))throw new TypeError(e+" is not a symbol");return d.call(W,e)?e.slice(20,-l.length):void 0},z(V,"keyFor",x),x.value=function(e,t){var r=M(e,t);return r&&D(t)&&(r.enumerable=F.call(e,t)),r},z(r,v,x),x.value=function(e,t){return 1===arguments.length||void 0===t?P(e):function(e,t){var r=P(e);return E(t).forEach(function(e){F.call(t,e)&&B(r,e,t[e])}),r}(e,t)},z(r,"create",x);var H=null===function(){return this}.call(null);if(x.value=H?function(){var e=m.call(this);return"[object String]"===e&&D(this)?"[object Symbol]":e}:function(){if(this===window)return"[object Null]";var e=m.call(this);return"[object String]"===e&&D(this)?"[object Symbol]":e},z(g,"toString",x),i=function(e,t,r){var o=M(g,t);delete g[t],z(e,t,r),e!==g&&z(g,t,o)},function(){try{var e={};return r.defineProperty(e,"t",{configurable:!0,enumerable:!1,get:function(){return!0},set:t}),!!e.t}catch(e){return!1}}()){var X;try{X=Function("s","var v = s.valueOf(); return { [v]() {} }[v].name;")}catch(e){}var Y=X&&"inferred"===function(){}.name?X:null;r.defineProperty(n.Symbol.prototype,"description",{configurable:!0,enumerable:!1,get:function(){return K(this)}})}}(Object,0,e),"Symbol"in e&&"iterator"in e.Symbol||Object.defineProperty(e.Symbol,"iterator",{value:e.Symbol("iterator")}),"Symbol"in e&&"species"in e.Symbol||Object.defineProperty(Symbol,"species",{value:Symbol("species")}),"Map"in e&&function(e){try{var t=new e.Map([[1,1],[2,2]]);return 0===e.Map.length&&2===t.size&&"Symbol"in e&&"iterator"in e.Symbol&&"function"==typeof t[e.Symbol.iterator]}catch(e){return!1}}(e)||function(e){var r=function(){try{var e={};return Object.defineProperty(e,"t",{configurable:!0,enumerable:!1,get:function(){return!0},set:t}),!!e.t}catch(e){return!1}}(),o=0,n=Symbol("meta_"+(1e8*Math.random()+"").replace(".","")),i=function(e){if("object"==typeof e?null!==e:"function"==typeof e){if(!Object.isExtensible(e))return!1;if(!Object.prototype.hasOwnProperty.call(e,n)){var t=typeof e+"-"+ ++o;Object.defineProperty(e,n,{configurable:!1,enumerable:!1,writable:!1,value:t})}return e[n]}return""+e},a=function(e,r){var o=i(r);if(!1===o)return l(e,r);var n=e._table[o];return n!==t&&n},l=function(e,t){for(var r=0;r<e._keys.length;r++){var o=e._keys[r];if(o!==u&&w(o,t))return r}return!1},p=function(e,t,r){var o=i(t);return!1!==o&&(!1===r?delete e._table[o]:e._table[o]=r,!0)},u=Symbol("undef"),f=function e(){if(!(this instanceof e))throw new TypeError('Constructor Map requires "new"');var o=$(this,e.prototype,{_table:{},_keys:[],_values:[],_size:0,_es6Map:!0});r||Object.defineProperty(o,"size",{configurable:!0,enumerable:!1,writable:!0,value:0});var n=arguments.length>0?arguments[0]:t;if(null===n||n===t)return o;var i=o.set;if(!c(i))throw new TypeError("Map.prototype.set is not a function");try{for(var a=C(n);;){var l=h(a);if(!1===l)return o;var p=v(l);if("object"!==y(p))try{throw new TypeError("Iterator value "+p+" is not an entry object")}catch(e){return s(a,e)}try{var u=p[0],f=p[1];i.call(o,u,f)}catch(e){return s(a,e)}}}catch(e){if(Array.isArray(n)||"[object Arguments]"===Object.prototype.toString.call(n)||n.callee){var b,w=n.length;for(b=0;b<w;b++)i.call(o,n[b][0],n[b][1])}}return o};function b(e,t){if("object"!==y(e))throw new TypeError("createMapIterator called on incompatible receiver "+Object.prototype.toString.call(e));if(!0!==e._es6Map)throw new TypeError("createMapIterator called on incompatible receiver "+Object.prototype.toString.call(e));var r=Object.create(g);return Object.defineProperty(r,"[[Map]]",{configurable:!0,enumerable:!1,writable:!0,value:e}),Object.defineProperty(r,"[[MapNextIndex]]",{configurable:!0,enumerable:!1,writable:!0,value:0}),Object.defineProperty(r,"[[MapIterationKind]]",{configurable:!0,enumerable:!1,writable:!0,value:t}),r}Object.defineProperty(f,"prototype",{configurable:!1,enumerable:!1,writable:!1,value:{}}),r?Object.defineProperty(f,Symbol.species,{configurable:!0,enumerable:!1,get:function(){return this},set:t}):N(f,Symbol.species,f),N(f.prototype,"clear",function(){var e=this;if("object"!==y(e))throw new TypeError("Method Map.prototype.clear called on incompatible receiver "+Object.prototype.toString.call(e));if(!0!==e._es6Map)throw new TypeError("Method Map.prototype.clear called on incompatible receiver "+Object.prototype.toString.call(e));for(var o=e._keys,n=0;n<o.length;n++)e._keys[n]=u,e._values[n]=u;return this._size=0,r||(this.size=this._size),this._table={},t}),N(f.prototype,"constructor",f),N(f.prototype,"delete",function(e){var t=this;if("object"!==y(t))throw new TypeError("Method Map.prototype.clear called on incompatible receiver "+Object.prototype.toString.call(t));if(!0!==t._es6Map)throw new TypeError("Method Map.prototype.clear called on incompatible receiver "+Object.prototype.toString.call(t));var o=a(t,e);if(!1!==o){var n=t._keys[o];if(n!==u&&w(n,e))return this._keys[o]=u,this._values[o]=u,this._size=--this._size,r||(this.size=this._size),p(this,e,!1),!0}return!1}),N(f.prototype,"entries",function(){return b(this,"key+value")}),N(f.prototype,"forEach",function(e){var r=this;if("object"!==y(r))throw new TypeError("Method Map.prototype.forEach called on incompatible receiver "+Object.prototype.toString.call(r));if(!0!==r._es6Map)throw new TypeError("Method Map.prototype.forEach called on incompatible receiver "+Object.prototype.toString.call(r));if(!c(e))throw new TypeError(Object.prototype.toString.call(e)+" is not a function.");if(arguments[1])var o=arguments[1];for(var n=r._keys,i=0;i<n.length;i++)r._keys[i]!==u&&r._values[i]!==u&&e.call(o,r._values[i],r._keys[i],r);return t}),N(f.prototype,"get",function(e){var r=this;if("object"!==y(r))throw new TypeError("Method Map.prototype.get called on incompatible receiver "+Object.prototype.toString.call(r));if(!0!==r._es6Map)throw new TypeError("Method Map.prototype.get called on incompatible receiver "+Object.prototype.toString.call(r));var o=a(r,e);if(!1!==o){var n=r._keys[o];if(n!==u&&w(n,e))return r._values[o]}return t}),N(f.prototype,"has",function(e){var t=this;if("object"!=typeof t)throw new TypeError("Method Map.prototype.has called on incompatible receiver "+Object.prototype.toString.call(t));if(!0!==t._es6Map)throw new TypeError("Method Map.prototype.has called on incompatible receiver "+Object.prototype.toString.call(t));var r=a(t,e);if(!1!==r){var o=t._keys[r];if(o!==u&&w(o,e))return!0}return!1}),N(f.prototype,"keys",function(){return b(this,"key")}),N(f.prototype,"set",function(e,t){var o=this;if("object"!==y(o))throw new TypeError("Method Map.prototype.set called on incompatible receiver "+Object.prototype.toString.call(o));if(!0!==o._es6Map)throw new TypeError("Method Map.prototype.set called on incompatible receiver "+Object.prototype.toString.call(o));var n=a(o,e);if(!1!==n)o._values[n]=t;else{-0===e&&(e=0);var i={"[[Key]]":e,"[[Value]]":t};o._keys.push(i["[[Key]]"]),o._values.push(i["[[Value]]"]),p(o,e,o._keys.length-1),++o._size,r||(o.size=o._size)}return o}),r&&Object.defineProperty(f.prototype,"size",{configurable:!0,enumerable:!1,get:function(){var e=this;if("object"!==y(e))throw new TypeError("Method Map.prototype.size called on incompatible receiver "+Object.prototype.toString.call(e));if(!0!==e._es6Map)throw new TypeError("Method Map.prototype.size called on incompatible receiver "+Object.prototype.toString.call(e));return this._size},set:t}),N(f.prototype,"values",function(){return b(this,"value")}),N(f.prototype,Symbol.iterator,f.prototype.entries),"name"in f||Object.defineProperty(f,"name",{configurable:!0,enumerable:!1,writable:!1,value:"Map"});var g={};Object.defineProperty(g,"isMapIterator",{configurable:!1,enumerable:!1,writable:!1,value:!0}),N(g,"next",function(){var e=this;if("object"!==y(e))throw new TypeError("Method %MapIteratorPrototype%.next called on incompatible receiver "+Object.prototype.toString.call(e));if(!e.isMapIterator)throw new TypeError("Method %MapIteratorPrototype%.next called on incompatible receiver "+Object.prototype.toString.call(e));var r=e["[[Map]]"],o=e["[[MapNextIndex]]"],n=e["[[MapIterationKind]]"];if(r===t)return A(t,!0);if(!r._es6Map)throw new Error(Object.prototype.toString.call(r)+" has a [[MapData]] internal slot.");for(var i=r._keys.length;o<i;){var a=Object.create(null);if(a["[[Key]]"]=r._keys[o],a["[[Value]]"]=r._values[o],o+=1,e["[[MapNextIndex]]"]=o,a["[[Key]]"]!==u){if("key"===n)var c=a["[[Key]]"];else if("value"===n)c=a["[[Value]]"];else{if("key+value"!==n)throw new Error;c=[a["[[Key]]"],a["[[Value]]"]]}return A(c,!1)}}return e["[[Map]]"]=t,A(t,!0)}),N(g,Symbol.iterator,function(){return this});try{N(e,"Map",f)}catch(t){e.Map=f}}(e),"Set"in e&&function(){try{var t=new e.Set([1,2]);return 0===e.Set.length&&2===t.size&&"Symbol"in e&&"iterator"in e.Symbol&&"function"==typeof t[e.Symbol.iterator]}catch(e){return!1}}()||function(e){var r=function(){try{var e={};return Object.defineProperty(e,"t",{configurable:!0,enumerable:!1,get:function(){return!0},set:t}),!!e.t}catch(e){return!1}}(),o=Symbol("undef"),n=function e(){if(!(this instanceof e))throw new TypeError('Constructor Set requires "new"');var o=$(this,e.prototype,{_values:[],_size:0,_es6Set:!0});r||Object.defineProperty(o,"size",{configurable:!0,enumerable:!1,writable:!0,value:0});var n=arguments.length>0?arguments[0]:t;if(null===n||n===t)return o;var i=o.add;if(!c(i))throw new TypeError("Set.prototype.add is not a function");try{for(var a=C(n);;){var l=h(a);if(!1===l)return o;var p=v(l);try{i.call(o,p)}catch(e){return s(a,e)}}}catch(e){if(!Array.isArray(n)&&"[object Arguments]"!==Object.prototype.toString.call(n)&&!n.callee)throw e;var u,f=n.length;for(u=0;u<f;u++)i.call(o,n[u])}return o};Object.defineProperty(n,"prototype",{configurable:!1,enumerable:!1,writable:!1,value:{}}),r?Object.defineProperty(n,Symbol.species,{configurable:!0,enumerable:!1,get:function(){return this},set:t}):N(n,Symbol.species,n),N(n.prototype,"add",function(e){var t=this;if("object"!=typeof t)throw new TypeError("Method Set.prototype.add called on incompatible receiver "+Object.prototype.toString.call(t));if(!0!==t._es6Set)throw new TypeError("Method Set.prototype.add called on incompatible receiver "+Object.prototype.toString.call(t));for(var n=t._values,i=0;i<n.length;i++){var a=n[i];if(a!==o&&w(a,e))return t}return 0===e&&1/e==-1/0&&(e=0),t._values.push(e),this._size=++this._size,r||(this.size=this._size),t}),N(n.prototype,"clear",function(){var e=this;if("object"!=typeof e)throw new TypeError("Method Set.prototype.clear called on incompatible receiver "+Object.prototype.toString.call(e));if(!0!==e._es6Set)throw new TypeError("Method Set.prototype.clear called on incompatible receiver "+Object.prototype.toString.call(e));for(var n=e._values,i=0;i<n.length;i++)n[i]=o;return this._size=0,r||(this.size=this._size),t}),N(n.prototype,"constructor",n),N(n.prototype,"delete",function(e){var t=this;if("object"!=typeof t)throw new TypeError("Method Set.prototype.delete called on incompatible receiver "+Object.prototype.toString.call(t));if(!0!==t._es6Set)throw new TypeError("Method Set.prototype.delete called on incompatible receiver "+Object.prototype.toString.call(t));for(var n=t._values,i=0;i<n.length;i++){var a=n[i];if(a!==o&&w(a,e))return n[i]=o,this._size=--this._size,r||(this.size=this._size),!0}return!1}),N(n.prototype,"entries",function(){return a(this,"key+value")}),N(n.prototype,"forEach",function(e){var r=this;if("object"!=typeof r)throw new TypeError("Method Set.prototype.forEach called on incompatible receiver "+Object.prototype.toString.call(r));if(!0!==r._es6Set)throw new TypeError("Method Set.prototype.forEach called on incompatible receiver "+Object.prototype.toString.call(r));if(!c(e))throw new TypeError(Object.prototype.toString.call(e)+" is not a function.");if(arguments[1])var n=arguments[1];for(var i=r._values,a=0;a<i.length;a++){var l=i[a];l!==o&&e.call(n,l,l,r)}return t}),N(n.prototype,"has",function(e){var t=this;if("object"!=typeof t)throw new TypeError("Method Set.prototype.forEach called on incompatible receiver "+Object.prototype.toString.call(t));if(!0!==t._es6Set)throw new TypeError("Method Set.prototype.forEach called on incompatible receiver "+Object.prototype.toString.call(t));for(var r=t._values,n=0;n<r.length;n++){var i=r[n];if(i!==o&&w(i,e))return!0}return!1});var i=function(){return a(this,"value")};function a(e,t){if("object"!=typeof e)throw new TypeError("createSetIterator called on incompatible receiver "+Object.prototype.toString.call(e));if(!0!==e._es6Set)throw new TypeError("createSetIterator called on incompatible receiver "+Object.prototype.toString.call(e));var r=Object.create(l);return Object.defineProperty(r,"[[IteratedSet]]",{configurable:!0,enumerable:!1,writable:!0,value:e}),Object.defineProperty(r,"[[SetNextIndex]]",{configurable:!0,enumerable:!1,writable:!0,value:0}),Object.defineProperty(r,"[[SetIterationKind]]",{configurable:!0,enumerable:!1,writable:!0,value:t}),r}N(n.prototype,"values",i),N(n.prototype,"keys",i),r&&Object.defineProperty(n.prototype,"size",{configurable:!0,enumerable:!1,get:function(){var e=this;if("object"!=typeof e)throw new TypeError("Method Set.prototype.size called on incompatible receiver "+Object.prototype.toString.call(e));if(!0!==e._es6Set)throw new TypeError("Method Set.prototype.size called on incompatible receiver "+Object.prototype.toString.call(e));for(var t=e._values,r=0,n=0;n<t.length;n++){t[n]!==o&&(r+=1)}return r},set:t}),N(n.prototype,Symbol.iterator,i),"name"in n||Object.defineProperty(n,"name",{configurable:!0,enumerable:!1,writable:!1,value:"Set"});var l={};Object.defineProperty(l,"isSetIterator",{configurable:!1,enumerable:!1,writable:!1,value:!0}),N(l,"next",function(){var e=this;if("object"!=typeof e)throw new TypeError("Method %SetIteratorPrototype%.next called on incompatible receiver "+Object.prototype.toString.call(e));if(!e.isSetIterator)throw new TypeError("Method %SetIteratorPrototype%.next called on incompatible receiver "+Object.prototype.toString.call(e));var r=e["[[IteratedSet]]"],n=e["[[SetNextIndex]]"],i=e["[[SetIterationKind]]"];if(r===t)return A(t,!0);if(!r._es6Set)throw new Error(Object.prototype.toString.call(r)+" does not have [[SetData]] internal slot.");for(var a=r._values,c=a.length;n<c;){var l=a[n];if(n+=1,e["[[SetNextIndex]]"]=n,l!==o)return A("key+value"===i?[l,l]:l,!1)}return e["[[IteratedSet]]"]=t,A(t,!0)}),N(l,Symbol.iterator,function(){return this});try{N(e,"Set",n)}catch(t){e.Set=n}}(e),"from"in Array&&function(){try{return Array.from({length:-1/0}),"a"===Array.from(new e.Set(["a"]))[0]&&"a"===Array.from(new e.Map([["a","one"]]))[0][0]}catch(e){return!1}}()||function(){var e=Object.prototype.toString,i=String.prototype.match;N(Array,"from",function(a){var l=this,u=arguments.length>1?arguments[1]:t;if(u===t)var y=!1;else{if(!1===c(u))throw new TypeError(Object.prototype.toString.call(u)+" is not a function.");var w=arguments.length>2?arguments[2]:t;if(w!==t)var g=w;else g=t;y=!0}var j,O=f(a,Symbol.iterator);if(O!==t){if(b(l))var S=D(l);else S=r(0);for(var _=C(a,O),E=0;;){if(E>=Math.pow(2,53)-1)return s(_,new TypeError("Iteration count can not be greater than or equal 9007199254740991."));var M=m(E),P=h(_);if(!1===P)return S.length=E,S;var T=v(P);if(y)try{var I=o(u,g,[T,E])}catch(e){return s(_,e)}else I=T;try{x(S,M,I)}catch(e){return s(_,e)}E+=1}}if("string"==typeof(j=a)||"object"==typeof j&&"[object String]"===e.call(j))var z=i.call(a,/[\uD800-\uDBFF][\uDC00-\uDFFF]?|[^\uD800-\uDFFF]|./g)||[];else z=p(a);var k=d(n(z,"length"));for(S=b(l)?D(l,[k]):r(k),E=0;E<k;){var A=n(z,M=m(E));x(S,M,I=!0===y?o(u,g,[A,E]):A),E+=1}return S.length=k,S})}()}("object"==typeof window&&window||"object"==typeof self&&self||"object"==typeof global&&global||{})}();
+/******/ (function() { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	!function() {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = function(exports) {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+/*!**************************************************************************!*\
+  !*** ./src/assets/ts/common_v2/features/hebelmaison/polyfill-library.js ***!
+  \**************************************************************************/
+__webpack_require__.r(__webpack_exports__);
+/* Polyfill service DEVELOPMENT MODE - for live use set NODE_ENV to 'production'
+ * For detailed credits and licence information see https://github.com/financial-times/polyfill-service.
+ * 
+ * Features requested: Array.from,Object.assign
+ * 
+ * - _ESAbstract.ArrayCreate, License: CC0 (required by "Array.from", "Set", "Symbol", "Array.prototype.map", "_ESAbstract.ArraySpeciesCreate")
+ * - _ESAbstract.Call, License: CC0 (required by "Array.from", "_ESAbstract.ToString", "_ESAbstract.ToPrimitive", "_ESAbstract.OrdinaryToPrimitive")
+ * - _ESAbstract.Get, License: CC0 (required by "Array.from", "Set", "Symbol", "Object.getOwnPropertyNames", "Array.prototype.indexOf")
+ * - _ESAbstract.HasOwnProperty, License: CC0 (required by "Object.assign", "Object.getOwnPropertyDescriptor")
+ * - _ESAbstract.HasProperty, License: CC0 (required by "Array.from", "Set", "Symbol", "Object.getOwnPropertyNames", "Array.prototype.indexOf")
+ * - _ESAbstract.IsArray, License: CC0 (required by "Array.from", "Set", "Symbol", "Array.prototype.map", "_ESAbstract.ArraySpeciesCreate")
+ * - _ESAbstract.IsCallable, License: CC0 (required by "Array.from", "_ESAbstract.ToString", "_ESAbstract.ToPrimitive", "_ESAbstract.OrdinaryToPrimitive")
+ * - _ESAbstract.SameValueNonNumber, License: CC0 (required by "Array.from", "Set", "_ESAbstract.SameValueZero")
+ * - _ESAbstract.ToBoolean, License: CC0 (required by "Array.from", "Set", "Symbol", "Array.prototype.filter")
+ * - _ESAbstract.ToObject, License: CC0 (required by "Array.from", "Set", "Symbol", "Object.getOwnPropertyNames", "Array.prototype.indexOf")
+ * - _ESAbstract.GetV, License: CC0 (required by "Array.from", "_ESAbstract.GetIterator")
+ * - _ESAbstract.GetMethod, License: CC0 (required by "Array.from", "_ESAbstract.ToString", "_ESAbstract.ToPrimitive")
+ * - _ESAbstract.Type, License: CC0 (required by "Array.from", "Set", "Symbol", "Array.prototype.map", "_ESAbstract.ArraySpeciesCreate")
+ * - _ESAbstract.GetPrototypeFromConstructor, License: CC0 (required by "Array.from", "Set", "_ESAbstract.OrdinaryCreateFromConstructor")
+ * - _ESAbstract.IsConstructor, License: CC0 (required by "Array.from", "Set", "Symbol", "Array.prototype.map", "_ESAbstract.ArraySpeciesCreate")
+ * - _ESAbstract.IteratorClose, License: CC0 (required by "Array.from", "Set")
+ * - _ESAbstract.IteratorComplete, License: CC0 (required by "Array.from", "Set")
+ * - _ESAbstract.IteratorNext, License: CC0 (required by "Array.from", "Set")
+ * - _ESAbstract.IteratorStep, License: CC0 (required by "Array.from", "Set")
+ * - _ESAbstract.IteratorValue, License: CC0 (required by "Array.from", "Set")
+ * - _ESAbstract.OrdinaryToPrimitive, License: CC0 (required by "Array.from", "_ESAbstract.ToString", "_ESAbstract.ToPrimitive")
+ * - _ESAbstract.SameValueZero, License: CC0 (required by "Array.from", "Set", "Symbol", "Object.getOwnPropertyNames", "Array.prototype.includes")
+ * - _ESAbstract.ToInteger, License: CC0 (required by "Array.from", "Set", "Symbol", "Object.getOwnPropertyNames", "Array.prototype.indexOf")
+ * - _ESAbstract.ToLength, License: CC0 (required by "Array.from", "Set", "Symbol", "Object.getOwnPropertyNames", "Array.prototype.indexOf")
+ * - _ESAbstract.ToPrimitive, License: CC0 (required by "Object.assign", "Object.getOwnPropertyDescriptor", "_ESAbstract.ToPropertyKey")
+ * - _ESAbstract.ToString, License: CC0 (required by "Array.from", "Set", "Symbol", "Object.getOwnPropertyNames", "Array.prototype.indexOf")
+ * - _ESAbstract.ToPropertyKey, License: CC0 (required by "Object.assign", "Object.getOwnPropertyDescriptor")
+ * - Object.defineProperty, License: CC0 (required by "Array.from", "Set", "_ESAbstract.OrdinaryCreateFromConstructor", "Object.create", "Object.defineProperties")
+ * - _ESAbstract.CreateDataProperty, License: CC0 (required by "Array.from", "Set", "_ESAbstract.CreateIterResultObject")
+ * - _ESAbstract.CreateDataPropertyOrThrow, License: CC0 (required by "Array.from", "Set", "Symbol", "Array.prototype.map")
+ * - _ESAbstract.CreateIterResultObject, License: CC0 (required by "Array.from", "Set")
+ * - _ESAbstract.CreateMethodProperty, License: CC0 (required by "Array.from", "Set", "Symbol", "Object.getOwnPropertyNames", "Array.prototype.indexOf")
+ * - Array.isArray, License: CC0 (required by "Array.from", "Set")
+ * - Array.prototype.forEach, License: CC0 (required by "Array.from", "Set", "Symbol")
+ * - Array.prototype.includes, License: MIT (required by "Array.from", "Set", "Symbol", "Object.getOwnPropertyNames")
+ * - Array.prototype.indexOf, License: CC0 (required by "Array.from", "Set", "Symbol", "Object.getOwnPropertyNames")
+ * - Function.prototype.bind, License: MIT (required by "Object.assign", "Object.getOwnPropertyDescriptor")
+ * - Object.freeze, License: CC0 (required by "Array.from", "Set", "Symbol")
+ * - Object.getOwnPropertyDescriptor, License: CC0 (required by "Array.from", "Set", "_ESAbstract.OrdinaryCreateFromConstructor", "Object.create", "Object.defineProperties")
+ * - Object.getPrototypeOf, License: CC0 (required by "Array.from", "Set", "_ESAbstract.OrdinaryCreateFromConstructor")
+ * - Object.isExtensible, License: CC0 (required by "Array.from", "Map")
+ * - Object.keys, License: MIT (required by "Array.from", "Set", "_ESAbstract.OrdinaryCreateFromConstructor", "Object.create", "Object.defineProperties")
+ * - Object.assign, License: CC0
+ * - Object.defineProperties, License: CC0 (required by "Array.from", "Set", "_ESAbstract.OrdinaryCreateFromConstructor", "Object.create")
+ * - Object.create, License: CC0 (required by "Array.from", "Set", "_ESAbstract.OrdinaryCreateFromConstructor")
+ * - _ESAbstract.OrdinaryCreateFromConstructor, License: CC0 (required by "Array.from", "Set")
+ * - _ESAbstract.Construct, License: CC0 (required by "Array.from", "Set", "Symbol", "Array.prototype.map", "_ESAbstract.ArraySpeciesCreate")
+ * - _ESAbstract.ArraySpeciesCreate, License: CC0 (required by "Array.from", "Set", "Symbol", "Array.prototype.map")
+ * - Array.prototype.filter, License: CC0 (required by "Array.from", "Set", "Symbol")
+ * - Array.prototype.map, License: CC0 (required by "Array.from", "Set", "Symbol")
+ * - Object.getOwnPropertyNames, License: CC0 (required by "Array.from", "Set", "Symbol")
+ * - Symbol, License: MIT (required by "Array.from", "Set", "Symbol.species")
+ * - Symbol.iterator, License: MIT (required by "Array.from", "Set")
+ * - _ESAbstract.GetIterator, License: CC0 (required by "Array.from", "Set")
+ * - Symbol.species, License: MIT (required by "Array.from", "Set")
+ * - Map, License: CC0 (required by "Array.from")
+ * - Set, License: CC0 (required by "Array.from")
+ * - Array.from, License: CC0 */
+
+(function(self, undefined) {
+
+// _ESAbstract.ArrayCreate
+// 9.4.2.2. ArrayCreate ( length [ , proto ] )
+function ArrayCreate(length /* [, proto] */) { // eslint-disable-line no-unused-vars
+	// 1. Assert: length is an integer Number ≥ 0.
+	// 2. If length is -0, set length to +0.
+	if (1 / length === -Infinity) {
+		length = 0;
+	}
+	// 3. If length>2^32-1, throw a RangeError exception.
+	if (length > (Math.pow(2, 32) - 1)) {
+		throw new RangeError('Invalid array length');
+	}
+	// 4. If proto is not present, set proto to the intrinsic object %ArrayPrototype%.
+	// 5. Let A be a newly created Array exotic object.
+	var A = [];
+	// 6. Set A's essential internal methods except for [[DefineOwnProperty]] to the default ordinary object definitions specified in 9.1.
+	// 7. Set A.[[DefineOwnProperty]] as specified in 9.4.2.1.
+	// 8. Set A.[[Prototype]] to proto.
+	// 9. Set A.[[Extensible]] to true.
+	// 10. Perform ! OrdinaryDefineOwnProperty(A, "length", PropertyDescriptor{[[Value]]: length, [[Writable]]: true, [[Enumerable]]: false, [[Configurable]]: false}).
+	A.length = length;
+	// 11. Return A.
+	return A;
+}
+
+// _ESAbstract.Call
+/* global IsCallable */
+// 7.3.12. Call ( F, V [ , argumentsList ] )
+function Call(F, V /* [, argumentsList] */) { // eslint-disable-line no-unused-vars
+	// 1. If argumentsList is not present, set argumentsList to a new empty List.
+	var argumentsList = arguments.length > 2 ? arguments[2] : [];
+	// 2. If IsCallable(F) is false, throw a TypeError exception.
+	if (IsCallable(F) === false) {
+		throw new TypeError(Object.prototype.toString.call(F) + 'is not a function.');
+	}
+	// 3. Return ? F.[[Call]](V, argumentsList).
+	return F.apply(V, argumentsList);
+}
+
+// _ESAbstract.Get
+// 7.3.1. Get ( O, P )
+function Get(O, P) { // eslint-disable-line no-unused-vars
+	// 1. Assert: Type(O) is Object.
+	// 2. Assert: IsPropertyKey(P) is true.
+	// 3. Return ? O.[[Get]](P, O).
+	return O[P];
+}
+
+// _ESAbstract.HasOwnProperty
+// 7.3.11 HasOwnProperty (O, P)
+function HasOwnProperty(o, p) { // eslint-disable-line no-unused-vars
+	// 1. Assert: Type(O) is Object.
+	// 2. Assert: IsPropertyKey(P) is true.
+	// 3. Let desc be ? O.[[GetOwnProperty]](P).
+	// 4. If desc is undefined, return false.
+	// 5. Return true.
+	// Polyfill.io - As we expect user agents to support ES3 fully we can skip the above steps and use Object.prototype.hasOwnProperty to do them for us.
+	return Object.prototype.hasOwnProperty.call(o, p);
+}
+
+// _ESAbstract.HasProperty
+// 7.3.10. HasProperty ( O, P )
+function HasProperty(O, P) { // eslint-disable-line no-unused-vars
+	// Assert: Type(O) is Object.
+	// Assert: IsPropertyKey(P) is true.
+	// Return ? O.[[HasProperty]](P).
+	return P in O;
+}
+
+// _ESAbstract.IsArray
+// 7.2.2. IsArray ( argument )
+function IsArray(argument) { // eslint-disable-line no-unused-vars
+	// 1. If Type(argument) is not Object, return false.
+	// 2. If argument is an Array exotic object, return true.
+	// 3. If argument is a Proxy exotic object, then
+		// a. If argument.[[ProxyHandler]] is null, throw a TypeError exception.
+		// b. Let target be argument.[[ProxyTarget]].
+		// c. Return ? IsArray(target).
+	// 4. Return false.
+
+	// Polyfill.io - We can skip all the above steps and check the string returned from Object.prototype.toString().
+	return Object.prototype.toString.call(argument) === '[object Array]';
+}
+
+// _ESAbstract.IsCallable
+// 7.2.3. IsCallable ( argument )
+function IsCallable(argument) { // eslint-disable-line no-unused-vars
+	// 1. If Type(argument) is not Object, return false.
+	// 2. If argument has a [[Call]] internal method, return true.
+	// 3. Return false.
+
+	// Polyfill.io - Only function objects have a [[Call]] internal method. This means we can simplify this function to check that the argument has a type of function.
+	return typeof argument === 'function';
+}
+
+// _ESAbstract.SameValueNonNumber
+// 7.2.12. SameValueNonNumber ( x, y )
+function SameValueNonNumber(x, y) { // eslint-disable-line no-unused-vars
+	// 1. Assert: Type(x) is not Number.
+	// 2. Assert: Type(x) is the same as Type(y).
+	// 3. If Type(x) is Undefined, return true.
+	// 4. If Type(x) is Null, return true.
+	// 5. If Type(x) is String, then
+		// a. If x and y are exactly the same sequence of code units (same length and same code units at corresponding indices), return true; otherwise, return false.
+	// 6. If Type(x) is Boolean, then
+		// a. If x and y are both true or both false, return true; otherwise, return false.
+	// 7. If Type(x) is Symbol, then
+		// a. If x and y are both the same Symbol value, return true; otherwise, return false.
+	// 8. If x and y are the same Object value, return true. Otherwise, return false.
+
+	// Polyfill.io - We can skip all above steps because the === operator does it all for us.
+	return x === y;
+}
+
+// _ESAbstract.ToBoolean
+// 7.1.2. ToBoolean ( argument )
+// The abstract operation ToBoolean converts argument to a value of type Boolean according to Table 9:
+/*
+--------------------------------------------------------------------------------------------------------------
+| Argument Type | Result                                                                                     |
+--------------------------------------------------------------------------------------------------------------
+| Undefined     | Return false.                                                                              |
+| Null          | Return false.                                                                              |
+| Boolean       | Return argument.                                                                           |
+| Number        | If argument is +0, -0, or NaN, return false; otherwise return true.                        |
+| String        | If argument is the empty String (its length is zero), return false; otherwise return true. |
+| Symbol        | Return true.                                                                               |
+| Object        | Return true.                                                                               |
+--------------------------------------------------------------------------------------------------------------
+*/
+function ToBoolean(argument) { // eslint-disable-line no-unused-vars
+	return Boolean(argument);
+}
+
+// _ESAbstract.ToObject
+// 7.1.13 ToObject ( argument )
+// The abstract operation ToObject converts argument to a value of type Object according to Table 12:
+// Table 12: ToObject Conversions
+/*
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| Argument Type | Result                                                                                                                             |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| Undefined     | Throw a TypeError exception.                                                                                                       |
+| Null          | Throw a TypeError exception.                                                                                                       |
+| Boolean       | Return a new Boolean object whose [[BooleanData]] internal slot is set to argument. See 19.3 for a description of Boolean objects. |
+| Number        | Return a new Number object whose [[NumberData]] internal slot is set to argument. See 20.1 for a description of Number objects.    |
+| String        | Return a new String object whose [[StringData]] internal slot is set to argument. See 21.1 for a description of String objects.    |
+| Symbol        | Return a new Symbol object whose [[SymbolData]] internal slot is set to argument. See 19.4 for a description of Symbol objects.    |
+| Object        | Return argument.                                                                                                                   |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+*/
+function ToObject(argument) { // eslint-disable-line no-unused-vars
+	if (argument === null || argument === undefined) {
+		throw TypeError();
+	}
+	return Object(argument);
+}
+
+// _ESAbstract.GetV
+/* global ToObject */
+// 7.3.2 GetV (V, P)
+function GetV(v, p) { // eslint-disable-line no-unused-vars
+	// 1. Assert: IsPropertyKey(P) is true.
+	// 2. Let O be ? ToObject(V).
+	var o = ToObject(v);
+	// 3. Return ? O.[[Get]](P, V).
+	return o[p];
+}
+
+// _ESAbstract.GetMethod
+/* global GetV, IsCallable */
+// 7.3.9. GetMethod ( V, P )
+function GetMethod(V, P) { // eslint-disable-line no-unused-vars
+	// 1. Assert: IsPropertyKey(P) is true.
+	// 2. Let func be ? GetV(V, P).
+	var func = GetV(V, P);
+	// 3. If func is either undefined or null, return undefined.
+	if (func === null || func === undefined) {
+		return undefined;
+	}
+	// 4. If IsCallable(func) is false, throw a TypeError exception.
+	if (IsCallable(func) === false) {
+		throw new TypeError('Method not callable: ' + P);
+	}
+	// 5. Return func.
+	return func;
+}
+
+// _ESAbstract.Type
+// "Type(x)" is used as shorthand for "the type of x"...
+function Type(x) { // eslint-disable-line no-unused-vars
+	switch (typeof x) {
+		case 'undefined':
+			return 'undefined';
+		case 'boolean':
+			return 'boolean';
+		case 'number':
+			return 'number';
+		case 'string':
+			return 'string';
+		case 'symbol':
+			return 'symbol';
+		default:
+			// typeof null is 'object'
+			if (x === null) return 'null';
+			// Polyfill.io - This is here because a Symbol polyfill will have a typeof `object`.
+			if ('Symbol' in self && (x instanceof self.Symbol || x.constructor === self.Symbol)) return 'symbol';
+
+			return 'object';
+	}
+}
+
+// _ESAbstract.GetPrototypeFromConstructor
+/* global Get, Type */
+// 9.1.14. GetPrototypeFromConstructor ( constructor, intrinsicDefaultProto )
+function GetPrototypeFromConstructor(constructor, intrinsicDefaultProto) { // eslint-disable-line no-unused-vars
+	// 1. Assert: intrinsicDefaultProto is a String value that is this specification's name of an intrinsic object. The corresponding object must be an intrinsic that is intended to be used as the [[Prototype]] value of an object.
+	// 2. Assert: IsCallable(constructor) is true.
+	// 3. Let proto be ? Get(constructor, "prototype").
+	var proto = Get(constructor, "prototype");
+	// 4. If Type(proto) is not Object, then
+	if (Type(proto) !== 'object') {
+		// a. Let realm be ? GetFunctionRealm(constructor).
+		// b. Set proto to realm's intrinsic object named intrinsicDefaultProto.
+		proto = intrinsicDefaultProto;
+	}
+	// 5. Return proto.
+	return proto;
+}
+
+// _ESAbstract.IsConstructor
+/* global Type */
+// 7.2.4. IsConstructor ( argument )
+function IsConstructor(argument) { // eslint-disable-line no-unused-vars
+	// 1. If Type(argument) is not Object, return false.
+	if (Type(argument) !== 'object') {
+		return false;
+	}
+	// 2. If argument has a [[Construct]] internal method, return true.
+	// 3. Return false.
+
+	// Polyfill.io - `new argument` is the only way  to truly test if a function is a constructor.
+	// We choose to not use`new argument` because the argument could have side effects when called.
+	// Instead we check to see if the argument is a function and if it has a prototype.
+	// Arrow functions do not have a [[Construct]] internal method, nor do they have a prototype.
+	return typeof argument === 'function' && !!argument.prototype;
+}
+
+// _ESAbstract.IteratorClose
+/* global GetMethod, Type, Call */
+// 7.4.6. IteratorClose ( iteratorRecord, completion )
+function IteratorClose(iteratorRecord, completion) { // eslint-disable-line no-unused-vars
+	// 1. Assert: Type(iteratorRecord.[[Iterator]]) is Object.
+	if (Type(iteratorRecord['[[Iterator]]']) !== 'object') {
+		throw new Error(Object.prototype.toString.call(iteratorRecord['[[Iterator]]']) + 'is not an Object.');
+	}
+	// 2. Assert: completion is a Completion Record.
+	// Polyfill.io - Ignoring this step as there is no way to check if something is a Completion Record in userland JavaScript.
+
+	// 3. Let iterator be iteratorRecord.[[Iterator]].
+	var iterator = iteratorRecord['[[Iterator]]'];
+	// 4. Let return be ? GetMethod(iterator, "return").
+	// Polyfill.io - We name it  returnMethod because return is a keyword and can not be used as an identifier (E.G. variable name, function name etc).
+	var returnMethod = GetMethod(iterator, "return");
+	// 5. If return is undefined, return Completion(completion).
+	if (returnMethod === undefined) {
+		return completion;
+	}
+	// 6. Let innerResult be Call(return, iterator, « »).
+	try {
+		var innerResult = Call(returnMethod, iterator);
+	} catch (error) {
+		var innerException = error;
+	}
+	// 7. If completion.[[Type]] is throw, return Completion(completion).
+	if (completion) {
+		return completion;
+	}
+	// 8. If innerResult.[[Type]] is throw, return Completion(innerResult).
+	if (innerException) {
+		throw innerException;
+	}
+	// 9. If Type(innerResult.[[Value]]) is not Object, throw a TypeError exception.
+	if (Type(innerResult) !== 'object') {
+		throw new TypeError("Iterator's return method returned a non-object.");
+	}
+	// 10. Return Completion(completion).
+	return completion;
+}
+
+// _ESAbstract.IteratorComplete
+/* global Type, ToBoolean, Get */
+// 7.4.3 IteratorComplete ( iterResult )
+function IteratorComplete(iterResult) { // eslint-disable-line no-unused-vars
+	// 1. Assert: Type(iterResult) is Object.
+	if (Type(iterResult) !== 'object') {
+		throw new Error(Object.prototype.toString.call(iterResult) + 'is not an Object.');
+	}
+	// 2. Return ToBoolean(? Get(iterResult, "done")).
+	return ToBoolean(Get(iterResult, "done"));
+}
+
+// _ESAbstract.IteratorNext
+/* global Call, Type */
+// 7.4.2. IteratorNext ( iteratorRecord [ , value ] )
+function IteratorNext(iteratorRecord /* [, value] */) { // eslint-disable-line no-unused-vars
+	// 1. If value is not present, then
+	if (arguments.length < 2) {
+		// a. Let result be ? Call(iteratorRecord.[[NextMethod]], iteratorRecord.[[Iterator]], « »).
+		var result = Call(iteratorRecord['[[NextMethod]]'], iteratorRecord['[[Iterator]]']);
+	// 2. Else,
+	} else {
+		// a. Let result be ? Call(iteratorRecord.[[NextMethod]], iteratorRecord.[[Iterator]], « value »).
+		result = Call(iteratorRecord['[[NextMethod]]'], iteratorRecord['[[Iterator]]'], [arguments[1]]);
+	}
+	// 3. If Type(result) is not Object, throw a TypeError exception.
+	if (Type(result) !== 'object') {
+		throw new TypeError('bad iterator');
+	}
+	// 4. Return result.
+	return result;
+}
+
+// _ESAbstract.IteratorStep
+/* global IteratorNext, IteratorComplete */
+// 7.4.5. IteratorStep ( iteratorRecord )
+function IteratorStep(iteratorRecord) { // eslint-disable-line no-unused-vars
+	// 1. Let result be ? IteratorNext(iteratorRecord).
+	var result = IteratorNext(iteratorRecord);
+	// 2. Let done be ? IteratorComplete(result).
+	var done = IteratorComplete(result);
+	// 3. If done is true, return false.
+	if (done === true) {
+		return false;
+	}
+	// 4. Return result.
+	return result;
+}
+
+// _ESAbstract.IteratorValue
+/* global Type, Get */
+// 7.4.4 IteratorValue ( iterResult )
+function IteratorValue(iterResult) { // eslint-disable-line no-unused-vars
+	// Assert: Type(iterResult) is Object.
+	if (Type(iterResult) !== 'object') {
+		throw new Error(Object.prototype.toString.call(iterResult) + 'is not an Object.');
+	}
+	// Return ? Get(iterResult, "value").
+	return Get(iterResult, "value");
+}
+
+// _ESAbstract.OrdinaryToPrimitive
+/* global Get, IsCallable, Call, Type */
+// 7.1.1.1. OrdinaryToPrimitive ( O, hint )
+function OrdinaryToPrimitive(O, hint) { // eslint-disable-line no-unused-vars
+	// 1. Assert: Type(O) is Object.
+	// 2. Assert: Type(hint) is String and its value is either "string" or "number".
+	// 3. If hint is "string", then
+	if (hint === 'string') {
+		// a. Let methodNames be « "toString", "valueOf" ».
+		var methodNames = ['toString', 'valueOf'];
+		// 4. Else,
+	} else {
+		// a. Let methodNames be « "valueOf", "toString" ».
+		methodNames = ['valueOf', 'toString'];
+	}
+	// 5. For each name in methodNames in List order, do
+	for (var i = 0; i < methodNames.length; ++i) {
+		var name = methodNames[i];
+		// a. Let method be ? Get(O, name).
+		var method = Get(O, name);
+		// b. If IsCallable(method) is true, then
+		if (IsCallable(method)) {
+			// i. Let result be ? Call(method, O).
+			var result = Call(method, O);
+			// ii. If Type(result) is not Object, return result.
+			if (Type(result) !== 'object') {
+				return result;
+			}
+		}
+	}
+	// 6. Throw a TypeError exception.
+	throw new TypeError('Cannot convert to primitive.');
+}
+
+// _ESAbstract.SameValueZero
+/* global Type, SameValueNonNumber */
+// 7.2.11. SameValueZero ( x, y )
+function SameValueZero (x, y) { // eslint-disable-line no-unused-vars
+	// 1. If Type(x) is different from Type(y), return false.
+	if (Type(x) !== Type(y)) {
+		return false;
+	}
+	// 2. If Type(x) is Number, then
+	if (Type(x) === 'number') {
+		// a. If x is NaN and y is NaN, return true.
+		if (isNaN(x) && isNaN(y)) {
+			return true;
+		}
+		// b. If x is +0 and y is -0, return true.
+		if (1/x === Infinity && 1/y === -Infinity) {
+			return true;
+		}
+		// c. If x is -0 and y is +0, return true.
+		if (1/x === -Infinity && 1/y === Infinity) {
+			return true;
+		}
+		// d. If x is the same Number value as y, return true.
+		if (x === y) {
+			return true;
+		}
+		// e. Return false.
+		return false;
+	}
+	// 3. Return SameValueNonNumber(x, y).
+	return SameValueNonNumber(x, y);
+}
+
+// _ESAbstract.ToInteger
+/* global Type */
+// 7.1.4. ToInteger ( argument )
+function ToInteger(argument) { // eslint-disable-line no-unused-vars
+	if (Type(argument) === 'symbol') {
+		throw new TypeError('Cannot convert a Symbol value to a number');
+	}
+
+	// 1. Let number be ? ToNumber(argument).
+	var number = Number(argument);
+	// 2. If number is NaN, return +0.
+	if (isNaN(number)) {
+		return 0;
+	}
+	// 3. If number is +0, -0, +∞, or -∞, return number.
+	if (1/number === Infinity || 1/number === -Infinity || number === Infinity || number === -Infinity) {
+		return number;
+	}
+	// 4. Return the number value that is the same sign as number and whose magnitude is floor(abs(number)).
+	return ((number < 0) ? -1 : 1) * Math.floor(Math.abs(number));
+}
+
+// _ESAbstract.ToLength
+/* global ToInteger */
+// 7.1.15. ToLength ( argument )
+function ToLength(argument) { // eslint-disable-line no-unused-vars
+	// 1. Let len be ? ToInteger(argument).
+	var len = ToInteger(argument);
+	// 2. If len ≤ +0, return +0.
+	if (len <= 0) {
+		return 0;
+	}
+	// 3. Return min(len, 253-1).
+	return Math.min(len, Math.pow(2, 53) -1);
+}
+
+// _ESAbstract.ToPrimitive
+/* global Type, GetMethod, Call, OrdinaryToPrimitive */
+// 7.1.1. ToPrimitive ( input [ , PreferredType ] )
+function ToPrimitive(input /* [, PreferredType] */) { // eslint-disable-line no-unused-vars
+	var PreferredType = arguments.length > 1 ? arguments[1] : undefined;
+	// 1. Assert: input is an ECMAScript language value.
+	// 2. If Type(input) is Object, then
+	if (Type(input) === 'object') {
+		// a. If PreferredType is not present, let hint be "default".
+		if (arguments.length < 2) {
+			var hint = 'default';
+			// b. Else if PreferredType is hint String, let hint be "string".
+		} else if (PreferredType === String) {
+			hint = 'string';
+			// c. Else PreferredType is hint Number, let hint be "number".
+		} else if (PreferredType === Number) {
+			hint = 'number';
+		}
+		// d. Let exoticToPrim be ? GetMethod(input, @@toPrimitive).
+		var exoticToPrim = typeof self.Symbol === 'function' && typeof self.Symbol.toPrimitive === 'symbol' ? GetMethod(input, self.Symbol.toPrimitive) : undefined;
+		// e. If exoticToPrim is not undefined, then
+		if (exoticToPrim !== undefined) {
+			// i. Let result be ? Call(exoticToPrim, input, « hint »).
+			var result = Call(exoticToPrim, input, [hint]);
+			// ii. If Type(result) is not Object, return result.
+			if (Type(result) !== 'object') {
+				return result;
+			}
+			// iii. Throw a TypeError exception.
+			throw new TypeError('Cannot convert exotic object to primitive.');
+		}
+		// f. If hint is "default", set hint to "number".
+		if (hint === 'default') {
+			hint = 'number';
+		}
+		// g. Return ? OrdinaryToPrimitive(input, hint).
+		return OrdinaryToPrimitive(input, hint);
+	}
+	// 3. Return input
+	return input;
+}
+
+// _ESAbstract.ToString
+/* global Type, ToPrimitive */
+// 7.1.12. ToString ( argument )
+// The abstract operation ToString converts argument to a value of type String according to Table 11:
+// Table 11: ToString Conversions
+/*
+|---------------|--------------------------------------------------------|
+| Argument Type | Result                                                 |
+|---------------|--------------------------------------------------------|
+| Undefined     | Return "undefined".                                    |
+|---------------|--------------------------------------------------------|
+| Null	        | Return "null".                                         |
+|---------------|--------------------------------------------------------|
+| Boolean       | If argument is true, return "true".                    |
+|               | If argument is false, return "false".                  |
+|---------------|--------------------------------------------------------|
+| Number        | Return NumberToString(argument).                       |
+|---------------|--------------------------------------------------------|
+| String        | Return argument.                                       |
+|---------------|--------------------------------------------------------|
+| Symbol        | Throw a TypeError exception.                           |
+|---------------|--------------------------------------------------------|
+| Object        | Apply the following steps:                             |
+|               | Let primValue be ? ToPrimitive(argument, hint String). |
+|               | Return ? ToString(primValue).                          |
+|---------------|--------------------------------------------------------|
+*/
+function ToString(argument) { // eslint-disable-line no-unused-vars
+	switch(Type(argument)) {
+		case 'symbol':
+			throw new TypeError('Cannot convert a Symbol value to a string');
+		case 'object':
+			var primValue = ToPrimitive(argument, String);
+			return ToString(primValue); // eslint-disable-line no-unused-vars
+		default:
+			return String(argument);
+	}
+}
+
+// _ESAbstract.ToPropertyKey
+/* globals ToPrimitive, Type, ToString */
+// 7.1.14. ToPropertyKey ( argument )
+function ToPropertyKey(argument) { // eslint-disable-line no-unused-vars
+	// 1. Let key be ? ToPrimitive(argument, hint String).
+	var key = ToPrimitive(argument, String);
+	// 2. If Type(key) is Symbol, then
+	if (Type(key) === 'symbol') {
+		// a. Return key.
+		return key;
+	}
+	// 3. Return ! ToString(key).
+	return ToString(key);
+}
+if (!("defineProperty"in Object&&function(){try{var e={}
+return Object.defineProperty(e,"test",{value:42}),!0}catch(t){return!1}}()
+)) {
+
+// Object.defineProperty
+(function (nativeDefineProperty) {
+
+	var supportsAccessors = Object.prototype.hasOwnProperty.call(Object.prototype, '__defineGetter__');
+	var ERR_ACCESSORS_NOT_SUPPORTED = 'Getters & setters cannot be defined on this javascript engine';
+	var ERR_VALUE_ACCESSORS = 'A property cannot both have accessors and be writable or have a value';
+
+	// Polyfill.io - This does not use CreateMethodProperty because our CreateMethodProperty function uses Object.defineProperty.
+	Object.defineProperty = function defineProperty(object, property, descriptor) {
+
+		// Where native support exists, assume it
+		if (nativeDefineProperty && (object === window || object === document || object === Element.prototype || object instanceof Element)) {
+			return nativeDefineProperty(object, property, descriptor);
+		}
+
+		if (object === null || !(object instanceof Object || typeof object === 'object')) {
+			throw new TypeError('Object.defineProperty called on non-object');
+		}
+
+		if (!(descriptor instanceof Object)) {
+			throw new TypeError('Property description must be an object');
+		}
+
+		var propertyString = String(property);
+		var hasValueOrWritable = 'value' in descriptor || 'writable' in descriptor;
+		var getterType = 'get' in descriptor && typeof descriptor.get;
+		var setterType = 'set' in descriptor && typeof descriptor.set;
+
+		// handle descriptor.get
+		if (getterType) {
+			if (getterType === undefined) {
+				return object;
+			}
+			if (getterType !== 'function') {
+				throw new TypeError('Getter must be a function');
+			}
+			if (!supportsAccessors) {
+				throw new TypeError(ERR_ACCESSORS_NOT_SUPPORTED);
+			}
+			if (hasValueOrWritable) {
+				throw new TypeError(ERR_VALUE_ACCESSORS);
+			}
+			Object.__defineGetter__.call(object, propertyString, descriptor.get);
+		} else {
+			object[propertyString] = descriptor.value;
+		}
+
+		// handle descriptor.set
+		if (setterType) {
+			if (setterType === undefined) {
+				return object;
+			}
+			if (setterType !== 'function') {
+				throw new TypeError('Setter must be a function');
+			}
+			if (!supportsAccessors) {
+				throw new TypeError(ERR_ACCESSORS_NOT_SUPPORTED);
+			}
+			if (hasValueOrWritable) {
+				throw new TypeError(ERR_VALUE_ACCESSORS);
+			}
+			Object.__defineSetter__.call(object, propertyString, descriptor.set);
+		}
+
+		// OK to define value unconditionally - if a getter has been specified as well, an error would be thrown above
+		if ('value' in descriptor) {
+			object[propertyString] = descriptor.value;
+		}
+
+		return object;
+	};
+}(Object.defineProperty));
+
+}
+
+
+// _ESAbstract.CreateDataProperty
+// 7.3.4. CreateDataProperty ( O, P, V )
+// NOTE
+// This abstract operation creates a property whose attributes are set to the same defaults used for properties created by the ECMAScript language assignment operator.
+// Normally, the property will not already exist. If it does exist and is not configurable or if O is not extensible, [[DefineOwnProperty]] will return false.
+function CreateDataProperty(O, P, V) { // eslint-disable-line no-unused-vars
+	// 1. Assert: Type(O) is Object.
+	// 2. Assert: IsPropertyKey(P) is true.
+	// 3. Let newDesc be the PropertyDescriptor{ [[Value]]: V, [[Writable]]: true, [[Enumerable]]: true, [[Configurable]]: true }.
+	var newDesc = {
+		value: V,
+		writable: true,
+		enumerable: true,
+		configurable: true
+	};
+	// 4. Return ? O.[[DefineOwnProperty]](P, newDesc).
+	try {
+		Object.defineProperty(O, P, newDesc);
+		return true;
+	} catch (e) {
+		return false;
+	}
+}
+
+// _ESAbstract.CreateDataPropertyOrThrow
+/* global CreateDataProperty */
+// 7.3.6. CreateDataPropertyOrThrow ( O, P, V )
+function CreateDataPropertyOrThrow(O, P, V) { // eslint-disable-line no-unused-vars
+	// 1. Assert: Type(O) is Object.
+	// 2. Assert: IsPropertyKey(P) is true.
+	// 3. Let success be ? CreateDataProperty(O, P, V).
+	var success = CreateDataProperty(O, P, V);
+	// 4. If success is false, throw a TypeError exception.
+	if (!success) {
+		throw new TypeError('Cannot assign value `' + Object.prototype.toString.call(V) + '` to property `' + Object.prototype.toString.call(P) + '` on object `' + Object.prototype.toString.call(O) + '`');
+	}
+	// 5. Return success.
+	return success;
+}
+
+// _ESAbstract.CreateIterResultObject
+/* global Type, CreateDataProperty */
+// 7.4.7. CreateIterResultObject ( value, done )
+function CreateIterResultObject(value, done) { // eslint-disable-line no-unused-vars
+	// 1. Assert: Type(done) is Boolean.
+	if (Type(done) !== 'boolean') {
+		throw new Error();
+	}
+	// 2. Let obj be ObjectCreate(%ObjectPrototype%).
+	var obj = {};
+	// 3. Perform CreateDataProperty(obj, "value", value).
+	CreateDataProperty(obj, "value", value);
+	// 4. Perform CreateDataProperty(obj, "done", done).
+	CreateDataProperty(obj, "done", done);
+	// 5. Return obj.
+	return obj;
+}
+
+// _ESAbstract.CreateMethodProperty
+// 7.3.5. CreateMethodProperty ( O, P, V )
+function CreateMethodProperty(O, P, V) { // eslint-disable-line no-unused-vars
+	// 1. Assert: Type(O) is Object.
+	// 2. Assert: IsPropertyKey(P) is true.
+	// 3. Let newDesc be the PropertyDescriptor{[[Value]]: V, [[Writable]]: true, [[Enumerable]]: false, [[Configurable]]: true}.
+	var newDesc = {
+		value: V,
+		writable: true,
+		enumerable: false,
+		configurable: true
+	};
+	// 4. Return ? O.[[DefineOwnProperty]](P, newDesc).
+	Object.defineProperty(O, P, newDesc);
+}
+if (!("isArray"in Array
+)) {
+
+// Array.isArray
+/* global CreateMethodProperty, IsArray */
+// 22.1.2.2. Array.isArray ( arg )
+CreateMethodProperty(Array, 'isArray', function isArray(arg) {
+	// 1. Return ? IsArray(arg).
+	return IsArray(arg);
+});
+
+}
+
+if (!("forEach"in Array.prototype
+)) {
+
+// Array.prototype.forEach
+/* global Call, CreateMethodProperty, Get, HasProperty, IsCallable, ToLength, ToObject, ToString */
+// 22.1.3.10. Array.prototype.forEach ( callbackfn [ , thisArg ] )
+CreateMethodProperty(Array.prototype, 'forEach', function forEach(callbackfn /* [ , thisArg ] */) {
+	// 1. Let O be ? ToObject(this value).
+	var O = ToObject(this);
+	// Polyfill.io - If O is a String object, split it into an array in order to iterate correctly.
+	// We will use arrayLike in place of O when we are iterating through the list.
+	var arraylike = O instanceof String ? O.split('') : O;
+	// 2. Let len be ? ToLength(? Get(O, "length")).
+	var len = ToLength(Get(O, "length"));
+	// 3. If IsCallable(callbackfn) is false, throw a TypeError exception.
+	if (IsCallable(callbackfn) === false) {
+		throw new TypeError(callbackfn + ' is not a function');
+	}
+	// 4. If thisArg is present, let T be thisArg; else let T be undefined.
+	var T = arguments.length > 1 ? arguments[1] : undefined;
+	// 5. Let k be 0.
+	var k = 0;
+	// 6. Repeat, while k < len
+	while (k < len) {
+		// a. Let Pk be ! ToString(k).
+		var Pk = ToString(k);
+		// b. Let kPresent be ? HasProperty(O, Pk).
+		var kPresent = HasProperty(arraylike, Pk);
+		// c. If kPresent is true, then
+		if (kPresent) {
+			// i. Let kValue be ? Get(O, Pk).
+			var kValue = Get(arraylike, Pk);
+			// ii. Perform ? Call(callbackfn, T, « kValue, k, O »).
+			Call(callbackfn, T, [kValue, k, O]);
+		}
+		// d. Increase k by 1.
+		k = k + 1;
+	}
+	// 7. Return undefined.
+	return undefined;
+});
+
+}
+
+if (!("includes"in Array.prototype
+)) {
+
+// Array.prototype.includes
+/* global CreateMethodProperty, Get, SameValueZero, ToInteger, ToLength, ToObject, ToString */
+// 22.1.3.11. Array.prototype.includes ( searchElement [ , fromIndex ] )
+CreateMethodProperty(Array.prototype, 'includes', function includes(searchElement /* [ , fromIndex ] */) {
+	'use strict';
+	// 1. Let O be ? ToObject(this value).
+	var O = ToObject(this);
+	// 2. Let len be ? ToLength(? Get(O, "length")).
+	var len = ToLength(Get(O, "length"));
+	// 3. If len is 0, return false.
+	if (len === 0) {
+		return false;
+	}
+	// 4. Let n be ? ToInteger(fromIndex). (If fromIndex is undefined, this step produces the value 0.)
+	var n = ToInteger(arguments[1]);
+	// 5. If n ≥ 0, then
+	if (n >= 0) {
+		// a. Let k be n.
+		var k = n;
+		// 6. Else n < 0,
+	} else {
+		// a. Let k be len + n.
+		k = len + n;
+		// b. If k < 0, let k be 0.
+		if (k < 0) {
+			k = 0;
+		}
+	}
+	// 7. Repeat, while k < len
+	while (k < len) {
+		// a. Let elementK be the result of ? Get(O, ! ToString(k)).
+		var elementK = Get(O, ToString(k));
+		// b. If SameValueZero(searchElement, elementK) is true, return true.
+		if (SameValueZero(searchElement, elementK)) {
+			return true;
+		}
+		// c. Increase k by 1.
+		k = k + 1;
+	}
+	// 8. Return false.
+	return false;
+});
+
+}
+
+if (!("indexOf"in Array.prototype
+)) {
+
+// Array.prototype.indexOf
+/* global CreateMethodProperty, Get, HasProperty, ToInteger, ToLength, ToObject, ToString */
+// 22.1.3.12. Array.prototype.indexOf ( searchElement [ , fromIndex ] )
+CreateMethodProperty(Array.prototype, 'indexOf', function indexOf(searchElement /* [ , fromIndex ] */) {
+	// 1. Let O be ? ToObject(this value).
+	var O = ToObject(this);
+	// 2. Let len be ? ToLength(? Get(O, "length")).
+	var len = ToLength(Get(O, "length"));
+	// 3. If len is 0, return -1.
+	if (len === 0) {
+		return -1;
+	}
+	// 4. Let n be ? ToInteger(fromIndex). (If fromIndex is undefined, this step produces the value 0.)
+	var n = ToInteger(arguments[1]);
+	// 5. If n ≥ len, return -1.
+	if (n >= len) {
+		return -1;
+	}
+	// 6. If n ≥ 0, then
+	if (n >= 0) {
+		// a. If n is -0, let k be +0; else let k be n.
+		var k = 1/n === -Infinity ? 0 : n;
+		// 7. Else n < 0,
+	} else {
+		// a. Let k be len + n.
+		k = len + n;
+		// b. If k < 0, let k be 0.
+		if (k < 0) {
+			k = 0;
+		}
+	}
+	// 8. Repeat, while k < len
+	while (k < len) {
+		// a. Let kPresent be ? HasProperty(O, ! ToString(k)).
+		var kPresent = HasProperty(O, ToString(k));
+		// b. If kPresent is true, then
+		if (kPresent) {
+			// i. Let elementK be ? Get(O, ! ToString(k)).
+			var elementK = Get(O, ToString(k));
+			// ii. Let same be the result of performing Strict Equality Comparison searchElement === elementK.
+			var same = searchElement === elementK;
+			// iii. If same is true, return k.
+			if (same) {
+				return k;
+			}
+		}
+		// c. Increase k by 1.
+		k = k + 1;
+	}
+	// 9. Return -1.
+	return -1;
+});
+
+}
+
+if (!("bind"in Function.prototype
+)) {
+
+// Function.prototype.bind
+/* global CreateMethodProperty, IsCallable */
+// 19.2.3.2. Function.prototype.bind ( thisArg, ...args )
+// https://github.com/es-shims/es5-shim/blob/d6d7ff1b131c7ba14c798cafc598bb6780d37d3b/es5-shim.js#L182
+CreateMethodProperty(Function.prototype, 'bind', function bind(that) { // .length is 1
+	// add necessary es5-shim utilities
+	var $Array = Array;
+	var $Object = Object;
+	var ArrayPrototype = $Array.prototype;
+	var Empty = function Empty() { };
+	var array_slice = ArrayPrototype.slice;
+	var array_concat = ArrayPrototype.concat;
+	var array_push = ArrayPrototype.push;
+	var max = Math.max;
+	// /add necessary es5-shim utilities
+
+	// 1. Let Target be the this value.
+	var target = this;
+	// 2. If IsCallable(Target) is false, throw a TypeError exception.
+	if (!IsCallable(target)) {
+		throw new TypeError('Function.prototype.bind called on incompatible ' + target);
+	}
+	// 3. Let A be a new (possibly empty) internal list of all of the
+	//   argument values provided after thisArg (arg1, arg2 etc), in order.
+	// XXX slicedArgs will stand in for "A" if used
+	var args = array_slice.call(arguments, 1); // for normal call
+	// 4. Let F be a new native ECMAScript object.
+	// 11. Set the [[Prototype]] internal property of F to the standard
+	//   built-in Function prototype object as specified in 15.3.3.1.
+	// 12. Set the [[Call]] internal property of F as described in
+	//   15.3.4.5.1.
+	// 13. Set the [[Construct]] internal property of F as described in
+	//   15.3.4.5.2.
+	// 14. Set the [[HasInstance]] internal property of F as described in
+	//   15.3.4.5.3.
+	var bound;
+	var binder = function () {
+
+		if (this instanceof bound) {
+			// 15.3.4.5.2 [[Construct]]
+			// When the [[Construct]] internal method of a function object,
+			// F that was created using the bind function is called with a
+			// list of arguments ExtraArgs, the following steps are taken:
+			// 1. Let target be the value of F's [[TargetFunction]]
+			//   internal property.
+			// 2. If target has no [[Construct]] internal method, a
+			//   TypeError exception is thrown.
+			// 3. Let boundArgs be the value of F's [[BoundArgs]] internal
+			//   property.
+			// 4. Let args be a new list containing the same values as the
+			//   list boundArgs in the same order followed by the same
+			//   values as the list ExtraArgs in the same order.
+			// 5. Return the result of calling the [[Construct]] internal
+			//   method of target providing args as the arguments.
+
+			var result = target.apply(
+				this,
+				array_concat.call(args, array_slice.call(arguments))
+			);
+			if ($Object(result) === result) {
+				return result;
+			}
+			return this;
+
+		} else {
+			// 15.3.4.5.1 [[Call]]
+			// When the [[Call]] internal method of a function object, F,
+			// which was created using the bind function is called with a
+			// this value and a list of arguments ExtraArgs, the following
+			// steps are taken:
+			// 1. Let boundArgs be the value of F's [[BoundArgs]] internal
+			//   property.
+			// 2. Let boundThis be the value of F's [[BoundThis]] internal
+			//   property.
+			// 3. Let target be the value of F's [[TargetFunction]] internal
+			//   property.
+			// 4. Let args be a new list containing the same values as the
+			//   list boundArgs in the same order followed by the same
+			//   values as the list ExtraArgs in the same order.
+			// 5. Return the result of calling the [[Call]] internal method
+			//   of target providing boundThis as the this value and
+			//   providing args as the arguments.
+
+			// equiv: target.call(this, ...boundArgs, ...args)
+			return target.apply(
+				that,
+				array_concat.call(args, array_slice.call(arguments))
+			);
+
+		}
+
+	};
+
+	// 15. If the [[Class]] internal property of Target is "Function", then
+	//     a. Let L be the length property of Target minus the length of A.
+	//     b. Set the length own property of F to either 0 or L, whichever is
+	//       larger.
+	// 16. Else set the length own property of F to 0.
+
+	var boundLength = max(0, target.length - args.length);
+
+	// 17. Set the attributes of the length own property of F to the values
+	//   specified in 15.3.5.1.
+	var boundArgs = [];
+	for (var i = 0; i < boundLength; i++) {
+		array_push.call(boundArgs, '$' + i);
+	}
+
+	// XXX Build a dynamic function with desired amount of arguments is the only
+	// way to set the length property of a function.
+	// In environments where Content Security Policies enabled (Chrome extensions,
+	// for ex.) all use of eval or Function costructor throws an exception.
+	// However in all of these environments Function.prototype.bind exists
+	// and so this code will never be executed.
+	bound = Function('binder', 'return function (' + boundArgs.join(',') + '){ return binder.apply(this, arguments); }')(binder);
+
+	if (target.prototype) {
+		Empty.prototype = target.prototype;
+		bound.prototype = new Empty();
+		// Clean up dangling references.
+		Empty.prototype = null;
+	}
+
+	// TODO
+	// 18. Set the [[Extensible]] internal property of F to true.
+
+	// TODO
+	// 19. Let thrower be the [[ThrowTypeError]] function Object (13.2.3).
+	// 20. Call the [[DefineOwnProperty]] internal method of F with
+	//   arguments "caller", PropertyDescriptor {[[Get]]: thrower, [[Set]]:
+	//   thrower, [[Enumerable]]: false, [[Configurable]]: false}, and
+	//   false.
+	// 21. Call the [[DefineOwnProperty]] internal method of F with
+	//   arguments "arguments", PropertyDescriptor {[[Get]]: thrower,
+	//   [[Set]]: thrower, [[Enumerable]]: false, [[Configurable]]: false},
+	//   and false.
+
+	// TODO
+	// NOTE Function objects created using Function.prototype.bind do not
+	// have a prototype property or the [[Code]], [[FormalParameters]], and
+	// [[Scope]] internal properties.
+	// XXX can't delete prototype in pure-js.
+
+	// 22. Return F.
+	return bound;
+});
+
+}
+
+if (!("freeze"in Object
+)) {
+
+// Object.freeze
+/* global CreateMethodProperty */
+// 19.1.2.6. Object.freeze ( O )
+CreateMethodProperty(Object, 'freeze', function freeze(O) {
+	// This feature cannot be implemented fully as a polyfill.
+	// We choose to silently fail which allows "securable" code
+	// to "gracefully" degrade to working but insecure code.
+	return O;
+});
+
+}
+
+if (!("getOwnPropertyDescriptor"in Object&&"function"==typeof Object.getOwnPropertyDescriptor&&function(){try{return"3"===Object.getOwnPropertyDescriptor("13.7",1).value}catch(t){return!1}}()
+)) {
+
+// Object.getOwnPropertyDescriptor
+/* global CreateMethodProperty, ToObject, ToPropertyKey, HasOwnProperty, Type */
+(function () {
+	var nativeGetOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+
+	var supportsDOMDescriptors = (function () {
+		try {
+			return Object.defineProperty(document.createElement('div'), 'one', {
+				get: function () {
+					return 1;
+				}
+			}).one === 1;
+		} catch (e) {
+			return false;
+		}
+	});
+
+	var toString = ({}).toString;
+	var split = ''.split;
+
+	// 19.1.2.8 Object.getOwnPropertyDescriptor ( O, P )
+	CreateMethodProperty(Object, 'getOwnPropertyDescriptor', function getOwnPropertyDescriptor(O, P) {
+		// 1. Let obj be ? ToObject(O).
+		var obj = ToObject(O);
+		// Polyfill.io fallback for non-array-like strings which exist in some ES3 user-agents (IE 8)
+		obj = (Type(obj) === 'string' || obj instanceof String) && toString.call(O) == '[object String]' ? split.call(O, '') : Object(O);
+
+		// 2. Let key be ? ToPropertyKey(P).
+		var key = ToPropertyKey(P);
+
+		// 3. Let desc be ? obj.[[GetOwnProperty]](key).
+		// 4. Return FromPropertyDescriptor(desc).
+		// Polyfill.io Internet Explorer 8 natively supports property descriptors only on DOM objects.
+		// We will fallback to the polyfill implementation if the native implementation throws an error.
+		if (supportsDOMDescriptors) {
+			try {
+				return nativeGetOwnPropertyDescriptor(obj, key);
+			// eslint-disable-next-line no-empty
+			} catch (error) {}
+		}
+		if (HasOwnProperty(obj, key)) {
+			return {
+				enumerable: true,
+				configurable: true,
+				writable: true,
+				value: obj[key]
+			};
+		}
+	});
+}());
+
+}
+
+if (!("getPrototypeOf"in Object
+)) {
+
+// Object.getPrototypeOf
+/* global CreateMethodProperty */
+// Based on: https://github.com/es-shims/es5-shim/blob/master/es5-sham.js
+
+// https://github.com/es-shims/es5-shim/issues#issue/2
+// http://ejohn.org/blog/objectgetprototypeof/
+// recommended by fschaefer on github
+//
+// sure, and webreflection says ^_^
+// ... this will nerever possibly return null
+// ... Opera Mini breaks here with infinite loops
+CreateMethodProperty(Object, 'getPrototypeOf', function getPrototypeOf(object) {
+	if (object !== Object(object)) {
+		throw new TypeError('Object.getPrototypeOf called on non-object');
+	}
+	var proto = object.__proto__;
+	if (proto || proto === null) {
+		return proto;
+	} else if (typeof object.constructor == 'function' && object instanceof object.constructor) {
+		return object.constructor.prototype;
+	} else if (object instanceof Object) {
+		return Object.prototype;
+	} else {
+		// Correctly return null for Objects created with `Object.create(null)`
+		// (shammed or native) or `{ __proto__: null}`.  Also returns null for
+		// cross-realm objects on browsers that lack `__proto__` support (like
+		// IE <11), but that's the best we can do.
+		return null;
+	}
+});
+
+}
+
+if (!("isExtensible"in Object
+)) {
+
+// Object.isExtensible
+/* global CreateMethodProperty, Type */
+
+(function (nativeIsExtensible) {
+	// 19.1.2.13 Object.isExtensible ( O )
+	CreateMethodProperty(Object, 'isExtensible', function isExtensible(O) {
+		// 1. If Type(O) is not Object, return false.
+		if (Type(O) !== "object") {
+			return false;
+		}
+		// 2. Return ? IsExtensible(O).
+		return nativeIsExtensible ? nativeIsExtensible(O) : true;
+	});
+}(Object.isExtensible));
+
+}
+
+if (!("keys"in Object&&function(){return 2===Object.keys(arguments).length}(1,2)&&function(){try{return Object.keys(""),!0}catch(t){return!1}}()
+)) {
+
+// Object.keys
+/* global CreateMethodProperty */
+CreateMethodProperty(Object, "keys", (function() {
+	'use strict';
+
+	// modified from https://github.com/es-shims/object-keys
+
+	var has = Object.prototype.hasOwnProperty;
+	var toStr = Object.prototype.toString;
+	var isEnumerable = Object.prototype.propertyIsEnumerable;
+	var hasDontEnumBug = !isEnumerable.call({ toString: null }, 'toString');
+	var hasPrototypeEnumBug = isEnumerable.call(function () { }, 'prototype');
+	function hasProtoEnumBug() {
+		// Object.create polyfill creates an enumerable __proto__
+		var createdObj;
+		try {
+			createdObj = Object.create({});
+		} catch (e) {
+			// If this fails the polyfil isn't loaded yet, but will be.
+			// Can't add it to depedencies because of it would create a circular depedency.
+			return true;
+		}
+
+		return isEnumerable.call(createdObj, '__proto__')
+	}
+
+	var dontEnums = [
+		'toString',
+		'toLocaleString',
+		'valueOf',
+		'hasOwnProperty',
+		'isPrototypeOf',
+		'propertyIsEnumerable',
+		'constructor'
+	];
+	var equalsConstructorPrototype = function (o) {
+		var ctor = o.constructor;
+		return ctor && ctor.prototype === o;
+	};
+	var excludedKeys = {
+		$console: true,
+		$external: true,
+		$frame: true,
+		$frameElement: true,
+		$frames: true,
+		$innerHeight: true,
+		$innerWidth: true,
+		$outerHeight: true,
+		$outerWidth: true,
+		$pageXOffset: true,
+		$pageYOffset: true,
+		$parent: true,
+		$scrollLeft: true,
+		$scrollTop: true,
+		$scrollX: true,
+		$scrollY: true,
+		$self: true,
+		$webkitIndexedDB: true,
+		$webkitStorageInfo: true,
+		$window: true
+	};
+	var hasAutomationEqualityBug = (function () {
+		if (typeof window === 'undefined') { return false; }
+		for (var k in window) {
+			try {
+				if (!excludedKeys['$' + k] && has.call(window, k) && window[k] !== null && typeof window[k] === 'object') {
+					try {
+						equalsConstructorPrototype(window[k]);
+					} catch (e) {
+						return true;
+					}
+				}
+			} catch (e) {
+				return true;
+			}
+		}
+		return false;
+	}());
+	var equalsConstructorPrototypeIfNotBuggy = function (o) {
+		if (typeof window === 'undefined' || !hasAutomationEqualityBug) {
+			return equalsConstructorPrototype(o);
+		}
+		try {
+			return equalsConstructorPrototype(o);
+		} catch (e) {
+			return false;
+		}
+	};
+
+	function isArgumentsObject(value) {
+		var str = toStr.call(value);
+		var isArgs = str === '[object Arguments]';
+		if (!isArgs) {
+			isArgs = str !== '[object Array]' &&
+				value !== null &&
+				typeof value === 'object' &&
+				typeof value.length === 'number' &&
+				value.length >= 0 &&
+				toStr.call(value.callee) === '[object Function]';
+		}
+		return isArgs;
+	}
+
+	return function keys(object) {
+		var isFunction = toStr.call(object) === '[object Function]';
+		var isArguments = isArgumentsObject(object);
+		var isString = toStr.call(object) === '[object String]';
+		var theKeys = [];
+
+		if (object === undefined || object === null) {
+			throw new TypeError('Cannot convert undefined or null to object');
+		}
+
+		var skipPrototype = hasPrototypeEnumBug && isFunction;
+		if (isString && object.length > 0 && !has.call(object, 0)) {
+			for (var i = 0; i < object.length; ++i) {
+				theKeys.push(String(i));
+			}
+		}
+
+		if (isArguments && object.length > 0) {
+			for (var j = 0; j < object.length; ++j) {
+				theKeys.push(String(j));
+			}
+		} else {
+			for (var name in object) {
+				if (!(hasProtoEnumBug() && name === '__proto__') && !(skipPrototype && name === 'prototype') && has.call(object, name)) {
+					theKeys.push(String(name));
+				}
+			}
+		}
+
+		if (hasDontEnumBug) {
+			var skipConstructor = equalsConstructorPrototypeIfNotBuggy(object);
+
+			for (var k = 0; k < dontEnums.length; ++k) {
+				if (!(skipConstructor && dontEnums[k] === 'constructor') && has.call(object, dontEnums[k])) {
+					theKeys.push(dontEnums[k]);
+				}
+			}
+		}
+		return theKeys;
+	};
+}()));
+
+}
+
+if (!("assign"in Object
+)) {
+
+// Object.assign
+/* global CreateMethodProperty, Get, ToObject */
+// 19.1.2.1 Object.assign ( target, ...sources )
+CreateMethodProperty(Object, 'assign', function assign(target, source) { // eslint-disable-line no-unused-vars
+	// 1. Let to be ? ToObject(target).
+	var to = ToObject(target);
+
+	// 2. If only one argument was passed, return to.
+	if (arguments.length === 1) {
+		return to;
+	}
+
+	// 3. Let sources be the List of argument values starting with the second argument
+	var sources = Array.prototype.slice.call(arguments, 1);
+
+	// 4. For each element nextSource of sources, in ascending index order, do
+	var index1;
+	var index2;
+	var keys;
+	var from;
+	for (index1 = 0; index1 < sources.length; index1++) {
+		var nextSource = sources[index1];
+		// a. If nextSource is undefined or null, let keys be a new empty List.
+		if (nextSource === undefined || nextSource === null) {
+			keys = [];
+			// b. Else,
+		} else {
+			// Polyfill.io - In order to get strings in ES3 and old V8 working correctly we need to split them into an array ourselves.
+			// i. Let from be ! ToObject(nextSource).
+			from = Object.prototype.toString.call(nextSource) === '[object String]' ? String(nextSource).split('') : ToObject(nextSource);
+			// ii. Let keys be ? from.[[OwnPropertyKeys]]().
+			/*
+				This step in our polyfill is not complying with the specification.
+				[[OwnPropertyKeys]] is meant to return ALL keys, including non-enumerable and symbols.
+				TODO: When we have Reflect.ownKeys, use that instead as it is the userland equivalent of [[OwnPropertyKeys]].
+			*/
+			keys = Object.keys(from);
+		}
+
+		// c. For each element nextKey of keys in List order, do
+		for (index2 = 0; index2 < keys.length; index2++) {
+			var nextKey = keys[index2];
+			var enumerable;
+			try {
+				// i. Let desc be ? from.[[GetOwnProperty]](nextKey).
+				var desc = Object.getOwnPropertyDescriptor(from, nextKey);
+				// ii. If desc is not undefined and desc.[[Enumerable]] is true, then
+				enumerable = desc !== undefined && desc.enumerable === true;
+			} catch (e) {
+				// Polyfill.io - We use Object.prototype.propertyIsEnumerable as a fallback
+				// because `Object.getOwnPropertyDescriptor(window.location, 'hash')` causes Internet Explorer 11 to crash.
+				enumerable = Object.prototype.propertyIsEnumerable.call(from, nextKey);
+			}
+			if (enumerable) {
+				// 1. Let propValue be ? Get(from, nextKey).
+				var propValue = Get(from, nextKey);
+				// 2. Perform ? Set(to, nextKey, propValue, true).
+				to[nextKey] = propValue;
+			}
+		}
+	}
+	// 5. Return to.
+	return to;
+});
+
+}
+
+if (!("defineProperties"in Object
+)) {
+
+// Object.defineProperties
+/* global CreateMethodProperty, Get, ToObject, Type */
+// 19.1.2.3. Object.defineProperties ( O, Properties )
+CreateMethodProperty(Object, 'defineProperties', function defineProperties(O, Properties) {
+	// 1. If Type(O) is not Object, throw a TypeError exception.
+	if (Type(O) !== 'object') {
+		throw new TypeError('Object.defineProperties called on non-object');
+	}
+	// 2. Let props be ? ToObject(Properties).
+	var props = ToObject(Properties);
+	// 3. Let keys be ? props.[[OwnPropertyKeys]]().
+	/*
+		Polyfill.io - This step in our polyfill is not complying with the specification.
+		[[OwnPropertyKeys]] is meant to return ALL keys, including non-enumerable and symbols.
+		TODO: When we have Reflect.ownKeys, use that instead as it is the userland equivalent of [[OwnPropertyKeys]].
+	*/
+	var keys = Object.keys(props);
+	// 4. Let descriptors be a new empty List.
+	var descriptors = [];
+	// 5. For each element nextKey of keys in List order, do
+	for (var i = 0; i < keys.length; i++) {
+		var nextKey = keys[i];
+		// a. Let propDesc be ? props.[[GetOwnProperty]](nextKey).
+		var propDesc = Object.getOwnPropertyDescriptor(props, nextKey);
+		// b. If propDesc is not undefined and propDesc.[[Enumerable]] is true, then
+		if (propDesc !== undefined && propDesc.enumerable) {
+			// i. Let descObj be ? Get(props, nextKey).
+			var descObj = Get(props, nextKey);
+			// ii. Let desc be ? ToPropertyDescriptor(descObj).
+			// Polyfill.io - We skip this step because Object.defineProperty deals with it.
+			// TODO: Implement this step?
+			var desc = descObj;
+			// iii. Append the pair (a two element List) consisting of nextKey and desc to the end of descriptors.
+			descriptors.push([nextKey, desc]);
+		}
+	}
+	// 6. For each pair from descriptors in list order, do
+	for (var j = 0; j < descriptors.length; j++){
+		// a. Let P be the first element of pair.
+		var P = descriptors[j][0];
+		// b. Let desc be the second element of pair.
+		desc = descriptors[j][1];
+		// c. Perform ? DefinePropertyOrThrow(O, P, desc).
+		Object.defineProperty(O, P, desc);
+	}
+	// 7. Return O.
+	return O;
+});
+
+}
+
+if (!("create"in Object
+)) {
+
+// Object.create
+/* global CreateMethodProperty, Type */
+(function () {
+	var supportsProto = !({ __proto__: null } instanceof Object);
+	if (supportsProto) {
+		var createEmpty = function () {
+			return {
+				__proto__: null
+			};
+		};
+	} else {
+		// Taken from https://github.com/es-shims/es5-shim/blob/a265a136d6220146cfbb09026c2de1fa42e220ec/es5-sham.js#L247
+		// In old IE __proto__ can't be used to manually set `null`, nor does
+		// any other method exist to make an object that inherits from nothing,
+		// aside from Object.prototype itself. Instead, create a new global
+		// object and *steal* its Object.prototype and strip it bare. This is
+		// used as the prototype to create nullary objects.
+		createEmpty = function () {
+			// Determine which approach to use
+			// see https://github.com/es-shims/es5-shim/issues/150
+			var iframe = document.createElement('iframe');
+			iframe.style.display = 'none';
+			var parent = document.body || document.documentElement;
+			parent.appendChild(iframe);
+			iframe.src = 'javascript:';
+			var empty = iframe.contentWindow.Object.prototype;
+			parent.removeChild(iframe);
+			iframe = null;
+			delete empty.constructor;
+			delete empty.hasOwnProperty;
+			delete empty.propertyIsEnumerable;
+			delete empty.isPrototypeOf;
+			delete empty.toLocaleString;
+			delete empty.toString;
+			delete empty.valueOf;
+			var Empty = function Empty() {};
+			Empty.prototype = empty;
+			// short-circuit future calls
+			createEmpty = function () {
+				return new Empty();
+			};
+			return new Empty();
+		};
+	}
+
+	function T() {}
+
+	CreateMethodProperty(Object, 'create', function create(O, properties) {
+		// 1. If Type(O) is neither Object nor Null, throw a TypeError exception.
+		if (Type(O) !== 'object' && Type(O) !== 'null') {
+			throw new TypeError('Object prototype may only be an Object or null');
+		}
+		if (Type(O) === 'null') {
+			var obj = createEmpty();
+		} else {
+			// 2. Let obj be ObjectCreate(O).
+			T.prototype = O;
+			obj = new T();
+			obj.__proto__ = O;
+
+
+			obj.constructor.prototype = O;
+			obj.__proto__ = O;
+		}
+
+		// 3. If Properties is not undefined, then
+		if (1 in arguments) {
+			// a. Return ? ObjectDefineProperties(obj, Properties).
+			return Object.defineProperties(obj, properties);
+		}
+
+		return obj;
+	});
+}());
+
+}
+
+
+// _ESAbstract.OrdinaryCreateFromConstructor
+/* global GetPrototypeFromConstructor */
+// 9.1.13. OrdinaryCreateFromConstructor ( constructor, intrinsicDefaultProto [ , internalSlotsList ] )
+function OrdinaryCreateFromConstructor(constructor, intrinsicDefaultProto) { // eslint-disable-line no-unused-vars
+	var internalSlotsList = arguments[2] || {};
+	// 1. Assert: intrinsicDefaultProto is a String value that is this specification's name of an intrinsic object.
+	// The corresponding object must be an intrinsic that is intended to be used as the[[Prototype]] value of an object.
+
+	// 2. Let proto be ? GetPrototypeFromConstructor(constructor, intrinsicDefaultProto).
+	var proto = GetPrototypeFromConstructor(constructor, intrinsicDefaultProto);
+
+	// 3. Return ObjectCreate(proto, internalSlotsList).
+	// Polyfill.io - We do not pass internalSlotsList to Object.create because Object.create does not use the default ordinary object definitions specified in 9.1.
+	var obj = Object.create(proto);
+	for (var name in internalSlotsList) {
+		if (Object.prototype.hasOwnProperty.call(internalSlotsList, name)) {
+			Object.defineProperty(obj, name, {
+				configurable: true,
+				enumerable: false,
+				writable: true,
+				value: internalSlotsList[name]
+			});
+		}
+	}
+	return obj;
+}
+
+// _ESAbstract.Construct
+/* global IsConstructor, OrdinaryCreateFromConstructor, Call */
+// 7.3.13. Construct ( F [ , argumentsList [ , newTarget ]] )
+function Construct(F /* [ , argumentsList [ , newTarget ]] */) { // eslint-disable-line no-unused-vars
+	// 1. If newTarget is not present, set newTarget to F.
+	var newTarget = arguments.length > 2 ? arguments[2] : F;
+
+	// 2. If argumentsList is not present, set argumentsList to a new empty List.
+	var argumentsList = arguments.length > 1 ? arguments[1] : [];
+
+	// 3. Assert: IsConstructor(F) is true.
+	if (!IsConstructor(F)) {
+		throw new TypeError('F must be a constructor.');
+	}
+
+	// 4. Assert: IsConstructor(newTarget) is true.
+	if (!IsConstructor(newTarget)) {
+		throw new TypeError('newTarget must be a constructor.');
+	}
+
+	// 5. Return ? F.[[Construct]](argumentsList, newTarget).
+	// Polyfill.io - If newTarget is the same as F, it is equivalent to new F(...argumentsList).
+	if (newTarget === F) {
+		return new (Function.prototype.bind.apply(F, [null].concat(argumentsList)))();
+	} else {
+		// Polyfill.io - This is mimicking section 9.2.2 step 5.a.
+		var obj = OrdinaryCreateFromConstructor(newTarget, Object.prototype);
+		return Call(F, obj, argumentsList);
+	}
+}
+
+// _ESAbstract.ArraySpeciesCreate
+/* global IsArray, ArrayCreate, Get, Type, IsConstructor, Construct */
+// 9.4.2.3. ArraySpeciesCreate ( originalArray, length )
+function ArraySpeciesCreate(originalArray, length) { // eslint-disable-line no-unused-vars
+	// 1. Assert: length is an integer Number ≥ 0.
+	// 2. If length is -0, set length to +0.
+	if (length === 0 && 1/length === -Infinity) {
+		length = 0;
+	}
+
+	// 3. Let isArray be ? IsArray(originalArray).
+	var isArray = IsArray(originalArray);
+
+	// 4. If isArray is false, return ? ArrayCreate(length).
+	if (isArray === false) {
+		return ArrayCreate(length);
+	}
+
+	// 5. Let C be ? Get(originalArray, "constructor").
+	var C = Get(originalArray, 'constructor');
+
+	// Polyfill.io - We skip this section as not sure how to make a cross-realm normal Array, a same-realm Array.
+	// 6. If IsConstructor(C) is true, then
+	// if (IsConstructor(C)) {
+		// a. Let thisRealm be the current Realm Record.
+		// b. Let realmC be ? GetFunctionRealm(C).
+		// c. If thisRealm and realmC are not the same Realm Record, then
+			// i. If SameValue(C, realmC.[[Intrinsics]].[[%Array%]]) is true, set C to undefined.
+	// }
+	// 7. If Type(C) is Object, then
+	if (Type(C) === 'object') {
+		// a. Set C to ? Get(C, @@species).
+		C = 'Symbol' in self && 'species' in self.Symbol ? Get(C, self.Symbol.species) : undefined;
+		// b. If C is null, set C to undefined.
+		if (C === null) {
+			C = undefined;
+		}
+	}
+	// 8. If C is undefined, return ? ArrayCreate(length).
+	if (C === undefined) {
+		return ArrayCreate(length);
+	}
+	// 9. If IsConstructor(C) is false, throw a TypeError exception.
+	if (!IsConstructor(C)) {
+		throw new TypeError('C must be a constructor');
+	}
+	// 10. Return ? Construct(C, « length »).
+	return Construct(C, [length]);
+}
+if (!("filter"in Array.prototype
+)) {
+
+// Array.prototype.filter
+/* global CreateMethodProperty, ToObject, ToLength, Get, IsCallable, ArraySpeciesCreate, ToString, HasProperty, ToBoolean, Call, CreateDataPropertyOrThrow */
+// 22.1.3.7. Array.prototype.filter ( callbackfn [ , thisArg ] )
+CreateMethodProperty(Array.prototype, 'filter', function filter(callbackfn /* [ , thisArg ] */) {
+	// 1. Let O be ? ToObject(this value).
+	var O = ToObject(this);
+	// 2. Let len be ? ToLength(? Get(O, "length")).
+	var len = ToLength(Get(O, "length"));
+	// 3. If IsCallable(callbackfn) is false, throw a TypeError exception.
+	if (IsCallable(callbackfn) === false) {
+		throw new TypeError(callbackfn + ' is not a function');
+	}
+	// 4. If thisArg is present, let T be thisArg; else let T be undefined.
+	var T = arguments.length > 1 ? arguments[1] : undefined;
+	// 5. Let A be ? ArraySpeciesCreate(O, 0).
+	var A = ArraySpeciesCreate(O, 0);
+	// 6. Let k be 0.
+	var k = 0;
+	// 7. Let to be 0.
+	var to = 0;
+	// 8. Repeat, while k < len
+	while (k < len) {
+		// a. Let Pk be ! ToString(k).
+		var Pk = ToString(k);
+		// b. Let kPresent be ? HasProperty(O, Pk).
+		var kPresent = HasProperty(O, Pk);
+		// c. If kPresent is true, then
+		if (kPresent) {
+			// i. Let kValue be ? Get(O, Pk).
+			var kValue = Get(O, Pk);
+			// ii. Let selected be ToBoolean(? Call(callbackfn, T, « kValue, k, O »)).
+			var selected = ToBoolean(Call(callbackfn, T, [kValue, k, O]));
+			// iii. If selected is true, then
+			if (selected) {
+				// 1. Perform ? CreateDataPropertyOrThrow(A, ! ToString(to), kValue)
+				CreateDataPropertyOrThrow(A, ToString(to), kValue);
+				// 2. Increase to by 1.
+				to = to + 1;
+			}
+
+		}
+		// d. Increase k by 1.
+		k = k + 1;
+	}
+	// 9. Return A.
+	return A;
+});
+
+}
+
+if (!("map"in Array.prototype
+)) {
+
+// Array.prototype.map
+/* global ArraySpeciesCreate, Call, CreateDataPropertyOrThrow, CreateMethodProperty, Get, HasProperty, IsCallable, ToLength, ToObject, ToString */
+// 22.1.3.16. Array.prototype.map ( callbackfn [ , thisArg ] )
+CreateMethodProperty(Array.prototype, 'map', function map(callbackfn /* [ , thisArg ] */) {
+	// 1. Let O be ? ToObject(this value).
+	var O = ToObject(this);
+	// 2. Let len be ? ToLength(? Get(O, "length")).
+	var len = ToLength(Get(O, "length"));
+	// 3. If IsCallable(callbackfn) is false, throw a TypeError exception.
+	if (IsCallable(callbackfn) === false) {
+		throw new TypeError(callbackfn + ' is not a function');
+	}
+	// 4. If thisArg is present, let T be thisArg; else let T be undefined.
+	var T = arguments.length > 1 ? arguments[1] : undefined;
+	// 5. Let A be ? ArraySpeciesCreate(O, len).
+	var A = ArraySpeciesCreate(O, len);
+	// 6. Let k be 0.
+	var k = 0;
+	// 7. Repeat, while k < len
+	while (k < len) {
+		// a. Let Pk be ! ToString(k).
+		var Pk = ToString(k);
+		// b. Let kPresent be ? HasProperty(O, Pk).
+		var kPresent = HasProperty(O, Pk);
+		// c. If kPresent is true, then
+		if (kPresent) {
+			// i. Let kValue be ? Get(O, Pk).
+			var kValue = Get(O, Pk);
+			// ii. Let mappedValue be ? Call(callbackfn, T, « kValue, k, O »).
+			var mappedValue = Call(callbackfn, T, [kValue, k, O]);
+			// iii. Perform ? CreateDataPropertyOrThrow(A, Pk, mappedValue).
+			CreateDataPropertyOrThrow(A, Pk, mappedValue);
+		}
+		// d. Increase k by 1.
+		k = k + 1;
+	}
+	// 8. Return A.
+	return A;
+});
+
+}
+
+if (!("getOwnPropertyNames"in Object&&function(){try{return Object.getOwnPropertyNames(1),!0}catch(t){return!1}}()
+)) {
+
+// Object.getOwnPropertyNames
+/* global CreateMethodProperty, ToObject */
+(function() {
+	var toString = {}.toString;
+	var split = "".split;
+	var concat = [].concat;
+	var hasOwnProperty = Object.prototype.hasOwnProperty;
+	var nativeGetOwnPropertyNames = Object.getOwnPropertyNames || Object.keys;
+	var cachedWindowNames =
+		typeof self === "object" ? nativeGetOwnPropertyNames(self) : [];
+
+	// 19.1.2.10 Object.getOwnPropertyNames ( O )
+	CreateMethodProperty(
+		Object,
+		"getOwnPropertyNames",
+		function getOwnPropertyNames(O) {
+			var object = ToObject(O);
+
+			if (toString.call(object) === "[object Window]") {
+				try {
+					return nativeGetOwnPropertyNames(object);
+				} catch (e) {
+					// IE bug where layout engine calls userland Object.getOwnPropertyNames for cross-domain `window` objects
+					return concat.call([], cachedWindowNames);
+				}
+			}
+
+			// Polyfill.io fallback for non-array-like strings which exist in some ES3 user-agents (IE 8)
+			object =
+				toString.call(object) == "[object String]"
+					? split.call(object, "")
+					: Object(object);
+
+			var result = nativeGetOwnPropertyNames(object);
+			var extraNonEnumerableKeys = ["length", "prototype"];
+			for (var i = 0; i < extraNonEnumerableKeys.length; i++) {
+				var key = extraNonEnumerableKeys[i];
+				if (hasOwnProperty.call(object, key) && !result.includes(key)) {
+					result.push(key);
+				}
+			}
+
+			if (result.includes("__proto__")) {
+				var index = result.indexOf("__proto__");
+				result.splice(index, 1);
+			}
+
+			return result;
+		}
+	);
+})();
+
+}
+
+if (!("Symbol"in self&&0===self.Symbol.length
+)) {
+
+// Symbol
+// A modification of https://github.com/WebReflection/get-own-property-symbols
+// (C) Andrea Giammarchi - MIT Licensed
+
+/* global Type */
+(function (Object,  GOPS, global) {
+	'use strict'; //so that ({}).toString.call(null) returns the correct [object Null] rather than [object Window]
+
+	var supportsGetters = (function () {
+		// supports getters
+		try {
+			var a = {};
+			Object.defineProperty(a, "t", {
+				configurable: true,
+				enumerable: false,
+				get: function () {
+					return true;
+				},
+				set: undefined
+			});
+			return !!a.t;
+		} catch (e) {
+			return false;
+		}
+	}());
+
+	var	setDescriptor;
+	var id = 0;
+	var random = '' + Math.random();
+	var prefix = '__\x01symbol:';
+	var prefixLength = prefix.length;
+	var internalSymbol = '__\x01symbol@@' + random;
+	var emptySymbolLookup = {};
+	var DP = 'defineProperty';
+	var DPies = 'defineProperties';
+	var GOPN = 'getOwnPropertyNames';
+	var GOPD = 'getOwnPropertyDescriptor';
+	var PIE = 'propertyIsEnumerable';
+	var ObjectProto = Object.prototype;
+	var hOP = ObjectProto.hasOwnProperty;
+	var pIE = ObjectProto[PIE];
+	var toString = ObjectProto.toString;
+	var concat = Array.prototype.concat;
+	var cachedWindowNames = Object.getOwnPropertyNames ? Object.getOwnPropertyNames(self) : [];
+	var nGOPN = Object[GOPN];
+	var gOPN = function getOwnPropertyNames (obj) {
+		if (toString.call(obj) === '[object Window]') {
+			try {
+				return nGOPN(obj);
+			} catch (e) {
+				// IE bug where layout engine calls userland gOPN for cross-domain `window` objects
+				return concat.call([], cachedWindowNames);
+			}
+		}
+		return nGOPN(obj);
+	};
+	var gOPD = Object[GOPD];
+	var objectCreate = Object.create;
+	var objectKeys = Object.keys;
+	var freeze = Object.freeze || Object;
+	var objectDefineProperty = Object[DP];
+	var $defineProperties = Object[DPies];
+	var descriptor = gOPD(Object, GOPN);
+	var addInternalIfNeeded = function (o, uid, enumerable) {
+		if (!hOP.call(o, internalSymbol)) {
+			try {
+				objectDefineProperty(o, internalSymbol, {
+					enumerable: false,
+					configurable: false,
+					writable: false,
+					value: {}
+				});
+			} catch (e) {
+				o[internalSymbol] = {};
+			}
+		}
+		o[internalSymbol]['@@' + uid] = enumerable;
+	};
+	var createWithSymbols = function (proto, descriptors) {
+		var self = objectCreate(proto);
+		gOPN(descriptors).forEach(function (key) {
+			if (propertyIsEnumerable.call(descriptors, key)) {
+				$defineProperty(self, key, descriptors[key]);
+			}
+		});
+		return self;
+	};
+	var copyAsNonEnumerable = function (descriptor) {
+		var newDescriptor = objectCreate(descriptor);
+		newDescriptor.enumerable = false;
+		return newDescriptor;
+	};
+	var get = function get(){};
+	var onlyNonSymbols = function (name) {
+		return name != internalSymbol &&
+			!hOP.call(source, name);
+	};
+	var onlySymbols = function (name) {
+		return name != internalSymbol &&
+			hOP.call(source, name);
+	};
+	var propertyIsEnumerable = function propertyIsEnumerable(key) {
+		var uid = '' + key;
+		return onlySymbols(uid) ? (
+			hOP.call(this, uid) &&
+			this[internalSymbol] && this[internalSymbol]['@@' + uid]
+		) : pIE.call(this, key);
+	};
+	var setAndGetSymbol = function (uid) {
+		var descriptor = {
+			enumerable: false,
+			configurable: true,
+			get: get,
+			set: function (value) {
+			setDescriptor(this, uid, {
+				enumerable: false,
+				configurable: true,
+				writable: true,
+				value: value
+			});
+			addInternalIfNeeded(this, uid, true);
+			}
+		};
+		try {
+			objectDefineProperty(ObjectProto, uid, descriptor);
+		} catch (e) {
+			ObjectProto[uid] = descriptor.value;
+		}
+		source[uid] = objectDefineProperty(
+			Object(uid),
+			'constructor',
+			sourceConstructor
+		);
+		var description = gOPD(Symbol.prototype, 'description');
+		if (description) {
+			objectDefineProperty(
+				source[uid],
+				'description',
+				description
+			);
+		}
+		return freeze(source[uid]);
+	};
+
+	var symbolDescription = function (s) {
+		var sym = thisSymbolValue(s);
+
+		// 3. Return sym.[[Description]].
+		if (supportsInferredNames) {
+			var name = getInferredName(sym);
+			if (name !== "") {
+				return name.slice(1, -1); // name.slice('['.length, -']'.length);
+			}
+		}
+
+		if (emptySymbolLookup[sym] !== undefined) {
+			return emptySymbolLookup[sym];
+		}
+
+		var string = sym.toString();
+		var randomStartIndex = string.lastIndexOf("0.");
+		string = string.slice(10, randomStartIndex);
+
+		if (string === "") {
+			return undefined;
+		}
+		return string;
+	};
+
+	var Symbol = function Symbol() {
+		var description = arguments[0];
+		if (this instanceof Symbol) {
+			throw new TypeError('Symbol is not a constructor');
+		}
+
+		var uid = prefix.concat(description || '', random, ++id);
+
+		if (description !== undefined && (description === null || isNaN(description) || String(description) === "")) {
+			emptySymbolLookup[uid] = String(description);
+		}
+
+		var that = setAndGetSymbol(uid);
+
+		if (!supportsGetters) {
+			Object.defineProperty(that, "description", {
+				configurable: true,
+				enumerable: false,
+				value: symbolDescription(that)
+			});
+		}
+
+		return that;
+	};
+
+	var source = objectCreate(null);
+	var sourceConstructor = {value: Symbol};
+	var sourceMap = function (uid) {
+		return source[uid];
+		};
+	var $defineProperty = function defineProperty(o, key, descriptor) {
+		var uid = '' + key;
+		if (onlySymbols(uid)) {
+			setDescriptor(o, uid, descriptor.enumerable ?
+				copyAsNonEnumerable(descriptor) : descriptor);
+			addInternalIfNeeded(o, uid, !!descriptor.enumerable);
+		} else {
+			objectDefineProperty(o, key, descriptor);
+		}
+		return o;
+	};
+
+	var onlyInternalSymbols = function (obj) {
+		return function (name) {
+			return hOP.call(obj, internalSymbol) && hOP.call(obj[internalSymbol], '@@' + name);
+		};
+	};
+	var $getOwnPropertySymbols = function getOwnPropertySymbols(o) {
+		return gOPN(o).filter(o === ObjectProto ? onlyInternalSymbols(o) : onlySymbols).map(sourceMap);
+		}
+	;
+
+	descriptor.value = $defineProperty;
+	objectDefineProperty(Object, DP, descriptor);
+
+	descriptor.value = $getOwnPropertySymbols;
+	objectDefineProperty(Object, GOPS, descriptor);
+
+	descriptor.value = function getOwnPropertyNames(o) {
+		return gOPN(o).filter(onlyNonSymbols);
+	};
+	objectDefineProperty(Object, GOPN, descriptor);
+
+	descriptor.value = function defineProperties(o, descriptors) {
+		var symbols = $getOwnPropertySymbols(descriptors);
+		if (symbols.length) {
+		objectKeys(descriptors).concat(symbols).forEach(function (uid) {
+			if (propertyIsEnumerable.call(descriptors, uid)) {
+			$defineProperty(o, uid, descriptors[uid]);
+			}
+		});
+		} else {
+		$defineProperties(o, descriptors);
+		}
+		return o;
+	};
+	objectDefineProperty(Object, DPies, descriptor);
+
+	descriptor.value = propertyIsEnumerable;
+	objectDefineProperty(ObjectProto, PIE, descriptor);
+
+	descriptor.value = Symbol;
+	objectDefineProperty(global, 'Symbol', descriptor);
+
+	// defining `Symbol.for(key)`
+	descriptor.value = function (key) {
+		var uid = prefix.concat(prefix, key, random);
+		return uid in ObjectProto ? source[uid] : setAndGetSymbol(uid);
+	};
+	objectDefineProperty(Symbol, 'for', descriptor);
+
+	// defining `Symbol.keyFor(symbol)`
+	descriptor.value = function (symbol) {
+		if (onlyNonSymbols(symbol))
+		throw new TypeError(symbol + ' is not a symbol');
+		return hOP.call(source, symbol) ?
+		symbol.slice(prefixLength * 2, -random.length) :
+		void 0
+		;
+	};
+	objectDefineProperty(Symbol, 'keyFor', descriptor);
+
+	descriptor.value = function getOwnPropertyDescriptor(o, key) {
+		var descriptor = gOPD(o, key);
+		if (descriptor && onlySymbols(key)) {
+		descriptor.enumerable = propertyIsEnumerable.call(o, key);
+		}
+		return descriptor;
+	};
+	objectDefineProperty(Object, GOPD, descriptor);
+
+	descriptor.value = function create(proto, descriptors) {
+		return arguments.length === 1 || typeof descriptors === "undefined" ?
+		objectCreate(proto) :
+		createWithSymbols(proto, descriptors);
+	};
+
+	objectDefineProperty(Object, 'create', descriptor);
+
+	var strictModeSupported = (function(){ 'use strict'; return this; }).call(null) === null;
+	if (strictModeSupported) {
+		descriptor.value = function () {
+			var str = toString.call(this);
+			return (str === '[object String]' && onlySymbols(this)) ? '[object Symbol]' : str;
+		};
+	} else {
+		descriptor.value = function () {
+			// https://github.com/Financial-Times/polyfill-library/issues/164#issuecomment-486965300
+			// Polyfill.io this code is here for the situation where a browser does not
+			// support strict mode and is executing `Object.prototype.toString.call(null)`.
+			// This code ensures that we return the correct result in that situation however,
+			// this code also introduces a bug where it will return the incorrect result for
+			// `Object.prototype.toString.call(window)`. We can't have the correct result for
+			// both `window` and `null`, so we have opted for `null` as we believe this is the more
+			// common situation.
+			if (this === window) {
+				return '[object Null]';
+			}
+
+			var str = toString.call(this);
+			return (str === '[object String]' && onlySymbols(this)) ? '[object Symbol]' : str;
+		};
+	}
+	objectDefineProperty(ObjectProto, 'toString', descriptor);
+
+	setDescriptor = function (o, key, descriptor) {
+		var protoDescriptor = gOPD(ObjectProto, key);
+		delete ObjectProto[key];
+		objectDefineProperty(o, key, descriptor);
+		if (o !== ObjectProto) {
+			objectDefineProperty(ObjectProto, key, protoDescriptor);
+		}
+	};
+
+	// The abstract operation thisSymbolValue(value) performs the following steps:
+	function thisSymbolValue(value) {
+		// 1. If Type(value) is Symbol, return value.
+		if (Type(value) === "symbol") {
+			return value;
+		}
+		// 2. If Type(value) is Object and value has a [[SymbolData]] internal slot, then
+		// a. Let s be value.[[SymbolData]].
+		// b. Assert: Type(s) is Symbol.
+		// c. Return s.
+		// 3. Throw a TypeError exception.
+		throw TypeError(value + " is not a symbol");
+	}
+
+	// Symbol.prototype.description
+	if (function () {
+		// supports getters
+		try {
+			var a = {};
+			Object.defineProperty(a, "t", {
+				configurable: true,
+				enumerable: false,
+				get: function() {
+					return true;
+				},
+				set: undefined
+			});
+			return !!a.t;
+		} catch (e) {
+			return false;
+		}
+	}()) {
+		var getInferredName;
+		try {
+			// eslint-disable-next-line no-new-func
+			getInferredName = Function("s", "var v = s.valueOf(); return { [v]() {} }[v].name;");
+			// eslint-disable-next-line no-empty
+		} catch (e) { }
+
+		var inferred = function () { };
+		var supportsInferredNames = getInferredName && inferred.name === "inferred" ? getInferredName : null;
+
+
+		// 19.4.3.2 get Symbol.prototype.description
+		Object.defineProperty(global.Symbol.prototype, "description", {
+			configurable: true,
+			enumerable: false,
+			get: function () {
+				// 1. Let s be the this value.
+				var s = this;
+				return symbolDescription(s);
+			}
+		});
+	}
+
+}(Object, 'getOwnPropertySymbols', self));
+
+}
+
+if (!("Symbol"in self&&"iterator"in self.Symbol
+)) {
+
+// Symbol.iterator
+Object.defineProperty(self.Symbol, 'iterator', { value: self.Symbol('iterator') });
+
+}
+
+
+// _ESAbstract.GetIterator
+/* global GetMethod, Symbol, Call, Type, GetV */
+// 7.4.1. GetIterator ( obj [ , method ] )
+// The abstract operation GetIterator with argument obj and optional argument method performs the following steps:
+function GetIterator(obj /*, method */) { // eslint-disable-line no-unused-vars
+	// 1. If method is not present, then
+		// a. Set method to ? GetMethod(obj, @@iterator).
+	var method = arguments.length > 1 ? arguments[1] : GetMethod(obj, Symbol.iterator);
+	// 2. Let iterator be ? Call(method, obj).
+	var iterator = Call(method, obj);
+	// 3. If Type(iterator) is not Object, throw a TypeError exception.
+	if (Type(iterator) !== 'object') {
+		throw new TypeError('bad iterator');
+	}
+	// 4. Let nextMethod be ? GetV(iterator, "next").
+	var nextMethod = GetV(iterator, "next");
+	// 5. Let iteratorRecord be Record {[[Iterator]]: iterator, [[NextMethod]]: nextMethod, [[Done]]: false}.
+	var iteratorRecord = Object.create(null);
+	iteratorRecord['[[Iterator]]'] = iterator;
+	iteratorRecord['[[NextMethod]]'] = nextMethod;
+	iteratorRecord['[[Done]]'] = false;
+	// 6. Return iteratorRecord.
+	return iteratorRecord;
+}
+if (!("Symbol"in self&&"species"in self.Symbol
+)) {
+
+// Symbol.species
+/* global Symbol */
+Object.defineProperty(Symbol, 'species', { value: Symbol('species') });
+
+}
+
+if (!("Map"in self&&function(t){try{var n=new t.Map([[1,1],[2,2]])
+return 0===t.Map.length&&2===n.size&&"Symbol"in t&&"iterator"in t.Symbol&&"function"==typeof n[t.Symbol.iterator]}catch(e){return!1}}(self)
+)) {
+
+// Map
+/* global CreateIterResultObject, CreateMethodProperty, GetIterator, IsCallable, IteratorClose, IteratorStep, IteratorValue, OrdinaryCreateFromConstructor, SameValueZero, Type, Symbol */
+(function (global) {
+	var supportsGetters = (function () {
+		try {
+			var a = {};
+			Object.defineProperty(a, 't', {
+				configurable: true,
+				enumerable: false,
+				get: function () {
+					return true;
+				},
+				set: undefined
+			});
+			return !!a.t;
+		} catch (e) {
+			return false;
+		}
+	}());
+
+	// Need an internal counter to assign unique IDs to a key map
+	var _uniqueHashId = 0;
+	// Create a unique key name for storing meta data on functions and objects to enable lookups in hash table
+	var _metaKey = Symbol('meta_' + ((Math.random() * 100000000) + '').replace('.', ''));
+
+	/**
+	 * hashKey()
+	 * Function that given a key of `any` type, returns a string key value to enable hash map optimization for accessing Map data structure
+	 * @param {string|integer|function|object} recordKey - Record key to normalize to string accessor for hash map
+	 * @returns {string|false} - Returns a hashed string value or false if non extensible object key
+	 */
+	var hashKey = function(recordKey) {
+		// Check to see if we are dealing with object or function type.
+		if (typeof recordKey === 'object' ? recordKey !== null : typeof recordKey === 'function') {
+			// Check to see if we are dealing with a non extensible object
+			if (!Object.isExtensible(recordKey)) {
+				// Return `false`
+				return false;
+			}
+			if (!Object.prototype.hasOwnProperty.call(recordKey, _metaKey)) {
+				var uniqueHashKey = typeof(recordKey)+'-'+(++_uniqueHashId);
+				Object.defineProperty(recordKey, _metaKey, {
+					configurable: false,
+					enumerable: false,
+					writable: false,
+					value: uniqueHashKey
+				});
+			}
+			// Return previously defined hashed key
+			return recordKey[_metaKey];
+		}
+		// If this is just a primitive, we can cast it to a string and return it
+		return ''+recordKey;
+	};
+
+	/**
+	 * getRecordIndex()
+	 * Function that given a Map and a key of `any` type, returns an index number that coorelates with a record found in `this._keys[index]` and `this._values[index]`
+	 * @param {Map} map - Map structure
+	 * @param {string|number|function|object} recordKey - Record key to normalize to string accessor for hash map
+	 * @returns {number|false} - Returns either a index to access map._keys and map._values, or false if not found
+	 */
+	var getRecordIndex = function(map, recordKey) {
+		var hashedKey = hashKey(recordKey); // Casts key to unique string (unless already string or number)
+		if (hashedKey === false) {
+			// We have to iterate through our Map structure because `recordKey` is non-primitive and not extensible
+			return getRecordIndexSlow(map, recordKey);
+		}
+		var recordIndex = map._table[hashedKey]; // O(1) access to record
+		return recordIndex !== undefined ? recordIndex : false;
+	};
+
+	/**
+	 * getRecordIndexSlow()
+	 * Alternative (and slower) function to `getRecordIndex()`.  Necessary for looking up non-extensible object keys.
+	 * @param {Map} map - Map structure
+	 * @param {string|number|function|object} recordKey - Record key to normalize to string accessor for hash map
+	 * @returns {number|false} - Returns either a index to access map._keys and map._values, or false if not found
+	 */
+	var getRecordIndexSlow = function(map, recordKey) {
+		// We have to iterate through our Map structure because `recordKey` is non-primitive and not extensible
+		for (var i = 0; i < map._keys.length; i++) {
+			var _recordKey = map._keys[i];
+			if (_recordKey !== undefMarker && SameValueZero(_recordKey, recordKey)) {
+				return i;
+			}
+		}
+		return false;
+	};
+
+	/**
+	 * setHashIndex()
+	 * Function that given a map, key of `any` type, and a value, creates a new entry in Map hash table
+	 * @param {Map} map
+	 * @param {string|number|function|object} recordKey - Key to translate into normalized key for hash map
+	 * @param {number|bool} recordIndex - new record index for the hashedKey or `false` to delete the record index for the hashedKey
+	 * @returns {bool} - indicates success of operation
+	 */
+	var setHashIndex = function(map, recordKey, recordIndex) {
+		var hashedKey = hashKey(recordKey);
+		if (hashedKey === false) {
+			// If hashed key is false, the recordKey is an object which is not extensible.
+			// That indicates we cannot use the hash map for it, so this operation becomes no-op.
+			return false;
+		}
+		if (recordIndex === false) {
+			delete map._table[hashedKey];
+		} else {
+			map._table[hashedKey] = recordIndex;
+		}
+		return true;
+	};
+
+	// Deleted map items mess with iterator pointers, so rather than removing them mark them as deleted. Can't use undefined or null since those both valid keys so use a private symbol.
+	var undefMarker = Symbol('undef');
+	// 23.1.1.1 Map ( [ iterable ] )
+	var Map = function Map(/* iterable */) {
+		// 1. If NewTarget is undefined, throw a TypeError exception.
+		if (!(this instanceof Map)) {
+			throw new TypeError('Constructor Map requires "new"');
+		}
+		// 2. Let map be ? OrdinaryCreateFromConstructor(NewTarget, "%MapPrototype%", « [[MapData]] »).
+		var map = OrdinaryCreateFromConstructor(this, Map.prototype, {
+			_table: {}, // O(1) access table for retrieving records
+			_keys: [],
+			_values: [],
+			_size: 0,
+			_es6Map: true
+		});
+
+		// 3. Set map.[[MapData]] to a new empty List.
+		// Polyfill.io - This step was done as part of step two.
+
+		// Some old engines do not support ES5 getters/setters.  Since Map only requires these for the size property, we can fall back to setting the size property statically each time the size of the map changes.
+		if (!supportsGetters) {
+			Object.defineProperty(map, 'size', {
+				configurable: true,
+				enumerable: false,
+				writable: true,
+				value: 0
+			});
+		}
+
+		// 4. If iterable is not present, let iterable be undefined.
+		var iterable = arguments.length > 0 ? arguments[0] : undefined;
+
+		// 5. If iterable is either undefined or null, return map.
+		if (iterable === null || iterable === undefined) {
+			return map;
+		}
+
+		// 6. Let adder be ? Get(map, "set").
+		var adder = map.set;
+
+		// 7. If IsCallable(adder) is false, throw a TypeError exception.
+		if (!IsCallable(adder)) {
+			throw new TypeError("Map.prototype.set is not a function");
+		}
+
+		// 8. Let iteratorRecord be ? GetIterator(iterable).
+		try {
+			var iteratorRecord = GetIterator(iterable);
+			// 9. Repeat,
+			// eslint-disable-next-line no-constant-condition
+			while (true) {
+				// a. Let next be ? IteratorStep(iteratorRecord).
+				var next = IteratorStep(iteratorRecord);
+				// b. If next is false, return map.
+				if (next === false) {
+					return map;
+				}
+				// c. Let nextItem be ? IteratorValue(next).
+				var nextItem = IteratorValue(next);
+				// d. If Type(nextItem) is not Object, then
+				if (Type(nextItem) !== 'object') {
+					// i. Let error be Completion{[[Type]]: throw, [[Value]]: a newly created TypeError object, [[Target]]: empty}.
+					try {
+						throw new TypeError('Iterator value ' + nextItem + ' is not an entry object');
+					} catch (error) {
+						// ii. Return ? IteratorClose(iteratorRecord, error).
+						return IteratorClose(iteratorRecord, error);
+					}
+				}
+				try {
+					// Polyfill.io - The try catch accounts for steps: f, h, and j.
+
+					// e. Let k be Get(nextItem, "0").
+					var k = nextItem[0];
+					// f. If k is an abrupt completion, return ? IteratorClose(iteratorRecord, k).
+					// g. Let v be Get(nextItem, "1").
+					var v = nextItem[1];
+					// h. If v is an abrupt completion, return ? IteratorClose(iteratorRecord, v).
+					// i. Let status be Call(adder, map, « k.[[Value]], v.[[Value]] »).
+					adder.call(map, k, v);
+				} catch (e) {
+					// j. If status is an abrupt completion, return ? IteratorClose(iteratorRecord, status).
+					return IteratorClose(iteratorRecord, e);
+				}
+			}
+		} catch (e) {
+			// Polyfill.io - For user agents which do not have iteration methods on argument objects or arrays, we can special case those.
+			if (Array.isArray(iterable) ||
+				Object.prototype.toString.call(iterable) === '[object Arguments]' ||
+				// IE 7 & IE 8 return '[object Object]' for the arguments object, we can detect by checking for the existence of the callee property
+				(!!iterable.callee)) {
+				var index;
+				var length = iterable.length;
+				for (index = 0; index < length; index++) {
+					adder.call(map, iterable[index][0], iterable[index][1]);
+				}
+			}
+		}
+		return map;
+	};
+
+	// 23.1.2.1. Map.prototype
+	// The initial value of Map.prototype is the intrinsic object %MapPrototype%.
+	// This property has the attributes { [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: false }.
+	Object.defineProperty(Map, 'prototype', {
+		configurable: false,
+		enumerable: false,
+		writable: false,
+		value: {}
+	});
+
+	// 23.1.2.2 get Map [ @@species ]
+	if (supportsGetters) {
+		Object.defineProperty(Map, Symbol.species, {
+			configurable: true,
+			enumerable: false,
+			get: function () {
+				// 1. Return the this value.
+				return this;
+			},
+			set: undefined
+		});
+	} else {
+		CreateMethodProperty(Map, Symbol.species, Map);
+	}
+
+	// 23.1.3.1 Map.prototype.clear ( )
+	CreateMethodProperty(Map.prototype, 'clear', function clear() {
+			// 1. Let M be the this value.
+			var M = this;
+			// 2. If Type(M) is not Object, throw a TypeError exception.
+			if (Type(M) !== 'object') {
+				throw new TypeError('Method Map.prototype.clear called on incompatible receiver ' + Object.prototype.toString.call(M));
+			}
+			// 3. If M does not have a [[MapData]] internal slot, throw a TypeError exception.
+			if (M._es6Map !== true) {
+				throw new TypeError('Method Map.prototype.clear called on incompatible receiver ' + Object.prototype.toString.call(M));
+			}
+			// 4. Let entries be the List that is M.[[MapData]].
+			var entries = M._keys;
+			// 5. For each Record {[[Key]], [[Value]]} p that is an element of entries, do
+			for (var i = 0; i < entries.length; i++) {
+				// 5.a. Set p.[[Key]] to empty.
+				M._keys[i] = undefMarker;
+				// 5.b. Set p.[[Value]] to empty.
+				M._values[i] = undefMarker;
+			}
+			this._size = 0;
+			if (!supportsGetters) {
+				this.size = this._size;
+			}
+			// 5a. Clear lookup table
+			this._table = {};
+			// 6. Return undefined.
+			return undefined;
+		}
+	);
+
+	// 23.1.3.2. Map.prototype.constructor
+	CreateMethodProperty(Map.prototype, 'constructor', Map);
+
+	// 23.1.3.3. Map.prototype.delete ( key )
+	CreateMethodProperty(Map.prototype, 'delete', function (key) {
+			// 1. Let M be the this value.
+			var M = this;
+			// 2. If Type(M) is not Object, throw a TypeError exception.
+			if (Type(M) !== 'object') {
+				throw new TypeError('Method Map.prototype.clear called on incompatible receiver ' + Object.prototype.toString.call(M));
+			}
+			// 3. If M does not have a [[MapData]] internal slot, throw a TypeError exception.
+			if (M._es6Map !== true) {
+				throw new TypeError('Method Map.prototype.clear called on incompatible receiver ' + Object.prototype.toString.call(M));
+			}
+			// 4. Let entries be the List that is M.[[MapData]].
+			// 5. For each Record {[[Key]], [[Value]]} p that is an element of entries, do
+				// 5a. If p.[[Key]] is not empty and SameValueZero(p.[[Key]], key) is true, then
+					// i. Set p.[[Key]] to empty.
+					// ii. Set p.[[Value]] to empty.
+					// ii-a. Remove key from lookup table
+					// iii. Return true.
+			// 6. Return false.
+
+			// Implement steps 4-6 with a more optimal algo
+
+			// Steps 4-5: Access record
+			var recordIndex = getRecordIndex(M, key); // O(1) access to record index
+
+			if (recordIndex !== false) {
+				// Get record's `key` (could be `any` type);
+				var recordKey = M._keys[recordIndex];
+				// 5a. If p.[[Key]] is not empty and SameValueZero(p.[[Key]], key) is true, then
+				if (recordKey !== undefMarker && SameValueZero(recordKey, key)) {
+					// i. Set p.[[Key]] to empty.
+					this._keys[recordIndex] = undefMarker;
+					// ii. Set p.[[Value]] to empty.
+					this._values[recordIndex] = undefMarker;
+					this._size = --this._size;
+					if (!supportsGetters) {
+						this.size = this._size;
+					}
+					// iia. Remove key from lookup table
+					setHashIndex(this, key, false);
+					// iii. Return true.
+					return true;
+				}
+			}
+
+			// 6. Return false.
+			return false;
+		}
+	);
+
+	// 23.1.3.4. Map.prototype.entries ( )
+	CreateMethodProperty(Map.prototype, 'entries', function entries () {
+			// 1. Let M be the this value.
+			var M = this;
+			// 2. Return ? CreateMapIterator(M, "key+value").
+			return CreateMapIterator(M, 'key+value');
+		}
+	);
+
+	// 23.1.3.5. Map.prototype.forEach ( callbackfn [ , thisArg ] )
+	CreateMethodProperty(Map.prototype, 'forEach', function (callbackFn) {
+			// 1. Let M be the this value.
+			var M = this;
+			// 2. If Type(M) is not Object, throw a TypeError exception.
+			if (Type(M) !== 'object') {
+				throw new TypeError('Method Map.prototype.forEach called on incompatible receiver ' + Object.prototype.toString.call(M));
+			}
+			// 3. If M does not have a [[MapData]] internal slot, throw a TypeError exception.
+			if (M._es6Map !== true) {
+				throw new TypeError('Method Map.prototype.forEach called on incompatible receiver ' + Object.prototype.toString.call(M));
+			}
+			// 4. If IsCallable(callbackfn) is false, throw a TypeError exception.
+			if (!IsCallable(callbackFn)) {
+				throw new TypeError(Object.prototype.toString.call(callbackFn) + ' is not a function.');
+			}
+			// 5. If thisArg is present, let T be thisArg; else let T be undefined.
+			if (arguments[1]) {
+				var T = arguments[1];
+			}
+			// 6. Let entries be the List that is M.[[MapData]].
+			var entries = M._keys;
+			// 7. For each Record {[[Key]], [[Value]]} e that is an element of entries, in original key insertion order, do
+			for (var i = 0; i < entries.length; i++) {
+				// a. If e.[[Key]] is not empty, then
+				if (M._keys[i] !== undefMarker && M._values[i] !== undefMarker ) {
+					// i. Perform ? Call(callbackfn, T, « e.[[Value]], e.[[Key]], M »).
+					callbackFn.call(T, M._values[i], M._keys[i], M);
+				}
+			}
+			// 8. Return undefined.
+			return undefined;
+		}
+	);
+
+	// 23.1.3.6. Map.prototype.get ( key )
+	CreateMethodProperty(Map.prototype, 'get', function get(key) {
+			// 1. Let M be the this value.
+			var M = this;
+			// 2. If Type(M) is not Object, throw a TypeError exception.
+			if (Type(M) !== 'object') {
+				throw new TypeError('Method Map.prototype.get called on incompatible receiver ' + Object.prototype.toString.call(M));
+			}
+			// 3. If M does not have a [[MapData]] internal slot, throw a TypeError exception.
+			if (M._es6Map !== true) {
+				throw new TypeError('Method Map.prototype.get called on incompatible receiver ' + Object.prototype.toString.call(M));
+			}
+			// 4. Let entries be the List that is M.[[MapData]].
+			// 5. For each Record {[[Key]], [[Value]]} p that is an element of entries, do
+				// a. If p.[[Key]] is not empty and SameValueZero(p.[[Key]], key) is true, return p.[[Value]].
+			// 6. Return undefined.
+
+			// Implement steps 4-6 with a more optimal algo
+			var recordIndex = getRecordIndex(M, key); // O(1) access to record index
+			if (recordIndex !== false) {
+				var recordKey = M._keys[recordIndex];
+				if (recordKey !== undefMarker && SameValueZero(recordKey, key)) {
+					return M._values[recordIndex];
+				}
+			}
+
+			return undefined;
+		});
+
+	// 23.1.3.7. Map.prototype.has ( key )
+	CreateMethodProperty(Map.prototype, 'has', function has (key) {
+			// 1. Let M be the this value.
+			var M = this;
+			// 2. If Type(M) is not Object, throw a TypeError exception.
+			if (typeof M !== 'object') {
+				throw new TypeError('Method Map.prototype.has called on incompatible receiver ' + Object.prototype.toString.call(M));
+			}
+			// 3. If M does not have a [[MapData]] internal slot, throw a TypeError exception.
+			if (M._es6Map !== true) {
+				throw new TypeError('Method Map.prototype.has called on incompatible receiver ' + Object.prototype.toString.call(M));
+			}
+			// 4. Let entries be the List that is M.[[MapData]].
+			// 5. For each Record {[[Key]], [[Value]]} p that is an element of entries, do
+				// a. If p.[[Key]] is not empty and SameValueZero(p.[[Key]], key) is true, return true.
+			// 6. Return false.
+
+			// Implement steps 4-6 with a more optimal algo
+			var recordIndex = getRecordIndex(M, key); // O(1) access to record index
+			if (recordIndex !== false) {
+				var recordKey = M._keys[recordIndex];
+				if (recordKey !== undefMarker && SameValueZero(recordKey, key)) {
+					return true;
+				}
+			}
+
+			return false;
+		});
+
+	// 23.1.3.8. Map.prototype.keys ( )
+	CreateMethodProperty(Map.prototype, 'keys', function keys () {
+			// 1. Let M be the this value.
+			var M = this;
+			// 2. Return ? CreateMapIterator(M, "key").
+			return CreateMapIterator(M, "key");
+		});
+
+	// 23.1.3.9. Map.prototype.set ( key, value )
+	CreateMethodProperty(Map.prototype, 'set', function set(key, value) {
+			// 1. Let M be the this value.
+			var M = this;
+			// 2. If Type(M) is not Object, throw a TypeError exception.
+			if (Type(M) !== 'object') {
+				throw new TypeError('Method Map.prototype.set called on incompatible receiver ' + Object.prototype.toString.call(M));
+			}
+			// 3. If M does not have a [[MapData]] internal slot, throw a TypeError exception.
+			if (M._es6Map !== true) {
+				throw new TypeError('Method Map.prototype.set called on incompatible receiver ' + Object.prototype.toString.call(M));
+			}
+			// 4. Let entries be the List that is M.[[MapData]].
+			// 5. For each Record {[[Key]], [[Value]]} p that is an element of entries, do
+			// 6. If key is -0, let key be +0.
+			// 7. Let p be the Record {[[Key]]: key, [[Value]]: value}.
+			// 8. Append p as the last element of entries.
+			// 9. Return M.
+
+			// Strictly following the above steps 4-9 will lead to an inefficient algorithm.
+			// Step 8 also doesn't seem to be required if an entry already exists
+			var recordIndex = getRecordIndex(M, key); // O(1) access to record index
+			if (recordIndex !== false) {
+				// update path
+				M._values[recordIndex] = value;
+			} else {
+				// eslint-disable-next-line no-compare-neg-zero
+				if (key === -0) {
+					key = 0;
+				}
+				var p = {
+					'[[Key]]': key,
+					'[[Value]]': value
+				};
+				M._keys.push(p['[[Key]]']);
+				M._values.push(p['[[Value]]']);
+				setHashIndex(M, key, M._keys.length - 1); // update lookup table
+				++M._size;
+				if (!supportsGetters) {
+					M.size = M._size;
+				}
+			}
+			return M;
+		});
+
+	// 23.1.3.10. get Map.prototype.size
+	if (supportsGetters) {
+		Object.defineProperty(Map.prototype, 'size', {
+			configurable: true,
+			enumerable: false,
+			get: function () {
+				// 1. Let M be the this value.
+				var M = this;
+				// 2. If Type(M) is not Object, throw a TypeError exception.
+				if (Type(M) !== 'object') {
+					throw new TypeError('Method Map.prototype.size called on incompatible receiver ' + Object.prototype.toString.call(M));
+				}
+				// 3. If M does not have a [[MapData]] internal slot, throw a TypeError exception.
+				if (M._es6Map !== true) {
+					throw new TypeError('Method Map.prototype.size called on incompatible receiver ' + Object.prototype.toString.call(M));
+				}
+				// 4. Let entries be the List that is M.[[MapData]].
+				// 5. Let count be 0.
+				// 6. For each Record {[[Key]], [[Value]]} p that is an element of entries, do
+					// 6a. If p.[[Key]] is not empty, set count to count+1.
+				// 7. Return count.
+
+				// Implement 4-7 more efficently by returning pre-computed property
+				return this._size;
+			},
+			set: undefined
+		});
+	}
+
+	// 23.1.3.11. Map.prototype.values ( )
+	CreateMethodProperty(Map.prototype, 'values', function values () {
+			// 1. Let M be the this value.
+			var M = this;
+			// 2. Return ? CreateMapIterator(M, "value").
+			return CreateMapIterator(M, 'value');
+		}
+	);
+
+	// 23.1.3.12. Map.prototype [ @@iterator ] ( )
+	// The initial value of the @@iterator property is the same function object as the initial value of the entries property.
+	CreateMethodProperty(Map.prototype, Symbol.iterator, Map.prototype.entries);
+
+	// 23.1.3.13. Map.prototype [ @@toStringTag ]
+	// The initial value of the @@toStringTag property is the String value "Map".
+	// This property has the attributes { [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: true }.
+
+	// Polyfill.io - Safari 8 implements Map.name but as a non-configurable property, which means it would throw an error if we try and configure it here.
+	if (!('name' in Map)) {
+		// 19.2.4.2 name
+		Object.defineProperty(Map, 'name', {
+			configurable: true,
+			enumerable: false,
+			writable: false,
+			value: 'Map'
+		});
+	}
+
+	// 23.1.5.1. CreateMapIterator ( map, kind )
+	function CreateMapIterator(map, kind) {
+		// 1. If Type(map) is not Object, throw a TypeError exception.
+		if (Type(map) !== 'object') {
+			throw new TypeError('createMapIterator called on incompatible receiver ' + Object.prototype.toString.call(map));
+		}
+		// 2. If map does not have a [[MapData]] internal slot, throw a TypeError exception.
+		if (map._es6Map !== true) {
+			throw new TypeError('createMapIterator called on incompatible receiver ' + Object.prototype.toString.call(map));
+		}
+		// 3. Let iterator be ObjectCreate(%MapIteratorPrototype%, « [[Map]], [[MapNextIndex]], [[MapIterationKind]] »).
+		var iterator = Object.create(MapIteratorPrototype);
+		// 4. Set iterator.[[Map]] to map.
+		Object.defineProperty(iterator, '[[Map]]', {
+			configurable: true,
+			enumerable: false,
+			writable: true,
+			value: map
+		});
+		// 5. Set iterator.[[MapNextIndex]] to 0.
+		Object.defineProperty(iterator, '[[MapNextIndex]]', {
+			configurable: true,
+			enumerable: false,
+			writable: true,
+			value: 0
+		});
+		// 6. Set iterator.[[MapIterationKind]] to kind.
+		Object.defineProperty(iterator, '[[MapIterationKind]]', {
+			configurable: true,
+			enumerable: false,
+			writable: true,
+			value: kind
+		});
+		// 7. Return iterator.
+		return iterator;
+	}
+
+	// 23.1.5.2. The %MapIteratorPrototype% Object
+	var MapIteratorPrototype = {};
+	// Polyfill.io - We use this as a quick way to check if an object is a Map Iterator instance.
+	Object.defineProperty(MapIteratorPrototype, 'isMapIterator', {
+		configurable: false,
+		enumerable: false,
+		writable: false,
+		value: true
+	});
+
+	// 23.1.5.2.1. %MapIteratorPrototype%.next ( )
+	CreateMethodProperty(MapIteratorPrototype, 'next', function next() {
+			// 1. Let O be the this value.
+			var O = this;
+			// 2. If Type(O) is not Object, throw a TypeError exception.
+			if (Type(O) !== 'object') {
+				throw new TypeError('Method %MapIteratorPrototype%.next called on incompatible receiver ' + Object.prototype.toString.call(O));
+			}
+			// 3. If O does not have all of the internal slots of a Map Iterator Instance (23.1.5.3), throw a TypeError exception.
+			if (!O.isMapIterator) {
+				throw new TypeError('Method %MapIteratorPrototype%.next called on incompatible receiver ' + Object.prototype.toString.call(O));
+			}
+			// 4. Let m be O.[[Map]].
+			var m = O['[[Map]]'];
+			// 5. Let index be O.[[MapNextIndex]].
+			var index = O['[[MapNextIndex]]'];
+			// 6. Let itemKind be O.[[MapIterationKind]].
+			var itemKind = O['[[MapIterationKind]]'];
+			// 7. If m is undefined, return CreateIterResultObject(undefined, true).
+			if (m === undefined) {
+				return CreateIterResultObject(undefined, true);
+			}
+			// 8. Assert: m has a [[MapData]] internal slot.
+			if (!m._es6Map) {
+				throw new Error(Object.prototype.toString.call(m) + ' has a [[MapData]] internal slot.');
+			}
+			// 9. Let entries be the List that is m.[[MapData]].
+			var entries = m._keys;
+			// 10. Let numEntries be the number of elements of entries.
+			var numEntries = entries.length;
+			// 11. NOTE: numEntries must be redetermined each time this method is evaluated.
+			// 12. Repeat, while index is less than numEntries,
+			while (index < numEntries) {
+				// a. Let e be the Record {[[Key]], [[Value]]} that is the value of entries[index].
+				var e = Object.create(null);
+				e['[[Key]]'] = m._keys[index];
+				e['[[Value]]'] = m._values[index];
+				// b. Set index to index+1.
+				index = index + 1;
+				// c. Set O.[[MapNextIndex]] to index.
+				O['[[MapNextIndex]]'] = index;
+				// d. If e.[[Key]] is not empty, then
+				if (e['[[Key]]'] !== undefMarker) {
+					// i. If itemKind is "key", let result be e.[[Key]].
+					if (itemKind === 'key') {
+						var result = e['[[Key]]'];
+						// ii. Else if itemKind is "value", let result be e.[[Value]].
+					} else if (itemKind === 'value') {
+						result = e['[[Value]]'];
+						// iii. Else,
+					} else {
+						// 1. Assert: itemKind is "key+value".
+						if (itemKind !== 'key+value') {
+							throw new Error();
+						}
+						// 2. Let result be CreateArrayFromList(« e.[[Key]], e.[[Value]] »).
+						result = [
+							e['[[Key]]'],
+							e['[[Value]]']
+						];
+					}
+					// iv. Return CreateIterResultObject(result, false).
+					return CreateIterResultObject(result, false);
+				}
+			}
+			// 13. Set O.[[Map]] to undefined.
+			O['[[Map]]'] = undefined;
+			// 14. Return CreateIterResultObject(undefined, true).
+			return CreateIterResultObject(undefined, true);
+		}
+	);
+
+	// 23.1.5.2.2 %MapIteratorPrototype% [ @@toStringTag ]
+	// The initial value of the @@toStringTag property is the String value "Map Iterator".
+	// This property has the attributes { [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: true }.
+
+	CreateMethodProperty(MapIteratorPrototype, Symbol.iterator, function iterator() {
+			return this;
+		}
+	);
+
+	// Export the object
+	try {
+		CreateMethodProperty(global, 'Map', Map);
+	} catch (e) {
+		// IE8 throws an error here if we set enumerable to false.
+		// More info on table 2: https://msdn.microsoft.com/en-us/library/dd229916(v=vs.85).aspx
+		global.Map = Map;
+	}
+}(self));
+
+}
+
+if (!("Set"in self&&function(){try{var e=new self.Set([1,2])
+return 0===self.Set.length&&2===e.size&&"Symbol"in self&&"iterator"in self.Symbol&&"function"==typeof e[self.Symbol.iterator]}catch(t){return!1}}()
+)) {
+
+// Set
+/* global CreateIterResultObject, CreateMethodProperty, GetIterator, IsCallable, IteratorClose, IteratorStep, IteratorValue, OrdinaryCreateFromConstructor, SameValueZero, Symbol */
+(function (global) {
+	var supportsGetters = (function () {
+		try {
+			var a = {};
+			Object.defineProperty(a, 't', {
+				configurable: true,
+				enumerable: false,
+				get: function () {
+					return true;
+				},
+				set: undefined
+			});
+			return !!a.t;
+		} catch (e) {
+			return false;
+		}
+	}());
+
+	// Deleted set items mess with iterator pointers, so rather than removing them mark them as deleted. Can't use undefined or null since those both valid keys so use a private symbol.
+	var undefMarker = Symbol('undef');
+	// 23.2.1.1. Set ( [ iterable ] )
+	var Set = function Set(/* iterable */) {
+		// 1. If NewTarget is undefined, throw a TypeError exception.
+		if (!(this instanceof Set)) {
+			throw new TypeError('Constructor Set requires "new"');
+		}
+		// 2. Let set be ? OrdinaryCreateFromConstructor(NewTarget, "%SetPrototype%", « [[SetData]] »).
+		var set = OrdinaryCreateFromConstructor(this, Set.prototype, {
+			_values: [],
+			_size: 0,
+			_es6Set: true
+		});
+
+		// 3. Set set.[[SetData]] to a new empty List.
+		// Polyfill.io - This step was done as part of step two.
+
+		// Some old engines do not support ES5 getters/setters.  Since Set only requires these for the size property, we can fall back to setting the size property statically each time the size of the set changes.
+		if (!supportsGetters) {
+			Object.defineProperty(set, 'size', {
+				configurable: true,
+				enumerable: false,
+				writable: true,
+				value: 0
+			});
+		}
+
+		// 4. If iterable is not present, let iterable be undefined.
+		var iterable = arguments.length > 0 ? arguments[0] : undefined;
+
+		// 5. If iterable is either undefined or null, return set.
+		if (iterable === null || iterable === undefined) {
+			return set;
+		}
+
+		// 6. Let adder be ? Get(set, "add").
+		var adder = set.add;
+		// 7. If IsCallable(adder) is false, throw a TypeError exception.
+		if (!IsCallable(adder)) {
+			throw new TypeError("Set.prototype.add is not a function");
+		}
+
+		try {
+			// 8. Let iteratorRecord be ? GetIterator(iterable).
+			var iteratorRecord = GetIterator(iterable);
+			// 9. Repeat,
+			// eslint-disable-next-line no-constant-condition
+			while (true) {
+				// a. Let next be ? IteratorStep(iteratorRecord).
+				var next = IteratorStep(iteratorRecord);
+				// b. If next is false, return set.
+				if (next === false) {
+					return set;
+				}
+				// c. Let nextValue be ? IteratorValue(next).
+				var nextValue = IteratorValue(next);
+				// d. Let status be Call(adder, set, « nextValue.[[Value]] »).
+				try {
+					adder.call(set, nextValue);
+				} catch (e) {
+					// e. If status is an abrupt completion, return ? IteratorClose(iteratorRecord, status).
+					return IteratorClose(iteratorRecord, e);
+				}
+			}
+		} catch (e) {
+			// Polyfill.io - For user agents which do not have iteration methods on argument objects or arrays, we can special case those.
+			if (Array.isArray(iterable) ||
+				Object.prototype.toString.call(iterable) === '[object Arguments]' ||
+				// IE 7 & IE 8 return '[object Object]' for the arguments object, we can detect by checking for the existence of the callee property
+				(!!iterable.callee)) {
+				var index;
+				var length = iterable.length;
+				for (index = 0; index < length; index++) {
+					adder.call(set, iterable[index]);
+				}
+			} else {
+				throw (e);
+			}
+		}
+		return set;
+	};
+
+	// 23.2.2.1. Set.prototype
+	// The initial value of Set.prototype is the intrinsic %SetPrototype% object.
+	// This property has the attributes { [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: false }.
+	Object.defineProperty(Set, 'prototype', {
+		configurable: false,
+		enumerable: false,
+		writable: false,
+		value: {}
+	});
+
+	// 23.2.2.2 get Set [ @@species ]
+	if (supportsGetters) {
+		Object.defineProperty(Set, Symbol.species, {
+			configurable: true,
+			enumerable: false,
+			get: function () {
+				// 1. Return the this value.
+				return this;
+			},
+			set: undefined
+		});
+	} else {
+		CreateMethodProperty(Set, Symbol.species, Set);
+	}
+
+	// 23.2.3.1. Set.prototype.add ( value )
+	CreateMethodProperty(Set.prototype, 'add', function add(value) {
+			// 1. Let S be the this value.
+			var S = this;
+			// 2. If Type(S) is not Object, throw a TypeError exception.
+			if (typeof S !== 'object') {
+				throw new TypeError('Method Set.prototype.add called on incompatible receiver ' + Object.prototype.toString.call(S));
+			}
+			// 3. If S does not have a [[SetData]] internal slot, throw a TypeError exception.
+			if (S._es6Set !== true) {
+				throw new TypeError('Method Set.prototype.add called on incompatible receiver ' + Object.prototype.toString.call(S));
+			}
+			// 4. Let entries be the List that is S.[[SetData]].
+			var entries = S._values;
+			// 5. For each e that is an element of entries, do
+			for (var i = 0; i < entries.length; i++) {
+				var e = entries[i];
+				// a. If e is not empty and SameValueZero(e, value) is true, then
+				if (e !== undefMarker && SameValueZero(e, value)) {
+					// i. Return S.
+					return S;
+				}
+			}
+			// 6. If value is -0, let value be +0.
+			if (value === 0 && 1/value === -Infinity) {
+				value = 0;
+			}
+			// 7. Append value as the last element of entries.
+			S._values.push(value);
+
+			this._size = ++this._size;
+			if (!supportsGetters) {
+				this.size = this._size;
+			}
+			// 8. Return S.
+			return S;
+		});
+
+	// 23.2.3.2. Set.prototype.clear ( )
+	CreateMethodProperty(Set.prototype, 'clear', function clear() {
+			// 1. Let S be the this value.
+			var S = this;
+			// 2. If Type(S) is not Object, throw a TypeError exception.
+			if (typeof S !== 'object') {
+				throw new TypeError('Method Set.prototype.clear called on incompatible receiver ' + Object.prototype.toString.call(S));
+			}
+			// 3. If S does not have a [[SetData]] internal slot, throw a TypeError exception.
+			if (S._es6Set !== true) {
+				throw new TypeError('Method Set.prototype.clear called on incompatible receiver ' + Object.prototype.toString.call(S));
+			}
+			// 4. Let entries be the List that is S.[[SetData]].
+			var entries = S._values;
+			// 5. For each e that is an element of entries, do
+			for (var i = 0; i < entries.length; i++) {
+				// a. Replace the element of entries whose value is e with an element whose value is empty.
+				entries[i] = undefMarker;
+			}
+			this._size = 0;
+			if (!supportsGetters) {
+				this.size = this._size;
+			}
+			// 6. Return undefined.
+			return undefined;
+		});
+
+	// 23.2.3.3. Set.prototype.constructor
+	CreateMethodProperty(Set.prototype, 'constructor', Set);
+
+	// 23.2.3.4. Set.prototype.delete ( value )
+	CreateMethodProperty(Set.prototype, 'delete', function (value) {
+			// 1. Let S be the this value.
+			var S = this;
+			// 2. If Type(S) is not Object, throw a TypeError exception.
+			if (typeof S !== 'object') {
+				throw new TypeError('Method Set.prototype.delete called on incompatible receiver ' + Object.prototype.toString.call(S));
+			}
+			// 3. If S does not have a [[SetData]] internal slot, throw a TypeError exception.
+			if (S._es6Set !== true) {
+				throw new TypeError('Method Set.prototype.delete called on incompatible receiver ' + Object.prototype.toString.call(S));
+			}
+			// 4. Let entries be the List that is S.[[SetData]].
+			var entries = S._values;
+			// 5. For each e that is an element of entries, do
+			for (var i = 0; i < entries.length; i++) {
+				var e = entries[i];
+				// a. If e is not empty and SameValueZero(e, value) is true, then
+				if (e !== undefMarker && SameValueZero(e, value)) {
+					// i. Replace the element of entries whose value is e with an element whose value is empty.
+					entries[i] = undefMarker;
+
+					this._size = --this._size;
+					if (!supportsGetters) {
+						this.size = this._size;
+					}
+					// ii. Return true.
+					return true;
+				}
+			}
+			// 6. Return false.
+			return false;
+		}
+	);
+
+	// 23.2.3.5. Set.prototype.entries ( )
+	CreateMethodProperty(Set.prototype, 'entries', function entries() {
+			// 1. Let S be the this value.
+			var S = this;
+			// 2. Return ? CreateSetIterator(S, "key+value").
+			return CreateSetIterator(S, 'key+value');
+		}
+	);
+
+	// 23.2.3.6. Set.prototype.forEach ( callbackfn [ , thisArg ] )
+	CreateMethodProperty(Set.prototype, 'forEach', function forEach(callbackFn /*[ , thisArg ]*/) {
+			// 1. Let S be the this value.
+			var S = this;
+			// 2. If Type(S) is not Object, throw a TypeError exception.
+			if (typeof S !== 'object') {
+				throw new TypeError('Method Set.prototype.forEach called on incompatible receiver ' + Object.prototype.toString.call(S));
+			}
+			// 3. If S does not have a [[SetData]] internal slot, throw a TypeError exception.
+			if (S._es6Set !== true) {
+				throw new TypeError('Method Set.prototype.forEach called on incompatible receiver ' + Object.prototype.toString.call(S));
+			}
+			// 4. If IsCallable(callbackfn) is false, throw a TypeError exception.
+			if (!IsCallable(callbackFn)) {
+				throw new TypeError(Object.prototype.toString.call(callbackFn) + ' is not a function.');
+			}
+			// 5. If thisArg is present, let T be thisArg; else let T be undefined.
+			if (arguments[1]) {
+				var T = arguments[1];
+			}
+			// 6. Let entries be the List that is S.[[SetData]].
+			var entries = S._values;
+			// 7. For each e that is an element of entries, in original insertion order, do
+			for (var i = 0; i < entries.length; i++) {
+				var e = entries[i];
+				// a. If e is not empty, then
+				if (e !== undefMarker) {
+					// i. Perform ? Call(callbackfn, T, « e, e, S »).
+					callbackFn.call(T, e, e, S);
+				}
+			}
+			// 8. Return undefined.
+			return undefined;
+		}
+	);
+
+	// 23.2.3.7. Set.prototype.has ( value )
+	CreateMethodProperty(Set.prototype, 'has', function has(value) {
+			// 1. Let S be the this value.
+			var S = this;
+			// 2. If Type(S) is not Object, throw a TypeError exception.
+			if (typeof S !== 'object') {
+				throw new TypeError('Method Set.prototype.forEach called on incompatible receiver ' + Object.prototype.toString.call(S));
+			}
+			// 3. If S does not have a [[SetData]] internal slot, throw a TypeError exception.
+			if (S._es6Set !== true) {
+				throw new TypeError('Method Set.prototype.forEach called on incompatible receiver ' + Object.prototype.toString.call(S));
+			}
+			// 4. Let entries be the List that is S.[[SetData]].
+			var entries = S._values;
+			// 5. For each e that is an element of entries, do
+			for (var i = 0; i < entries.length; i++) {
+				var e = entries[i];
+				// a. If e is not empty and SameValueZero(e, value) is true, return true.
+				if (e !== undefMarker && SameValueZero(e, value)) {
+					return true;
+				}
+			}
+			// 6. Return false.
+			return false;
+		}
+	);
+
+	// Polyfill.io - We need to define Set.prototype.values before Set.prototype.keys because keys is a reference to values.
+	// 23.2.3.10. Set.prototype.values()
+	var values = function values() {
+		// 1. Let S be the this value.
+		var S = this;
+		// 2. Return ? CreateSetIterator(S, "value").
+		return CreateSetIterator(S, "value");
+	};
+	CreateMethodProperty(Set.prototype, 'values', values);
+
+	// 23.2.3.8 Set.prototype.keys ( )
+	// The initial value of the keys property is the same function object as the initial value of the values property.
+	CreateMethodProperty(Set.prototype, 'keys', values);
+
+	// 23.2.3.9. get Set.prototype.size
+	if (supportsGetters) {
+		Object.defineProperty(Set.prototype, 'size', {
+			configurable: true,
+			enumerable: false,
+			get: function () {
+				// 1. Let S be the this value.
+				var S = this;
+				// 2. If Type(S) is not Object, throw a TypeError exception.
+				if (typeof S !== 'object') {
+					throw new TypeError('Method Set.prototype.size called on incompatible receiver ' + Object.prototype.toString.call(S));
+				}
+				// 3. If S does not have a [[SetData]] internal slot, throw a TypeError exception.
+				if (S._es6Set !== true) {
+					throw new TypeError('Method Set.prototype.size called on incompatible receiver ' + Object.prototype.toString.call(S));
+				}
+				// 4. Let entries be the List that is S.[[SetData]].
+				var entries = S._values;
+				// 5. Let count be 0.
+				var count = 0;
+				// 6. For each e that is an element of entries, do
+				for (var i = 0; i < entries.length; i++) {
+					var e = entries[i];
+					// a. If e is not empty, set count to count+1.
+					if (e !== undefMarker) {
+						count = count + 1;
+					}
+				}
+				// 7. Return count.
+				return count;
+			},
+			set: undefined
+		});
+	}
+
+	// 23.2.3.11. Set.prototype [ @@iterator ] ( )
+	// The initial value of the @@iterator property is the same function object as the initial value of the values property.
+	CreateMethodProperty(Set.prototype, Symbol.iterator, values);
+
+	// 23.2.3.12. Set.prototype [ @@toStringTag ]
+	// The initial value of the @@toStringTag property is the String value "Set".
+	// This property has the attributes { [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: true }.
+
+	// Polyfill.io - Safari 8 implements Set.name but as a non-configurable property, which means it would throw an error if we try and configure it here.
+	if (!('name' in Set)) {
+		// 19.2.4.2 name
+		Object.defineProperty(Set, 'name', {
+			configurable: true,
+			enumerable: false,
+			writable: false,
+			value: 'Set'
+		});
+	}
+
+	// 23.2.5.1. CreateSetIterator ( set, kind )
+	function CreateSetIterator(set, kind) {
+		// 1. If Type(set) is not Object, throw a TypeError exception.
+		if (typeof set !== 'object') {
+			throw new TypeError('createSetIterator called on incompatible receiver ' + Object.prototype.toString.call(set));
+		}
+		// 2. If set does not have a [[SetData]] internal slot, throw a TypeError exception.
+		if (set._es6Set !== true) {
+			throw new TypeError('createSetIterator called on incompatible receiver ' + Object.prototype.toString.call(set));
+		}
+		// 3. Let iterator be ObjectCreate(%SetIteratorPrototype%, « [[IteratedSet]], [[SetNextIndex]], [[SetIterationKind]] »).
+		var iterator = Object.create(SetIteratorPrototype);
+		// 4. Set iterator.[[IteratedSet]] to set.
+		Object.defineProperty(iterator, '[[IteratedSet]]', {
+			configurable: true,
+			enumerable: false,
+			writable: true,
+			value: set
+		});
+		// 5. Set iterator.[[SetNextIndex]] to 0.
+		Object.defineProperty(iterator, '[[SetNextIndex]]', {
+			configurable: true,
+			enumerable: false,
+			writable: true,
+			value: 0
+		});
+		// 6. Set iterator.[[SetIterationKind]] to kind.
+		Object.defineProperty(iterator, '[[SetIterationKind]]', {
+			configurable: true,
+			enumerable: false,
+			writable: true,
+			value: kind
+		});
+		// 7. Return iterator.
+		return iterator;
+	}
+
+	// 23.2.5.2. The %SetIteratorPrototype% Object
+	var SetIteratorPrototype = {};
+	//Polyfill.io - We add this property to help us identify what is a set iterator.
+	Object.defineProperty(SetIteratorPrototype, 'isSetIterator', {
+		configurable: false,
+		enumerable: false,
+		writable: false,
+		value: true
+	});
+
+	// 23.2.5.2.1. %SetIteratorPrototype%.next ( )
+	CreateMethodProperty(SetIteratorPrototype, 'next', function next() {
+		// 1. Let O be the this value.
+		var O = this;
+		// 2. If Type(O) is not Object, throw a TypeError exception.
+		if (typeof O !== 'object') {
+			throw new TypeError('Method %SetIteratorPrototype%.next called on incompatible receiver ' + Object.prototype.toString.call(O));
+		}
+		// 3. If O does not have all of the internal slots of a Set Iterator Instance (23.2.5.3), throw a TypeError exception.
+		if (!O.isSetIterator) {
+			throw new TypeError('Method %SetIteratorPrototype%.next called on incompatible receiver ' + Object.prototype.toString.call(O));
+		}
+		// 4. Let s be O.[[IteratedSet]].
+		var s = O['[[IteratedSet]]'];
+		// 5. Let index be O.[[SetNextIndex]].
+		var index = O['[[SetNextIndex]]'];
+		// 6. Let itemKind be O.[[SetIterationKind]].
+		var itemKind = O['[[SetIterationKind]]'];
+		// 7. If s is undefined, return CreateIterResultObject(undefined, true).
+		if (s === undefined) {
+			return CreateIterResultObject(undefined, true);
+		}
+		// 8. Assert: s has a [[SetData]] internal slot.
+		if (!s._es6Set) {
+			throw new Error(Object.prototype.toString.call(s) + ' does not have [[SetData]] internal slot.');
+		}
+		// 9. Let entries be the List that is s.[[SetData]].
+		var entries = s._values;
+		// 10. Let numEntries be the number of elements of entries.
+		var numEntries = entries.length;
+		// 11. NOTE: numEntries must be redetermined each time this method is evaluated.
+		// 12. Repeat, while index is less than numEntries,
+		while (index < numEntries) {
+			// a. Let e be entries[index].
+			var e = entries[index];
+			// b. Set index to index+1.
+			index = index + 1;
+			// c. Set O.[[SetNextIndex]] to index.
+			O['[[SetNextIndex]]'] = index;
+			// d. If e is not empty, then
+			if (e !== undefMarker) {
+				// i. If itemKind is "key+value", then
+				if (itemKind === 'key+value') {
+					// 1. Return CreateIterResultObject(CreateArrayFromList(« e, e »), false).
+					return CreateIterResultObject([e, e], false);
+				}
+				// ii. Return CreateIterResultObject(e, false).
+				return CreateIterResultObject(e, false);
+			}
+		}
+		// 13. Set O.[[IteratedSet]] to undefined.
+		O['[[IteratedSet]]'] = undefined;
+		// 14. Return CreateIterResultObject(undefined, true).
+		return CreateIterResultObject(undefined, true);
+	});
+
+	// 23.2.5.2.2. %SetIteratorPrototype% [ @@toStringTag ]
+	// The initial value of the @@toStringTag property is the String value "Set Iterator".
+	// This property has the attributes { [[Writable]]: false, [[Enumerable]]: false, [[Configurable]]: true }.
+
+	CreateMethodProperty(SetIteratorPrototype, Symbol.iterator, function iterator() {
+			return this;
+		}
+	);
+
+	// Export the object
+	try {
+		CreateMethodProperty(global, 'Set', Set);
+	} catch (e) {
+		// IE8 throws an error here if we set enumerable to false.
+		// More info on table 2: https://msdn.microsoft.com/en-us/library/dd229916(v=vs.85).aspx
+		global.Set = Set;
+	}
+
+}(self));
+
+}
+
+if (!("from"in Array&&function(){try{return Array.from({length:-Infinity}),"a"===Array.from(new self.Set(["a"]))[0]&&"a"===Array.from(new self.Map([["a","one"]]))[0][0]}catch(r){return!1}}()
+)) {
+
+// Array.from
+/* globals
+	IsCallable, GetMethod, Symbol, IsConstructor, Construct, ArrayCreate, GetIterator, IteratorClose,
+	ToString, IteratorStep, IteratorValue, Call, CreateDataPropertyOrThrow, ToObject, ToLength, Get, CreateMethodProperty
+*/
+(function () {
+	var toString = Object.prototype.toString;
+	var stringMatch = String.prototype.match;
+	// A cross-realm friendly way to detect if a value is a String object or literal.
+	function isString(value) {
+		if (typeof value === 'string') { return true; }
+		if (typeof value !== 'object') { return false; }
+		return toString.call(value) === '[object String]';
+	}
+
+	// 22.1.2.1. Array.from ( items [ , mapfn [ , thisArg ] ] )
+	CreateMethodProperty(Array, 'from', function from(items /* [ , mapfn [ , thisArg ] ] */) { // eslint-disable-line no-undef
+		// 1. Let C be the this value.
+		var C = this;
+		// 2. If mapfn is undefined, let mapping be false.
+		var mapfn = arguments.length > 1 ? arguments[1] : undefined;
+		if (mapfn === undefined) {
+			var mapping = false;
+			// 3. Else,
+		} else {
+			// a. If IsCallable(mapfn) is false, throw a TypeError exception.
+			if (IsCallable(mapfn) === false) {
+				throw new TypeError(Object.prototype.toString.call(mapfn) + ' is not a function.');
+			}
+			// b. If thisArg is present, let T be thisArg; else let T be undefined.
+			var thisArg = arguments.length > 2 ? arguments[2] : undefined;
+			if (thisArg !== undefined) {
+				var T = thisArg;
+			} else {
+				T = undefined;
+			}
+			// c. Let mapping be true.
+			mapping = true;
+
+		}
+		// 4. Let usingIterator be ? GetMethod(items, @@iterator).
+		var usingIterator = GetMethod(items, Symbol.iterator);
+		// 5. If usingIterator is not undefined, then
+		if (usingIterator !== undefined) {
+			// a. If IsConstructor(C) is true, then
+			if (IsConstructor(C)) {
+				// i. Let A be ? Construct(C).
+				var A = Construct(C);
+				// b. Else,
+			} else {
+				// i. Let A be ! ArrayCreate(0).
+				A = ArrayCreate(0);
+			}
+			// c. Let iteratorRecord be ? GetIterator(items, usingIterator).
+			var iteratorRecord = GetIterator(items, usingIterator);
+			// d. Let k be 0.
+			var k = 0;
+			// e. Repeat,
+			// eslint-disable-next-line no-constant-condition
+			while (true) {
+				// i. If k ≥ 2^53-1, then
+				if (k >= (Math.pow(2, 53) - 1)) {
+					// 1. Let error be Completion{[[Type]]: throw, [[Value]]: a newly created TypeError object, [[Target]]: empty}.
+					var error = new TypeError('Iteration count can not be greater than or equal 9007199254740991.');
+					// 2. Return ? IteratorClose(iteratorRecord, error).
+					return IteratorClose(iteratorRecord, error);
+				}
+				// ii. Let Pk be ! ToString(k).
+				var Pk = ToString(k);
+				// iii. Let next be ? IteratorStep(iteratorRecord).
+				var next = IteratorStep(iteratorRecord);
+				// iv. If next is false, then
+				if (next === false) {
+					// 1. Perform ? Set(A, "length", k, true).
+					A.length = k;
+					// 2. Return A.
+					return A;
+				}
+				// v. Let nextValue be ? IteratorValue(next).
+				var nextValue = IteratorValue(next);
+				// vi. If mapping is true, then
+				if (mapping) {
+					try {
+						// Polyfill.io - The try catch accounts for step 2.
+						// 1. Let mappedValue be Call(mapfn, T, « nextValue, k »).
+						var mappedValue = Call(mapfn, T, [nextValue, k]);
+						// 2. If mappedValue is an abrupt completion, return ? IteratorClose(iteratorRecord, mappedValue).
+						// 3. Let mappedValue be mappedValue.[[Value]].
+					} catch (e) {
+						return IteratorClose(iteratorRecord, e);
+					}
+
+					// vii. Else, let mappedValue be nextValue.
+				} else {
+					mappedValue = nextValue;
+				}
+				try {
+					// Polyfill.io - The try catch accounts for step ix.
+					// viii. Let defineStatus be CreateDataPropertyOrThrow(A, Pk, mappedValue).
+					CreateDataPropertyOrThrow(A, Pk, mappedValue);
+					// ix. If defineStatus is an abrupt completion, return ? IteratorClose(iteratorRecord, defineStatus).
+				} catch (e) {
+					return IteratorClose(iteratorRecord, e);
+				}
+				// x. Increase k by 1.
+				k = k + 1;
+			}
+		}
+		// 6. NOTE: items is not an Iterable so assume it is an array-like object.
+		// 7. Let arrayLike be ! ToObject(items).
+		// Polyfill.io - For Strings we need to split astral symbols into surrogate pairs.
+		if (isString(items)) {
+			var arrayLike = stringMatch.call(items, /[\uD800-\uDBFF][\uDC00-\uDFFF]?|[^\uD800-\uDFFF]|./g) || [];
+		} else {
+			arrayLike = ToObject(items);
+		}
+		// 8. Let len be ? ToLength(? Get(arrayLike, "length")).
+		var len = ToLength(Get(arrayLike, "length"));
+		// 9. If IsConstructor(C) is true, then
+		if (IsConstructor(C)) {
+			// a. Let A be ? Construct(C, « len »).
+			A = Construct(C, [len]);
+			// 10. Else,
+		} else {
+			// a. Let A be ? ArrayCreate(len).
+			A = ArrayCreate(len);
+		}
+		// 11. Let k be 0.
+		k = 0;
+		// 12. Repeat, while k < len
+		while (k < len) {
+			// a. Let Pk be ! ToString(k).
+			Pk = ToString(k);
+			// b. Let kValue be ? Get(arrayLike, Pk).
+			var kValue = Get(arrayLike, Pk);
+			// c. If mapping is true, then
+			if (mapping === true) {
+				// i. Let mappedValue be ? Call(mapfn, T, « kValue, k »).
+				mappedValue = Call(mapfn, T, [kValue, k]);
+				// d. Else, let mappedValue be kValue.
+			} else {
+				mappedValue = kValue;
+			}
+			// e. Perform ? CreateDataPropertyOrThrow(A, Pk, mappedValue).
+			CreateDataPropertyOrThrow(A, Pk, mappedValue);
+			// f. Increase k by 1.
+			k = k + 1;
+		}
+		// 13. Perform ? Set(A, "length", len, true).
+		A.length = len;
+		// 14. Return A.
+		return A;
+	});
+}());
+
+}
+
+})
+('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+
+/******/ })()
+;
+//# sourceMappingURL=polyfill-library.js.map

@@ -1,11 +1,80 @@
-<%
-  // index.htmlに吐き出した時、行があくようならここを一列に
-  const __dirname = process.cwd();
-  var pageData = {};
-  var pageName = 'lightbox14';
-  pageData.metaList = JSON.parse(include(`${__dirname}/src/assets/json/meta.json`));
-%><% function content(__append) {
-  %><main class="l-main">
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="author" content="">
+  
+  <!-- キャッシュ対策 -->
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta http-equiv="Expires" content="-1">
+  <!-- /キャッシュ対策 -->
+
+    <meta name="description" content="ヘーベルメゾンの賃貸物件一覧｜ヘーベルメゾン｜物件情報はこちら！旭化成不動産レジデンスが提供する、賃貸マンション「ヘーベルメゾン」、都民住宅や分譲マンション賃貸、賃貸戸建「ヘーベルハウス」といった賃貸物件は、Room A CLUBやベルティスサービスなどの入居者サービスも充実しています。">
+    <meta name="keywords" content="">
+      <title>ペット共生型賃貸住宅 プラスわんプラスにゃんの概要｜HEBEL HAUSの賃貸住宅 ヘーベルメゾン｜HEBEL HAUSの賃貸住宅 ヘーベルメゾン（旧ヘーベルROOMS）</title>
+  
+  <!-- @@@ TEMPLATE BEGIN @@@ -->
+  <link rel="shortcut icon" type="image/x-icon" href="//www.afr-web.co.jp/hebel-rooms/common_v2/favicon.ico">
+  
+  <meta name="viewport" content="width=device-width, target-densitydpi=medium-dpi, initial-scale=1, minimum-scale=1,maximum-scale=1.0,user-scalable=no" id="_chk-viewport">
+  
+  <link rel="stylesheet" href="//www.afr-web.co.jp/hebel-rooms/common_v2/lib/scrollup/image.css" type="text/css">
+  <link rel="stylesheet" href="//www.afr-web.co.jp/hebel-rooms/common_v2/lib/selectBoxIt/jquery.selectBoxIt.css" type="text/css">
+  <link rel="stylesheet" href="/hebel-rooms/common_v2/css/style.css" type="text/css">
+  <link rel="stylesheet" href="//www.afr-web.co.jp/file.jsp?id=359205" type="text/css">
+  
+  <link rel="canonical" href="">
+  <!-- @@@ TEMPLATE END @@@ -->
+  
+  <!-- ↓↓ アドバンススクリプト ↓↓ -->
+
+  
+  
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://www.afr-web.co.jp/file.jsp?id=356290">
+    
+
+  <script>
+      window.addEventListener('DOMContentLoaded',function(){
+        function deviceCheck(){
+          const ua = navigator.userAgent;
+          if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || (ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0)) {
+            return 'sp';
+          } else if (ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0 || (ua.indexOf('macintosh') > -1 && 'ontouchend' in document)) {
+            return 'tab';
+          } else {
+            return 'other';
+          }
+        }
+        console.log(deviceCheck());
+        if(deviceCheck() === 'sp'){
+          document.querySelector('body').classList.add('sp');
+        }
+      },false);
+    </script>
+  <!-- ↑↑ アドバンススクリプト ↑↑ -->
+  
+  <link rel="stylesheet" type="text/css" href="//www.asahi-kasei.co.jp/j-koho/css/j-koho_footer.css" media="all" />
+  <script type="text/javascript" src="//www.asahi-kasei.co.jp/j-koho/js/j-koho_footer.js"></script>
+</head>
+<body>
+
+  <!-- ↓↓ [ header2 ] ↓↓ -->
+  <!-- GTMタグが入る為基本的に使用しない -->
+<!-- ↑↑ [ header2 ] ↑↑ -->
+
+<!-- #container -->
+<div id="container" class="pg_home">
+    <header id="header" class="for_sp">
+      <div class="headerWrap">
+        <h1 class="logo">
+          <a href="/hebel-rooms/index.html/"><img src="/hebel-rooms/feature/assets/images/common/logo_sp.png" alt="ヘーベルメゾン" class="sp"></a>
+        </h1>
+      </div>
+    </header>
+  <!-- ↓↓ ソースを記述 ↓↓ -->
+  <main class="l-main">
   <section class="l-section" data-section="firstview">
     <div class="l-container --large">
       <div class="firstview-main">
@@ -373,7 +442,21 @@
         前のページに戻る
       </button>
     </div>
-  </div><%
-} %><%-
-  include(`${__dirname}/src/layouts/_default`, {content,pageData:pageData,pageName:pageName,__dirname:__dirname,meta:pageData.metaList[pageName]})
-%>
+  </div>
+  <!-- ↑↑ ソースを記述 ↑↑ -->
+</div>
+<!-- /#container -->
+
+<!-- ↓↓ [ footer2 ] ↓↓ -->
+
+
+  <!-- ここから削除しない -->
+  <script type="text/javascript" src="/hebel-rooms/common_v2/lib/jquery.min.js"></script>
+ <!-- @@@TEMPLATE END@@@ -->
+<!-- ↓↓ [ footer3 ] ↓↓ -->
+<!-- ↑↑ [ footer3 ] ↑↑ -->
+
+<!-- ↓↓ [ anytag ] ↓↓ -->
+<!-- ↑↑ [ anytag ] ↑↑ -->
+</body>
+</html>
