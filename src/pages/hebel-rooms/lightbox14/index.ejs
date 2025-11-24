@@ -1,0 +1,50 @@
+<%
+  // index.htmlに吐き出した時、行があくようならここを一列に
+  const __dirname = process.cwd();
+  var pageData = {};
+  var pageName = 'lightbox14';
+  pageData.metaList = JSON.parse(include(`${__dirname}/src/assets/json/meta.json`));
+%>
+<% function content(__append) { %>
+<main class="hk-main-content contents">
+
+  <!-- /foot-area -->
+  <div id="wrap_footer" class="wrap_footer for_sp">
+    <div id="footer" class="footer">
+      <div class="footer-content-bottom">
+        <!-- *********** 【FOR SP】 *********** -->
+        <div class="for_sp scrolltopwrap">
+          <a href="#" class="scrolltop for_sp" id="scrollTop"><img src="//www.afr-web.co.jp/hebel-rooms/common_v2/img/sp/common/sp-scrollup.png" alt=""></a>
+        </div>
+        <div class="centering-list for_sp">
+          <ul class="cf">
+            <li><a href="http://www.afr-web.co.jp/fudousan/sitemap/index.html/" target="_blank">サイトマップ</a></li>
+            <li class="separator">｜</li>
+            <li><a href="http://www.afr-web.co.jp/fudousan/info/privacy.html/" target="_blank">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div class="centering-list for_sp">
+          <ul class="cf">
+            <li><a href="http://www.afr-web.co.jp/fudousan/info/legal.html/" target="_blank">ご利用条件</a></li>
+            <li class="separator">｜</li>
+            <li><a href="http://www.afr-web.co.jp/fudousan/info/aboutus.html/" target="_blank">宅建業法上の表示</a></li>
+          </ul>
+        </div>
+        <!-- *********** /【FOR SP】 *********** -->
+        <p class="copylight">Copyright© 2015 Asahi Kasei&nbsp; Realty&nbsp;&amp; &nbsp;Residence Corp. All rights reserved.</p>
+      </div><!-- /.footer-content-bottom -->
+    </div>
+  </div>
+  <div id="close_button" class="close_button">
+    <div class="wrap">
+      <button class="close" onclick="history.back()" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="19.99" viewBox="0 0 10 19.99"><path d="M9.58,19.5a1.88,1.88,0,0,0,0-2.37L3.45,10,9.58,2.77A1.88,1.88,0,0,0,9.43.4,1.29,1.29,0,0,0,7.57.4L.42,8.78a1.87,1.87,0,0,0,0,2.36l7.15,8.37A1.28,1.28,0,0,0,9.58,19.5Z" fill="#fff"/></svg>
+        前のページに戻る
+      </button>
+    </div>
+  </div>
+</main>
+<% } %><%
+<%-
+  include(`${__dirname}/src/layouts/_default`, {content,pageData:pageData,pageName:pageName,__dirname:__dirname,meta:pageData.metaList[pageName]})
+%>
