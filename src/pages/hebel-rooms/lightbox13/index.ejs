@@ -1,0 +1,144 @@
+<%
+  // index.htmlに吐き出した時、行があくようならここを一列に
+  const __dirname = process.cwd();
+  var pageData = {};
+  var pageName = 'lightbox13';
+  pageData.metaList = JSON.parse(include(`${__dirname}/src/assets/json/meta.json`));
+%><% function content(__append) {
+  %><div class="contents">
+    <div class="contents-inner">
+      <div class="contents-head">
+        <h1 class="contents-heading">
+          <picture>
+            <source media="(max-width: 767px)" srcset="/hebel-rooms/lightbox13/img/mv_sp.jpg" width="732" height="640">
+            <source media="(min-width: 768px)" srcset="/hebel-rooms/lightbox13/img/mv.jpg" width="980" height="260">
+            <img src="/hebel-rooms/lightbox13/img/mv.jpg" alt="HEBEL MAISON PREMIUM EDITION" width="980" height="260">
+          </picture>
+        </h1>
+      </div>
+      <section class="content-body">
+        <h2 class="content-body-heading">
+          <span class="content-body-heading_shoulder">
+            <img src="/hebel-rooms/lightbox13/img/content_heading_shoulder.svg" alt="FEATURE" width="155" height="17">
+          </span>
+          <span class="content-body-heading_main">特長</span>
+        </h2>
+        <div class="content-body-inner">
+          <div class="swiper-container content-body-list-wrap">
+            <ul class="content-body-list swiper-wrapper">
+            <li class="content-card swiper-slide">
+              <h3 class="content-card_heading"><img src="/hebel-rooms/lightbox13/img/list_heading01.svg" alt="01 FACADE（外観）" width="270" height="20"></h3>
+              <div class="content-card_thumb">
+                <img src="/hebel-rooms/lightbox13/img/list_thumb01.jpg" alt="" width="616" height="342">
+              </div>
+              <p class="content-card_text">ミュージアムやライブラリーを彷彿させる、デザインコンセプトは、シンプルモダン。</p>
+            </li>
+            <li class="content-card swiper-slide">
+              <h3 class="content-card_heading"><img src="/hebel-rooms/lightbox13/img/list_heading02.svg" alt="02 LANDSCAPE（ランドスケープ）" width="270" height="20"></h3>
+              <div class="content-card_thumb">
+                <img src="/hebel-rooms/lightbox13/img/list_thumb02.jpg" alt="" width="616" height="342">
+              </div>
+              <p class="content-card_text">大切なのは、建物だけではない。<br>敷地を読み解いてこそ、建築は美しくなる。</p>
+            </li>
+            <li class="content-card swiper-slide">
+              <h3 class="content-card_heading"><img src="/hebel-rooms/lightbox13/img/list_heading03.svg" alt="03 COMMON SPACE（共用部）" width="270" height="20"></h3>
+              <div class="content-card_thumb">
+                <img src="/hebel-rooms/lightbox13/img/list_thumb03.jpg" alt="" width="616" height="342">
+              </div>
+              <p class="content-card_text">住む方をお迎えする。<br>その瞬間を重んじて設えた、おもてなしの空間。</p>
+            </li>
+            <li class="content-card swiper-slide">
+              <h3 class="content-card_heading"><img src="/hebel-rooms/lightbox13/img/list_heading04.svg" alt="04 PRIVATE SPACE（住戸部）" width="270" height="20"></h3>
+              <div class="content-card_thumb">
+                <img src="/hebel-rooms/lightbox13/img/list_thumb04.jpg" alt="" width="616" height="342">
+              </div>
+              <p class="content-card_text">こだわりを貫いたインテリアデザイン。それも居住性能、という発想。</p>
+            </li>
+            <li class="content-card swiper-slide">
+              <h3 class="content-card_heading"><img src="/hebel-rooms/lightbox13/img/list_heading05.svg" alt="05 LIGHTING（照明）" width="270" height="20"></h3>
+              <div class="content-card_thumb">
+                <img src="/hebel-rooms/lightbox13/img/list_thumb05.jpg" alt="" width="616" height="342">
+              </div>
+              <p class="content-card_text">光とともに、影をデザインする。<br>そして、幻想的な世界が描かれる。</p>
+            </li>
+            </ul>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  <!-- /hk-wrapper -->
+
+  <!-- /foot-area -->
+  <div id="wrap_footer" class="wrap_footer for_sp">
+    <div id="footer" class="footer">
+      <div class="footer-content-bottom">
+        <!-- *********** 【FOR SP】 *********** -->
+        <div class="for_sp scrolltopwrap">
+          <a href="#" class="scrolltop for_sp" id="scrollTop"><img src="//www.afr-web.co.jp/hebel-rooms/common_v2/img/sp/common/sp-scrollup.png" alt=""></a>
+        </div>
+        <div class="centering-list for_sp">
+          <ul class="cf">
+            <li><a href="http://www.afr-web.co.jp/fudousan/sitemap/index.html/" target="_blank">サイトマップ</a></li>
+            <li class="separator">｜</li>
+            <li><a href="http://www.afr-web.co.jp/fudousan/info/privacy.html/" target="_blank">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div class="centering-list for_sp">
+          <ul class="cf">
+            <li><a href="http://www.afr-web.co.jp/fudousan/info/legal.html/" target="_blank">ご利用条件</a></li>
+            <li class="separator">｜</li>
+            <li><a href="http://www.afr-web.co.jp/fudousan/info/aboutus.html/" target="_blank">宅建業法上の表示</a></li>
+          </ul>
+        </div>
+        <!-- *********** /【FOR SP】 *********** -->
+        <p class="copylight">Copyright© 2015 Asahi Kasei&nbsp; Realty&nbsp;&amp; &nbsp;Residence Corp. All rights reserved.</p>
+      </div><!-- /.footer-content-bottom -->
+    </div>
+  </div>
+  <div id="close_button" class="close_button">
+    <div class="wrap">
+      <button class="close" onclick="history.back()" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="19.99" viewBox="0 0 10 19.99"><path d="M9.58,19.5a1.88,1.88,0,0,0,0-2.37L3.45,10,9.58,2.77A1.88,1.88,0,0,0,9.43.4,1.29,1.29,0,0,0,7.57.4L.42,8.78a1.87,1.87,0,0,0,0,2.36l7.15,8.37A1.28,1.28,0,0,0,9.58,19.5Z" fill="#fff"/></svg>
+        前のページに戻る
+      </button>
+    </div>
+  </div>
+</div>
+<script>
+  // Swiperインスタンスを格納する変数
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const mySwiper = new Swiper('.swiper-container', {
+      direction: 'horizontal',
+      loop: false,
+      slidesPerView: 3,
+      spaceBetween: 0,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      autoplay: {
+        delay: 5000,
+      },
+      breakpoints: {
+        739: {
+          loop: true,
+          slidesPerView: 1,
+        }
+      }
+    });
+  });
+
+
+</script>
+<%
+} %><%-
+  include(`${__dirname}/src/layouts/_default`, {content,pageData:pageData,pageName:pageName,__dirname:__dirname,meta:pageData.metaList[pageName]})
+%>

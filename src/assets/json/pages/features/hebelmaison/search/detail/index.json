@@ -18,8 +18,8 @@
           "alt":""
         },
         "link":{
-          "href":"",
-          "type":"link"
+          "href":{"pc":"/hebel-rooms/lightbox13/index.html/"},
+          "type":"lightbox"
         },
         "label":{
           "text":"ハイグレード仕様"
@@ -168,7 +168,7 @@
           "alt":""
         },
         "link":{
-          "href":{"pc":"/hebel-rooms/lightbox11/"},
+          "href":{"pc":"/hebel-rooms/lightbox11/index.html/"},
           "type":"lightbox"
         },
         "label":{
