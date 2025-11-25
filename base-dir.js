@@ -17,6 +17,10 @@ export function getBaseDir(type,__dirname) {
       //   inputPath: `${__dirname}/src/pages/hebel-rooms/lightbox08/index.scss`,
       //   outputPath: `${__dirname}/dist/hebel-rooms/lightbox08/css/style.css`,
       // },
+       {
+        inputPath: `${__dirname}/src/pages/hebel-rooms/lightbox13/index.scss`,
+        outputPath: `${__dirname}/dist/hebel-rooms/lightbox13/css/style.css`,
+      },
       // {
       //   inputPath: `${__dirname}/src/pages/hebel-rooms/features/hebelmaison/style.scss`,
       //   outputPath: `${__dirname}/dist/hebel-rooms/common_v2/css/features/hebelmaison/style.css`,

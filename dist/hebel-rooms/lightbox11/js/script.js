@@ -9,7 +9,9 @@ $(function () {
       return false;
     }
   });
-  
+});
+
+document.addEventListener('DOMContentLoaded', function () {
   //swiper
   var mySwiper = new Swiper('.swiper-container', {
     loop: true,
