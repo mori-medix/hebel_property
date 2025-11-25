@@ -1,0 +1,272 @@
+:root {
+  --color-base-text: #411f0d;
+  --color-base-text-light: #664e42;
+  --color-base-bg: #fff;
+  --color-bg: #F6FAF9;
+  --color-orange: #e99f59;
+  --color-orange-light: #fff3e4;
+  --font-bold: 700;
+  --font-regular: 400
+}
+
+.l-container {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: 210px
+}
+
+#header {
+  display: none
+}
+
+#header .headerWrap{
+  margin: 3.6vw 0;
+}
+
+#header .logo {
+  width: 48%;
+}
+
+#header .logo a {
+  display: inline-block
+}
+
+.l-main {
+  display: block;
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 120px;
+  font-family: "Yu Gothic", "游ゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  letter-spacing: 0
+}
+
+.l-section[data-section=firstview] {
+  margin-bottom: 80px
+}
+
+.firstview-main__visual {
+  overflow: hidden;
+  border-radius: 20px
+}
+
+.firstview-main__visual h1 {
+  display: block
+}
+
+.firstview-main__visual picture,
+.firstview-main__visual img {
+  display: block;
+  width: 100%
+}
+
+/* feature list */
+.p-feature {
+  margin-bottom: 100px
+}
+
+.p-feature__head h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 2;
+  letter-spacing: .25em;
+}
+
+.p-feature__list {
+  margin-top: 60px;
+  display: flex;
+  gap: 13px;
+  justify-content: center;
+}
+
+/* feature detail */
+.p-feature-detail {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.p-feature-detail__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: .1em;
+}
+
+.p-feature-detail__head img {
+  height: 70px;
+  object-fit: contain;
+}
+
+.p-feature-detail__desc {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2;
+  letter-spacing: 0;
+}
+
+.p-feature-detail__content {
+  margin-top: 60px;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+
+  li {
+    background-color: var(--color-bg);
+    width: 338px;
+    padding: 32px 14px 32px 26px;
+  }
+}
+
+.p-feature-detail__content-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.p-feature-detail__content-heading h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.67;
+  letter-spacing: .05em;
+  text-align: center;
+
+  &:first-of-type {
+    height: 85px;
+  }
+
+  &:nth-of-type(2) {
+    height: 117px;
+  }
+}
+
+.p-feature-detail__content-img {
+  margin-top: 24px;
+}
+
+.p-feature-detail__content-img img {
+  width: 100%;
+  height: auto;
+}
+
+.p-feature-detail.is-reverse {
+  background-color: var(--color-bg);
+  
+  .p-feature-detail__content li {
+    background-color: #fff;
+  }
+}
+
+#feature03 .p-feature-detail__content li {
+  padding: 0;
+  background-color: transparent;
+}
+
+@media (max-width: 1519px) {
+  .l-container {
+    max-width: 1060px;
+    padding-inline: 40px
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .l-container {
+    padding-inline: 6.1538vw
+  }
+
+  #header {
+    display: block
+  }
+
+  .l-main {
+    padding-top: 0;
+    padding-bottom: 10.2564vw;
+    font-size: 4.102vw
+  }
+
+  .l-section[data-section=firstview] {
+    margin-bottom: 10.2564vw
+  }
+
+  .l-container.--large {
+    padding-inline: 3.077vw
+  }
+
+  .firstview-main__visual {
+    border-radius: 5.1282vw
+  }
+
+  /* feature list */
+  .p-feature {
+    margin-bottom: 10.2564vw
+  }
+
+  .p-feature__head h2 {
+    font-size: 1.95rem;
+  }
+
+  .p-feature__list {
+    margin-top: 10.2564vw;
+    flex-direction: column;
+    gap: 8.2051vw;
+
+    li img{
+      width: 100%;
+    }
+  }
+
+  /* feature detail */
+  .p-feature-detail__head {
+    gap: 6.1538vw;
+
+    h2 {
+      text-align: center;
+      font-size: 1.95rem;
+      line-height: 2;
+    }
+  }
+
+  .p-feature-detail__head img {
+    height: 10.2564vw;
+  }
+
+  .p-feature-detail__content {
+    flex-direction: column;
+    gap: 8.2051vw;
+  }
+
+  .p-feature-detail__content li {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .p-feature-detail__content-heading h3 {
+    font-size: 1.63rem;
+    line-height: 1.5;
+    height: auto;
+  }
+}
+
+/* =========================================================
+default
+========================================================= */
+
+.l-main .section {
+  width: 100%;
+}
+
+.close_button {
+  display: none;
+}
+

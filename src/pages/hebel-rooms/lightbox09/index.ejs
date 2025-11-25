@@ -1,0 +1,254 @@
+<%
+  // index.htmlに吐き出した時、行があくようならここを一列に
+  const __dirname = process.cwd();
+  var pageData = {};
+  var pageName = 'lightbox09';
+  pageData.metaList = JSON.parse(include(`${__dirname}/src/assets/json/meta.json`));
+%><% function content(__append) {
+  %><main class="l-main">
+  <!-- mainvisual -->
+  <section class="l-section" data-section="firstview">
+    <div class="l-container --large">
+      <div class="firstview-main">
+        <div class="firstview-main__visual">
+          <h1>
+            <picture>
+              <source media="(min-width: 768px)" srcset="/hebel-rooms/lightbox09/img/firstview_visual.jpg">
+              <source media="(max-width: 767px)" srcset="/hebel-rooms/lightbox09/img/firstview_visual_sp.jpg">
+              <img src="/hebel-rooms/lightbox09/img/firstview_visual.jpg" width="980" height="260" loading="eager" decoding="async" alt="都市に住まう女性に新しい「あんしん」を 一人暮らしの女性のための、安心共有賃貸 New Safole">
+            </picture>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /mainvisual -->
+  <section class="l-section p-feature">
+    <div class="l-container --large">
+      <div class="l-inner">
+        <div class="p-feature__head">
+          <h2>あんしんが“見える”暮らし<br>NewSafole 3つの特長</h2>
+        </div>
+        <ul class="p-feature__list">
+          <li>
+            <a href="#feature01">
+              <picture>
+                <source media="(min-width: 768px)" srcset="/hebel-rooms/lightbox09/img/feature_01.png">
+                <source media="(max-width: 767px)" srcset="/hebel-rooms/lightbox09/img/feature_01_sp.png">
+                <img src="/hebel-rooms/lightbox09/img/feature_01.png" width="338" height="298" loading="eager" decoding="async" alt="01 ぬくもり感じるおかえりラウンジ">
+              </picture>
+            </a>
+          </li>
+          <li>
+            <a href="#feature02">
+              <picture>
+              <source media="(min-width: 768px)" srcset="/hebel-rooms/lightbox09/img/feature_02.png">
+                <source media="(max-width: 767px)" srcset="/hebel-rooms/lightbox09/img/feature_02_sp.png">
+                <img src="/hebel-rooms/lightbox09/img/feature_02.png" width="338" height="298" loading="eager" decoding="async" alt="02 快適をお約束 あんしんの見える化">
+              </picture>
+            </a>
+          </li>
+          <li>
+            <a href="#feature03">
+              <picture>
+              <source media="(min-width: 768px)" srcset="/hebel-rooms/lightbox09/img/feature_03.png">
+              <source media="(max-width: 767px)" srcset="/hebel-rooms/lightbox09/img/feature_03_sp.png">
+              <img src="/hebel-rooms/lightbox09/img/feature_03.png" width="338" height="298" loading="eager" decoding="async" alt="03 女性に優しい充実の設備">
+              </picture>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="l-section p-feature-detail is-reverse" id="feature01">
+    <div class="l-container --large">
+      <div class="l-inner">
+        <div class="p-feature-detail__head">
+          <img src="/hebel-rooms/lightbox09/img/feature01_heading.png" width="154" height="70" loading="eager" decoding="async" alt="01 Special lounge">
+          <h2>ぬくもり感じる<br class="for_sp">おかえりラウンジ</h2>
+        </div>
+        <div class="p-feature-detail__desc">
+          <p>
+            疲れて帰宅したときにエントランスの明かりを見て<br>
+            ホッと温かみを感じることができる。<br>
+            さらに管理会社や他の入居者の雰囲気が<br class="for_sp">なんとなく伝わり<br>
+            住まいに居心地の良い親しみが<br class="for_sp">感じられるよう工夫しています。
+          </p>
+        </div>
+        <ul class="p-feature-detail__content">
+          <li>
+            <div class="p-feature-detail__content-heading">
+              <img src="/hebel-rooms/lightbox09/img/point01.png" width="90" height="60" loading="eager" decoding="async" alt="Point01">
+              <h3>
+                夜間に帰ってきたとき、<br>
+                ホッとするような<br>
+                あたたかな光でお迎え。
+              </h3>
+            </div>
+            <div class="p-feature-detail__content-img">
+              <img src="/hebel-rooms/lightbox09/img/feature01_img01.png" width="280" height="161" loading="eager" decoding="async" alt="">
+            </div>
+          </li>
+          <li>
+            <div class="p-feature-detail__content-heading">
+              <img src="/hebel-rooms/lightbox09/img/point02.png" width="90" height="60" loading="eager" decoding="async" alt="Point02">
+              <h3>
+                街や暮らしの<br>
+                便利な情報をシェアできる<br>
+                コミュニケーションボード
+              </h3>
+            </div>
+            <div class="p-feature-detail__content-img">
+              <img src="/hebel-rooms/lightbox09/img/feature01_img02.png" width="280" height="161" loading="eager" decoding="async" alt="">
+            </div>
+          </li>
+          <li>
+            <div class="p-feature-detail__content-heading">
+              <img src="/hebel-rooms/lightbox09/img/point03.png" width="90" height="60" loading="eager" decoding="async" alt="Point03">
+              <h3>
+                お気に入りをシェアできる<br>
+                共有のブックコーナー
+              </h3>
+            </div>
+            <div class="p-feature-detail__content-img">
+              <img src="/hebel-rooms/lightbox09/img/feature01_img03.png" width="280" height="161" loading="eager" decoding="async" alt="">
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="l-section p-feature-detail" id="feature02">
+    <div class="l-container --large">
+      <div class="l-inner">
+        <div class="p-feature-detail__head">
+          <img src="/hebel-rooms/lightbox09/img/feature02_heading.png" width="154" height="70" loading="eager" decoding="async" alt="02 Live in confort">
+          <h2>快適をお約束<br class="for_sp"> あんしんの見える化</h2>
+        </div>
+        <div class="p-feature-detail__desc">
+          <p>
+            夜遅くなった日の帰り道、<br class="for_sp">同じ建物で暮らす入居者のマナー、<br>
+            管理会社の日頃の管理など、<br class="for_sp">女性が気になる不安要素は、<br>
+            実際に暮らしてみないとわからないことばかり。<br>
+            NewSafoleは、<br class="for_sp">暮らす前から安心を感じられる工夫をしています。
+          </p>
+        </div>
+        <ul class="p-feature-detail__content">
+          <li>
+            <div class="p-feature-detail__content-heading">
+              <img src="/hebel-rooms/lightbox09/img/point01.png" width="90" height="60" loading="eager" decoding="async" alt="Point01">
+              <h3>
+                入居者は<br>
+                マナー同意書にサイン。<br>
+                住民の意識やマナーを<br>
+                “見える化”
+              </h3>
+            </div>
+            <div class="p-feature-detail__content-img">
+              <img src="/hebel-rooms/lightbox09/img/feature02_img01.png" width="268" height="149" loading="eager" decoding="async" alt="">
+            </div>
+          </li>
+          <li>
+            <div class="p-feature-detail__content-heading">
+              <img src="/hebel-rooms/lightbox09/img/point02.png" width="90" height="60" loading="eager" decoding="async" alt="Point02">
+              <h3>
+                立地の安全基準で<br>
+                周辺環境の良さを<br>
+                「見える化」
+              </h3>
+            </div>
+            <div class="p-feature-detail__content-img">
+              <img src="/hebel-rooms/lightbox09/img/feature02_img02.png" width="268" height="149" loading="eager" decoding="async" alt="">
+            </div>
+          </li>
+          <li>
+            <div class="p-feature-detail__content-heading">
+              <img src="/hebel-rooms/lightbox09/img/point03.png" width="90" height="60" loading="eager" decoding="async" alt="Point03">
+              <h3>
+                エントランスに設けた<br>
+                おかえりラウンジで<br>
+                あんしんを「見える化」
+              </h3>
+            </div>
+            <div class="p-feature-detail__content-img">
+              <img src="/hebel-rooms/lightbox09/img/feature02_img03.png" width="268" height="149" loading="eager" decoding="async" alt="">
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="l-section p-feature-detail is-reverse" id="feature03">
+    <div class="l-container --large">
+      <div class="l-inner">
+        <div class="p-feature-detail__head">
+          <img src="/hebel-rooms/lightbox09/img/feature03_heading.png" width="205" height="70" loading="eager" decoding="async" alt="03 Facilities and design">
+          <h2>女性に嬉しい<br class="for_sp"> 充実の設備</h2>
+        </div>
+        <div class="p-feature-detail__desc">
+          <p>
+            「道路からお部屋の中が見えるのは嫌」<br>
+            「ベランダに侵入されるのが怖い」などの声をもと<br class="for_sp">に、<br class="for_pc">
+            防犯設備と設計ノウハウの両面で、<br>
+            入居者のプライバシー保護や防犯性に<br class="for_sp">配慮しています。
+          </p>
+        </div>
+        <ul class="p-feature-detail__content">
+          <li>
+            <div class="p-feature-detail__content-img">
+              <img src="/hebel-rooms/lightbox09/img/feature03_img01.png" width="342" height="249" loading="eager" decoding="async" alt="">
+            </div>
+          </li>
+          <li>
+            <div class="p-feature-detail__content-img">
+              <img src="/hebel-rooms/lightbox09/img/feature03_img02.png" width="342" height="249" loading="eager" decoding="async" alt="">
+            </div>
+          </li>
+          <li>
+            <div class="p-feature-detail__content-img">
+              <img src="/hebel-rooms/lightbox09/img/feature03_img03.png" width="342" height="249" loading="eager" decoding="async" alt="">
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="wrap_footer" class="wrap_footer for_sp">
+    <div id="footer" class="footer">
+      <div class="footer-content-bottom">
+        <!-- *********** 【FOR SP】 *********** -->
+        <div class="for_sp scrolltopwrap">
+          <a href="#" class="scrolltop for_sp" id="scrollTop"><img src="//www.afr-web.co.jp/hebel-rooms/common_v2/img/sp/common/sp-scrollup.png" alt=""></a>
+        </div>
+        <div class="centering-list for_sp">
+          <ul class="cf">
+            <li><a href="http://www.afr-web.co.jp/fudousan/sitemap/index.html/" target="_blank">サイトマップ</a></li>
+            <li class="separator">｜</li>
+            <li><a href="http://www.afr-web.co.jp/fudousan/info/privacy.html/" target="_blank">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <div class="centering-list for_sp">
+          <ul class="cf">
+            <li><a href="http://www.afr-web.co.jp/fudousan/info/legal.html/" target="_blank">ご利用条件</a></li>
+            <li class="separator">｜</li>
+            <li><a href="http://www.afr-web.co.jp/fudousan/info/aboutus.html/" target="_blank">宅建業法上の表示</a></li>
+          </ul>
+        </div>
+        <!-- *********** /【FOR SP】 *********** -->
+        <p class="copylight">Copyright© 2015 Asahi Kasei&nbsp; Realty&nbsp;&amp; &nbsp;Residence Corp. All rights reserved.</p>
+      </div><!-- /.footer-content-bottom -->
+    </div>
+  </div>
+  <div id="close_button" class="close_button">
+    <div class="wrap">
+      <button class="close" onclick="history.back()" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="19.99" viewBox="0 0 10 19.99"><path d="M9.58,19.5a1.88,1.88,0,0,0,0-2.37L3.45,10,9.58,2.77A1.88,1.88,0,0,0,9.43.4,1.29,1.29,0,0,0,7.57.4L.42,8.78a1.87,1.87,0,0,0,0,2.36l7.15,8.37A1.28,1.28,0,0,0,9.58,19.5Z" fill="#fff"/></svg>
+        前のページに戻る
+      </button>
+    </div>
+  </div><%
+} %><%-
+  include(`${__dirname}/src/layouts/_default`, {content,pageData:pageData,pageName:pageName,__dirname:__dirname,meta:pageData.metaList[pageName]})
+%>
